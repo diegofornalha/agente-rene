@@ -2346,15 +2346,6 @@ server.listen(PORT, () => {
     automationCron.start();
   }
 
-  // Telegram channel (opt-in)
-  if (process.env.TELEGRAM_ENABLED === 'true') {
-    const telegram = require('./services/telegram/telegram-channel');
-    telegram.start({ io, taskRunner }).catch(err => {
-      console.error('❌ Telegram channel failed to start:', err);
-    });
-    console.log('  • Telegram channel: enabled');
-  }
-
   // Cron scheduler (sempre ligado — sem cron.json = no-op)
   cronScheduler.start({ taskRunner, io });
 
