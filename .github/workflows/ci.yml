@@ -8,8 +8,8 @@ jobs:
       run:
         working-directory: backend-sdk-claude
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           # Espelha a produção: CLAUDE_NODE_BIN = ~/opt/node = v22 (ver
           # "Dependency policy" no RUNBOOK). O binário do better-sqlite3 é
