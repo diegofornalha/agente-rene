@@ -1,6 +1,0 @@
-[submodule "backend-sdk-claude/MazyOS"]
-	path = backend-sdk-claude/MazyOS
-	url = https://github.com/mazzeoia/MazyOS
-[submodule "hermes-webui"]
-	path = hermes-webui
-	url = https://github.com/claw-mythos/hermes-webui.git
