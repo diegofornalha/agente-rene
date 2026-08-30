@@ -244,3 +244,31 @@ on the host process briefly, redo, then unset. If unintended, no action needed
 
 **Lost sessions after restart** — confirm `SESSION_STORE_BACKEND=sqlite` in
 `.env` and that `data/state.db` has rows in the `sessions` table.
+
+---
+
+## Dependency policy (2026-08-30)
+
+Kept deliberately, do not "fix" without reading this:
+
+- **`@anthropic-ai/claude-code` 2.1.210 — PINNED.** See the comment in
+  `bridge-rene/claude-query.js` for why. Never bump casually.
+- **`@whiskeysockets/baileys` 7.0.0-rc12** — production WhatsApp channel;
+  upgrade only with a planned re-pair/test window.
+- **`express` 4** — v5 changes wildcard/param routing and async handler
+  semantics across ~2.4k lines of routes. Re-evaluate after the server.js
+  modularization (routes/ + supertest coverage).
+- **`html-docx-js`** — its jszip/lodash.merge advisories have no upstream fix.
+  Vector does not apply: we only *generate* DOCX from our own HTML
+  (`services/doc-converter.js`), never load untrusted zips. Accepted risk;
+  future alternative: `html-to-docx`.
+- **Node runtime**: production runs `CLAUDE_NODE_BIN` (~/opt/node, v22) while
+  the shell default may be newer. `better-sqlite3`'s native binary is built
+  for the production ABI — `scripts/preflight.sh` auto-heals a mismatch at
+  boot, and `npm test` (via `scripts/run-tests.sh`) always uses the
+  production node. If you upgrade the production Node, preflight rebuilds the
+  binary on first boot automatically.
+
+After ANY `npm install`/`npm audit fix`, re-run `bash scripts/preflight.sh`
+(it resolves the production node from `.env`) to confirm the sqlite binary
+still matches, and `npm test` before restarting PM2.
