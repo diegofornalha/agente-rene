@@ -88,6 +88,13 @@ backend-sdk-claude/hermes-agent/
 .claude/
 .claude-flow/
 
+# Exceção: o guard pre-bash e o settings que o registra são versionados
+# (git não re-inclui arquivo sob diretório excluído — reabrir o diretório primeiro)
+!backend-sdk-claude/.claude/
+backend-sdk-claude/.claude/*
+!backend-sdk-claude/.claude/settings.json
+!backend-sdk-claude/.claude/helpers/
+
 # Coverage em qualquer subdiretório
 **/coverage/
 

@@ -170,7 +170,17 @@ need; the tool policy above is the primary safeguard.
 `.claude/helpers/hook-handler.cjs pre-bash` blocks any Bash command that reads
 or copies OAuth tokens, SSH private keys, AWS creds, GitHub host config, the
 project `.env`, or the WhatsApp auth dir. Anchored regex avoids false positives
-like `.sshfoo`.
+like `.sshfoo`. Destructive patterns (rm -rf /, pipe-to-shell, reverse shell,
+rc/authorized_keys persistence, sudo) are also blocked and are NOT bypassable.
+
+The handler and the `PreToolUse` registration live versioned in
+`.claude/helpers/hook-handler.cjs` and `.claude/settings.json` (gitignore has
+explicit exceptions for those two paths; the rest of `.claude/` stays local).
+Spec/regression: `tests/hook-prebash.test.js`. It applies to every task whose
+workspace is the backend root (the task-runner default). Tasks with a custom
+`workspace` outside the backend do NOT inherit project settings — global
+coverage would require replicating the hook in `~/.claude/settings.json`
+(operator decision; keep the two in sync manually if you do).
 
 Emergency bypass (one-shot, for a legitimate rotation):
 
