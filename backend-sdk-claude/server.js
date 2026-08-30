@@ -37,55 +37,14 @@ const logger = require('./services/logger');
 
 const { app, server, io, upload } = require('./app');
 
-// In-memory session storage (in production, use Redis or database)
-const sessions = new Map();
-const activeConnections = new Map();
-// Sistema de deduplicação de mensagens
-const processedMessages = new Map();
+const {
+  sessions, activeConnections, processedMessages,
+  startCleanups, _sanitizeTask,
+} = require('./services/chat/session-registry');
+startCleanups(io);
 
 // Referência ao canal WhatsApp pra rotas externas (POST /api/whatsapp/say)
 let whatsappChannel = null;
-
-const MESSAGE_TTL = 30000; // 30 seconds
-
-// Limpeza automática de mensagens antigas
-setInterval(() => {
-  const now = Date.now();
-  for (const [messageId, timestamp] of processedMessages.entries()) {
-    if (now - timestamp > MESSAGE_TTL) {
-      processedMessages.delete(messageId);
-    }
-  }
-}, 60000); // Limpar a cada minuto
-
-// Limpeza de conexões stale que nunca dispararam 'disconnect'
-const CONNECTION_STALE_MS = 5 * 60 * 1000; // 5 minutos sem atividade
-setInterval(() => {
-  const now = Date.now();
-  for (const [socketId, info] of activeConnections.entries()) {
-    const socket = io.sockets?.sockets?.get(socketId);
-    if (!socket || socket.disconnected) {
-      activeConnections.delete(socketId);
-    } else if (now - info.connectedAt > CONNECTION_STALE_MS && !info.lastActivity) {
-      // Conexão antiga sem atividade registrada — manter mas marcar
-      info.lastActivity = info.lastActivity || info.connectedAt;
-    }
-  }
-}, 60000);
-
-// Limpeza de sessões sem atividade (4 horas)
-setInterval(() => {
-  const now = Date.now();
-  const SESSION_TTL = 4 * 60 * 60 * 1000;
-  let cleaned = 0;
-  for (const [sessionId, data] of sessions.entries()) {
-    if (data.lastActivity && (now - data.lastActivity > SESSION_TTL)) {
-      sessions.delete(sessionId);
-      cleaned++;
-    }
-  }
-  if (cleaned > 0) logger.info(`🧹 Cleaned ${cleaned} stale sessions`);
-}, 3600000); // A cada hora
 
 const {
   isClaudeLimitError, extractResetTime, getClaudeResetTime,
@@ -1483,11 +1442,6 @@ app.get('/api/drive/files/:folderId', async (req, res) => {
     res.status(500).json({ ok: false, error: err.message });
   }
 });
-
-function _sanitizeTask(task) {
-  const { _abortController, _timeoutId, ...safe } = task;
-  return safe;
-}
 
 // Socket.IO connection handling
 io.on('connection', (socket) => {
