@@ -1,0 +1,56 @@
+{
+  "name": "bridge-lucrecia",
+  "version": "1.0.0",
+  "description": "Bridge Lucrecia (Lucro Ativo) — CRM, Read.ai, OpenSign, Zoho, WhatsApp",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:handlers": "jest tests/handlers",
+    "test:automations": "jest tests/automations",
+    "perf:load": "../postman/scripts/perf-load.sh",
+    "security:zap-baseline": "../postman/scripts/zap-baseline.sh",
+    "security:zap-full": "../postman/scripts/zap-baseline.sh --full",
+    "security:self-scan": "curl -s -X POST http://localhost:3456/api/security/scan -H \"Authorization: Bearer $(grep '^WEBHOOK_CRM_SECRET=' ../backend-sdk-claude/.env | cut -d= -f2-)\" | python3 -m json.tool",
+    "postman:smoke": "postman collection run 27183547-1ab9d180-1cda-4faa-96a7-320517dc243c --environment 27183547-cafee879-cbf9-4911-8602-06f823d33f28 -i \"00 — Smoke (sem auth)\" -i \"10 — CRM • Read-only\"",
+    "postman:smoke:health": "postman collection run 27183547-1ab9d180-1cda-4faa-96a7-320517dc243c --environment 27183547-cafee879-cbf9-4911-8602-06f823d33f28 -i \"00 — Smoke (sem auth)\"",
+    "postman:full": "postman collection run 27183547-1ab9d180-1cda-4faa-96a7-320517dc243c --environment 27183547-cafee879-cbf9-4911-8602-06f823d33f28",
+    "postman:data-driven": "postman collection run 27183547-1ab9d180-1cda-4faa-96a7-320517dc243c --environment 27183547-cafee879-cbf9-4911-8602-06f823d33f28 -i \"POST /api/crm/leads/import-batch (1 row da fixture)\" -d ../postman/data/leads-import-fixtures.csv",
+    "postman:baseline": "../postman/scripts/baseline.sh",
+    "postman:openapi": "/usr/bin/python3 ../postman/scripts/postman2openapi.py ../postman/mythos-backend.postman_collection.json ../postman/openapi.yaml",
+    "postman:opensign-smoke": "postman collection run 27183547-04ec8bf9-6715-4bfa-8038-4acdc1f27366 --environment 27183547-c9566acf-7b4a-4c04-9ae4-065da0dc79de -i \"00 — Smoke (Master-Key)\"",
+    "postman:opensign-full": "postman collection run 27183547-04ec8bf9-6715-4bfa-8038-4acdc1f27366 --environment 27183547-c9566acf-7b4a-4c04-9ae4-065da0dc79de -i \"00 — Smoke (Master-Key)\" -i \"10 — Templates (read-only)\" -i \"20 — Contactbook (read-only)\" -i \"30 — Documents (read-only + filtered)\" -i \"40 — Cloud functions (smoke com payload inválido)\" -i \"50 — 🚫 Negative\"",
+    "postman:opensign-sync": "../postman/scripts/sync-opensign-env.sh",
+    "postman:wuzapi-smoke": "postman collection run 27183547-b0daee4e-76b3-4b0b-a002-c2205707f9ac --environment 27183547-64da0a93-e253-4316-b71e-0eaee6b07387 -i \"00 — 🔍 Inspect (read-only smoke)\"",
+    "postman:wuzapi-full": "postman collection run 27183547-b0daee4e-76b3-4b0b-a002-c2205707f9ac --environment 27183547-64da0a93-e253-4316-b71e-0eaee6b07387 -i \"00 — 🔍 Inspect (read-only smoke)\" -i \"50 — 🚫 Negative\"",
+    "postman:wuzapi-sync": "../postman/scripts/sync-wuzapi-env.sh"
+  },
+  "dependencies": {
+    "@notionhq/client": "^5.20.0",
+    "@xmldom/xmldom": "^0.9.10",
+    "better-sqlite3": "^12.9.0",
+    "fs-extra": "^11.2.0",
+    "googleapis": "^171.4.0",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^2.4.5",
+    "playwright": "^1.60.0",
+    "xml-crypto": "^6.1.2"
+  },
+  "devDependencies": {
+    "autocannon": "^8.0.0",
+    "jest": "^30.4.1",
+    "socket.io-client": "^4.8.3"
+  },
+  "optionalDependencies": {
+    "puppeteer": "^24.43.1"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/services/crm/__tests__/"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  }
+}

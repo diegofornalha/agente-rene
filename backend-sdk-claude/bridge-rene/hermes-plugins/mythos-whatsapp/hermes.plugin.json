@@ -1,0 +1,20 @@
+{
+  "id": "mythos-whatsapp-inbound",
+  "name": "Mythos WhatsApp Inbound",
+  "description": "Routes WhatsApp group messages to the mythos backend for NotebookLM-grounded replies.",
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled":      { "type": "boolean",  "default": true },
+      "backendUrl":   { "type": "string",   "default": "http://127.0.0.1:3456/api/whatsapp/inbound" },
+      "authToken":    { "type": "string",   "default": "" },
+      "allowedGroups":{ "type": "array",    "items": { "type": "string" }, "default": [] },
+      "minLen":       { "type": "integer",  "minimum": 1, "maximum": 5000, "default": 8 },
+      "timeoutMs":    { "type": "integer",  "minimum": 1000, "maximum": 600000, "default": 60000 }
+    }
+  }
+}

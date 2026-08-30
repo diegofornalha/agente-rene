@@ -1,0 +1,60 @@
+{
+  "id": "wagner-wa-groups",
+  "name": "Lucro Ativo — Grupos Operacionais WhatsApp",
+  "description": "Cria/atualiza grupo operacional WhatsApp pós-disparo de contrato OpenSign, juntando fixos Lucro Ativo + representante do cliente + testemunhas. Em dry-run, simula sem tocar no Baileys.",
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": ["create_operational_group"]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "dryRun": {
+        "type": "boolean",
+        "default": true,
+        "description": "Quando true, NÃO chama Baileys — só monta participantes, loga e grava JID fake. Idempotência testável sem risco."
+      },
+      "teamPath": {
+        "type": "string",
+        "default": "/home/lucrecia/.hermes-claw-lucrecia/opensign-bridge/team.json"
+      },
+      "clientsDir": {
+        "type": "string",
+        "default": "/home/lucrecia/.claude/skills/cadastro-cliente-opensign/clients"
+      },
+      "channelId": {
+        "type": "string",
+        "default": "whatsapp"
+      },
+      "accountId": {
+        "type": "string",
+        "default": "default"
+      },
+      "subjectTemplate": {
+        "type": "string",
+        "default": "LA: {doc_titulo}",
+        "description": "Template do nome do grupo. Limite WhatsApp = 25 chars (plugin trunca defensivamente)."
+      },
+      "wuzapiBaseUrl": {
+        "type": "string",
+        "default": "http://127.0.0.1:18790",
+        "description": "URL do gateway wuzapi local. Default: docker compose em 127.0.0.1:18790."
+      },
+      "wuzapiToken": {
+        "type": "string",
+        "description": "Token da sessão wuzapi (criado via POST /admin/users). Obrigatório quando dryRun=false."
+      },
+      "wuzapiTimeoutMs": {
+        "type": "number",
+        "default": 15000
+      },
+      "mensagemInicialTemplate": {
+        "type": "string",
+        "default": "Grupo operacional do contrato \"{doc_titulo}\" com {razao_social}. Documento foi enviado pra assinatura. Aviso aqui quando todos assinarem."
+      }
+    }
+  }
+}

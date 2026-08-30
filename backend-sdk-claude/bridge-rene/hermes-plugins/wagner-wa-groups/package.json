@@ -1,0 +1,11 @@
+{
+  "name": "wagner-wa-groups",
+  "version": "0.1.0",
+  "description": "OpenClaw plugin: cria grupo operacional WhatsApp automaticamente após disparo de contrato OpenSign (fixos Lucro Ativo + cliente + testemunhas).",
+  "type": "module",
+  "main": "index.mjs",
+  "private": true,
+  "hermes": {
+    "extensions": ["./index.mjs"]
+  }
+}
