@@ -1,34 +1,41 @@
 // Sessions FTS5 — espelha tasks (data/tasks.json) em uma tabela FTS5 do
 // SQLite pra busca full-text rápida. Sincroniza no boot + a cada save.
 
-const Database = require('better-sqlite3');
 const path = require('path');
 const fs = require('fs-extra');
+const { openDb } = require('../db/sqlite');
 
 const DB_FILE = path.join(__dirname, '..', '..', 'data', 'state.db');
-fs.ensureDirSync(path.dirname(DB_FILE));
 
-const db = new Database(DB_FILE);
-db.pragma('journal_mode = WAL');
+let _dbInstance = null;
 
-db.exec(`
-  CREATE VIRTUAL TABLE IF NOT EXISTS tasks_fts USING fts5(
-    id UNINDEXED,
-    prompt,
-    result,
-    source UNINDEXED,
-    tags,
-    status UNINDEXED,
-    created_at UNINDEXED,
-    tokenize = 'unicode61'
-  );
-`);
+// Lazy: abre o banco (e roda o boot sync) só no primeiro uso, nunca em
+// require-time — testes e scripts podem importar sem tocar data/state.db.
+function db() {
+  if (_dbInstance) return _dbInstance;
+  fs.ensureDirSync(path.dirname(DB_FILE));
+  _dbInstance = openDb(DB_FILE);
+  _dbInstance.exec(`
+    CREATE VIRTUAL TABLE IF NOT EXISTS tasks_fts USING fts5(
+      id UNINDEXED,
+      prompt,
+      result,
+      source UNINDEXED,
+      tags,
+      status UNINDEXED,
+      created_at UNINDEXED,
+      tokenize = 'unicode61'
+    );
+  `);
+  bootSync();
+  return _dbInstance;
+}
 
 // Sincroniza um lote de tasks (chamado no boot e a cada _save do task-runner).
 function syncFromTasks(tasks) {
-  const tx = db.transaction((batch) => {
-    const del = db.prepare('DELETE FROM tasks_fts WHERE id = ?');
-    const ins = db.prepare(`INSERT INTO tasks_fts (id, prompt, result, source, tags, status, created_at)
+  const tx = db().transaction((batch) => {
+    const del = db().prepare('DELETE FROM tasks_fts WHERE id = ?');
+    const ins = db().prepare(`INSERT INTO tasks_fts (id, prompt, result, source, tags, status, created_at)
                             VALUES (?, ?, ?, ?, ?, ?, ?)`);
     for (const t of batch) {
       del.run(t.id);
@@ -55,12 +62,13 @@ function search(query, { limit = 20, source, status } = {}) {
   if (status) { sql += ' AND status = ?'; params.push(status); }
   sql += ' ORDER BY rank LIMIT ?';
   params.push(limit);
-  return db.prepare(sql).all(...params);
+  return db().prepare(sql).all(...params);
 }
 
 // Boot sync — popula a partir de data/tasks.json se a tabela estiver vazia.
+// Chamado de dentro de db() com _dbInstance já setado.
 function bootSync() {
-  const count = db.prepare('SELECT count(*) AS n FROM tasks_fts').get().n;
+  const count = _dbInstance.prepare('SELECT count(*) AS n FROM tasks_fts').get().n;
   if (count > 0) {
     console.log(`🔎 Sessions FTS5: ${count} entries já indexadas`);
     return;
@@ -75,7 +83,5 @@ function bootSync() {
     console.error('FTS5 boot sync failed:', e.message);
   }
 }
-
-bootSync();
 
 module.exports = { search, syncFromTasks };

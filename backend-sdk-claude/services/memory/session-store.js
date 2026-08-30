@@ -30,15 +30,11 @@ const _stmts = {};
 
 function _initDb() {
   if (db) return db;
-  const Database = require('better-sqlite3');
+  const { openDb } = require('../db/sqlite');
   fs.ensureDirSync(path.dirname(DB_FILE));
-  db = new Database(DB_FILE);
-  db.pragma('journal_mode = WAL');
-  // synchronous=NORMAL is the documented sweet spot with WAL: durability up to
-  // the last fsync (we never lose committed transactions on crash), without
-  // paying for fsync on every transaction. Default FULL adds latency for no
-  // benefit when WAL is on.
-  db.pragma('synchronous = NORMAL');
+  // WAL + synchronous=NORMAL (via openDb) is the documented sweet spot:
+  // durability up to the last fsync without paying for fsync per transaction.
+  db = openDb(DB_FILE);
   db.exec(`
     CREATE TABLE IF NOT EXISTS sessions (
       scope         TEXT NOT NULL,

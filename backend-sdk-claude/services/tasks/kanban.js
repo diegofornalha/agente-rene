@@ -2,18 +2,26 @@
 // Persistência em SQLite (data/state.db). Cards têm status: backlog,
 // in_progress, blocked, done. Cada card pode disparar uma task no taskRunner.
 
-const Database = require('better-sqlite3');
 const path = require('path');
 const fs = require('fs-extra');
 const { v4: uuidv4 } = require('uuid');
+const { openDb } = require('../db/sqlite');
 
 const DB_FILE = path.join(__dirname, '..', '..', 'data', 'state.db');
-fs.ensureDirSync(path.dirname(DB_FILE));
 
-const db = new Database(DB_FILE);
-db.pragma('journal_mode = WAL');
+let _dbInstance = null;
 
-db.exec(`
+// Lazy: abre o banco só no primeiro uso, nunca em require-time — testes e
+// scripts podem importar o kanban sem tocar data/state.db de produção.
+function db() {
+  if (_dbInstance) return _dbInstance;
+  fs.ensureDirSync(path.dirname(DB_FILE));
+  _dbInstance = openDb(DB_FILE);
+  _dbInstance.exec(SCHEMA);
+  return _dbInstance;
+}
+
+const SCHEMA = `
   CREATE TABLE IF NOT EXISTS kanban_cards (
     id            TEXT PRIMARY KEY,
     board         TEXT NOT NULL DEFAULT 'default',
@@ -31,7 +39,7 @@ db.exec(`
 
   CREATE INDEX IF NOT EXISTS idx_kanban_status ON kanban_cards(board, status);
   CREATE INDEX IF NOT EXISTS idx_kanban_priority ON kanban_cards(priority DESC);
-`);
+`;
 
 let _taskRunner = null;
 
@@ -53,7 +61,7 @@ function createCard({ board = 'default', title, description, assignee, priority 
   if (!title) throw new Error('title obrigatório');
   const now = Date.now();
   const id = uuidv4();
-  db.prepare(`
+  db().prepare(`
     INSERT INTO kanban_cards (id, board, title, description, status, assignee, priority, tags_json, created_at, updated_at)
     VALUES (?, ?, ?, ?, 'backlog', ?, ?, ?, ?, ?)
   `).run(id, board, title, description || null, assignee || null, priority, JSON.stringify(tags), now, now);
@@ -61,7 +69,7 @@ function createCard({ board = 'default', title, description, assignee, priority 
 }
 
 function getCard(id) {
-  return _row(db.prepare('SELECT * FROM kanban_cards WHERE id = ?').get(id));
+  return _row(db().prepare('SELECT * FROM kanban_cards WHERE id = ?').get(id));
 }
 
 function listCards({ board = 'default', status } = {}) {
@@ -69,8 +77,8 @@ function listCards({ board = 'default', status } = {}) {
     ? 'SELECT * FROM kanban_cards WHERE board = ? AND status = ? ORDER BY priority DESC, created_at ASC'
     : 'SELECT * FROM kanban_cards WHERE board = ? ORDER BY priority DESC, created_at ASC';
   const rows = status
-    ? db.prepare(sql).all(board, status)
-    : db.prepare(sql).all(board);
+    ? db().prepare(sql).all(board, status)
+    : db().prepare(sql).all(board);
   return rows.map(_row);
 }
 
@@ -78,7 +86,7 @@ function moveCard(id, status) {
   const allowed = ['backlog', 'in_progress', 'blocked', 'done'];
   if (!allowed.includes(status)) throw new Error(`status inválido: ${status}`);
   const finishedAt = status === 'done' ? Date.now() : null;
-  db.prepare('UPDATE kanban_cards SET status = ?, updated_at = ?, finished_at = ? WHERE id = ?')
+  db().prepare('UPDATE kanban_cards SET status = ?, updated_at = ?, finished_at = ? WHERE id = ?')
     .run(status, Date.now(), finishedAt, id);
   return getCard(id);
 }
@@ -102,13 +110,13 @@ function dispatchCard(id, { workspace, model, agent } = {}) {
     agent: agent || card.assignee || undefined,
     maxTurns: 12,
   });
-  db.prepare('UPDATE kanban_cards SET status = ?, task_id = ?, updated_at = ? WHERE id = ?')
+  db().prepare('UPDATE kanban_cards SET status = ?, task_id = ?, updated_at = ? WHERE id = ?')
     .run('in_progress', task.id, Date.now(), id);
   return { card: getCard(id), task };
 }
 
 function deleteCard(id) {
-  const res = db.prepare('DELETE FROM kanban_cards WHERE id = ?').run(id);
+  const res = db().prepare('DELETE FROM kanban_cards WHERE id = ?').run(id);
   return { ok: res.changes > 0 };
 }
 

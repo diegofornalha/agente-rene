@@ -17,11 +17,9 @@ let db = null;
 
 function _initDb() {
   if (db) return db;
-  const Database = require('better-sqlite3');
+  const { openDb } = require('../db/sqlite');
   fs.ensureDirSync(path.dirname(DB_FILE));
-  db = new Database(DB_FILE);
-  db.pragma('journal_mode = WAL');
-  db.pragma('synchronous = NORMAL');
+  db = openDb(DB_FILE);
   db.exec(`
     CREATE TABLE IF NOT EXISTS rota_fiscal_leads (
       id            TEXT PRIMARY KEY,

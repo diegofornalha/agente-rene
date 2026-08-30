@@ -14,7 +14,7 @@
 
 const fs = require('fs-extra');
 const path = require('path');
-const Database = require('better-sqlite3');
+const { openDb } = require('../db/sqlite');
 
 const SKILLS_ROOT   = path.join(__dirname, '..', '..', '.claude', 'skills');
 const STATE_DB      = path.join(__dirname, '..', '..', 'data', 'state.db');
@@ -29,8 +29,7 @@ let _db = null;
 
 function _getDb() {
   if (!_db) {
-    _db = new Database(STATE_DB);
-    _db.pragma('journal_mode = WAL');
+    _db = openDb(STATE_DB);
     _db.exec(`
       CREATE TABLE IF NOT EXISTS skill_usage (
         name TEXT PRIMARY KEY,
