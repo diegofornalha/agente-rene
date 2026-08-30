@@ -34,22 +34,16 @@ const { resolveIdentity } = require('./identity-resolver');
 const L = require('../../config/locale');
 
 const {
-  _runCmd, _transcribeAudio, _processVideo, _saveInboundMedia,
-  getLatestInboundImage, _downloadQuotedMedia, _describeQuotedImage,
-  _transcribeQuotedMedia, _extractQuotedContext,
+  _transcribeAudio, _processVideo, _saveInboundMedia,
+  getLatestInboundImage, _extractQuotedContext,
 } = require('./media-inbound');
-const {
-  TTS_ENABLED, TTS_MODE, TTS_SYSTEM_PROMPT,
-  _synthesizeTTS, _mp3ToOggOpus, _sendAsAudio, _sendStreamingAudio,
-} = require('./tts');
+const { TTS_ENABLED, TTS_MODE, _sendAsAudio } = require('./tts');
 
 const QR_PNG_PATH = process.env.WHATSAPP_QR_PNG || '/tmp/whatsapp-qr.png';
 const sockRef = require('./sock-ref');
 const { CONV_LOG_PATH, _appendConv, _jidToRole } = require('./conv-log');
 const {
-  _msgContextInfo, _extractQuotedText, _extractText, _extractLinks,
-  _splitDetails, _splitSummaryBody, _quotedMediaType, _stripLinkFormatting,
-  _extractCurrentMessage,
+  _msgContextInfo, _extractText, _extractCurrentMessage,
 } = require('./message-extract');
 
 const {
@@ -66,11 +60,10 @@ const logger = pino({ level: 'warn' });
 
 const {
   _checkGroupAntiLoop, _checkDmBotAntiLoop, _jidIsKnownBot, _isFromKnownBot,
-  _normForDedup, _lastReplyByJid, SEMANTIC_DEDUP_WINDOW_MS,
 } = require('./anti-loop');
 const {
   pendingByTaskId, inflightByJid, _notifyAuthDown, _formatReply,
-  _rehydrateZombieTasks, _summarizeStepsViaClaude,
+  _rehydrateZombieTasks, _startDelivery,
 } = require('./reply-delivery');
 
 // Detecta se a mensagem ENDEREÇA o bot (menção @ / reply a msg do bot / nome),
@@ -737,303 +730,7 @@ sock.ev.on('messages.upsert', async ({ messages, type }) => {
     }
   });
 
-  // ── Socket.IO event handlers — resposta imediata quando delivery funciona ──
-
-  // [DESABILITADO 2026-06-04] _handleTaskDone foi removido do código mas a chamada
-  // permaneceu, gerando ReferenceError silencioso a cada task done — algumas tasks
-  // ficavam "presas" sem entrega (resposta gerada, mas não enviada ao WhatsApp).
-  // O polling de 1.5s abaixo cobre 100% da entrega; este atalho era só pra latência.
-  //
-  // io.on('task_done', ({ taskId, status, result }) => {
-  //   const ctx = pendingByTaskId.get(taskId);
-  //   if (!ctx) return;
-  //   _handleTaskDone(ctx, taskId, status, result);
-  // });
-
-  io.on('task_step', ({ taskId, step }) => {
-    // Captura deltas de texto pra streaming TTS futuro.
-    const ctx = pendingByTaskId.get(taskId);
-    if (!ctx || step.type !== 'assistant') return;
-    const text = step.text || '';
-    if (!text || !TTS_ENABLED || TTS_MODE === 'none') return;
-    // Defensivo: erro de auth nunca vira áudio streaming (o task-runner já
-    // sanitiza os steps na origem; isto é cinto e suspensório).
-    if (isAuthErrorStrict(text)) return;
-    ctx._streamBuffer = (ctx._streamBuffer || '') + text;
-
-    // Streaming TTS: detecta frases completas e envia áudio imediato.
-    // Simples: pega texto até o último ". " / "! " / "? " ou ".\n"
-    const SENTENCE_END = /([.!?])\s+/g;
-    let match;
-    let lastEnd = -1;
-    let lastDelim = '';
-    SENTENCE_END.lastIndex = 0;
-    while ((match = SENTENCE_END.exec(ctx._streamBuffer)) !== null) {
-      lastEnd = match.index + match[0].length;
-      lastDelim = match[1];
-    }
-    // Só envia se tiver pelo menos uma frase completa (≥5 chars).
-    if (lastEnd > 4) {
-      const phrase = ctx._streamBuffer.slice(0, lastEnd).trim();
-      ctx._streamBuffer = ctx._streamBuffer.slice(lastEnd);
-      // Envia áudio sem esperar task completa.
-      _sendStreamingAudio(ctx.remoteJid, phrase).catch(() => {});
-    }
-  });
-
-  // Polling leve (1.5s) como fallback caso Socket.IO não entregue.
-  setInterval(async () => {
-    if (!isReady || pendingByTaskId.size === 0) return;
-
-    for (const [taskId, ctx] of [...pendingByTaskId.entries()]) {
-      const t = taskRunner.getTask(taskId);
-      if (!t) { pendingByTaskId.delete(taskId); continue; }
-
-      // Heartbeat de progresso em LINGUAGEM NATURAL: resumo via Haiku do que o
-      // agente fez desde o último heartbeat (delta, não cumulativo). Se nada de
-      // novo aconteceu, pula — typing indicator basta. Sem cap: conteúdo real
-      // não é ruído.
-      const elapsedMs = Date.now() - ctx.startedAt;
-      const FIRST_HEARTBEAT_DELAY_MS = 30_000;
-      const HEARTBEAT_INTERVAL_MS = 20_000;
-      const lastBeatAt = ctx.lastProgressAt || ctx.startedAt;
-      const heartbeatDue = (ctx.lastProgressAt
-        ? (Date.now() - lastBeatAt) >= HEARTBEAT_INTERVAL_MS
-        : elapsedMs >= FIRST_HEARTBEAT_DELAY_MS);
-
-      if (heartbeatDue) {
-        const allSteps = t.steps || [];
-        const lastIdx = ctx.lastStepIndex ?? 0;
-        const newSteps = allSteps.slice(lastIdx);
-
-        console.log(`💓 [hb] task=${taskId.slice(0,8)} elapsed=${Math.round(elapsedMs/1000)}s allSteps=${allSteps.length} newSteps=${newSteps.length} lastIdx=${lastIdx}`);
-
-        if (newSteps.length === 0) {
-          // Nada novo desde o último heartbeat — silêncio é melhor que ruído.
-          // Avança o relógio mesmo assim pra não martelar log a cada 1.5s.
-          ctx.lastProgressAt = Date.now();
-        } else {
-          ctx.lastProgressAt = Date.now();
-          ctx.lastStepIndex = allSteps.length;
-          ctx.heartbeatCount = (ctx.heartbeatCount || 0) + 1;
-
-          const msgSpoken = await _summarizeStepsViaClaude(newSteps);
-          console.log(`💓 [hb] summary=${msgSpoken ? `"${msgSpoken.slice(0,80)}"` : 'NULL (Haiku falhou ou retornou vazio)'}`);
-          if (msgSpoken) {
-            try {
-              if (TTS_ENABLED && TTS_MODE === 'audio_only') {
-                try {
-                  const mp3 = await _synthesizeTTS(msgSpoken);
-                  const ogg = await _mp3ToOggOpus(mp3);
-                  await sock.sendMessage(ctx.remoteJid, { audio: ogg, mimetype: 'audio/ogg; codecs=opus', ptt: true });
-                  _appendConv(`bot→${_jidToRole(ctx.remoteJid)}`, `[áudio heartbeat] ${msgSpoken}`);
-                  console.log(`💓 [hb] enviado como áudio`);
-                } catch (e) {
-                  await sock.sendMessage(ctx.remoteJid, { text: msgSpoken });
-                  _appendConv(`bot→${_jidToRole(ctx.remoteJid)}`, msgSpoken);
-                  console.log(`💓 [hb] enviado como texto (TTS falhou: ${e.message})`);
-                }
-              } else {
-                await sock.sendMessage(ctx.remoteJid, { text: msgSpoken });
-                _appendConv(`bot→${_jidToRole(ctx.remoteJid)}`, msgSpoken);
-                console.log(`💓 [hb] enviado como texto`);
-              }
-            } catch (e) {
-              console.warn(`⚠️ [hb] envio falhou: ${e.message}`);
-            }
-          }
-        }
-      }
-
-      if (t.status === 'done' || t.status === 'error' || t.status === 'cancelled') {
-        pendingByTaskId.delete(taskId);
-        if (ctx.typingInterval) clearInterval(ctx.typingInterval);
-
-        // Ressuscitação silenciosa em caso de erro: o user já mandou a pergunta,
-        // não devemos pedir reformulação. Recria a task uma vez automaticamente.
-        // Se a ressuscitada também falhar (resurrectedOnce já true), aí sim cai
-        // no fluxo de envio com a mensagem neutra.
-        // Exceção: falha de auth — recriar só queimaria outro 401; cai no fluxo
-        // de envio, onde _formatReply devolve o aviso de authDown.
-        if (t.status === 'error' && !ctx.resurrectedOnce
-            && t.error !== 'claude_auth_down' && !authMonitor.isDown()) {
-          console.log(`🩹 Task ${taskId.slice(0,8)} erro definitivo — ressuscitando 1x sem avisar user`);
-          const newTask = taskRunner.createTask({
-            prompt: t.prompt,
-            source: 'whatsapp',
-            systemPrompt: TTS_ENABLED ? TTS_SYSTEM_PROMPT : undefined,
-            tags: [...(t.tags || []), 'resurrected'],
-            maxTurns: 25,
-          });
-          const newTypingInterval = setInterval(() => {
-            sock.sendPresenceUpdate('available')
-              .then(() => sock.sendPresenceUpdate('composing', ctx.remoteJid))
-              .catch(() => {});
-          }, 5000);
-          // Mantém a Promise inflight viva — a fila do jid não libera ainda.
-          pendingByTaskId.set(newTask.id, {
-            remoteJid: ctx.remoteJid,
-            startedAt: Date.now(),
-            typingInterval: newTypingInterval,
-            resolveInflight: ctx.resolveInflight,
-            thisInflight: ctx.thisInflight,
-            resurrectedOnce: true,
-            rawMessage: ctx.rawMessage,
-          });
-          continue;
-        }
-
-        // Libera a fila do jid: a próxima mensagem desse user pode prosseguir.
-        if (ctx.resolveInflight) ctx.resolveInflight();
-        if (ctx.thisInflight && inflightByJid.get(ctx.remoteJid) === ctx.thisInflight) {
-          inflightByJid.delete(ctx.remoteJid);
-        }
-
-        // Falha de auth (plano desconectado): não manda erro cru nem "🤔 Hmm",
-        // manda o lembrete de reconexão (com rate-limit de 5min por chat) e
-        // não polui o convHistory com o episódio.
-        if ((t.status === 'error' && t.error === 'claude_auth_down')
-            || (t.status === 'done' && isAuthErrorStrict(t.result))) {
-          if (t.status === 'done') authMonitor.reportAuthFailure(t.result);
-          await _notifyAuthDown(ctx.remoteJid);
-          continue;
-        }
-
-        const fullReply = _formatReply(t);
-        const role = _jidToRole(ctx.remoteJid);
-        const ms = Date.now() - ctx.startedAt;
-
-        // ── Hard block: NUNCA enviar áudio/texto se a resposta for vazia/placeholder ──
-        // Lição operacional 2026-06-05: agente respondeu "(resposta vazia)" como áudio
-        // TTS pra mensagens invisíveis da Diego — bizarro e ruidoso. Também não
-        // polui convHistory com placeholder (senão o modelo aprende padrão errado).
-        const _hasRealContent = t.status === 'done'
-          && t.result && t.result.trim()
-          && fullReply !== '(resposta vazia)';
-        if (!_hasRealContent && t.status === 'done') {
-          console.log(`🤫 Task ${taskId.slice(0,8)} done com resposta vazia — sem envio, sem convHistory`);
-          continue;
-        }
-
-        // ── Dedup semântico (Diego checkpoint #4 — 2026-06-05) ──
-        // Se a mesma resposta normalizada foi enviada pro mesmo jid nos últimos 60s,
-        // abortar. Pega "Registrado." × 5 e variações que o prompt sozinho não pega.
-        const _norm = _normForDedup(fullReply);
-        const _prev = _lastReplyByJid.get(ctx.remoteJid);
-        const _now = Date.now();
-        if (_norm && _prev && _prev.norm === _norm && (_now - _prev.ts) < SEMANTIC_DEDUP_WINDOW_MS) {
-          const _ago = Math.round((_now - _prev.ts) / 1000);
-          console.log(`🤫 Dedup semântico — resposta idêntica enviada há ${_ago}s pro ${ctx.remoteJid}, abortando`);
-          continue;
-        }
-        _lastReplyByJid.set(ctx.remoteJid, { norm: _norm, ts: _now });
-
-        // Grava turno no histórico multi-turno (pra próxima msg do mesmo jid).
-        // SEMPRE a mensagem crua do interlocutor — nunca o prompt montado.
-        // Persistir t.prompt re-aninhava o wrapper de injeção a cada turno
-        // (matryoshka), inflando o contexto até exigir /reset (fix 2026-07-02).
-        // Fallback _extractCurrentMessage cobre zombies rehidratados sem ctx.
-        // Prefixo "Nome: " só em grupo (ctx.senderName) — é rótulo de falante no
-        // histórico, não wrapper de injeção; não re-aninha (o wrapper é montado
-        // à parte em finalPrompt).
-        const _rawMsg = ctx.rawMessage || _extractCurrentMessage(t.prompt) || '';
-        convHistory.addTurn('wa', ctx.remoteJid, ctx.senderName ? `${ctx.senderName}: ${_rawMsg}` : _rawMsg, fullReply);
-
-        try {
-          await sock.sendPresenceUpdate('paused', ctx.remoteJid);
-
-          // Caminho de erro/cancelado — sem TTS, manda só o texto
-          if (t.status !== 'done' || !TTS_ENABLED) {
-            await sock.sendMessage(ctx.remoteJid, { text: fullReply });
-            console.log(`📤 WhatsApp → ${ctx.remoteJid} (${t.status}, ${ms}ms): ${fullReply.slice(0, 80)}`);
-            _appendConv(`bot→${role}`, fullReply);
-          } else if (TTS_MODE === 'audio_only') {
-            // Modo audio_only: a parte falada vira áudio natural; o bloco
-            // "📋 Detalhes:" (números/códigos/IPs) e links soltos vão como
-            // texto — dado técnico falado fica robótico.
-            const { spoken, details } = _splitDetails(fullReply);
-            let ttsOk = false;
-            try {
-              const mp3 = await _synthesizeTTS(spoken);
-              const ogg = await _mp3ToOggOpus(mp3);
-              await sock.sendMessage(ctx.remoteJid, {
-                audio: ogg,
-                mimetype: 'audio/ogg; codecs=opus',
-                ptt: true,
-              });
-              _appendConv(`bot→${role}`, `[áudio TTS audio_only] ${spoken.slice(0, 120)}`);
-              console.log(`🔊 TTS audio_only → ${ctx.remoteJid}: ${spoken.slice(0, 80)}`);
-              ttsOk = true;
-            } catch (e) {
-              console.error(`❌ TTS audio_only falhou — fallback pra texto:`, e.message);
-            }
-            if (!ttsOk) {
-              // TTS falhou — manda o texto completo pra não deixar o user sem resposta.
-              await sock.sendMessage(ctx.remoteJid, { text: fullReply });
-              _appendConv(`bot→${role}`, fullReply);
-            }
-            // [REMOVIDO 2026-06-05] Envio de "texto auxiliar" (📋 Detalhes + 🔗 Links)
-            // foi desativado a pedido do Lucas — modo audio_only = APENAS áudio.
-            // Se houver dado técnico (URL/IP/código), agente deve verbalizar de forma
-            // natural ou aceitar perder o detalhe em vez de poluir com 2 msgs separadas.
-          } else if (TTS_MODE === 'full') {
-            // Modo full: áudio da resposta inteira + texto como fallback
-            try {
-              const mp3 = await _synthesizeTTS(fullReply);
-              const ogg = await _mp3ToOggOpus(mp3);
-              await sock.sendMessage(ctx.remoteJid, {
-                audio: ogg,
-                mimetype: 'audio/ogg; codecs=opus',
-                ptt: true,
-              });
-              _appendConv(`bot→${role}`, `[áudio TTS full] ${fullReply.slice(0, 120)}`);
-              console.log(`🔊 TTS full → ${ctx.remoteJid}: ${fullReply.slice(0, 80)}`);
-            } catch (e) {
-              console.error(`❌ TTS full falhou (segue texto):`, e.message);
-            }
-            // Envia texto também (pra quem preferir ler)
-            await sock.sendMessage(ctx.remoteJid, { text: fullReply });
-            console.log(`📤 WhatsApp → ${ctx.remoteJid} (${t.status}, ${ms}ms): ${fullReply.slice(0, 80)}`);
-            _appendConv(`bot→${role}`, fullReply);
-          } else {
-            // Modo summary (padrão): TTS do resumo + texto do corpo
-            const { summary, body } = _splitSummaryBody(fullReply);
-            try {
-              const mp3 = await _synthesizeTTS(summary);
-              const ogg = await _mp3ToOggOpus(mp3);
-              await sock.sendMessage(ctx.remoteJid, {
-                audio: ogg,
-                mimetype: 'audio/ogg; codecs=opus',
-                ptt: true,
-              });
-              _appendConv(`bot→${role}`, `[áudio TTS resumo] ${summary}`);
-              console.log(`🔊 TTS → ${ctx.remoteJid}: ${summary.slice(0, 80)}`);
-            } catch (e) {
-              console.error(`❌ TTS falhou (segue texto):`, e.message);
-            }
-            await sock.sendMessage(ctx.remoteJid, { text: body });
-            console.log(`📤 WhatsApp → ${ctx.remoteJid} (${t.status}, ${ms}ms): ${body.slice(0, 80)}`);
-            _appendConv(`bot→${role}`, body);
-          }
-        } catch (e) {
-          console.error(`❌ WhatsApp send failed:`, e.message);
-        }
-      }
-
-      // Timeout client-side de 16min (task-runner já aborta em 15min)
-      if (Date.now() - ctx.startedAt > 16 * 60 * 1000) {
-        pendingByTaskId.delete(taskId);
-        if (ctx.typingInterval) clearInterval(ctx.typingInterval);
-        if (ctx.resolveInflight) ctx.resolveInflight();
-        if (ctx.thisInflight && inflightByJid.get(ctx.remoteJid) === ctx.thisInflight) {
-          inflightByJid.delete(ctx.remoteJid);
-        }
-        try {
-          await sock.sendMessage(ctx.remoteJid, { text: '⏱️ Demorou mais que o esperado pra processar. Tô tentando resolver.' });
-        } catch (e) { /* ignore */ }
-      }
-    }
-  }, 1500);
+  _startDelivery({ io, taskRunner });
 
   return sock;
 }
