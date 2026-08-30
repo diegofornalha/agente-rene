@@ -121,3 +121,6 @@ hermes-webui
 **/.venv/
 __pycache__/
 *.pyc
+
+# Uploads temporários da rota /api/upload (runtime)
+backend-sdk-claude/uploads/
