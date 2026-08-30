@@ -1,0 +1,29 @@
+name: ci
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend-sdk-claude
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          # Espelha a produção: CLAUDE_NODE_BIN = ~/opt/node = v22 (ver
+          # "Dependency policy" no RUNBOOK). O binário do better-sqlite3 é
+          # compilado pra ABI desse Node.
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: backend-sdk-claude/package-lock.json
+      - run: npm ci
+      # Cinto e suspensório: garante o binário nativo pra ABI deste runner.
+      - run: npm rebuild better-sqlite3
+      # No CI o node do runner É o node de produção (22), então jest direto
+      # (scripts/run-tests.sh resolveria CLAUDE_NODE_BIN do .env, que não
+      # existe no CI — o default `node` já é o certo aqui).
+      - run: npx jest
+        env:
+          JEST_DETECT_OPEN: '0'
+      - run: node scripts/audit-gate.js

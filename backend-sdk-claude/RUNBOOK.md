@@ -272,3 +272,15 @@ Kept deliberately, do not "fix" without reading this:
 After ANY `npm install`/`npm audit fix`, re-run `bash scripts/preflight.sh`
 (it resolves the production node from `.env`) to confirm the sqlite binary
 still matches, and `npm test` before restarting PM2.
+
+---
+
+## CI & pre-push
+
+- **GitHub Actions** (`.github/workflows/ci.yml`): Node 22 (mirrors
+  production), `npm ci` + rebuild better-sqlite3, full jest suite, then
+  `scripts/audit-gate.js` (fails on high/critical vulns outside the accepted
+  html-docx-js chain — allowlist lives in the script).
+- **Local pre-push hook** (the real deploy is git on this host):
+  `ln -sf ../../backend-sdk-claude/scripts/pre-push .git/hooks/pre-push`
+  Runs the sqlite ABI probe + full suite + audit-gate before any push.
