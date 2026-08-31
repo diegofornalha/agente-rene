@@ -50,19 +50,24 @@ if ! "$NODE_BIN" -e "$SQLITE_PROBE" >/dev/null 2>&1; then
 fi
 ok "better-sqlite3 native binding loads"
 
-# 3. OAuth credentials. The backend depends on the subscription-auth token under
-#    ~/.claude/.credentials.json (NOT ANTHROPIC_API_KEY). We only verify presence
-#    and permissions — never read the contents.
+# 3. OAuth credentials. The backend depends on the subscription-auth token (NOT
+#    ANTHROPIC_API_KEY). On Linux it lives at ~/.claude/.credentials.json; on
+#    macOS the CLI stores it in the login Keychain instead ("Claude Code-credentials"),
+#    so accept either. We only verify presence — never read the contents.
 CREDS_PATH="${HOME}/.claude/.credentials.json"
-[ -f "$CREDS_PATH" ] || fail "OAuth credentials missing at $CREDS_PATH — run 'claude login'"
-
-if stat -f '%Lp' "$CREDS_PATH" >/dev/null 2>&1; then
-  PERMS="$(stat -f '%Lp' "$CREDS_PATH")"
+if [ -f "$CREDS_PATH" ]; then
+  if stat -f '%Lp' "$CREDS_PATH" >/dev/null 2>&1; then
+    PERMS="$(stat -f '%Lp' "$CREDS_PATH")"
+  else
+    PERMS="$(stat -c '%a' "$CREDS_PATH")"
+  fi
+  [ "$PERMS" = "600" ] || warn "$CREDS_PATH perms=$PERMS (expected 600). Run: chmod 600 \"$CREDS_PATH\""
+  ok "credentials present (perms=$PERMS)"
+elif [ "$(uname)" = "Darwin" ] && security find-generic-password -s "Claude Code-credentials" >/dev/null 2>&1; then
+  ok "credentials present (macOS Keychain)"
 else
-  PERMS="$(stat -c '%a' "$CREDS_PATH")"
+  fail "OAuth credentials missing ($CREDS_PATH or macOS Keychain) — run 'claude login'"
 fi
-[ "$PERMS" = "600" ] || warn "$CREDS_PATH perms=$PERMS (expected 600). Run: chmod 600 \"$CREDS_PATH\""
-ok "credentials present (perms=$PERMS)"
 
 # 4. Required runtime dirs (idempotent)
 mkdir -p "$ROOT/logs" "$ROOT/data"
