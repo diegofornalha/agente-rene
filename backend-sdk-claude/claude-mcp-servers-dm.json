@@ -35,6 +35,13 @@
         "ZAPSIGN_API_KEY": "${ZAPSIGN_API_KEY_DM}",
         "ZAPSIGN_BASE_URL": "${ZAPSIGN_BASE_URL_DM}"
       }
+    },
+    "buffer": {
+      "type": "http",
+      "url": "https://mcp.buffer.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${BUFFER_API_KEY_DM}"
+      }
     }
   }
 }
