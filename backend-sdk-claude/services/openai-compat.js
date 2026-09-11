@@ -19,6 +19,8 @@ const fs = require('fs');
 const os = require('os');
 const { v4: uuidv4 } = require('uuid');
 const { query } = require('../claude-query');
+const authMonitor = require('./health/auth-monitor');
+const { isAuthError } = authMonitor;
 
 const MODEL_ID = 'claudecode';
 
@@ -88,6 +90,23 @@ function _authOk(req) {
   return token === expected;
 }
 
+// Claude Code deslogado às vezes devolve HTTP-sucesso com texto "Not logged in · Please run /login"
+// — isso NÃO pode passar como resposta válida, senão o Hermes não cai no fallback.
+function _looksLikeLoggedOut(text) {
+  const t = String(text || '').trim();
+  if (!t || t.length > 400) return false;
+  return /not logged in/i.test(t)
+    || /please run \/?login/i.test(t)
+    || /^please run \/?login/i.test(t);
+}
+
+function _failAuth(res, message) {
+  try { authMonitor.reportAuthFailure(message); } catch (_) {}
+  return res.status(401).json({
+    error: { message, type: 'authentication_error', code: 'claude_auth' },
+  });
+}
+
 function _chunk(id, created, model, delta, finish_reason = null) {
   return {
     id, object: 'chat.completion.chunk', created, model,
@@ -113,6 +132,18 @@ function mount(app) {
 
   app.post('/v1/chat/completions', jsonBig, async (req, res) => {
     if (!_authOk(req)) return res.status(401).json({ error: { message: 'invalid api key', type: 'invalid_request_error' } });
+
+    // authDown: falha o primary de verdade pra o Hermes cair no fallback_providers (xAI).
+    // Não usar SSE 200 com texto de erro — isso NÃO dispara fallback.
+    if (authMonitor.isDown()) {
+      return res.status(503).json({
+        error: {
+          message: 'claude authDown — primary unavailable; client should use fallback',
+          type: 'api_error',
+          code: 'claude_auth_down',
+        },
+      });
+    }
 
     const body = req.body || {};
     const stream = body.stream === true;
@@ -191,8 +222,20 @@ function mount(app) {
       }
     }
 
+    if (text && _looksLikeLoggedOut(text)) {
+      errored = text;
+      text = '';
+    }
+
     // ── Streaming (SSE): entrega o texto coletado (robusto; não token-a-token) ──
     if (stream) {
+      if (!text && errored && isAuthError(errored)) {
+        authMonitor.reportAuthFailure(errored);
+        return res.status(401).json({ error: { message: errored, type: 'authentication_error', code: 'claude_auth' } });
+      }
+      if (!text && errored) {
+        return res.status(503).json({ error: { message: errored, type: 'api_error' } });
+      }
       res.writeHead(200, {
         'Content-Type': 'text/event-stream',
         'Cache-Control': 'no-cache',
@@ -213,7 +256,11 @@ function mount(app) {
 
     // ── Não-streaming ──
     if (!text && errored) {
-      return res.status(500).json({ error: { message: errored, type: 'api_error' } });
+      if (isAuthError(errored)) {
+        authMonitor.reportAuthFailure(errored);
+        return res.status(401).json({ error: { message: errored, type: 'authentication_error', code: 'claude_auth' } });
+      }
+      return res.status(503).json({ error: { message: errored, type: 'api_error' } });
     }
 
     res.json({

@@ -66,7 +66,7 @@ if [ -f "$CREDS_PATH" ]; then
 elif [ "$(uname)" = "Darwin" ] && security find-generic-password -s "Claude Code-credentials" >/dev/null 2>&1; then
   ok "credentials present (macOS Keychain)"
 else
-  fail "OAuth credentials missing ($CREDS_PATH or macOS Keychain) — run 'claude login'"
+  echo "[preflight] WARN: OAuth credentials missing ($CREDS_PATH or macOS Keychain) — run 'claude login' (boot continua; Hermes deve usar fallback xAI)" >&2
 fi
 
 # 4. Required runtime dirs (idempotent)

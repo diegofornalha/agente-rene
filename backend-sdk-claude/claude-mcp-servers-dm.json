@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "grok": {
+      "command": "node",
+      "args": [
+        "/home/box/.hermes/agente-rene/backend-sdk-claude/mcp-servers/grok-mcp.mjs"
+      ]
+    },
+    "wa-allowlist": {
+      "command": "node",
+      "args": [
+        "/home/box/.hermes/agente-rene/backend-sdk-claude/mcp-servers/wa-allowlist-mcp.mjs"
+      ],
+      "env": {
+        "WA_ALLOWLIST_PIN": ""
+      }
+    }
+  }
+}

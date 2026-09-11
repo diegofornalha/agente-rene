@@ -29,7 +29,7 @@ module.exports = {
     wait_ready: false,
     env: {
       NODE_ENV: 'production',
-      CLAUDE_NODE_BIN: '/home/hermes/opt/node/bin/node',
+      CLAUDE_NODE_BIN: '/usr/bin/node',
     },
     env_development: {
       NODE_ENV: 'development',

@@ -9,7 +9,7 @@
     "test": "bash scripts/run-tests.sh"
   },
   "dependencies": {
-    "@anthropic-ai/claude-code": "2.1.210",
+    "@anthropic-ai/claude-code": "^2.1.263",
     "@modelcontextprotocol/sdk": "^1.29.0",
     "@whiskeysockets/baileys": "^7.0.0-rc12",
     "better-sqlite3": "^12.10.0",
