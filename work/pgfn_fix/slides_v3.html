@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+  @page{size:1280px 720px;margin:0}
+  :root{--navy:#010760;--gold:#C0892C;--green:#1F795A;--grey:#5B616E;--line:#D8DBE4;--soft:#F6F7FA}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;color:#22262F}
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;page-break-after:always;background:#fff}
+  .tag{position:absolute;left:120px;top:78px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:17px;letter-spacing:.18em;color:var(--navy)}
+  h2.title{position:absolute;left:118px;top:104px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:42px;color:var(--navy);line-height:1.1}
+  .rule{position:absolute;left:120px;top:172px;width:92px;height:4px;background:var(--navy)}
+  .sub{position:absolute;left:120px;top:190px;font-size:19px;color:var(--grey)}
+  .foot{position:absolute;bottom:0;left:0;right:0;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 120px 0 118px;font-size:14px;color:#9AA0AC}
+
+  /* ---------- fase 4 (slide 11) ---------- */
+  .fase .tag{top:196px}
+  .fase h2.title{top:224px;font-size:46px}
+  .fase .rule{top:302px}
+  .fase .body{position:absolute;left:120px;top:334px;width:990px}
+  .fase .body p{font-size:27px;line-height:1.62;color:#141414;margin-bottom:26px}
+  .fase .body b{color:var(--navy);font-weight:700}
+
+  /* ---------- base normativa (slide 12) ---------- */
+  .norma .tag{top:70px}
+  .norma h2.title{top:96px}
+  .norma .rule{top:166px}
+  table.leis{position:absolute;left:120px;top:216px;width:1040px;border-collapse:collapse}
+  table.leis th{background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-size:17px;letter-spacing:.06em;text-align:left;padding:16px 22px;font-weight:700;white-space:nowrap}
+  table.leis td{padding:17px 22px;font-size:19px;line-height:1.4;vertical-align:top;border-bottom:1px solid #E8EAF0}
+  table.leis tr:nth-child(odd) td{background:var(--soft)}
+  table.leis td.mec{font-weight:700;color:#22262F;width:230px}
+  table.leis td.disp{width:250px;color:#33383F}
+  table.leis td b{color:var(--navy);font-weight:700}
+
+  /* ---------- waterfall (slide 14) ---------- */
+  .chart{position:absolute;left:120px;top:236px;width:1040px;height:330px}
+  .axis{position:absolute;left:0;right:0;bottom:64px;height:1px;background:var(--line)}
+  .bar{position:absolute;border-radius:4px 4px 0 0}
+  .bar.mid{border-radius:4px}
+  .conn{position:absolute;border-top:2px dashed #B9BECF}
+  .val{position:absolute;width:170px;text-align:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:21px;color:var(--navy)}
+  .val small{display:block;font-size:12.5px;font-weight:700;color:var(--gold);margin-top:1px}
+  .cap{position:absolute;width:196px;text-align:center;bottom:0;height:58px}
+  .cap b{display:block;font-size:14.5px;color:#22262F;font-weight:700;margin-bottom:3px}
+  .cap span{display:block;font-size:11.5px;line-height:1.3;color:var(--grey)}
+  .legend{position:absolute;right:122px;top:192px;display:flex;gap:22px;font-size:13.5px;color:var(--grey)}
+  .legend i{display:inline-block;width:13px;height:13px;border-radius:3px;margin-right:7px;vertical-align:-1.5px}
+  .math{position:absolute;left:120px;top:586px;width:1040px;background:var(--soft);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;padding:12px 26px;display:flex;align-items:center;justify-content:space-between}
+  .math .eq{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--navy);white-space:nowrap}
+  .math .eq small{font-weight:600;color:var(--grey);font-size:12.5px}
+  .note{position:absolute;left:120px;top:648px;width:1040px;font-size:12px;color:#8A8F9B;line-height:1.35}
+
+  /* ---------- memória de cálculo (slide 15) ---------- */
+  table.mem{position:absolute;left:120px;top:226px;width:1040px;border-collapse:collapse}
+  table.mem th{background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-size:13.5px;letter-spacing:.05em;text-align:left;padding:10px 16px;font-weight:700;white-space:nowrap}
+  table.mem td{padding:10px 16px;font-size:14px;line-height:1.35;border-bottom:1px solid #E8EAF0;vertical-align:top}
+  table.mem tr:nth-child(even) td{background:var(--soft)}
+  table.mem td.et{font-weight:700;color:var(--navy);white-space:nowrap}
+  table.mem td.calc{font-family:'Montserrat',sans-serif;font-weight:700;color:var(--navy);font-size:13px}
+  table.mem td .bl{color:var(--grey);font-size:13px}
+  .box{position:absolute;top:492px;width:508px;background:var(--soft);border-radius:10px;padding:14px 20px;border-top:4px solid var(--gold)}
+  .box h4{font-family:'Montserrat',sans-serif;font-size:15px;color:var(--navy);margin-bottom:6px;font-weight:800}
+  .box p{font-size:12.5px;line-height:1.42;color:#3A3F4A}
+  .sum{position:absolute;left:120px;top:614px;width:1040px;background:#EAF3EF;border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:12px 26px;font-size:14.5px;color:#173F30;line-height:1.4}
+  .sum b{color:var(--green)}
+</style>
+</head>
+<body>
+
+<!-- SLIDE 11 · Fase 4 — liquidação com crédito de terceiro -->
+<div class="slide fase">
+  <div class="tag">03 · FASE 4</div>
+  <h2 class="title">Liquidação com crédito de terceiro</h2>
+  <div class="rule"></div>
+  <div class="body">
+    <p>Quitação de até <b>70% do saldo remanescente</b> com <b>crédito financeiro de terceiro</b>, formalmente transferido ao contribuinte por <b>escritura pública</b> — adquirido com <b>deságio fixo de 20%</b>.</p>
+    <p>O saldo final é <b>parcelado em até 36 meses</b>, encerrando o passivo com previsibilidade de caixa.</p>
+  </div>
+  <div class="foot"><span>@meulucroativo</span><span>11</span></div>
+</div>
+
+<!-- SLIDE 12 · Base normativa -->
+<div class="slide norma">
+  <div class="tag">04 · FUNDAMENTAÇÃO LEGAL E REGULATÓRIA</div>
+  <h2 class="title">Base normativa da solução</h2>
+  <div class="rule"></div>
+  <table class="leis">
+    <tr><th>MECANISMO LEGAL</th><th>DISPOSITIVO</th><th>REGRA APLICÁVEL · IMPACTO</th></tr>
+    <tr>
+      <td class="mec">Lei Geral da Transação</td>
+      <td class="disp">Lei nº 13.988/2020</td>
+      <td>Marco legal que autoriza o acordo e a renegociação de débitos federais.</td>
+    </tr>
+    <tr>
+      <td class="mec">Flexibilização &amp; descontos</td>
+      <td class="disp">Lei nº 14.375/2022</td>
+      <td>Ampliou descontos para até <b>65%</b> sobre juros, multas e encargos, e estendeu prazos para até <b>120 meses</b>.</td>
+    </tr>
+    <tr>
+      <td class="mec">Regulamentação PGFN</td>
+      <td class="disp">Portaria PGFN nº 6.757/2022</td>
+      <td>Disciplina a Transação Individual para grandes devedores e a aferição do CAPAG.</td>
+    </tr>
+    <tr>
+      <td class="mec">Liquidação com créditos de terceiros</td>
+      <td class="disp">Art. 11 da Lei 13.988/2020 e Instruções PGFN</td>
+      <td>Autoriza a liquidação de até <b>70%</b> do saldo remanescente com créditos validados — incluindo <b>créditos de terceiros</b>, transferidos por <b>escritura pública</b>.</td>
+    </tr>
+  </table>
+  <div class="foot"><span>@meulucroativo</span><span>12</span></div>
+</div>
+
+<!-- SLIDE 14 · waterfall -->
+<div class="slide">
+  <div class="tag">05 · IMPACTO FINANCEIRO</div>
+  <h2 class="title">Simulação — passivo de R$ 10 milhões</h2>
+  <div class="rule"></div>
+  <div class="sub">Três movimentos: desconto &rarr; crédito de terceiro &rarr; parcelamento</div>
+  <div class="legend">
+    <span><i style="background:var(--navy)"></i>Saldo devedor</span>
+    <span><i style="background:var(--gold)"></i>Redução do saldo</span>
+    <span><i style="background:var(--green)"></i>Saldo parcelado</span>
+  </div>
+
+  <div class="chart">
+    <div class="axis"></div>
+    <div class="bar" style="left:12px;width:170px;bottom:64px;height:240px;background:var(--navy)"></div>
+    <div class="bar mid" style="left:220px;width:170px;bottom:220px;height:84px;background:var(--gold)"></div>
+    <div class="bar" style="left:428px;width:170px;bottom:64px;height:156px;background:#2E3A7E"></div>
+    <div class="bar mid" style="left:636px;width:170px;bottom:110.8px;height:109.2px;background:var(--gold)"></div>
+    <div class="bar" style="left:844px;width:170px;bottom:64px;height:46.8px;background:var(--green)"></div>
+    <div class="conn" style="left:182px;width:38px;bottom:304px"></div>
+    <div class="conn" style="left:390px;width:38px;bottom:220px"></div>
+    <div class="conn" style="left:598px;width:38px;bottom:220px"></div>
+    <div class="conn" style="left:806px;width:38px;bottom:110.8px"></div>
+    <div class="val" style="left:12px;bottom:312px">R$ 10,00 mi</div>
+    <div class="val" style="left:220px;bottom:312px">&minus; R$ 3,50 mi</div>
+    <div class="val" style="left:428px;bottom:228px">R$ 6,50 mi</div>
+    <div class="val" style="left:636px;bottom:228px">&minus; R$ 4,55 mi<small>custo: R$ 3,64 mi</small></div>
+    <div class="val" style="left:844px;bottom:119px">R$ 1,95 mi</div>
+    <div class="cap" style="left:-1px"><b>Passivo original</b><span>consolidado inscrito na PGFN — principal + juros, multas e encargos</span></div>
+    <div class="cap" style="left:207px"><b>1 · Desconto legal</b><span>até 65% sobre juros, multas e encargos — Lei nº 14.375/2022</span></div>
+    <div class="cap" style="left:415px"><b>Saldo remanescente</b><span>o que resta a tratar após o desconto legal</span></div>
+    <div class="cap" style="left:623px"><b>2 · Crédito de terceiro</b><span>quita até 70% do saldo · escritura pública · deságio fixo de 20%</span></div>
+    <div class="cap" style="left:831px"><b>3 · Saldo final</b><span>parcelado em até 36 meses</span></div>
+  </div>
+
+  <div class="math">
+    <span class="eq">10,00 &minus; 3,50 = 6,50</span>
+    <span class="eq">70% &times; 6,50 = 4,55 <small>· custo: 3,64</small></span>
+    <span class="eq">Desembolso 3,64 + 1,95 = 5,59 &rarr; <span style="color:var(--green)">economia R$ 4,41 mi</span> <small>(44,1%)</small></span>
+  </div>
+  <div class="note">Simulação ilustrativa. Os percentuais de desconto são tetos legais — o desconto efetivo depende da classificação da dívida e da capacidade de pagamento (CAPAG) do contribuinte, apuradas pela PGFN (Portaria PGFN nº 6.757/2022). O deságio de 20% na aquisição do crédito é fixo. Memória de cálculo detalhada no slide seguinte.</div>
+
+  <div class="foot"><span>@meulucroativo</span><span>14</span></div>
+</div>
+
+<!-- SLIDE 15 · memória de cálculo -->
+<div class="slide">
+  <div class="tag">05 · IMPACTO FINANCEIRO</div>
+  <h2 class="title">Como ler a simulação</h2>
+  <div class="rule"></div>
+  <div class="sub">Memória de cálculo e fundamento técnico de cada movimento</div>
+
+  <table class="mem">
+    <tr><th style="width:200px">ETAPA</th><th>O QUE ACONTECE</th><th style="width:205px">BASE LEGAL</th><th style="width:230px">CÁLCULO</th></tr>
+    <tr>
+      <td class="et">1 · Desconto legal</td>
+      <td>Redução de até <b>65%</b> incidente <b>apenas sobre juros, multas e encargos</b> — o principal não recebe desconto.</td>
+      <td class="bl">Lei nº 14.375/2022</td>
+      <td class="calc">10,00 &minus; 3,50 = R$ 6,50 mi</td>
+    </tr>
+    <tr>
+      <td class="et">2 · Quitação com<br>crédito de terceiro</td>
+      <td>Até <b>70%</b> do saldo pós-desconto é quitado com <b>crédito financeiro de terceiro</b>, transferido ao contribuinte por <b>escritura pública</b>. Aquisição com <b>deságio fixo de 20%</b> — desembolso de R$ 0,80 por R$ 1,00 de dívida extinta.</td>
+      <td class="bl">Art. 11, Lei nº 13.988/2020 · Portaria PGFN nº 6.757/2022</td>
+      <td class="calc">70% &times; 6,50 = R$ 4,55 mi<br><span style="color:var(--gold)">custo: 80% &times; 4,55 = R$ 3,64 mi</span></td>
+    </tr>
+    <tr>
+      <td class="et">3 · Saldo final</td>
+      <td>Valor remanescente pago em dinheiro, <b>parcelado em até 36 meses</b> (&asymp; R$ 54 mil/mês).</td>
+      <td class="bl">Termos do acordo homologado</td>
+      <td class="calc">6,50 &minus; 4,55 = R$ 1,95 mi</td>
+    </tr>
+  </table>
+
+  <div class="box" style="left:120px">
+    <h4>Por que “até 65%” reduz 35% do total?</h4>
+    <p>O teto de 65% vale <b>só para os acessórios</b> (juros, multas e encargos) — nunca para o principal. Na simulação, o corte de R$ 3,50 mi é o desconto aplicado sobre essa parcela, o que equivale a <b>35% do passivo consolidado</b>.</p>
+  </div>
+  <div class="box" style="left:652px">
+    <h4>Como funciona o crédito de terceiro?</h4>
+    <p>O crédito é de titularidade de terceiro e é <b>formalmente transferido ao contribuinte por escritura pública</b>, com segurança jurídica na cessão. A aquisição tem <b>deságio fixo de 20%</b>: a cada R$ 1,00 de dívida extinta, o desembolso é de <b>R$ 0,80</b>.</p>
+  </div>
+
+  <div class="sum"><b>Resultado:</b> o passivo de R$ 10,00 mi é encerrado com desembolso total de <b>R$ 5,59 mi</b> — economia de <b>R$ 4,41 mi (44,1% do passivo)</b>. O único saldo em dinheiro, R$ 1,95 mi, é diluído em até 36 meses.</div>
+
+  <div class="foot"><span>@meulucroativo</span><span>15</span></div>
+</div>
+
+</body>
+</html>

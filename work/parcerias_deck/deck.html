@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Gestão de Parcerias — Plano de Trabalho · Lucro Ativo</title>
+<style>
+  :root{
+    --navy:#010860; --navy2:#0a1180; --gold:#C9A227; --ink:#1a1f36;
+    --grey:#5a6072; --line:#e3e6ef; --bg:#f7f8fc;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:1280px 720px;margin:0}
+  body{font-family:'Inter',sans-serif;color:var(--ink)}
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;page-break-after:always;background:#fff;display:flex;flex-direction:column}
+  h1,h2,h3,.mont{font-family:'Montserrat',sans-serif}
+
+  /* ---- chrome comum ---- */
+  .topbar{display:flex;align-items:center;gap:18px;padding:34px 64px 0 64px}
+  .tag{font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;letter-spacing:.14em;color:var(--navy);text-transform:uppercase}
+  .tag .n{color:var(--gold);margin-right:10px}
+  .rule{height:3px;background:linear-gradient(90deg,var(--navy) 0 70%,var(--gold) 70% 100%);margin:14px 64px 0 64px}
+  .content{flex:1;display:flex;flex-direction:column;justify-content:center;padding:6px 64px 56px 64px}
+  .compact th{font-size:17px;padding:10px 14px}
+  .compact td{font-size:17px;padding:8px 14px}
+  .foot{position:absolute;bottom:0;left:0;right:0;height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;font-size:15px;color:var(--grey)}
+  .foot .brand{font-family:'Montserrat',sans-serif;font-weight:600;color:var(--navy)}
+  h2.title{font-size:44px;color:var(--navy);font-weight:800;line-height:1.12;margin-bottom:8px}
+  .sub{font-size:24px;color:var(--grey);margin-bottom:26px}
+  .ghost{position:absolute;right:24px;bottom:-40px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:340px;color:var(--navy);opacity:.045;line-height:1;z-index:0}
+  .z{position:relative;z-index:1}
+
+  /* ---- capa / navy ---- */
+  .navy{background:linear-gradient(160deg,var(--navy) 0%,#03063f 100%);color:#fff}
+  .navy .bars{position:absolute;right:70px;bottom:60px;display:flex;align-items:flex-end;gap:14px;opacity:.35}
+  .navy .bars div{width:34px;background:linear-gradient(180deg,var(--gold),#8d6f14);border-radius:4px 4px 0 0}
+  .cover{padding:0 90px;display:flex;flex-direction:column;justify-content:center;height:100%}
+  .cover img{width:340px;margin-bottom:52px}
+  .cover .kicker{font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  .cover h1{font-size:64px;font-weight:800;line-height:1.08;max-width:900px}
+  .cover .sub2{font-size:27px;color:#c8cdf0;margin-top:24px;max-width:860px;line-height:1.45}
+  .cover .meta{display:flex;gap:34px;margin-top:46px;font-size:19px;color:#aab1e8}
+  .cover .meta b{color:#fff;font-weight:600}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--gold)}
+
+  /* ---- cards / grids ---- */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--bg);border:1px solid var(--line);border-left:6px solid var(--navy);border-radius:10px;padding:22px 26px}
+  .card h3{font-size:23px;color:var(--navy);font-weight:700;margin-bottom:10px}
+  .card p, .card li{font-size:20px;line-height:1.5;color:var(--ink)}
+  .card.gold{border-left-color:var(--gold)}
+  ul.clean{list-style:none}
+  ul.clean li{padding-left:26px;position:relative;margin-bottom:10px}
+  ul.clean li::before{content:"";position:absolute;left:0;top:11px;width:12px;height:12px;background:var(--gold);border-radius:2px}
+  ul.clean li b{color:var(--navy)}
+
+  /* ---- stats ---- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:8px}
+  .stat{background:var(--navy);color:#fff;border-radius:12px;padding:24px 20px;text-align:center}
+  .stat .v{font-family:'Montserrat',sans-serif;font-weight:800;font-size:46px;color:var(--gold)}
+  .stat .l{font-size:17px;color:#c8cdf0;margin-top:6px;line-height:1.35}
+
+  /* ---- jornada ---- */
+  .journey{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:10px}
+  .step{background:var(--bg);border:1px solid var(--line);border-top:6px solid var(--navy);border-radius:10px;padding:16px 14px;text-align:center}
+  .step.hot{border-top-color:var(--gold);background:#fdf9ee}
+  .step .n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:34px;color:var(--navy)}
+  .step h4{font-family:'Montserrat',sans-serif;font-size:18.5px;color:var(--navy);margin:6px 0 8px 0;line-height:1.2}
+  .step p{font-size:15.5px;color:var(--grey);line-height:1.35}
+
+  /* ---- tabelas ---- */
+  table{width:100%;border-collapse:collapse;background:#fff}
+  th{background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-size:18px;font-weight:600;padding:12px 16px;text-align:left}
+  td{font-size:18.5px;padding:11px 16px;border-bottom:1px solid var(--line);line-height:1.35}
+  tr:nth-child(even) td{background:var(--bg)}
+  td b{color:var(--navy)}
+  .pill{display:inline-block;background:var(--gold);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14.5px;border-radius:20px;padding:3px 14px;letter-spacing:.04em}
+  .pill.navy{background:var(--navy)}
+  .pill.soft{background:#e7e9f7;color:var(--navy)}
+
+  .note{margin-top:14px;background:#fdf9ee;border:1px solid #ecd9a0;border-radius:10px;padding:12px 20px;font-size:17.5px;color:#6b5510}
+  .note b{color:#8a6d0d}
+</style>
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="cover">
+    <img src="logo_branca.svg" alt="Lucro Ativo">
+    <div class="kicker">Plano de Trabalho · Canal de Parcerias</div>
+    <h1>Gestão de Parcerias:<br>a rede que multiplica portas</h1>
+    <div class="sub2">Plano de trabalho da Coordenação de Parcerias para avaliação, ajustes e contribuições do coordenador da área.</div>
+    <div class="meta">
+      <span>Apresentam: <b>Dr. Lucas Santos</b> (Sponsor) · <b>Cleber Candia</b> (CCO &amp; CSO)</span>
+      <span>Para: <b>Ulisses</b> — Coordenador de Parcerias</span>
+      <span><b>Agosto de 2026</b></span>
+    </div>
+  </div>
+  <div class="bars"><div style="height:70px"></div><div style="height:110px"></div><div style="height:160px"></div><div style="height:220px"></div></div>
+</div>
+
+<!-- 2 · OBJETIVO DA REUNIÃO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">01</span>Objetivo desta reunião</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Validar juntos o plano — antes de executar</h2>
+    <div class="sub">Este material resume o playbook do canal. Nada aqui é definitivo: a versão final incorpora a sua leitura.</div>
+    <div class="grid3">
+      <div class="card"><h3>1 · Apresentar</h3><p>O modelo do canal de indicação: identidade, perfis-alvo, jornada do parceiro, metas e rotina de gestão.</p></div>
+      <div class="card"><h3>2 · Avaliar</h3><p>Sua análise crítica como coordenador: o que é exequível, o que ajustar, o que falta — com a realidade da agenda e da base.</p></div>
+      <div class="card gold"><h3>3 · Revisar</h3><p>Após esta reunião, o playbook é revisado com os ajustes acordados e segue para a versão de execução.</p></div>
+    </div>
+    <div class="note"><b>Premissa do encontro:</b> metas, cadências e janelas apresentadas são <b>propostas a calibrar</b> — o baseline real fecha no 1º ciclo de 90 dias.</div>
+  </div>
+  <div class="ghost">01</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Gestão de Parcerias · Plano de Trabalho</span><span>2</span></div>
+</div>
+
+<!-- 3 · O QUE É / NÃO É -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">02</span>Identidade do canal</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Parceiro é meio de venda — não braço de venda</h2>
+    <div class="sub">O parceiro abre a porta, valida e acompanha. A ação comercial junto ao cliente é 100% da equipe Lucro Ativo.</div>
+    <div class="grid2">
+      <div class="card"><h3>✓ O que o canal É</h3>
+        <ul class="clean">
+          <li><b>Parceria de indicação:</b> carteiras de terceiros viram portas qualificadas para a venda executiva LA + GS.</li>
+          <li><b>Relacionamento gerido:</b> contato proativo programado, plano conjunto e acompanhamento via dashboard.</li>
+          <li><b>Canal do Coordenador:</b> ponto focal único do parceiro, do credenciamento à rotina de resultado.</li>
+        </ul>
+      </div>
+      <div class="card gold"><h3>✗ O que o canal NÃO é</h3>
+        <ul class="clean">
+          <li><b>Não é Executivo de Vendas nem Parceiro de Vendas</b> — esses perfis existem na LA, mas pertencem a outro canal (Playbook Comercial).</li>
+          <li><b>Não é segundo time de vendas:</b> parceiro não conduz negociação nem escolhe qual executivo atende seus clientes (compliance).</li>
+          <li><b>Não é cadastro de gaveta:</b> contrato assinado sem carteira mapeada não conta como parceiro ativo.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ghost">02</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Gestão de Parcerias · Plano de Trabalho</span><span>3</span></div>
+</div>
+
+<!-- 4 · PERFIS-ALVO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">03</span>Perfis-alvo (ICP do canal)</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Quem buscamos: carteira ativa no perfil LA + GS</h2>
+    <table>
+      <tr><th style="width:26%">Perfil</th><th>Característica-alvo</th><th style="width:21%">Prioridade</th></tr>
+      <tr><td><b>Contabilidades &amp; BPOs</b></td><td>Escritórios contábeis de médio/grande porte e BPOs financeiros com carteira Lucro Real / Presumido</td><td><span class="pill navy">Foco principal</span></td></tr>
+      <tr><td><b>Escritórios Jurídicos</b></td><td>Bancas cíveis, trabalhistas e empresariais <b>sem</b> área tributária</td><td><span class="pill navy">Foco principal</span></td></tr>
+      <tr><td><b>Consultorias de Negócios</b></td><td>Consultores de gestão, CFOs as a service, assessores com acesso C-level</td><td><span class="pill navy">Foco principal</span></td></tr>
+      <tr><td><b>Representantes &amp; Corretores</b></td><td>Representantes B2B e corretores corporativos — atuação pontual</td><td><span class="pill soft">Por oportunidade</span></td></tr>
+    </table>
+    <div class="note"><b>Critério de entrada:</b> carteira de clientes <b>ativa</b> no perfil buscado. Sem carteira aderente, não há parceria — há cadastro.</div>
+  </div>
+  <div class="ghost">03</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Gestão de Parcerias · Plano de Trabalho</span><span>4</span></div>
+</div>
+
+<!-- 5 · META-MÃE -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>A meta-mãe</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">100+ parceiros efetivamente trabalhando</h2>
+    <div class="sub">Ponto de partida (auditoria 20/08): 82 parceiros com contrato mapeados — grande parte inativa ou em stand-by. A meta combina <b>reativação da base + captação nova</b>.</div>
+    <div class="stats">
+      <div class="stat"><div class="v">82</div><div class="l">parceiros em contrato hoje (57 assinados)</div></div>
+      <div class="stat"><div class="v">40→100+</div><div class="l">ramp trimestral de ativos: 40 · 60 · 80 · 100+</div></div>
+      <div class="stat"><div class="v">4–6</div><div class="l">novos parceiros credenciados / mês (com carteira mapeada)</div></div>
+      <div class="stat"><div class="v">6–8</div><div class="l">reativações / mês nos 2 primeiros ciclos</div></div>
+    </div>
+    <div class="note"><b>Régua de "parceiro ATIVO" (proposta):</b> contrato vigente <b>+</b> carteira mapeada <b>+</b> plano conjunto do ciclo <b>+</b> ao menos 1 indicação qualificada por trimestre. Sem régua de comportamento, "100+" vira meta de papel.</div>
+  </div>
+  <div class="ghost">04</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Gestão de Parcerias · Plano de Trabalho</span><span>5</span></div>
+</div>
+
+<!-- 6 · JORNADA -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">05</span>Jornada do parceiro</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Da prospecção à rotina de resultado — 6 etapas</h2>
+    <div class="journey">
+      <div class="step"><div class="n">1</div><h4>Prospecção</h4><p>Entidades de classe, indicações e rede — contato C-level do parceiro</p></div>
+      <div class="step"><div class="n">2</div><h4>Proposta de trabalho</h4><p>Modelo LA apresentado: papéis, portfólio e regras do canal</p></div>
+      <div class="step"><div class="n">3</div><h4>Credenciamento</h4><p>Contrato assinado (ZapSign) + onboarding agendado</p></div>
+      <div class="step hot"><div class="n">4</div><h4>Mapeamento da carteira</h4><p>Levantamento da base do parceiro cruzada com o ICP</p></div>
+      <div class="step hot"><div class="n">5</div><h4>Plano conjunto</h4><p>Contas-alvo, estratégia de abertura e agenda do ciclo</p></div>
+      <div class="step"><div class="n">6</div><h4>Rotina &amp; resultado</h4><p>Indicações no CRM, dashboard e reuniões de resultado</p></div>
+    </div>
+    <div class="note"><b>O que separa parceiro ativo de contrato de gaveta são as etapas 4 e 5.</b> Indicação só entra no funil comercial com qualificação mínima (empresa, decisor, contexto e validação do parceiro).</div>
+  </div>
+  <div class="ghost">05</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Gestão de Parcerias · Plano de Trabalho</span><span>6</span></div>
+</div>
+
+<!-- 7 · RÉGUA POR TIER -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">06</span>Rotina de gestão do canal</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Contato proativo, programado — por tier</h2>
+    <div class="sub" style="margin-bottom:16px">A régua por tier é o que torna 100+ parceiros administráveis por uma célula única, sem perder proximidade.</div>
+    <table class="compact">
+      <tr><th style="width:30%">Ritual</th><th style="width:22%">Frequência</th><th>Pauta</th></tr>
+      <tr><td><b>Contato efetivo · Tier A</b></td><td>Quinzenal</td><td>Pipeline da carteira, contas-alvo, pendências e próxima abertura</td></tr>
+      <tr><td><b>Contato efetivo · Tier B</b></td><td>Mensal</td><td>Status das indicações e destrave de contas</td></tr>
+      <tr><td><b>Régua · Tier C</b></td><td>Contínua (automatizada)</td><td>Conteúdo, convites a eventos e gatilhos de reativação (Agente + MKT)</td></tr>
+      <tr><td><b>Reunião de resultado</b></td><td>Mensal (A) / Bimestral (B)</td><td>Planejamento &amp; resultado: conversões, qualidade da indicação, plano do ciclo</td></tr>
+      <tr><td><b>Weekly de Parcerias</b></td><td>Terças · 45 min</td><td>Ulisses + Cleber: mapeamentos, pipeline de indicados, exceções</td></tr>
+    </table>
+    <div class="note"><b>Fora da régua:</b> ações de MKT e envio de informações não contam como contato efetivo — contato efetivo é conversa real, com próximo passo datado no CRM.</div>
+  </div>
+  <div class="ghost">06</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Gestão de Parcerias · Plano de Trabalho</span><span>7</span></div>
+</div>
+
+<!-- 8 · CASCATA DE METAS -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">07</span>Metas de atividade da coordenação</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">A cascata que sustenta a meta-mãe</h2>
+    <div class="grid2" style="gap:22px">
+      <div class="card"><h3>Atividade semanal proposta</h3>
+        <ul class="clean" style="font-size:19px">
+          <li><b>20–25 ligações</b> de gestão da base ativa</li>
+          <li><b>10–12 ligações</b> de prospecção de novos parceiros</li>
+          <li><b>3–4 reuniões</b> de apresentação (novos)</li>
+          <li><b>5–6 reuniões</b> de planejamento &amp; resultado</li>
+          <li><b>1–2 visitas presenciais</b> · eventos a cada 45–60 dias</li>
+        </ul>
+      </div>
+      <div class="card gold"><h3>Funis de conversão</h3>
+        <ul class="clean" style="font-size:19px">
+          <li><b>Parceria:</b> prospecção → reunião (25–30%) → proposta (60–70%) → credenciamento (~50%) = <b>4–6 novos/mês</b></li>
+          <li><b>Negócios na base:</b> ≥1 indicação/parceiro ativo/tri → <b>13→33 indicações/mês</b> no ramp → reunião ≥70% → proposta → contrato</li>
+          <li><b>Atribuição:</b> volume de indicação = canal · conversão = Vendas (executivos conduzem)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>Todos os volumes e taxas são PARÂMETRO A VALIDAR</b> — faixas de referência de mercado para canal indireto B2B; o baseline real fecha em 90 dias.</div>
+  </div>
+  <div class="ghost">07</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Gestão de Parcerias · Plano de Trabalho</span><span>8</span></div>
+</div>
+
+<!-- 9 · ATIVAÇÃO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">08</span>Ativação &amp; incentivos</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Como reativar a base e energizar o canal</h2>
+    <div class="grid3" style="gap:18px">
+      <div class="card"><h3>Eventos &amp; palestras</h3><p>Ciclo de 45–60 dias — Reforma Tributária (EC 132/23) e temas de autoridade: captam e reativam no mesmo movimento.</p></div>
+      <div class="card gold"><h3>Campanha conta-alvo</h3><p>Em vez de "vamos retomar?", chegar com 3 contas da carteira do parceiro já cruzadas com o ICP e proposta de abertura pronta.</p></div>
+      <div class="card"><h3>Kit do Parceiro</h3><p>One-pagers por solução, FAQs de capacitação, roteiro de abertura e material co-brandável no padrão da marca.</p></div>
+      <div class="card"><h3>Webinars técnicos</h3><p>Sessões mensais curtas de capacitação — presença alimenta a régua de atividade do parceiro.</p></div>
+      <div class="card"><h3>Ranking &amp; reconhecimento</h3><p>Ranking trimestral por indicações convertidas, selo "Parceiro Certificado LA" e prêmio anual do canal.</p></div>
+      <div class="card"><h3>Incentivos &amp; brindes</h3><p>Incentivos escalonados por tier (via aditivo validado pelo Jurídico); brindes como cortesia institucional, com política escrita.</p></div>
+    </div>
+  </div>
+  <div class="ghost">08</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Gestão de Parcerias · Plano de Trabalho</span><span>9</span></div>
+</div>
+
+<!-- 10 · PAPÉIS -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">09</span>Papéis &amp; governança</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Quem faz o quê — sem papel que borra</h2>
+    <table>
+      <tr><th style="width:30%">Papel</th><th>Responsabilidade na parceria</th></tr>
+      <tr><td><b>Sponsor</b> · Dr. Lucas (CEO)</td><td>Aprova modelo, metas e exceções de maior alçada; abre portas institucionais</td></tr>
+      <tr><td><b>Gestor do canal</b> · Cleber Candia (CCO &amp; CSO)</td><td>Supervisiona o canal, arbitra exceções de roteamento e conflitos de origem</td></tr>
+      <tr><td><b>Coordenador</b> · Ulisses</td><td>Ponto focal único do parceiro: capta, credencia, mapeia carteira, conduz plano conjunto e rituais</td></tr>
+      <tr><td><b>Executivo de Vendas</b> (roteado pelo CRM)</td><td>Conduz 100% da ação comercial na conta indicada; reporta status no dashboard</td></tr>
+      <tr><td><b>Parceiro</b> (indicador)</td><td>Abre a porta, valida a oportunidade e acompanha pelo dashboard</td></tr>
+    </table>
+    <div class="note"><b>Compliance de roteamento:</b> o parceiro não escolhe qual executivo atende seus clientes. Exceção única: parceiro indicado por um executivo — por coerência e respeito à origem da parceria.</div>
+  </div>
+  <div class="ghost">09</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Gestão de Parcerias · Plano de Trabalho</span><span>10</span></div>
+</div>
+
+<!-- 11 · CUSTOS -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">10</span>Gestão de custos do canal</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Deslocamento, estadia e alimentação: responsabilidade da LA</h2>
+    <div class="sub">O trabalho de campo do canal (visitas, eventos, reuniões presenciais) é investimento da Lucro Ativo — com disciplina de gestão.</div>
+    <div class="grid3" style="gap:18px">
+      <div class="card"><h3>O que a LA cobre</h3><p>Deslocamento (km/passagens), estadia e alimentação nas agendas do canal — visitas a parceiros, eventos e reuniões presenciais aprovadas.</p></div>
+      <div class="card"><h3>Como se gerencia</h3><p>Agenda de campo planejada por ciclo (rota por praça, várias visitas por deslocamento), aprovação prévia do CCO para viagens com estadia e registro de despesas por atividade.</p></div>
+      <div class="card gold"><h3>Como se mede</h3><p>Custo do canal acompanhado por ciclo contra o resultado (indicações e conversões) — visibilidade de ROI, não controle burocrático.</p></div>
+    </div>
+    <div class="note"><b>Política a formalizar na revisão:</b> teto por ciclo, prazo de reembolso e alçadas — <b>PARÂMETRO A VALIDAR</b> com o financeiro.</div>
+  </div>
+  <div class="ghost">10</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Gestão de Parcerias · Plano de Trabalho</span><span>11</span></div>
+</div>
+
+<!-- 12 · ROADMAP -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">11</span>Roadmap de implantação</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">4 fases — fundação antes de meta</h2>
+    <table>
+      <tr><th style="width:32%">Fase</th><th style="width:17%">Janela*</th><th>Entregas &amp; marco</th></tr>
+      <tr><td><b>F1 · Fundação &amp; Ativação da Base</b></td><td>Semanas 1–2</td><td>82 parceiros cadastrados no Twenty (tier/status) + diagnóstico — <b>M1: base 100% classificada</b></td></tr>
+      <tr><td><b>F2 · Prospecção Ativa</b></td><td>Semanas 3–6</td><td>Entidades de classe (SESCON, ACIs, OABs), contabilidades e consultorias — <b>M2: régua por tier operante (≥90%)</b></td></tr>
+      <tr><td><b>F3 · Capacitação &amp; Onboarding</b></td><td>Semanas 7–8</td><td>Kit do parceiro, webinars, treinamento — <b>M3: dashboard do parceiro no ar</b></td></tr>
+      <tr><td><b>F4 · Roteamento &amp; Rotina</b></td><td>Contínuo</td><td>Indicações roteadas, reuniões de resultado — <b>M4: 100+ parceiros ativos pela régua</b></td></tr>
+    </table>
+    <div class="note">*Janelas do Plano Ulisses (Planejamento v2) — <b>a validar contra a agenda real</b>. F1 e F2 podem correr em paralelo parcial (reativar Tier A enquanto prospecta).</div>
+  </div>
+  <div class="ghost">11</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Gestão de Parcerias · Plano de Trabalho</span><span>12</span></div>
+</div>
+
+<!-- 13 · FECHO -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="cover">
+    <img src="logo_branca.svg" alt="Lucro Ativo" style="width:280px;margin-bottom:44px">
+    <div class="kicker">Próximos passos</div>
+    <h1 style="font-size:54px">Sua leitura constrói a versão final</h1>
+    <div class="sub2" style="margin-top:20px">
+      1 · Ajustes e propostas do coordenador nesta reunião<br>
+      2 · Revisão do playbook com o que for acordado<br>
+      3 · Fundação da base no Twenty e início do ciclo 1 (90 dias de baseline)
+    </div>
+    <div class="meta"><span><b>Gestão de Parcerias · Lucro Ativo · Agosto 2026</b></span></div>
+  </div>
+  <div class="bars"><div style="height:220px"></div><div style="height:160px"></div><div style="height:110px"></div><div style="height:70px"></div></div>
+</div>
+
+</body>
+</html>

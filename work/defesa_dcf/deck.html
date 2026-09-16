@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Defesa Técnica · Direito Creditório Federal · Lucro Ativo</title>
+<style>
+  :root{--navy:#010860;--gold:#C9A227;--ink:#1a1f36;--grey:#5a6072;--line:#e3e6ef;--bg:#f7f8fc;--red:#B3261E;--green:#1E6B45}
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:1280px 720px;margin:0}
+  body{font-family:'Inter',sans-serif;color:var(--ink)}
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;page-break-after:always;background:#fff;display:flex;flex-direction:column}
+  h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
+  .topbar{display:flex;align-items:center;gap:18px;padding:30px 64px 0 64px}
+  .tag{font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;letter-spacing:.14em;color:var(--navy);text-transform:uppercase}
+  .tag .n{color:var(--gold);margin-right:10px}
+  .rule{height:3px;background:linear-gradient(90deg,var(--navy) 0 70%,var(--gold) 70% 100%);margin:12px 64px 0 64px}
+  .content{flex:1;display:flex;flex-direction:column;justify-content:center;padding:6px 64px 52px 64px}
+  .foot{position:absolute;bottom:0;left:0;right:0;height:42px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;font-size:14.5px;color:var(--grey)}
+  .foot .brand{font-family:'Montserrat',sans-serif;font-weight:600;color:var(--navy)}
+  h2.title{font-size:41px;color:var(--navy);font-weight:800;line-height:1.12;margin-bottom:8px}
+  .sub{font-size:21px;color:var(--grey);margin-bottom:20px;line-height:1.4}
+  .ghost{position:absolute;right:24px;bottom:-40px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:340px;color:var(--navy);opacity:.045;line-height:1;z-index:0}
+  .z{position:relative;z-index:1}
+  .navy{background:linear-gradient(160deg,var(--navy) 0%,#03063f 100%);color:#fff}
+  .bars{position:absolute;right:70px;bottom:60px;display:flex;align-items:flex-end;gap:14px;opacity:.35}
+  .bars div{width:34px;background:linear-gradient(180deg,var(--gold),#8d6f14);border-radius:4px 4px 0 0}
+  .cover{padding:0 90px;display:flex;flex-direction:column;justify-content:center;height:100%}
+  .cover img{width:330px;margin-bottom:42px}
+  .cover .kicker{font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
+  .cover h1{font-size:58px;font-weight:800;line-height:1.1;max-width:1000px}
+  .cover .sub2{font-size:24px;color:#c8cdf0;margin-top:22px;max-width:900px;line-height:1.45}
+  .cover .meta{display:flex;gap:34px;margin-top:40px;font-size:18px;color:#aab1e8}
+  .cover .meta b{color:#fff;font-weight:600}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--gold)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .grid4{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .card{background:var(--bg);border:1px solid var(--line);border-left:6px solid var(--navy);border-radius:10px;padding:18px 22px}
+  .card h3{font-size:20px;color:var(--navy);font-weight:700;margin-bottom:8px;line-height:1.2}
+  .card p,.card li{font-size:18px;line-height:1.45;color:var(--ink)}
+  .card.gold{border-left-color:var(--gold)}
+  .card.red{border-left-color:var(--red)}
+  .card.green{border-left-color:var(--green)}
+  .card b{color:var(--navy)}
+  .note{margin-top:14px;background:#fdf9ee;border:1px solid #ecd9a0;border-radius:10px;padding:12px 20px;font-size:17px;color:#6b5510;line-height:1.4}
+  .note b{color:#8a6d0d}
+  .alert{margin-top:14px;background:#fdf0ef;border:1px solid #f0c4c0;border-radius:10px;padding:12px 20px;font-size:17px;color:#7d201a;line-height:1.4}
+  .alert b{color:var(--red)}
+  /* TABELA COMPARATIVA */
+  table.cmp{width:100%;border-collapse:separate;border-spacing:0;margin-top:4px;font-size:16.5px}
+  table.cmp th{font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;padding:12px 16px;text-align:left;letter-spacing:.04em;text-transform:uppercase}
+  table.cmp th.c0{background:#eef0f7;color:var(--navy);width:20%;border-radius:8px 0 0 0}
+  table.cmp th.c1{background:#8d2b24;color:#fff;width:40%}
+  table.cmp th.c2{background:var(--navy);color:#fff;width:40%;border-radius:0 8px 0 0}
+  table.cmp td{padding:11px 16px;vertical-align:top;line-height:1.34;border-bottom:1px solid var(--line)}
+  table.cmp td.k{background:#f4f5fa;font-family:'Montserrat',sans-serif;font-weight:700;color:var(--navy);font-size:15.5px}
+  table.cmp td.bad{background:#fdf5f4;color:#5f231e}
+  table.cmp td.good{background:#f6f8ff;color:var(--ink)}
+  table.cmp td.good b{color:var(--navy)}
+  table.cmp td.bad b{color:#8d2b24}
+  table.cmp tr:last-child td{border-bottom:none}
+  /* PARES objeção -> resposta */
+  .pair{display:grid;grid-template-columns:1fr 1.35fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:8px}
+  .pair .q{background:#fdf5f4;padding:10px 18px;font-size:16.5px;color:#5f231e;display:flex;align-items:center;gap:10px;line-height:1.3}
+  .pair .q b{color:#8d2b24}
+  .pair .a{background:#f6f8ff;padding:10px 18px;font-size:16.5px;line-height:1.32;border-left:4px solid var(--navy)}
+  .pair .a b{color:var(--navy)}
+  /* PILARES */
+  .pill3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+  .pl{background:linear-gradient(165deg,var(--navy),#03063f);color:#fff;border-radius:12px;padding:24px 24px 26px 24px;position:relative;overflow:hidden}
+  .pl .n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:52px;color:var(--gold);line-height:1}
+  .pl h4{font-size:21px;margin:8px 0 10px 0;line-height:1.2}
+  .pl p{font-size:17px;line-height:1.42;color:#cfd4f2}
+  .pl p b{color:#fff}
+  /* SCRIPT */
+  .script{background:#f6f8ff;border:2px solid var(--navy);border-radius:14px;padding:26px 32px;position:relative}
+  .script:before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--gold);border-radius:12px 0 0 12px}
+  .script p{font-size:22.5px;line-height:1.52;color:var(--ink)}
+  .script p b{color:var(--navy)}
+  .script p+p{margin-top:14px}
+  /* DO / DONT */
+  .dd{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .dd .col{border-radius:12px;padding:20px 24px}
+  .dd .ok{background:#f2f8f4;border:1px solid #bfe0cc}
+  .dd .no{background:#fdf5f4;border:1px solid #f0c4c0}
+  .dd h3{font-family:'Montserrat',sans-serif;font-size:20px;margin-bottom:12px}
+  .dd .ok h3{color:var(--green)}
+  .dd .no h3{color:#8d2b24}
+  .dd li{list-style:none;font-size:17.5px;line-height:1.38;padding-left:26px;position:relative;margin-bottom:10px}
+  .dd .ok li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+  .dd .no li::before{content:"✕";position:absolute;left:0;color:#8d2b24;font-weight:800}
+  .dd li b{color:var(--navy)}
+  /* VENN / sobreposição */
+  .ovl{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:6px}
+  .ovl .box{border-radius:12px;padding:20px 24px}
+  .ovl .same{background:#fdf5f4;border:1px solid #f0c4c0}
+  .ovl .diff{background:#f6f8ff;border:1px solid #c9d0f0}
+  .ovl h3{font-family:'Montserrat',sans-serif;font-size:19px;margin-bottom:6px}
+  .ovl .same h3{color:#8d2b24}
+  .ovl .diff h3{color:var(--navy)}
+  .ovl .cap{font-size:15px;color:var(--grey);margin-bottom:12px}
+  .ovl li{list-style:none;font-size:17.5px;line-height:1.36;padding-left:24px;position:relative;margin-bottom:9px}
+  .ovl li::before{content:"";position:absolute;left:0;top:8px;width:11px;height:11px;border-radius:2px}
+  .ovl .same li::before{background:#c0524a}
+  .ovl .diff li::before{background:var(--gold)}
+  .ovl li b{color:var(--navy)}
+  /* ANEXO — texto corrido */
+  .doc{padding:26px 74px 54px 74px;flex:1;overflow:hidden}
+  .doc h2{font-size:30px;color:var(--navy);font-weight:800;margin-bottom:4px}
+  .doc .dsub{font-size:17px;color:var(--grey);margin-bottom:16px}
+  .doc h3{font-size:18.5px;color:var(--navy);margin:15px 0 7px 0}
+  .doc p{font-size:16px;line-height:1.5;margin-bottom:9px;text-align:justify}
+  .doc p b{color:var(--navy)}
+  .doc ul{margin:0 0 10px 0}
+  .doc li{font-size:16px;line-height:1.48;margin-bottom:7px;list-style:none;padding-left:24px;position:relative;text-align:justify}
+  .doc li::before{content:"";position:absolute;left:2px;top:8px;width:9px;height:9px;background:var(--gold);border-radius:2px}
+  .doc li b{color:var(--navy)}
+  .flag{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.06em;color:#fff;border-radius:5px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+  .f-red{background:var(--red)} .f-org{background:#C9720A} .f-blu{background:#1B4E8F} .f-grn{background:var(--green)}
+  .quote{background:#f4f5fa;border-left:5px solid var(--grey);padding:12px 18px;font-size:15.5px;line-height:1.46;color:#3d4358;font-style:italic;margin:10px 0}
+</style>
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="cover">
+    <img src="logo_branca.svg" alt="Lucro Ativo">
+    <div class="kicker">Capacitação Comercial · Uso Interno</div>
+    <h1>Nós não somos<br>o esquema</h1>
+    <div class="sub2">Defesa técnica do Direito Creditório Federal — como responder, ponto a ponto, ao ataque público às consultorias de crédito tributário.</div>
+    <div class="meta">
+      <span><b>Lucro Ativo</b> · Compliance Fiscal Tributário</span>
+      <span>Reunião do time de vendas · Setembro/2026</span>
+    </div>
+  </div>
+  <div class="bars"><div style="height:70px"></div><div style="height:110px"></div><div style="height:160px"></div><div style="height:220px"></div></div>
+</div>
+
+<!-- 2 · O CONTEXTO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">01</span>O contexto</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">O que está circulando</h2>
+    <div class="sub">Vídeo de alcance nas redes, publicado por advogado e contador, atacando em bloco todas as operações de direito creditório.</div>
+    <div class="grid3">
+      <div class="card red"><h3>A acusação</h3><p>"Crime com nome sofisticado e promessa de <b>20% de desconto</b> nos impostos"; "a legislação brasileira <b>não reconhece</b> compensação com crédito de terceiros"; empresas sendo autuadas com <b>multa de até 150%</b> e risco penal.</p></div>
+      <div class="card"><h3>Quem fala</h3><p>Contador e advogado, 26 anos de atuação, alegando <b>+R$ 650 milhões</b> economizados para clientes. Formato reels, com chamada para comentar <b>"quero"</b> e receber diagnóstico.</p></div>
+      <div class="card gold"><h3>O que ele vende</h3><p><b>Regularização e confissão de dívida</b> nos programas vigentes. Ou seja: monetiza exatamente o medo que o próprio vídeo cria. Não é alerta neutro — é concorrência comercial.</p></div>
+    </div>
+    <div class="note"><b>Como tratar isto na mesa:</b> o vídeo não é um problema a ser escondido. É a melhor oportunidade de demonstrar domínio técnico — desde que o executivo saiba exatamente onde ele acerta e onde ele erra.</div>
+  </div>
+  <div class="ghost">01</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Defesa Técnica · Direito Creditório Federal · Uso Interno</span><span>2</span></div>
+</div>
+
+<!-- 3 · O QUE É VERDADE -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">02</span>Honestidade primeiro</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Ele está certo no que ataca — e isso joga a nosso favor</h2>
+    <div class="sub">Existe mesmo um esquema criminoso circulando. Negar isso destruiria a nossa credibilidade em três segundos.</div>
+    <div class="grid3">
+      <div class="card red"><h3>O esquema existe</h3><p>Venda de "crédito" com <b>laudo e decisão de primeiro grau</b>, sem trânsito em julgado, usado direto em DCOMP como crédito de terceiro.</p></div>
+      <div class="card red"><h3>É vedado e é autuado</h3><p>Isso é <b>compensação não declarada</b> (Lei 9.430/96, art. 74, §12): multa isolada, cobrança do débito e representação fiscal para fins penais.</p></div>
+      <div class="card green"><h3>Por isso convém a nós</h3><p>Quanto mais o mercado aprende a distinguir, <b>mais valor tem uma operação que se sustenta tecnicamente</b>. O ruído elimina o concorrente frágil, não nós.</p></div>
+    </div>
+    <div class="alert"><b>A regra de ouro do executivo:</b> nossa defesa nunca é "ele exagera". É "<b>ele não distingue</b>". Concordamos com a crítica ao esquema — e mostramos, item por item, por que a nossa operação é o oposto dele.</div>
+  </div>
+  <div class="ghost">02</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Defesa Técnica · Direito Creditório Federal · Uso Interno</span><span>3</span></div>
+</div>
+
+<!-- 4 · SUPERFÍCIE DE CONFUSÃO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">03</span>Risco real</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Por que o cliente vai nos colocar no mesmo balaio</h2>
+    <div class="sub">Há uma sobreposição real de aparência. Ignorá-la é o erro mais caro que o executivo pode cometer nesta reunião.</div>
+    <div class="ovl">
+      <div class="box same">
+        <h3>Onde a aparência é a mesma</h3>
+        <div class="cap">O que um CFO desatento vê nos dois</div>
+        <ul>
+          <li>A mesma promessa de <b>20%</b> de economia</li>
+          <li>O uso de <b>cartório / escritura pública</b></li>
+          <li>A palavra <b>"crédito"</b> para pagar imposto</li>
+          <li>Abordagem por consultor externo</li>
+        </ul>
+      </div>
+      <div class="box diff">
+        <h3>Onde a substância é oposta</h3>
+        <div class="cap">O que só aparece quando se abre a estrutura</div>
+        <ul>
+          <li><b>Base legal</b> invocada (EC 113/2021 × art. 74)</li>
+          <li><b>Titularidade</b> do crédito no momento do uso</li>
+          <li><b>Maturidade</b> do crédito (trânsito em julgado)</li>
+          <li><b>Rito</b> e rastreabilidade dentro da Receita</li>
+        </ul>
+      </div>
+    </div>
+    <div class="alert"><b>Consequência prática:</b> o executivo <b>não pode fugir do assunto</b>. Quem traz o tema para a mesa primeiro ganha autoridade; quem é pego de surpresa parece culpado.</div>
+  </div>
+  <div class="ghost">03</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Defesa Técnica · Direito Creditório Federal · Uso Interno</span><span>4</span></div>
+</div>
+
+<!-- 5 · O COMPARATIVO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>O comparativo</span></div>
+  <div class="rule"></div>
+  <div class="content z" style="padding-top:2px">
+    <h2 class="title" style="font-size:38px;margin-bottom:4px">Sete diferenças que decidem a conversa</h2>
+    <div class="sub" style="font-size:19px;margin-bottom:12px">Este é o quadro que o executivo precisa dominar de cor.</div>
+    <table class="cmp">
+      <tr><th class="c0">Critério</th><th class="c1">O esquema autuado</th><th class="c2">Operação Lucro Ativo</th></tr>
+      <tr><td class="k">Base legal</td><td class="bad">Art. 74 da <b>Lei 9.430/96</b> — rito desenhado para crédito próprio</td><td class="good"><b>EC 113/2021</b> — CF, art. 100, §11, e regulamentação posterior</td></tr>
+      <tr><td class="k">Maturidade do crédito</td><td class="bad">Laudo ou decisão de <b>1º grau</b>, sem trânsito em julgado</td><td class="good"><b>Trânsito em julgado</b> — crédito líquido, certo e exigível</td></tr>
+      <tr><td class="k">Titularidade no uso</td><td class="bad">Compensa <b>crédito alheio</b> — de terceiro, no momento da DCOMP</td><td class="good">Cliente <b>habilitado como titular</b> de fração antes de compensar (CC, 286–298)</td></tr>
+      <tr><td class="k">Onde corre</td><td class="bad">DCOMP direta, <b>sem habilitação prévia</b> do crédito</td><td class="good"><b>PER/DCOMP na Receita Federal</b>, com pedido-mãe e rastreabilidade</td></tr>
+      <tr><td class="k">Papel do cartório</td><td class="bad">Encenação de solidez — <b>usado como se validasse</b> a operação</td><td class="good">Apenas <b>forma e publicidade</b> da cessão — não é o fundamento</td></tr>
+      <tr><td class="k">Quem conduz</td><td class="bad">"Consultores", sem responsabilidade profissional</td><td class="good"><b>Escritório de advocacia</b>, com parecer de viabilidade caso a caso</td></tr>
+      <tr><td class="k">Desfecho</td><td class="bad"><b>Compensação não declarada</b> (art. 74, §12): multa + risco penal</td><td class="good"><b>Extinção do débito por compensação</b> (CTN, art. 156, II)</td></tr>
+    </table>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Defesa Técnica · Direito Creditório Federal · Uso Interno</span><span>5</span></div>
+</div>
+
+<!-- 6 · ONDE O ARGUMENTO DELE QUEBRA -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">05</span>Contraditório</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Onde o argumento dele quebra</h2>
+    <div class="sub">Quatro falhas — duas técnicas, duas de conduta. Usar com precisão cirúrgica, nunca como ataque pessoal.</div>
+    <div class="grid4">
+      <div class="card red"><h3>1 · A generalização é falsa</h3><p>"A legislação não reconhece compensação com crédito de terceiro" só vale para o <b>rito do art. 74</b>. A <b>EC 113/2021</b> autoriza expressamente créditos <b>próprios ou adquiridos de terceiros</b>; a <b>Lei 13.988/2020, art. 11</b> faz o mesmo na transação. Ele tratou a regra de um rito como regra do sistema inteiro.</p></div>
+      <div class="card gold"><h3>2 · O percentual está desatualizado</h3><p>"Multa de até 150%" não é mais a regra. A <b>Lei 14.689/2023</b> alterou o art. 44 da Lei 9.430/96: a multa qualificada caiu para <b>100%</b>, com 150% apenas na <b>reincidência</b>. Autoridade de 26 anos citando percentual revogado enfraquece o próprio argumento.</p></div>
+      <div class="card gold"><h3>3 · Contradição performativa</h3><p>Ele acusa terceiros de vender milagre e encerra prometendo <b>"sem risco e com total segurança jurídica"</b>, com captação por comentário em rede social. É a mesma promessa absoluta que condena — em terreno delicado à luz do CED/OAB.</p></div>
+      <div class="card"><h3>4 · Não é fonte neutra</h3><p>O produto que ele oferece é <b>regularização e confissão de dívida</b>. Ele monetiza diretamente o medo que produz. Isso não invalida a crítica técnica — mas contextualiza a intenção editorial do vídeo.</p></div>
+    </div>
+  </div>
+  <div class="ghost">05</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Defesa Técnica · Direito Creditório Federal · Uso Interno</span><span>6</span></div>
+</div>
+
+<!-- 7 · AS TRÊS BLINDAGENS -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">06</span>Nossa estrutura</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">As três blindagens da operação</h2>
+    <div class="sub">Se o executivo lembrar de apenas três coisas nesta reunião, que sejam estas.</div>
+    <div class="pill3">
+      <div class="pl"><div class="n">01</div><h4>Titularidade antes do uso</h4><p>Antes de qualquer compensação, o cliente é <b>habilitado no polo ativo</b> como titular de uma fração do crédito, por <b>cessão formal</b> (CC, arts. 286–298). Quando a compensação acontece, o crédito <b>é dele</b> — e a vedação apontada no vídeo pressupõe crédito alheio.</p></div>
+      <div class="pl"><div class="n">02</div><h4>Crédito maduro</h4><p>O ativo é <b>crédito com trânsito em julgado</b> — líquido, certo e exigível, na forma exigida pelo <b>CTN, art. 170-A</b>. Não trabalhamos com laudo, tese em discussão ou decisão pendente de recurso.</p></div>
+      <div class="pl"><div class="n">03</div><h4>Dentro do sistema</h4><p>As compensações correm <b>na Receita Federal, via PER/DCOMP</b>, com pedido-mãe e rastreabilidade integral. Nada informal, nada paralelo, nada fora do sistema — e ancorado na <b>EC 113/2021</b>, não no art. 74.</p></div>
+    </div>
+    <div class="note"><b>A frase que resume:</b> na compensação irregular que a Receita combate, alguém usa crédito que não é seu. Na nossa operação, <b>o crédito é do cliente antes de ser usado</b>. É o oposto — não uma variação.</div>
+  </div>
+  <div class="ghost">06</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Defesa Técnica · Direito Creditório Federal · Uso Interno</span><span>7</span></div>
+</div>
+
+<!-- 8 · OBJEÇÃO -> RESPOSTA -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">07</span>Ponto a ponto</span></div>
+  <div class="rule"></div>
+  <div class="content z" style="padding-top:2px">
+    <h2 class="title" style="font-size:38px;margin-bottom:4px">Cada acusação e a resposta exata</h2>
+    <div class="sub" style="font-size:19px;margin-bottom:14px">Respostas curtas, para uso literal em reunião.</div>
+    <div class="pair"><div class="q"><b>"É crédito de terceiro"</b></div><div class="a">Não no nosso caso. O cliente é <b>habilitado como titular</b> da fração antes da primeira compensação. No momento do uso, o crédito é dele.</div></div>
+    <div class="pair"><div class="q"><b>"Vendem laudo e decisão favorável"</b></div><div class="a">Não trabalhamos com laudo nem com decisão pendente. O ativo tem <b>trânsito em julgado</b> — líquido, certo e exigível.</div></div>
+    <div class="pair"><div class="q"><b>"Fazem tudo via cartório pra parecer sólido"</b></div><div class="a">A escritura é <b>forma e publicidade da cessão</b> — não é o que valida a operação. Nós sustentamos no trânsito em julgado e na habilitação formal.</div></div>
+    <div class="pair"><div class="q"><b>"É por fora do sistema"</b></div><div class="a">As compensações correm <b>dentro da Receita, via PER/DCOMP</b>, com pedido-mãe e rastreabilidade integral. Nada informal.</div></div>
+    <div class="pair"><div class="q"><b>"Não existe base legal"</b></div><div class="a">A âncora é a <b>EC 113/2021</b> (CF, art. 100, §11) e a regulamentação posterior — <b>não</b> o art. 74 da Lei 9.430/96, que é justamente onde o esquema entra e se queima.</div></div>
+    <div class="pair" style="margin-bottom:0"><div class="q"><b>"São consultores vendendo milagre"</b></div><div class="a">A operação é conduzida <b>integralmente pela Lucro Ativo</b>, escritório de advocacia, com parecer de viabilidade caso a caso — e nós dizemos <b>não</b> quando não cabe.</div></div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Defesa Técnica · Direito Creditório Federal · Uso Interno</span><span>8</span></div>
+</div>
+
+<!-- 9 · SCRIPT DE BOLSO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">08</span>Script</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Resposta de bolso — 30 segundos</h2>
+    <div class="sub">Se o cliente trouxer o vídeo, ou qualquer variação dele, esta é a resposta. Decorar.</div>
+    <div class="script">
+      <p>"Ele está certo, e eu <b>recomendo desconfiar</b> mesmo. O que ele descreve é usar crédito de terceiro numa DCOMP — isso é vedado e está sendo autuado."</p>
+      <p>"A nossa operação é o oposto: o crédito é transferido e <b>habilitado no seu nome antes</b> de qualquer compensação, com <b>trânsito em julgado</b>, e tudo roda <b>dentro da Receita, via PER/DCOMP</b>, com base na <b>EC 113/2021</b> — não no art. 74 da Lei 9.430."</p>
+      <p>"Se quiser, eu trago o parecer com as âncoras normativas para o <b>seu jurídico analisar</b> antes de qualquer decisão."</p>
+    </div>
+    <div class="note"><b>Por que este fecho funciona:</b> convidar o jurídico do cliente a auditar a operação é o gesto que um esquema jamais faria. A oferta de escrutínio vale mais que qualquer adjetivo de segurança.</div>
+  </div>
+  <div class="ghost">08</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Defesa Técnica · Direito Creditório Federal · Uso Interno</span><span>9</span></div>
+</div>
+
+<!-- 10 · DO / DONT -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">09</span>Conduta em reunião</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">O que fazer e o que nunca fazer</h2>
+    <div class="sub">O maior risco não é a objeção do cliente. É a improvisação do executivo diante dela.</div>
+    <div class="dd">
+      <div class="col ok">
+        <h3>FAZER</h3>
+        <ul>
+          <li><b>Trazer o tema você mesmo</b>, antes do cliente — demonstra domínio</li>
+          <li><b>Concordar</b> com a crítica ao esquema, sem ressalva</li>
+          <li>Usar a palavra <b>"habilitação"</b> — é ela que separa os institutos</li>
+          <li>Oferecer o <b>parecer ao jurídico do cliente</b></li>
+          <li>Dizer <b>"não sei, vou confirmar"</b> quando a pergunta for técnica</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <h3>NUNCA FAZER</h3>
+        <ul>
+          <li>Dizer <b>"sem risco" ou "total segurança jurídica"</b> — é a frase dele</li>
+          <li><b>Atacar o autor</b> pessoalmente — perde a mesa na hora</li>
+          <li>Citar o <b>art. 74 da Lei 9.430/96</b> como nossa base legal</li>
+          <li><b>Improvisar percentual</b> de multa, prazo ou artigo de lei</li>
+          <li>Prometer <b>homologação</b> como se fosse automática</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ghost">09</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Defesa Técnica · Direito Creditório Federal · Uso Interno</span><span>10</span></div>
+</div>
+
+<!-- 11 · PENDÊNCIA -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">10</span>Controle interno</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">O que ainda precisa ser fechado</h2>
+    <div class="sub">Transparência interna: dois pontos que o time precisa saber que ainda não estão travados.</div>
+    <div class="grid2">
+      <div class="card gold"><h3>1 · Âncora normativa do prazo</h3><p>Falta definir a <b>âncora exata</b> do prazo de homologação e do enquadramento de <b>débitos vincendos</b> no rito da EC 113/2021 — o antigo apoio no art. 74, §5º saiu junto com a correção de base legal.<br><br><b>Responsável:</b> Alexandre Batistello (CLO).<br><b>Até lá:</b> não improvisar artigo em reunião — dizer "trago o parecer".</p></div>
+      <div class="card gold"><h3>2 · Nota técnica assinável</h3><p>Recomendação: transformar este material em uma <b>nota técnica de uma página</b>, assinada pelo jurídico, para anexar à proposta quando o cliente levantar a dúvida.<br><br>É a peça que mais converte com <b>CFO e contador</b> — público que decide por documento, não por conversa.</p></div>
+    </div>
+    <div class="alert"><b>Regra de contenção:</b> enquanto o item 1 não estiver fechado, nenhuma peça pública ou proposta deve afirmar prazo de homologação com citação de artigo. O executivo pode falar do <b>prazo comercial</b> (primeira compensação em até 30 dias, contrato de 12 meses) — que é operacional, não normativo.</div>
+  </div>
+  <div class="ghost">10</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Defesa Técnica · Direito Creditório Federal · Uso Interno</span><span>11</span></div>
+</div>
+
+<!-- 12 · FECHO -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="cover">
+    <img src="logo_branca.svg" alt="Lucro Ativo" style="width:250px;margin-bottom:34px">
+    <div class="kicker">Síntese</div>
+    <h1 style="font-size:52px">Quem explica a diferença<br>primeiro, ganha a mesa.</h1>
+    <div class="sub2" style="max-width:960px">O ruído do mercado não é ameaça à Lucro Ativo — é filtro. Ele elimina quem vende crédito e valoriza quem estrutura direito. A condição é uma só: o time precisa saber, com precisão, onde está a linha.</div>
+    <div class="meta"><span><b>Lucro Ativo</b> · Compliance Fiscal Tributário</span><span>Material de uso interno — não circular a cliente</span></div>
+  </div>
+  <div class="bars"><div style="height:60px"></div><div style="height:100px"></div><div style="height:150px"></div><div style="height:210px"></div></div>
+</div>
+
+<!-- 13 · ANEXO A -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">A</span>Apoio técnico</span></div>
+  <div class="rule"></div>
+  <div class="doc">
+    <h2>Anexo A · O texto integral do vídeo analisado</h2>
+    <div class="dsub">Transcrição de referência — base da análise apresentada nos slides anteriores.</div>
+    <div class="quote">"A casa caiu pra quem acreditou em milagre. (…) o capítulo mais grave dessa história está acontecendo agora em setembro. Então já salva e compartilha esse vídeo, porque se você conhece, comprou ou vendeu crédito pra pagar imposto, o problema não é pagar, e sim um crime que circulou nos últimos anos com o nome sofisticado e promessa de 20% de desconto nos impostos. Vendido por consultores que forneciam laudo, decisão judicial favorável e faziam tudo via cartório pra parecer, só que a legislação tributária brasileira não reconhece compensação de impostos com crédito de terceiros.<br><br>E agora, as empresas que usavam esse esquema estão sendo autuadas com multas de até 150% sobre o valor compensado e correção monetária. (…) Se a sua empresa usou o crédito de terceiros, você está nessa janela agora. Cada dia sem regularizar é um dia a mais de multa acumulando sobre o seu caixa (…). Ainda existe confessar a dívida dos programas vigentes (…).<br><br>Por isso é tão importante você compartilhar esse vídeo com todo empresário que você conhece (…). E se você quiser saber como, comenta 'quero' pra obter um diagnóstico da sua empresa. Eu sou [autor], contador e advogado há mais de 26 anos, e já ajudei empresas a recuperar e economizar mais de 650 milhões de reais em impostos, sem risco e com total segurança jurídica."</div>
+    <h3>Observação de forma</h3>
+    <p>A transcrição apresenta frases quebradas e trechos sem concordância ("Regularizar logo de responder por fraude", "sair dessa dano possível"), típicos de vídeo curto auto-transcrito. <b>Isso não é argumento a ser usado em reunião</b> — o executivo jamais deve atacar a forma. Consta aqui apenas para registrar que a peça é conteúdo de rede social, não parecer técnico, e que citações literais dela devem ser tratadas com essa ressalva.</p>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Defesa Técnica · Direito Creditório Federal · Uso Interno</span><span>13</span></div>
+</div>
+
+<!-- 14 · ANEXO B -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">B</span>Apoio técnico</span></div>
+  <div class="rule"></div>
+  <div class="doc">
+    <h2>Anexo B · Análise crítica integral</h2>
+    <div class="dsub">Fundamentação completa dos slides 02 a 06 — leitura de apoio do executivo.</div>
+
+    <h3><span class="flag f-grn">PROCEDE</span>O que no texto dele é verdade</h3>
+    <p>Existe mesmo um esquema criminoso em circulação: venda de "crédito" com laudo e decisão de primeiro grau, sem trânsito em julgado, usado diretamente em DCOMP como crédito de terceiro. Isso configura <b>compensação não declarada</b> (Lei 9.430/96, art. 74, §12) e gera autuação, multa isolada e representação fiscal para fins penais. A Receita Federal está efetivamente autuando. <b>Negar isso seria mentir e destruiria a nossa credibilidade.</b> A defesa da Lucro Ativo não é "ele exagera" — é "ele não sabe distinguir".</p>
+
+    <h3><span class="flag f-red">FRÁGIL</span>Onde o texto dele é tecnicamente falho</h3>
+    <ul>
+      <li><b>"A legislação tributária brasileira não reconhece compensação de impostos com crédito de terceiros."</b> Falso como afirmação absoluta. É verdade para o rito do art. 74 da Lei 9.430/96. Mas a própria <b>EC 113/2021 (CF, art. 100, §11)</b> autoriza o uso de crédito reconhecido judicialmente — inclusive adquirido de terceiro — para quitação de débitos perante a União, e a <b>Lei 13.988/2020, art. 11</b> admite crédito de terceiro na transação. Ele tratou uma regra de um rito específico como se fosse regra do sistema inteiro.</li>
+      <li><b>"Multa de até 150%."</b> Desatualizado. A <b>Lei 14.689/2023</b> alterou o art. 44 da Lei 9.430/96: a multa qualificada passou a ser de <b>100%</b>, com 150% reservado à reincidência. Um profissional com 26 anos de atuação citando percentual revogado enfraquece o próprio argumento de autoridade.</li>
+      <li><b>Contradição performativa.</b> Ele acusa os demais de vender milagre e encerra o vídeo com "sem risco e com total segurança jurídica", acompanhado de captação de clientela por comentário em rede social — a mesma promessa absoluta que condena, em terreno delicado à luz do Código de Ética da OAB.</li>
+      <li><b>Modelo de negócio.</b> O produto ofertado é regularização e confissão de dívida. Ou seja, o autor monetiza diretamente o medo que o próprio vídeo produz. Isso não invalida a crítica técnica ao esquema, mas contextualiza a peça como concorrência comercial, não alerta neutro.</li>
+    </ul>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Defesa Técnica · Direito Creditório Federal · Uso Interno</span><span>14</span></div>
+</div>
+
+<!-- 15 · ANEXO C -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">C</span>Apoio técnico</span></div>
+  <div class="rule"></div>
+  <div class="doc">
+    <h2>Anexo C · Defesa da operação, ponto a ponto</h2>
+    <div class="dsub">Versão estendida do quadro do slide 08, com a fundamentação de cada resposta.</div>
+    <ul>
+      <li><b>"Crédito de terceiro" → não é o nosso caso.</b> Antes de qualquer compensação, o cliente é habilitado como titular de uma fração do direito creditório, por cessão formal (Código Civil, arts. 286–298). Quando a compensação acontece, o crédito é dele. A vedação citada no vídeo pressupõe crédito alheio no momento do uso — exatamente o que não ocorre aqui.</li>
+      <li><b>"Laudo e decisão favorável" → não trabalhamos assim.</b> O ativo é crédito com trânsito em julgado, líquido, certo e exigível, na forma exigida pelo CTN, art. 170-A. Não há tese em discussão nem decisão pendente de recurso.</li>
+      <li><b>"Tudo via cartório pra parecer" → a escritura não é o fundamento.</b> Ela cumpre função de forma e publicidade da cessão. Sozinha, não valida nada — e nós não sustentamos a operação nela, e sim no trânsito em julgado somado à habilitação formal do cliente.</li>
+      <li><b>"Por fora do sistema" → o oposto.</b> As compensações correm dentro da Receita Federal, via PER/DCOMP, com pedido-mãe e rastreabilidade integral de cada competência. Não há qualquer etapa informal ou paralela.</li>
+      <li><b>"Base legal inexistente" → a âncora é constitucional.</b> A operação se apoia na EC 113/2021 (CF, art. 100, §11) e na regulamentação posterior — <b>não</b> no art. 74 da Lei 9.430/96, que é justamente a porta por onde o esquema descrito entra e se queima.</li>
+      <li><b>"Consultores" → advocacia com responsabilidade.</b> A operação é conduzida integralmente pela Lucro Ativo, com parecer de viabilidade caso a caso e responsabilidade profissional. Dizemos não quando o caso não cabe — e essa é a diferença entre estruturar e vender.</li>
+    </ul>
+
+    <h3><span class="flag f-org">ATENÇÃO</span>Alerta honesto ao time</h3>
+    <p>Existe superfície real de confusão: o esquema também promete 20% e também usa cartório. Um CFO que assistir ao vídeo tenderá a nos enquadrar por semelhança superficial. Daí decorre a regra de conduta do slide 09 — trazer o assunto à mesa antes do cliente — e a pendência do slide 11: enquanto a âncora normativa do prazo não estiver fechada pelo jurídico, o executivo não deve improvisar artigo de lei diante de um interlocutor técnico.</p>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Defesa Técnica · Direito Creditório Federal · Uso Interno</span><span>15</span></div>
+</div>
+
+</body>
+</html>

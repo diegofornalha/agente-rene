@@ -1,0 +1,23 @@
+CONTRATOS ASSINADOS LOCALIZADOS — Levantamento 30 Empresas (03/09/2026)
+Fontes: Google Drive (lucas@lucasjuridico.com) + ZapSign (pastas /Assinados ICMS/ e /Assinados DCF/)
+
+01_Assinados_confirmados/
+  - Arquivos com sufixo "- assinado" no Drive ou baixados direto do ZapSign (signed_file).
+  - DA TERRA = razão social VERNISE INEZ FRIEDRICH WILHELM & CIA LTDA (assinado ZapSign jan/2026).
+  - SUPERMERCADOS REAL: IPI (Drive) + DCF (ZapSign 27/07/2026). Os 26 deals "Comercial Real"
+    estão vinculados a este registro no CRM (vínculo a corrigir).
+
+02_Assinados_via_ZapSign_lote_marco/
+  - REDE WT, LITORAL MARKET e SUPER COMPANY (ICMS + IPI de cada).
+  - PDFs escaneados sem o sufixo "- assinado" no nome, MAS contêm o Relatório de
+    Assinaturas ZapSign/ICP-Brasil na última página (verificado visualmente):
+    assinados em 05-06/03/2026 por Matheus Alexandre de Castro e
+    Bruno Henrique Muller Pinheiro Batista (bruno.muller@meulucroativo.com.br).
+
+EMPRESAS SEM CONTRATO LOCALIZADO (nem Drive, nem ZapSign ICMS/DCF):
+  A N Administradora de Bens · Agropecuária Charrua · Amilto Garcia Vieira Junior ·
+  Angels Capital · Angels Securitizadora · C.R. Supermercado · Editora Diário da Amazônia ·
+  G13 · Gimave · João Nelson Brust · Mercado Altas Horas · Multisul Comércio/Logística (só
+  minuta IPI) · Rádio Alvorada · Super Kipao · SJT Multidrogas · Total Máquinas ·
+  VT Passafácil · Eucatur · Interfor (minuta DCF, fase contratação) · Simar (só minutas).
+  ATENÇÃO: a maioria destas está EM OPERAÇÃO (faturas/DARFs compensados no Drive).

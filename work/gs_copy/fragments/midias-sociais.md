@@ -1,0 +1,116 @@
+# Manifesto — cópia "MÍDIAS SOCIAIS" → "Material Comercial" (2026-09-04)
+
+## 2023
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23] 03.08.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23] 08.08.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23] 24.08.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23] 13.08.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23] 17.08.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23] 31.08.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23] 22.08.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23] 28.08.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/01.08] 08 03.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/01.08] 0804.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/01.08] 08 06.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/01.08] 08 02.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/01.08] 08 07.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/01.08] 08 05.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/01.08] 08 01.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/10.08] 08 4.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/10.08] 08 9.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/10.08] 08 7.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/10.08] 08 5.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/10.08] 08 8.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/10.08] 08 10.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/10.08] 08 6.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/10.08] 08 01.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/10.08] 08 2.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/08. Agosto 23/10.08] 08 3.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23] 20.09.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23] 12.09.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23] 07.09.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23] 27.09.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23] 13.09.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23/25.09] Slice 311.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23/25.09] Slice 309.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23/25.09] Slice 312.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23/25.09] Slice 308.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23/25.09] Slice 310.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23/29.09] 09-5.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23/29.09] 09-3.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23/29.09] 09.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23/29.09] 09-1.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23/29.09] 09-6.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23/29.09] 09-8.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23/29.09] 09-2.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23/29.09] 09-7.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/09. Setembro 23/29.09] 09-4.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23] 26.10.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23] 12.10.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23] 14.10.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23] 03.10.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23] 10.10.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23] 17.10.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23] 19.10.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/05.10] Slice 311.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/05.10] Slice 310.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/05.10] Slice 309.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/05.10] Slice 308.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/05.10] Slice 312.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/24.10] 09-2.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/24.10] 09-3.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/24.10] 09.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/24.10] 09-1.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/31.10] 08 8.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/31.10] 08 5.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/31.10] 08 3.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/31.10] 08 2.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/31.10] 08 7.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/31.10] 08 4.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/31.10] 08 01.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/10. Outubro 23/31.10] 08 6.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23] 21.11.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23] 15.11.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23] 07.11.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23] 30.11.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23] 17.11.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23] 23.11.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23] 10.11.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23/02.11] Slice 311.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23/02.11] Slice 308.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23/02.11] Slice 312.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23/02.11] Slice 309.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23/02.11] Slice 310.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23/28.11] Slice 310.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23/28.11] Slice 312.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23/28.11] Slice 311.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23/28.11] Slice 309.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/11. Novembro 23/28.11] Slice 308.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23] 07.12.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23] 18.12.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23] 20.12.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23] 24.12.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23] 31.12.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23] 05.12.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23] 27.12.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23] 13.12.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23] 15.12.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/04.12] Slice 326.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/04.12] Slice 327.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/04.12] Slice 325.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/04.12] Slice 324.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/04.12] Slice 322.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/04.12] Slice 329.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/04.12] Slice 323.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/04.12] Slice 328.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/11.12] Slice 333.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/11.12] Slice 332.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/11.12] Slice 336.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/11.12] Slice 334.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/11.12] Slice 330.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/11.12] Slice 335.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/11.12] Slice 331.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/12.12] Slice 3.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/12.12] Slice 4.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/12.12] Slice 1.png — OK
+- [Material Comercial/MÍDIAS SOCIAIS/2023/12. Dezembro 23/12.12] Slice 2.png — OK

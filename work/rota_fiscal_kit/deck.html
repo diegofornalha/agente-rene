@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Deck Comercial · Rota Fiscal · Lucro Ativo</title>
+<style>
+  :root{
+    --navy:#010860; --gold:#C9A227; --ink:#1a1f36;
+    --grey:#5a6072; --line:#e3e6ef; --bg:#f7f8fc;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:1280px 720px;margin:0}
+  body{font-family:'Inter',sans-serif;color:var(--ink)}
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;page-break-after:always;background:#fff;display:flex;flex-direction:column}
+  h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
+  .topbar{display:flex;align-items:center;gap:18px;padding:32px 64px 0 64px}
+  .tag{font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;letter-spacing:.14em;color:var(--navy);text-transform:uppercase}
+  .tag .n{color:var(--gold);margin-right:10px}
+  .rule{height:3px;background:linear-gradient(90deg,var(--navy) 0 70%,var(--gold) 70% 100%);margin:13px 64px 0 64px}
+  .content{flex:1;display:flex;flex-direction:column;justify-content:center;padding:6px 64px 56px 64px}
+  .foot{position:absolute;bottom:0;left:0;right:0;height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;font-size:15px;color:var(--grey)}
+  .foot .brand{font-family:'Montserrat',sans-serif;font-weight:600;color:var(--navy)}
+  h2.title{font-size:42px;color:var(--navy);font-weight:800;line-height:1.12;margin-bottom:8px}
+  .sub{font-size:22px;color:var(--grey);margin-bottom:22px}
+  .ghost{position:absolute;right:24px;bottom:-40px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:340px;color:var(--navy);opacity:.045;line-height:1;z-index:0}
+  .z{position:relative;z-index:1}
+  .navy{background:linear-gradient(160deg,var(--navy) 0%,#03063f 100%);color:#fff}
+  .navy .bars{position:absolute;right:70px;bottom:60px;display:flex;align-items:flex-end;gap:14px;opacity:.35}
+  .navy .bars div{width:34px;background:linear-gradient(180deg,var(--gold),#8d6f14);border-radius:4px 4px 0 0}
+  .cover{padding:0 90px;display:flex;flex-direction:column;justify-content:center;height:100%}
+  .cover img{width:340px;margin-bottom:46px}
+  .cover .kicker{font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  .cover h1{font-size:58px;font-weight:800;line-height:1.1;max-width:980px}
+  .cover .sub2{font-size:26px;color:#c8cdf0;margin-top:24px;max-width:920px;line-height:1.45}
+  .cover .meta{display:flex;gap:34px;margin-top:44px;font-size:19px;color:#aab1e8}
+  .cover .meta b{color:#fff;font-weight:600}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--gold)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--bg);border:1px solid var(--line);border-left:6px solid var(--navy);border-radius:10px;padding:20px 24px}
+  .card h3{font-size:21px;color:var(--navy);font-weight:700;margin-bottom:9px}
+  .card p,.card li{font-size:19px;line-height:1.48;color:var(--ink)}
+  .card.gold{border-left-color:var(--gold)}
+  .card b{color:var(--navy)}
+  ul.clean{list-style:none}
+  ul.clean li{padding-left:26px;position:relative;margin-bottom:11px;font-size:19.5px;line-height:1.48}
+  ul.clean li::before{content:"";position:absolute;left:0;top:10px;width:12px;height:12px;background:var(--gold);border-radius:2px}
+  ul.clean li b{color:var(--navy)}
+  .note{margin-top:15px;background:#fdf9ee;border:1px solid #ecd9a0;border-radius:10px;padding:12px 20px;font-size:17px;color:#6b5510}
+  .note b{color:#8a6d0d}
+  .flow6{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
+  .step{background:var(--bg);border:1px solid var(--line);border-top:6px solid var(--navy);border-radius:10px;padding:18px 18px}
+  .step.hot{border-top-color:var(--gold);background:#fdf9ee}
+  .step .n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:32px;color:var(--gold)}
+  .step h4{font-size:19.5px;color:var(--navy);margin:5px 0 8px 0;line-height:1.2}
+  .step p{font-size:16.5px;color:var(--grey);line-height:1.42}
+  .kv{display:flex;flex-direction:column;gap:12px;max-width:1100px}
+  .kv .row{display:flex;gap:14px;align-items:flex-start}
+  .kv .ic{min-width:44px;height:44px;border-radius:10px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:19px}
+  .kv .tx{font-size:18.5px;line-height:1.42}
+  .kv .tx b{color:var(--navy)}
+  /* rotas */
+  .rotas{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:4px}
+  .rota{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+  .rota .rh{background:linear-gradient(160deg,var(--navy) 0%,#03063f 100%);color:#fff;padding:16px 20px}
+  .rota .rh .k{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase}
+  .rota .rh h3{font-size:23px;font-weight:800;margin-top:4px}
+  .rota .rb{padding:16px 20px;flex:1}
+  .rota .rb p{font-size:17.5px;line-height:1.45;color:var(--ink)}
+  .rota .rb ul{list-style:none;margin-top:10px}
+  .rota .rb li{padding-left:20px;position:relative;margin-bottom:8px;font-size:16.5px;line-height:1.4;color:var(--ink)}
+  .rota .rb li::before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;background:var(--gold);border-radius:2px}
+  .rota .rf{padding:12px 20px;background:var(--bg);border-top:1px solid var(--line);font-size:15.5px;color:var(--grey)}
+  .rota .rf b{color:var(--navy)}
+  /* pilar box */
+  .pill{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14.5px;letter-spacing:.08em;color:#fff;background:var(--navy);border-radius:6px;padding:4px 12px;margin-bottom:10px;text-transform:uppercase}
+  .pill.gold{background:var(--gold)}
+  .bignum{display:flex;gap:28px;margin:10px 0 18px 0}
+  .bn{flex:1;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:18px 22px;text-align:center}
+  .bn .v{font-family:'Montserrat',sans-serif;font-weight:800;font-size:44px;color:var(--navy);line-height:1}
+  .bn .v span{font-size:24px}
+  .bn .l{font-size:16px;color:var(--grey);margin-top:8px;line-height:1.3}
+  .bn.hot .v{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="cover">
+    <img src="logo_branca.svg" alt="Lucro Ativo">
+    <div class="kicker">Solução Internacional · Rota Fiscal</div>
+    <h1>Internacionalização<br>tributária e patrimonial</h1>
+    <div class="sub2">O caminho estruturado para o empresário brasileiro diversificar jurisdição, proteger patrimônio e reduzir a carga tributária — de forma lícita, documentada e com condução jurídica integral da Lucro Ativo.</div>
+    <div class="meta">
+      <span><b>Lucro Ativo</b> · Compliance Fiscal Tributário</span>
+      <span>Apresentação Comercial</span>
+    </div>
+  </div>
+  <div class="bars"><div style="height:70px"></div><div style="height:110px"></div><div style="height:160px"></div><div style="height:220px"></div></div>
+</div>
+
+<!-- 2 · O CENÁRIO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">01</span>O cenário</span></div>
+  <div class="rule"></div>
+  <div class="ghost">BR</div>
+  <div class="content z">
+    <h2 class="title">O custo de operar apenas no Brasil</h2>
+    <div class="sub">O empresário brasileiro carrega uma das maiores cargas tributárias e um dos ambientes fiscais mais complexos do mundo — e a transição da Reforma Tributária (EC 132/2023) adiciona anos de convivência entre dois sistemas.</div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Concentração de risco</h3>
+        <p>Patrimônio, faturamento e residência fiscal em uma única jurisdição significam <b>exposição total</b> a mudanças de regra, contencioso e instabilidade — sem alternativa preparada.</p>
+      </div>
+      <div class="card">
+        <h3>Carga sobre o resultado</h3>
+        <p>Entre tributos sobre consumo, renda e folha, a parcela do resultado entregue ao fisco brasileiro compromete a <b>capacidade de reinvestimento</b> e a competitividade internacional.</p>
+      </div>
+      <div class="card">
+        <h3>Complexidade crescente</h3>
+        <p>A transição da Reforma (2026–2033) impõe <b>dois sistemas em paralelo</b> — CBS/IBS convivendo com o modelo atual — elevando custo de conformidade justamente para quem produz.</p>
+      </div>
+      <div class="card gold">
+        <h3>A resposta racional</h3>
+        <p>Internacionalizar não é fugir: é <b>planejamento tributário lícito</b> — escolher, dentro da lei, a jurisdição e a estrutura mais eficientes para cada parte do negócio e do patrimônio.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>02</span></div>
+</div>
+
+<!-- 3 · O QUE É -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">02</span>A solução</span></div>
+  <div class="rule"></div>
+  <div class="ghost">RF</div>
+  <div class="content z">
+    <h2 class="title">Rota Fiscal: internacionalização com método</h2>
+    <div class="sub">Um programa estruturado que leva o empresário do diagnóstico à operação internacional ativa — com advocacia tributária na condução e <b>estrutura própria da Lucro Ativo no Paraguai</b>.</div>
+    <ul class="clean">
+      <li><b>Sob medida:</b> a rota é definida pelo perfil — onde está a receita, o patrimônio, a família e o plano de vida do empresário. Não existe pacote único.</li>
+      <li><b>Condução integral:</b> diagnóstico, desenho da estrutura, documentação, atos no exterior e manutenção — um único responsável do início ao fim.</li>
+      <li><b>Compliance nos dois lados:</b> cada passo é formalizado tanto perante o fisco brasileiro quanto perante a jurisdição de destino. Nada de atalhos.</li>
+      <li><b>Presença local:</b> operação própria em Assunção (EAS Paraguay), com equipe e parceiros credenciados no destino — não terceirizamos o que é crítico.</li>
+    </ul>
+    <div class="note"><b>Posicionamento:</b> a Rota Fiscal é planejamento tributário internacional lícito. A Lucro Ativo não realiza — nem orienta — ocultação de patrimônio ou omissão de declarações.</div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>03</span></div>
+</div>
+
+<!-- 4 · AS TRÊS ROTAS -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">03</span>As três rotas</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Três caminhos, um método</h2>
+    <div class="sub">O diagnóstico define qual rota — ou combinação de rotas — serve ao seu caso.</div>
+    <div class="rotas">
+      <div class="rota">
+        <div class="rh"><div class="k">Rota 01</div><h3>Paraguai</h3></div>
+        <div class="rb">
+          <p>Residência fiscal e estrutura empresarial no país vizinho, com tributação radicalmente mais simples.</p>
+          <ul>
+            <li>Residência e RUC no Paraguai</li>
+            <li>Regime maquila para produzir e exportar</li>
+            <li>Mercosul: logística e mercado</li>
+          </ul>
+        </div>
+        <div class="rf">Para quem busca <b>mudança de base fiscal</b> ou produção no Mercosul.</div>
+      </div>
+      <div class="rota">
+        <div class="rh"><div class="k">Rota 02</div><h3>LLC · EUA</h3></div>
+        <div class="rb">
+          <p>Veículo empresarial norte-americano para receitas internacionais e organização patrimonial em moeda forte.</p>
+          <ul>
+            <li>Faturamento internacional em dólar</li>
+            <li>Acesso ao sistema financeiro dos EUA</li>
+            <li>Declarada e conforme no Brasil</li>
+          </ul>
+        </div>
+        <div class="rf">Para quem tem <b>receita internacional</b> ou busca dolarização estruturada.</div>
+      </div>
+      <div class="rota">
+        <div class="rh"><div class="k">Rota 03</div><h3>REINTEGRA</h3></div>
+        <div class="rb">
+          <p>Recuperação do resíduo tributário embutido na cadeia de produtos exportados — sem sair do Brasil.</p>
+          <ul>
+            <li>Crédito sobre a receita de exportação</li>
+            <li>Procedimento administrativo previsto em lei</li>
+            <li>Complementa as demais rotas</li>
+          </ul>
+        </div>
+        <div class="rf">Para <b>indústrias exportadoras</b> que deixam dinheiro na mesa.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>04</span></div>
+</div>
+
+<!-- 5 · ROTA PARAGUAI -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>Rota Paraguai</span></div>
+  <div class="rule"></div>
+  <div class="ghost">PY</div>
+  <div class="content z">
+    <h2 class="title">Paraguai: simplicidade tributária ao lado de casa</h2>
+    <div class="sub">Um dos sistemas tributários mais enxutos das Américas, a poucas horas do Brasil e dentro do Mercosul.</div>
+    <div class="bignum">
+      <div class="bn"><div class="v">10<span>%</span></div><div class="l">Imposto de renda empresarial (IRE)</div></div>
+      <div class="bn"><div class="v">10<span>%</span></div><div class="l">IVA — imposto sobre valor agregado</div></div>
+      <div class="bn hot"><div class="v">1<span>%</span></div><div class="l">Tributo único do regime maquila sobre o valor agregado local</div></div>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Residência fiscal</h3>
+        <p>Processo formal de residência, cédula e registro tributário (RUC), com planejamento da saída fiscal brasileira quando aplicável — <b>sem improviso migratório</b>.</p>
+      </div>
+      <div class="card">
+        <h3>Regime maquila</h3>
+        <p>Produzir no Paraguai e exportar — inclusive para o Brasil — com <b>tributo único de 1%</b> sobre o valor agregado local (Lei 1.064/97), energia barata e mão de obra competitiva.</p>
+      </div>
+    </div>
+    <div class="note"><b>PARÂMETRO A VALIDAR:</b> alíquotas, requisitos migratórios e enquadramento no regime maquila são confirmados caso a caso pelo jurídico antes de qualquer proposta.</div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>05</span></div>
+</div>
+
+<!-- 6 · ROTA LLC -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">05</span>Rota LLC · EUA</span></div>
+  <div class="rule"></div>
+  <div class="ghost">US</div>
+  <div class="content z">
+    <h2 class="title">LLC: sua operação internacional em dólar</h2>
+    <div class="sub">Um veículo empresarial nos Estados Unidos para faturar clientes no exterior, acessar o sistema financeiro americano e organizar patrimônio em moeda forte — declarado e em conformidade no Brasil.</div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Para que serve</h3>
+        <p>Receitas de exportação de serviços, marketplaces e clientes internacionais entram <b>direto na estrutura americana</b>, com conta bancária nos EUA e recebimento em dólar.</p>
+      </div>
+      <div class="card">
+        <h3>Proteção e organização</h3>
+        <p>Separação entre o patrimônio pessoal e a operação, <b>sucessão facilitada</b> e diversificação cambial — o caixa deixa de depender de uma única moeda.</p>
+      </div>
+      <div class="card gold">
+        <h3>Conformidade brasileira</h3>
+        <p>A estrutura é <b>declarada no Brasil</b> (DIRPF/CBE) e desenhada à luz das regras de tributação de investimentos no exterior (Lei 14.754/2023). Eficiência sim; omissão jamais.</p>
+      </div>
+      <div class="card">
+        <h3>Quando combinar rotas</h3>
+        <p>A LLC convive com a Rota Paraguai: cada peça cuida de uma função — <b>receita internacional, base fiscal e produção</b> — no mesmo desenho.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>06</span></div>
+</div>
+
+<!-- 7 · ROTA REINTEGRA -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">06</span>Rota REINTEGRA</span></div>
+  <div class="rule"></div>
+  <div class="ghost">RE</div>
+  <div class="content z">
+    <h2 class="title">REINTEGRA: o crédito que a exportadora esquece</h2>
+    <div class="sub">O regime devolve ao exportador parte do resíduo tributário acumulado na cadeia produtiva — um direito previsto em lei (Lei 13.043/2014) que muitas indústrias simplesmente não exercem.</div>
+    <div class="kv">
+      <div class="row"><div class="ic">1</div><div class="tx"><b>Quem alcança:</b> indústrias que exportam bens manufaturados elegíveis — diretamente ou via trading.</div></div>
+      <div class="row"><div class="ic">2</div><div class="tx"><b>Como funciona:</b> apuração de crédito sobre a receita de exportação, aproveitável para <b>compensar tributos federais ou pedir ressarcimento</b> — procedimento administrativo, sem litígio.</div></div>
+      <div class="row"><div class="ic">3</div><div class="tx"><b>Efeito caixa:</b> recupera margem sem mudar a operação — e financia, muitas vezes, o próprio projeto de internacionalização.</div></div>
+    </div>
+    <div class="note"><b>PARÂMETRO A VALIDAR:</b> o percentual do REINTEGRA é fixado por decreto e varia no tempo; a alíquota aplicável e o alcance retroativo são confirmados pelo jurídico antes de qualquer projeção ao cliente.</div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>07</span></div>
+</div>
+
+<!-- 8 · JORNADA -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">07</span>Como funciona</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">A jornada em seis etapas</h2>
+    <div class="sub">Método testado na prática — cada etapa com responsável, prazo e evidência documental.</div>
+    <div class="flow6">
+      <div class="step"><div class="n">1</div><h4>Diagnóstico</h4><p>Raio-X tributário e patrimonial: situação fiscal na Receita, DIRPF, estrutura societária e objetivos do empresário.</p></div>
+      <div class="step"><div class="n">2</div><h4>Desenho da rota</h4><p>Definição da rota (ou combinação) e da modalidade de residência/estrutura, com parecer e cronograma.</p></div>
+      <div class="step"><div class="n">3</div><h4>Documentação</h4><p>Certidões, autenticações, apostilamento de Haia e tradução juramentada — o dossiê completo antes de qualquer ato.</p></div>
+      <div class="step"><div class="n">4</div><h4>Planejamento da saída</h4><p>Quando aplicável: regularização de DIRPF e Declaração de Saída Definitiva (DSDP), para não haver bitributação nem pendência.</p></div>
+      <div class="step hot"><div class="n">5</div><h4>Missão presencial</h4><p>Agenda organizada no destino — migrações, registros e abertura da estrutura — com acompanhamento local da equipe.</p></div>
+      <div class="step"><div class="n">6</div><h4>Ativação e manutenção</h4><p>RUC/registros ativos, contabilidade local e calendário de obrigações — a estrutura viva, não um carimbo no passaporte.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>08</span></div>
+</div>
+
+<!-- 9 · SEGURANÇA -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">08</span>Segurança jurídica</span></div>
+  <div class="rule"></div>
+  <div class="ghost">§</div>
+  <div class="content z">
+    <h2 class="title">Tudo dentro da lei — nos dois países</h2>
+    <div class="sub">A diferença entre planejamento e problema é a formalização. A Rota Fiscal existe para fazer do jeito certo.</div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Saída fiscal formalizada</h3>
+        <p>Quem muda de base fiscal faz a <b>Declaração de Saída Definitiva</b> e encerra as obrigações corretamente — sem virar residente "fantasma" em dois países.</p>
+      </div>
+      <div class="card">
+        <h3>Estruturas declaradas</h3>
+        <p>Participações no exterior são <b>declaradas no Brasil</b> (DIRPF/CBE) enquanto houver residência fiscal brasileira. Nenhuma estrutura nossa depende de omissão.</p>
+      </div>
+      <div class="card">
+        <h3>Advocacia na condução</h3>
+        <p>Cada caso tem <b>análise jurídica individual</b> — advocacia tributária com 15 anos de prática, não um curso ou um despachante.</p>
+      </div>
+      <div class="card gold">
+        <h3>O que não fazemos</h3>
+        <p>Não prometemos "imposto zero", não operamos ocultação de ativos e não executamos rota sem diagnóstico. <b>Se não servir ao seu caso, dizemos.</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>09</span></div>
+</div>
+
+<!-- 10 · POR QUE A LUCRO ATIVO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">09</span>Por que a Lucro Ativo</span></div>
+  <div class="rule"></div>
+  <div class="ghost">LA</div>
+  <div class="content z">
+    <h2 class="title">Estrutura própria, não intermediação</h2>
+    <div class="sub">A maioria vende consultoria à distância. A Lucro Ativo opera no destino.</div>
+    <ul class="clean">
+      <li><b>Presença em Assunção:</b> estrutura própria no Paraguai (EAS Paraguay), com equipe local e rede credenciada — despachos, registros e contabilidade sem depender de terceiros desconhecidos.</li>
+      <li><b>Base tributária brasileira:</b> quem desenha a rota entende profundamente o lado de cá — Receita Federal, DIRPF, saída fiscal e as regras de tributação internacional do Brasil.</li>
+      <li><b>Ecossistema completo:</b> do diagnóstico à manutenção anual, o mesmo time responde — com CRM, documentação e trilha de auditoria de cada etapa.</li>
+      <li><b>Portfólio integrado:</b> a Rota Fiscal conversa com as demais soluções da casa (créditos tributários, compensação de ICMS, transação federal) — o empresário resolve o Brasil enquanto constrói o internacional.</li>
+    </ul>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>10</span></div>
+</div>
+
+<!-- 11 · PERFIL -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">10</span>Para quem é</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">O perfil que mais aproveita a Rota Fiscal</h2>
+    <div class="sub">Se você marca dois ou mais pontos abaixo, o diagnóstico tende a se pagar.</div>
+    <div class="grid3">
+      <div class="card"><h3>Empresário de resultado</h3><p>Lucro consistente e sensação de que o fisco é o <b>sócio majoritário</b> — sem plano B de jurisdição.</p></div>
+      <div class="card"><h3>Exportador / receita externa</h3><p>Indústria que exporta ou prestador com <b>clientes internacionais</b> recebendo em estrutura brasileira.</p></div>
+      <div class="card"><h3>Patrimônio a proteger</h3><p>Ativos relevantes concentrados no Brasil e <b>sucessão ainda não resolvida</b>.</p></div>
+      <div class="card"><h3>Produção intensiva</h3><p>Operação industrial pressionada por <b>custo tributário, energético e de folha</b> — candidata natural à maquila.</p></div>
+      <div class="card"><h3>Mobilidade real</h3><p>Disposição de cumprir os <b>requisitos formais</b> de residência e presença que a rota escolhida exigir.</p></div>
+      <div class="card gold"><h3>Visão de longo prazo</h3><p>Entende que internacionalizar é <b>projeto estruturado</b> — não atalho de fim de ano fiscal.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>11</span></div>
+</div>
+
+<!-- 12 · PRÓXIMOS PASSOS -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="cover">
+    <img src="logo_branca.svg" alt="Lucro Ativo" style="width:260px;margin-bottom:38px">
+    <div class="kicker">Próximos passos</div>
+    <h1 style="font-size:50px">Comece pelo diagnóstico</h1>
+    <div class="sub2" style="max-width:960px">Uma reunião de diagnóstico define se existe rota para o seu caso, qual é ela e o que muda no seu resultado. Sem compromisso de execução — e com a resposta honesta, inclusive quando a resposta for "ainda não".</div>
+    <div class="meta" style="margin-top:40px">
+      <span><b>1.</b> Reunião de diagnóstico</span>
+      <span><b>2.</b> Parecer e desenho da rota</span>
+      <span><b>3.</b> Execução acompanhada</span>
+    </div>
+    <div class="meta" style="margin-top:30px">
+      <span><b>Lucro Ativo</b> · Compliance Fiscal Tributário · @meulucroativo</span>
+    </div>
+  </div>
+  <div class="bars"><div style="height:70px"></div><div style="height:110px"></div><div style="height:160px"></div><div style="height:220px"></div></div>
+</div>
+
+</body>
+</html>

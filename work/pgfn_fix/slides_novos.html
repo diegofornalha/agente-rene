@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+  @page{size:1280px 720px;margin:0}
+  :root{--navy:#010760;--gold:#C0892C;--green:#1F795A;--grey:#5B616E;--line:#D8DBE4;--soft:#F6F7FA}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;color:#22262F}
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;page-break-after:always;background:#fff}
+  .tag{position:absolute;left:120px;top:78px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:17px;letter-spacing:.18em;color:var(--navy)}
+  h2.title{position:absolute;left:118px;top:104px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:42px;color:var(--navy);line-height:1.1}
+  .rule{position:absolute;left:120px;top:172px;width:92px;height:4px;background:var(--navy)}
+  .sub{position:absolute;left:120px;top:190px;font-size:19px;color:var(--grey)}
+  .foot{position:absolute;bottom:0;left:0;right:0;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 120px 0 118px;font-size:14px;color:#9AA0AC}
+
+  /* ---------- waterfall ---------- */
+  .chart{position:absolute;left:120px;top:236px;width:1040px;height:330px}
+  .axis{position:absolute;left:0;right:0;bottom:64px;height:1px;background:var(--line)}
+  .bar{position:absolute;border-radius:4px 4px 0 0}
+  .bar.mid{border-radius:4px}
+  .conn{position:absolute;border-top:2px dashed #B9BECF}
+  .val{position:absolute;width:170px;text-align:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:21px;color:var(--navy)}
+  .badge{position:absolute;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center}
+  .cap{position:absolute;width:196px;text-align:center;bottom:0;height:58px}
+  .cap b{display:block;font-size:14.5px;color:#22262F;font-weight:700;margin-bottom:3px}
+  .cap span{display:block;font-size:11.5px;line-height:1.3;color:var(--grey)}
+  .legend{position:absolute;right:122px;top:192px;display:flex;gap:22px;font-size:13.5px;color:var(--grey)}
+  .legend i{display:inline-block;width:13px;height:13px;border-radius:3px;margin-right:7px;vertical-align:-1.5px}
+  .math{position:absolute;left:120px;top:586px;width:1040px;background:var(--soft);border-left:4px solid var(--navy);border-radius:0 8px 8px 0;padding:12px 26px;display:flex;align-items:center;justify-content:space-between}
+  .math .eq{font-family:'Montserrat',sans-serif;font-weight:700;font-size:17.5px;color:var(--navy)}
+  .math .eq small{font-weight:600;color:var(--grey);font-size:13px}
+  .note{position:absolute;left:120px;top:648px;width:1040px;font-size:12px;color:#8A8F9B;line-height:1.35}
+
+  /* ---------- memória de cálculo ---------- */
+  table{position:absolute;left:120px;top:226px;width:1040px;border-collapse:collapse}
+  th{background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-size:13.5px;letter-spacing:.05em;text-align:left;padding:10px 16px;font-weight:700;white-space:nowrap}
+  td{padding:10px 16px;font-size:14px;line-height:1.35;border-bottom:1px solid #E8EAF0;vertical-align:top}
+  tr:nth-child(even) td{background:var(--soft)}
+  td.et{font-weight:700;color:var(--navy);white-space:nowrap}
+  td.calc{font-family:'Montserrat',sans-serif;font-weight:700;color:var(--navy);font-size:13.5px;white-space:nowrap}
+  td .bl{color:var(--grey);font-size:13px}
+  .box{position:absolute;top:478px;width:508px;background:var(--soft);border-radius:10px;padding:14px 20px;border-top:4px solid var(--gold)}
+  .box h4{font-family:'Montserrat',sans-serif;font-size:15px;color:var(--navy);margin-bottom:6px;font-weight:800}
+  .box p{font-size:12.5px;line-height:1.42;color:#3A3F4A}
+  .sum{position:absolute;left:120px;top:606px;width:1040px;background:#EAF3EF;border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:12px 26px;font-size:14.5px;color:#173F30;line-height:1.4}
+  .sum b{color:var(--green)}
+</style>
+</head>
+<body>
+
+<!-- SLIDE A · waterfall redesenhado -->
+<div class="slide">
+  <div class="tag">05 · IMPACTO FINANCEIRO</div>
+  <h2 class="title">Simulação — passivo de R$ 10 milhões</h2>
+  <div class="rule"></div>
+  <div class="sub">Três movimentos: desconto &rarr; créditos &rarr; parcelamento</div>
+  <div class="legend">
+    <span><i style="background:var(--navy)"></i>Saldo devedor</span>
+    <span><i style="background:var(--gold)"></i>Redução aplicada</span>
+    <span><i style="background:var(--green)"></i>Desembolso em caixa</span>
+  </div>
+
+  <div class="chart">
+    <!-- baseline em bottom:64px; escala: 10,00 mi = 240px. Colunas x: 12/220/428/636/844, largura 170 -->
+    <div class="axis"></div>
+    <!-- barras -->
+    <div class="bar" style="left:12px;width:170px;bottom:64px;height:240px;background:var(--navy)"></div>
+    <div class="bar mid" style="left:220px;width:170px;bottom:220px;height:84px;background:var(--gold)"></div>
+    <div class="bar" style="left:428px;width:170px;bottom:64px;height:156px;background:#2E3A7E"></div>
+    <div class="bar mid" style="left:636px;width:170px;bottom:110.8px;height:109.2px;background:var(--gold)"></div>
+    <div class="bar" style="left:844px;width:170px;bottom:64px;height:46.8px;background:var(--green)"></div>
+    <!-- conectores (níveis) -->
+    <div class="conn" style="left:182px;width:38px;bottom:304px"></div>
+    <div class="conn" style="left:390px;width:38px;bottom:220px"></div>
+    <div class="conn" style="left:598px;width:38px;bottom:220px"></div>
+    <div class="conn" style="left:806px;width:38px;bottom:110.8px"></div>
+    <!-- valores -->
+    <div class="val" style="left:12px;bottom:312px">R$ 10,00 mi</div>
+    <div class="val" style="left:220px;bottom:312px">&minus; R$ 3,50 mi</div>
+    <div class="val" style="left:428px;bottom:228px">R$ 6,50 mi</div>
+    <div class="val" style="left:636px;bottom:228px">&minus; R$ 4,55 mi</div>
+    <div class="val" style="left:844px;bottom:119px">R$ 1,95 mi</div>
+    <!-- captions -->
+    <div class="cap" style="left:-1px"><b>Passivo original</b><span>consolidado inscrito na PGFN — principal + juros, multas e encargos</span></div>
+    <div class="cap" style="left:207px"><b><span class="n"></span>1 · Desconto legal</b><span>até 65% sobre juros, multas e encargos — Lei nº 14.375/2022</span></div>
+    <div class="cap" style="left:415px"><b>Saldo remanescente</b><span>o que resta a tratar após o desconto legal</span></div>
+    <div class="cap" style="left:623px"><b>2 · Liquidação com créditos</b><span>até 70% do saldo, com PF e BCN próprios — art. 11, Lei nº 13.988/2020 · sem caixa</span></div>
+    <div class="cap" style="left:831px"><b>3 · Saldo em caixa</b><span>único desembolso real — parcelado em até 120 meses</span></div>
+  </div>
+
+  <div class="math">
+    <span class="eq">R$ 10,00 &minus; R$ 3,50 = R$ 6,50</span>
+    <span class="eq">70% &times; R$ 6,50 = R$ 4,55</span>
+    <span class="eq">R$ 6,50 &minus; R$ 4,55 = <span style="color:var(--green)">R$ 1,95 mi</span> <small>&nbsp;= 19,5% do passivo original</small></span>
+  </div>
+  <div class="note">Simulação ilustrativa. Os percentuais são tetos legais — o desconto efetivo depende da classificação da dívida e da capacidade de pagamento (CAPAG) do contribuinte, apuradas pela PGFN (Portaria PGFN nº 6.757/2022). Memória de cálculo detalhada no slide seguinte.</div>
+
+  <div class="foot"><span>@meulucroativo</span><span>14</span></div>
+</div>
+
+<!-- SLIDE B · memória de cálculo -->
+<div class="slide">
+  <div class="tag">05 · IMPACTO FINANCEIRO</div>
+  <h2 class="title">Como ler a simulação</h2>
+  <div class="rule"></div>
+  <div class="sub">Memória de cálculo e fundamento técnico de cada movimento</div>
+
+  <table>
+    <tr><th style="width:185px">ETAPA</th><th>O QUE ACONTECE</th><th style="width:220px">BASE LEGAL</th><th style="width:215px">CÁLCULO</th></tr>
+    <tr>
+      <td class="et">1 · Desconto legal</td>
+      <td>Redução de até <b>65%</b> incidente <b>apenas sobre juros, multas e encargos</b> — o principal não recebe desconto.</td>
+      <td class="bl">Lei nº 14.375/2022</td>
+      <td class="calc">10,00 &minus; 3,50 = R$ 6,50 mi</td>
+    </tr>
+    <tr>
+      <td class="et">2 · Liquidação<br>com créditos</td>
+      <td>Até <b>70%</b> do saldo pós-desconto é quitado com <b>Prejuízo Fiscal e Base Negativa de CSLL</b> — créditos da própria empresa ou de controladas, sem desembolso.</td>
+      <td class="bl">Art. 11, Lei nº 13.988/2020 · Portaria PGFN nº 6.757/2022</td>
+      <td class="calc">70% &times; 6,50 = R$ 4,55 mi</td>
+    </tr>
+    <tr>
+      <td class="et">3 · Saldo em caixa</td>
+      <td>Único valor efetivamente pago em dinheiro, <b>parcelado em até 120 meses</b>.</td>
+      <td class="bl">Lei nº 14.375/2022</td>
+      <td class="calc">6,50 &minus; 4,55 = R$ 1,95 mi</td>
+    </tr>
+  </table>
+
+  <div class="box" style="left:120px">
+    <h4>Por que “até 65%” reduz 35% do total?</h4>
+    <p>O teto de 65% vale <b>só para os acessórios</b> (juros, multas e encargos) — nunca para o principal. Na simulação, o corte de R$ 3,50 mi é o desconto aplicado sobre essa parcela, o que equivale a <b>35% do passivo consolidado</b>.</p>
+  </div>
+  <div class="box" style="left:652px">
+    <h4>Por que a liquidação é “sem caixa”?</h4>
+    <p>Prejuízo Fiscal e Base Negativa são <b>créditos escriturais que a empresa já possui</b> no balanço. A lei autoriza usá-los para extinguir a dívida — <b>sem sair dinheiro do caixa</b>.</p>
+  </div>
+
+  <div class="sum"><b>Resultado:</b> R$ 8,05 mi — <b>80,5% do passivo</b> — resolvidos sem desembolso direto (desconto legal + créditos próprios). O único pagamento em dinheiro, R$ 1,95 mi, é diluído em até 120 meses.</div>
+
+  <div class="foot"><span>@meulucroativo</span><span>15</span></div>
+</div>
+
+</body>
+</html>

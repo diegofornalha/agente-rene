@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Apresentação Comercial ICMS SC · Lucro Ativo</title>
+<style>
+  :root{
+    --navy:#010860; --gold:#C9A227; --ink:#1a1f36;
+    --grey:#5a6072; --line:#e3e6ef; --bg:#f7f8fc;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:1280px 720px;margin:0}
+  body{font-family:'Inter',sans-serif;color:var(--ink)}
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;page-break-after:always;background:#fff;display:flex;flex-direction:column}
+  h1,h2,h3{font-family:'Montserrat',sans-serif}
+  .topbar{display:flex;align-items:center;gap:18px;padding:32px 64px 0 64px}
+  .tag{font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;letter-spacing:.14em;color:var(--navy);text-transform:uppercase}
+  .tag .n{color:var(--gold);margin-right:10px}
+  .rule{height:3px;background:linear-gradient(90deg,var(--navy) 0 70%,var(--gold) 70% 100%);margin:13px 64px 0 64px}
+  .content{flex:1;display:flex;flex-direction:column;justify-content:center;padding:6px 64px 56px 64px}
+  .foot{position:absolute;bottom:0;left:0;right:0;height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;font-size:15px;color:var(--grey)}
+  .foot .brand{font-family:'Montserrat',sans-serif;font-weight:600;color:var(--navy)}
+  h2.title{font-size:44px;color:var(--navy);font-weight:800;line-height:1.12;margin-bottom:8px}
+  .sub{font-size:23px;color:var(--grey);margin-bottom:24px}
+  .ghost{position:absolute;right:24px;bottom:-40px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:340px;color:var(--navy);opacity:.045;line-height:1;z-index:0}
+  .z{position:relative;z-index:1}
+  .navy{background:linear-gradient(160deg,var(--navy) 0%,#03063f 100%);color:#fff}
+  .navy .bars{position:absolute;right:70px;bottom:60px;display:flex;align-items:flex-end;gap:14px;opacity:.35}
+  .navy .bars div{width:34px;background:linear-gradient(180deg,var(--gold),#8d6f14);border-radius:4px 4px 0 0}
+  .cover{padding:0 90px;display:flex;flex-direction:column;justify-content:center;height:100%}
+  .cover img{width:340px;margin-bottom:50px}
+  .cover .kicker{font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  .cover h1{font-size:62px;font-weight:800;line-height:1.08;max-width:940px}
+  .cover .sub2{font-size:27px;color:#c8cdf0;margin-top:24px;max-width:880px;line-height:1.45}
+  .cover .meta{display:flex;gap:34px;margin-top:46px;font-size:19px;color:#aab1e8}
+  .cover .meta b{color:#fff;font-weight:600}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--gold)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--bg);border:1px solid var(--line);border-left:6px solid var(--navy);border-radius:10px;padding:22px 26px}
+  .card h3{font-size:22px;color:var(--navy);font-weight:700;margin-bottom:10px}
+  .card p,.card li{font-size:19.5px;line-height:1.5;color:var(--ink)}
+  .card.gold{border-left-color:var(--gold)}
+  .card b{color:var(--navy)}
+  ul.clean{list-style:none}
+  ul.clean li{padding-left:26px;position:relative;margin-bottom:12px;font-size:20px;line-height:1.5}
+  ul.clean li::before{content:"";position:absolute;left:0;top:11px;width:12px;height:12px;background:var(--gold);border-radius:2px}
+  ul.clean li b{color:var(--navy)}
+  .note{margin-top:16px;background:#fdf9ee;border:1px solid #ecd9a0;border-radius:10px;padding:13px 20px;font-size:17.5px;color:#6b5510}
+  .note b{color:#8a6d0d}
+  /* fluxo */
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:12px}
+  .step{background:var(--bg);border:1px solid var(--line);border-top:6px solid var(--navy);border-radius:10px;padding:20px 18px;text-align:center;position:relative}
+  .step.hot{border-top-color:var(--gold);background:#fdf9ee}
+  .step .n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:40px;color:var(--navy)}
+  .step h4{font-family:'Montserrat',sans-serif;font-size:20px;color:var(--navy);margin:8px 0 10px 0;line-height:1.2}
+  .step p{font-size:17px;color:var(--grey);line-height:1.4}
+  /* camadas de segurança */
+  .layers{display:flex;flex-direction:column;gap:12px;margin-top:6px}
+  .layer{display:flex;align-items:center;gap:20px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 22px}
+  .layer .ic{min-width:56px;height:56px;border-radius:12px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px}
+  .layer.hot .ic{background:var(--gold)}
+  .layer .tx{font-size:19.5px;line-height:1.4}
+  .layer .tx b{color:var(--navy)}
+  /* comparativo visual */
+  .compare{display:flex;align-items:flex-end;gap:60px;justify-content:center;margin-top:10px}
+  .bar-g{text-align:center}
+  .bar-g .bar{width:190px;border-radius:10px 10px 0 0;margin:0 auto}
+  .bar-g .lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:var(--navy);margin-top:12px}
+  .bar-g .val{font-size:16.5px;color:var(--grey);margin-top:4px;max-width:230px}
+</style>
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="cover">
+    <img src="logo_branca.svg" alt="Lucro Ativo">
+    <div class="kicker">Solução Tributária · ICMS Santa Catarina</div>
+    <h1>Quitação estratégica<br>de ICMS em Santa Catarina</h1>
+    <div class="sub2">Reduza o desembolso de caixa do ICMS utilizando ativos com poder liberatório previsto em lei — com condução integral da Lucro Ativo e segurança jurídica validada nos tribunais.</div>
+    <div class="meta">
+      <span><b>Lucro Ativo</b> · Compliance Fiscal Tributário</span>
+      <span>Apresentação Comercial</span>
+    </div>
+  </div>
+  <div class="bars"><div style="height:70px"></div><div style="height:110px"></div><div style="height:160px"></div><div style="height:220px"></div></div>
+</div>
+
+<!-- 2 · A OPORTUNIDADE -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">01</span>A oportunidade</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">O ICMS não precisa consumir 100% do seu caixa</h2>
+    <div class="sub">A legislação de Santa Catarina confere a determinados títulos públicos estaduais o <b>poder liberatório</b>: o poder de quitar tributos estaduais.</div>
+    <div class="grid2">
+      <div class="card"><h3>O que isso significa</h3><p>Contribuintes de ICMS em Santa Catarina podem <b>quitar débitos do imposto utilizando esses ativos como moeda de pagamento</b> — em vez de desembolsar o valor integral em dinheiro. Os títulos são adquiridos no mercado por valor inferior ao que quitam, gerando <b>economia direta no desembolso</b>.</p></div>
+      <div class="card gold"><h3>A quem se aplica</h3><p>Débitos de ICMS <b>vencidos ou vincendos</b>, inclusive inscritos em dívida ativa — que, nesse caso, contam com <b>valoração adicional do título prevista em lei</b>. O alcance exato é definido na análise individual de cada empresa.</p></div>
+    </div>
+    <div class="note"><b>Importante:</b> não se trata de tese especulativa nem de benefício fiscal — é a aplicação de uma <b>prerrogativa expressa em lei estadual</b>, já reconhecida pelo Supremo Tribunal Federal e pela Justiça catarinense.</div>
+  </div>
+  <div class="ghost">01</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Quitação Estratégica de ICMS · SC</span><span>2</span></div>
+</div>
+
+<!-- 3 · COMO FUNCIONA (mecânica) -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">02</span>Como funciona</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">A mecânica, em uma imagem</h2>
+    <div class="sub">O título quita o imposto pelo seu valor de face — mas é adquirido por menos. A diferença é a sua economia.</div>
+    <div class="compare">
+      <div class="bar-g">
+        <div class="bar" style="height:260px;background:linear-gradient(180deg,#8a90b8,#5a6092)"></div>
+        <div class="lbl">Hoje</div>
+        <div class="val">ICMS pago 100% em dinheiro, todo mês</div>
+      </div>
+      <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:54px;color:var(--gold);padding-bottom:110px">→</div>
+      <div class="bar-g">
+        <div style="display:flex;flex-direction:column;width:190px;margin:0 auto">
+          <div style="height:170px;background:linear-gradient(180deg,var(--navy),#03063f);border-radius:10px 10px 0 0;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:17px;text-align:center;padding:0 10px">Aquisição do ativo (desembolso menor)</div>
+          <div style="height:90px;background:linear-gradient(180deg,var(--gold),#a8871f);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:17px;text-align:center;padding:0 10px">Economia de caixa</div>
+        </div>
+        <div class="lbl">Com a operação</div>
+        <div class="val">O título quita o débito pelo valor de face na data de utilização</div>
+      </div>
+    </div>
+    <div class="note"><b>Condições comerciais</b> (percentual de economia, volumes e prazos) são apresentadas em <b>proposta individual</b>, após o diagnóstico do passivo — variam conforme o caso e o momento de mercado.</div>
+  </div>
+  <div class="ghost">02</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Quitação Estratégica de ICMS · SC</span><span>3</span></div>
+</div>
+
+<!-- 4 · SEGURANÇA JURÍDICA -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">03</span>Segurança jurídica</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Validação em camadas — até o STF</h2>
+    <div class="layers">
+      <div class="layer hot"><div class="ic">STF</div><div class="tx"><b>Supremo Tribunal Federal:</b> decisão de mérito declarou inconstitucional a lei que tentou limitar o poder liberatório — restaurando expressamente a plena vigência da base legal da operação.</div></div>
+      <div class="layer"><div class="ic">TJ</div><div class="tx"><b>Justiça de Santa Catarina:</b> o órgão máximo do Tribunal rejeitou o questionamento à base legal; liminares recentes suspenderam protestos, garantiram <b>certidão fiscal (CPEN)</b> e afastaram enquadramentos restritivos de contribuintes que utilizaram os títulos.</div></div>
+      <div class="layer"><div class="ic">FAZ</div><div class="tx"><b>A própria Fazenda estadual</b> já aceitou o ativo como garantia em execução fiscal — reconhecendo seu valor jurídico-patrimonial.</div></div>
+      <div class="layer"><div class="ic">MP</div><div class="tx"><b>Ministério Público e Procuradoria:</b> manifestações favoráveis à validade das quitações realizadas — incluindo parecer pela absolvição de contribuinte, pela legitimidade da conduta.</div></div>
+      <div class="layer"><div class="ic">DR</div><div class="tx"><b>Doutrina de referência nacional:</b> parecer de tributarista de renome conclui pela validade do poder liberatório dos títulos.</div></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Quitação Estratégica de ICMS · SC</span><span>4</span></div>
+</div>
+
+<!-- 5 · O QUE A OPERAÇÃO RESOLVE -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>Aplicações</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">O que a operação pode resolver na sua empresa</h2>
+    <div class="grid3" style="margin-top:6px">
+      <div class="card"><h3>ICMS corrente</h3><p>Redução do desembolso mensal do imposto <b>a vencer</b> — alívio direto e recorrente no fluxo de caixa.</p></div>
+      <div class="card"><h3>Passivo acumulado</h3><p>Quitação de débitos <b>vencidos ou parcelados</b>, inscritos ou não em dívida ativa — com valoração adicional prevista em lei no caso de dívida ativa.</p></div>
+      <div class="card"><h3>Regularidade fiscal</h3><p>Caminho para <b>certidões e destravamento</b> de protestos e restrições que hoje limitam crédito, licitações e regimes especiais.</p></div>
+      <div class="card"><h3>Preservação de caixa</h3><p>O capital que deixaria de girar no pagamento do imposto permanece <b>financiando a operação e o crescimento</b>.</p></div>
+      <div class="card"><h3>Garantia em execução</h3><p>O ativo também pode servir como <b>instrumento de garantia do juízo</b> em execuções fiscais, conforme aceito pela própria Fazenda.</p></div>
+      <div class="card gold"><h3>Gestão do risco</h3><p>Operação <b>documentada e protocolada perante o Fisco</b>, com estratégia jurídica de proteção do contribuinte em todas as etapas.</p></div>
+    </div>
+  </div>
+  <div class="ghost">04</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Quitação Estratégica de ICMS · SC</span><span>5</span></div>
+</div>
+
+<!-- 6 · PERFIL -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">05</span>Perfil ideal</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Para quem essa solução faz sentido</h2>
+    <div class="grid2">
+      <div class="card"><h3>O perfil</h3><ul class="clean" style="margin-top:6px">
+        <li><b>Contribuintes de ICMS em Santa Catarina</b> — indústria, comércio, distribuição, agronegócio, energia;</li>
+        <li>Empresas com <b>recolhimento mensal relevante</b> de ICMS ou <b>passivo estadual acumulado</b>;</li>
+        <li>Gestões que buscam <b>eficiência de caixa com respaldo jurídico</b>, não atalhos.</li>
+      </ul></div>
+      <div class="card gold"><h3>O que a operação NÃO é</h3><ul class="clean" style="margin-top:6px">
+        <li>Não é benefício fiscal nem depende de favor do governo;</li>
+        <li>Não é tese em construção — a base legal já foi <b>validada pelo STF</b>;</li>
+        <li>Não é adesão em massa: cada empresa passa por <b>análise individual de viabilidade</b>.</li>
+      </ul></div>
+    </div>
+    <div class="note"><b>Transparência:</b> como toda operação tributária estruturada, há aspectos processuais em acompanhamento contínuo pelo nosso jurídico. O detalhamento completo — base legal, decisões e documentação — é apresentado na reunião técnica, sob acordo de confidencialidade.</div>
+  </div>
+  <div class="ghost">05</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Quitação Estratégica de ICMS · SC</span><span>6</span></div>
+</div>
+
+<!-- 7 · JORNADA -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">06</span>Como conduzimos</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Operação conduzida 100% pela Lucro Ativo</h2>
+    <div class="sub">Da análise à declaração de quitação perante o Fisco — sua equipe não precisa dominar o tema.</div>
+    <div class="flow">
+      <div class="step"><div class="n">1</div><h4>Diagnóstico</h4><p>Levantamento do perfil de ICMS da empresa: recolhimento corrente, passivo, certidões e restrições.</p></div>
+      <div class="step"><div class="n">2</div><h4>Confidencialidade</h4><p>NDA assinado e apresentação técnica completa da operação, com toda a base legal e documental.</p></div>
+      <div class="step"><div class="n">3</div><h4>Estruturação</h4><p>Proposta individual: volumes, condições comerciais e estratégia jurídica de proteção do contribuinte.</p></div>
+      <div class="step hot"><div class="n">4</div><h4>Execução</h4><p>Aquisição dos ativos, utilização na quitação do ICMS e protocolo perante o Fisco — com acompanhamento jurídico integral.</p></div>
+    </div>
+    <div class="note"><b>Acompanhamento contínuo:</b> a Lucro Ativo monitora o cenário jurídico da operação e mantém o cliente informado em todas as etapas — antes, durante e depois da quitação.</div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Quitação Estratégica de ICMS · SC</span><span>7</span></div>
+</div>
+
+<!-- 8 · CTA -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="cover" style="align-items:center;text-align:center">
+    <img src="logo_branca.svg" alt="Lucro Ativo" style="width:300px;margin-bottom:40px">
+    <h1 style="font-size:54px">Quanto do seu ICMS<br>pode virar caixa?</h1>
+    <div class="sub2" style="max-width:840px;margin-left:auto;margin-right:auto">Solicite o diagnóstico de viabilidade — sem custo e sem compromisso. Em uma reunião técnica, apresentamos a operação completa e a estimativa para a sua empresa.</div>
+    <div class="meta" style="justify-content:center">
+      <span><b>Lucro Ativo</b> · Compliance Fiscal Tributário</span>
+      <span>www.meulucroativo.com.br</span>
+      <span><b>@meulucroativo</b></span>
+    </div>
+  </div>
+  <div class="bars"><div style="height:70px"></div><div style="height:110px"></div><div style="height:160px"></div><div style="height:220px"></div></div>
+</div>
+
+</body>
+</html>

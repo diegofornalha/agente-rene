@@ -1,0 +1,244 @@
+- [Material Comercial/STUDIO FISCAL/REVISÃO PREVIDENCIÁRIA] Manual Procuração Eletrônica - Studio Agro (Atualizado).pdf — OK
+- [Material Comercial/STUDIO FISCAL/REVISÃO PREVIDENCIÁRIA] Revisão Previdenciaria -Studio Agro.pptx — OK
+- [Material Comercial/STUDIO FISCAL/CONSULTORIA TRIBUTÁRIA/APRESENTAÇÕES] Proposta Consultoria Tributária.pptx — OK
+- [Material Comercial/STUDIO FISCAL/CONSULTORIA TRIBUTÁRIA/APRESENTAÇÕES] Célula de Projetos Especiais da Studio Agro (Julho 2024).pptx — OK
+- [Material Comercial/STUDIO FISCAL/MAIS LEITE SAUDÁVEL/APRESENTAÇÕES] Apresentação PMLS - OK.pptx — OK
+- [Material Comercial/STUDIO FISCAL/LEI DO BEM/APRESENTAÇÕES] Apresentação Lei do Bem - Studio Agro - Atualizada 22.09.25.pptx — OK
+- [Material Comercial/STUDIO FISCAL/PROJETOS ESPECIAIS - TESES - EXCLUSÃO ICMS/APRESENTAÇÕES] EXCLUSÃO ICMS - PIS.COFINS. 24.02.2025.pptm — OK
+- [Material Comercial/STUDIO FISCAL/MAPA FISCAL/APRESENTAÇÕES] Apresentação Contratual NOVO MF  - Studio Agro - 01.09.25.pptx — OK
+- [Material Comercial/STUDIO FISCAL/MAPA FISCAL/CONTRATO] Contrato - MAPA FISCAL - 2025 - Studio Agro - 01.09.25.docx — OK
+- [Material Comercial/STUDIO FISCAL/CLINICAS MÉDICAS/APRESENTAÇÕES] Clinicas Médicas.pptx — OK
+- [Material Comercial/STUDIO FISCAL/CLINICAS MÉDICAS/APRESENTAÇÕES] Clinicas Médicas - Studio Fiscal.pdf — OK
+- [Material Comercial/STUDIO FISCAL/REFORMA TRIBUTÁRIA/APRESENTAÇÕES] [Sócios Agro] - A Reforma tributária já começou - Studio Agro - Atualizado 01.09.25.pptx — OK
+- [Material Comercial/STUDIO FISCAL/REFORMA TRIBUTÁRIA/APRESENTAÇÕES] Manual completo do novo tributário - AGRO.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2025] PONTOS QUALIFICADOS - FINTAX - Studio Agro - 01.09.25.pptx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2025] Planejamento e Revisão Tributária - Indústria - Studio Agro - 11.07.25.pptx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2025] Planejamento e Revisão Tributária - Supermercado - Studio Agro - 11.07.25.pptx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2025] Planejamento e Revisão Tributária - Serviços - Studio Agro - atualizada 14.07.2025.pptx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2025] PRT - GS - Atualizada 28.02.2025.pptx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2025] APRESENTAÇÃO - PLANEJAMENTO E REVISÃO TRIUTÁRIA - Studio Agro - Atualizado 08.04.25.pptx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2025] Apresentação 2025 - Studio Agro - 29.09.25.pptx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2025] Apresentação 2025 - Studio Agro - Atualizada 21.07.2025.pptx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2025] Apresentação - Planejamento e revisão tributária - Studio Agro - Atualizado 21.03.2025.pptx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2025] Proposta Comercial - Studio Agro - 22.09.25.pptx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2025] Preparação e Realização - Reunião Comercial (1).pptx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2025] Ficha de Pré Qualificação v6_modelo.xlsx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2024] E-book - Reforma Tributária - Studio Agro.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2024] Apresentação PRT - PADRÃO AGRO.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2024] APRESENTAÇÃO PRT.pptx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2024] Proposta Comercial PRT - Studio Agro (Dezembro 2024).pptx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/APRESENTAÇÕES/2024] Apresentação Geral 2024 - PRT.pptx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case Supermercado_Bruna_RS.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case de Sucesso - Supermercado - Palmares - PE.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case de Sucesso - Supermercado - Caxias do Sul - RS.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Cases Supermercados em Cananéia SP.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case de Sucesso - Supermercado - Poço Fundo - MG.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case de Sucesso - Supermercado - Bage - RS.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Supermercados SC - 800__.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Divulgação Feiras2.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case Supermercado O DIA.jpeg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] SUPERMERCADOS AL - 1947.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Supermercado GO -758.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Supermercado RR - 729__.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Supermercados GO -1007.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Supermercados SC - 801__.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] 16936 - SP3.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case Supermercados RR - 729.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case Supermercado SC -800.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Lista de Supermercados.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] CASE DE SUCESSO - 11066 - SUPERMERCADO - RS.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] SUPERMERCADO TO -1422.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Supermercados MG -816__.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case de sucesso Supermercados.jpeg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] SUPERMERCADO SP - 3994.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] CASE DE SUCESSO - 45228 - SUPERMERCADO - RS.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case de Sucesso - Supermercado - Teixeira - PB.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] CASE DE SUCESSO - 30770 - SUPERMERCADO - MG.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case Supermercado AL - 1947.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Cases Supermercados SP - LUZITANA.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Supermercado SP - 490__.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case de Sucesso - Supermercado - Campinas - SP.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case de Sucesso - Supermercado - Nova Prata - RS.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case de Sucesso - Carazinho - RS.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Supermercado RO -729.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case Supermercados ES - 1175.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case de Sucesso - Supermercado - Catalão - GO.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] CASE DE SUCESSO - 15604 - SUPERMERCADO - SP.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case de Sucesso - 11719 - Supermercado - Campinas.SP.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Supermercado SC  - 924.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] JOB 52997.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] SUPERMERCADO---12125---PB.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] SUPERMERCADOS RN - 3144.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] CASE DE SUCESSO - 30770 - SUPERMERCADO - MG (3).jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] SUPERMERCADOS MG - 1889.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] JOB  - 61864 .png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case Supermercado O DIA - Vacaria.jpeg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] 13088 (1).png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] JOB  -43883.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] 1016 (1).png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] 702__ (1).png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Comparativos de Créditos Encontraods Supermercados.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case de sucesso - Supermercados_Centro oeste, sul sudeste.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Cases de sucesso (1) (1).pptx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] Case de Sucesso - Supermercado - Araçatuba - SP.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] CASE DE SUCESSO - 43883 - SUPERMERCADO - GO.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] SUPERMERCADO ES - 1175.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] New Case Supermercado 3.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] CASE DE SUCESSO - 21068 - SUPERMERCADO - PE.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/SUPERMERCADOS] 882__ (1).png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] supermercados studio fiscal.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case Segmento frigorificos.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case Segmento frigorificos 2.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case Lojas Material de Construção.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] CASE tecnologia e software.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case MF Distribuidora de Combustível.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] CASE SUPERMERCADO RTF.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Industria Pre-moldados e estruturas metálicas 2012.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] CT Patrocínio AMAD - Studio Fiscal.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case Taguatur.docx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] CASE TRANSPORTADORAS ok.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case Segmento pre moldados.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] CASE DE MINERADORA.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case Segmento Material de construção.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Supermercados e distribuidoras atacadistas.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case Segmento Quimica.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case Segmento industria de alimentos.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] CASE SUPERMERCADOS RTI.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case RTF Transportadoras.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case Segmento Moveleiras.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case RTI Comercio.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case Segmento Limpeza.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] CASE TRANSPORTADORAS RTF.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] CASE FARMACEUTICO 3.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case MF - Metalurgica.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case Transportes RTF.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] CASE SERVIÇOS TERCEIRIZADOS.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] CASE DISTRIBUIDORES E SUPERMERCADOS(novo).pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case Segmento Industria em geral.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case de RTF em produtos monofásicos.docx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] CASE TRANSPORTADORAS.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case Farmeceutico RTF.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Telhas cascavel.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case Distribuidoras e supermercados.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] CASE RTF INDUSTRIA METALÚRGICA.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] CASE SUPERMERCADOS 2.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Concessionarias.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases 2011] Case Segmento Laticínios.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/DEPOIMENTOS] DEPOIMENTO - COMERCIO - MULTIFRIOS E BIGPEIXE - BA.mp4 — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/DEPOIMENTOS] WhatsApp Video 2021-09-30 at 15.44.25.mp4 — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/DEPOIMENTOS] DEPOIMENTO - 14347 - IND. E COM. RAÇÃO - CAMARU -ITUMBIARA.GO.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/DEPOIMENTOS] DEPOIMENTO - POSTO GASOLINA - POSTOS BRASILIA - SC.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/DEPOIMENTOS] DEPOIMENTO - 9742 e 39258 - POSTO DE COMBUSTÍVEL - PB  .png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/DEPOIMENTOS] STOLF_RIO DO SUL.SC.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/DEPOIMENTOS] Depoimento 17369 - SUPERMERCADO - TOIGO - PR.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/DEPOIMENTOS] Depoimento Clientes SF.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/DEPOIMENTOS] Depoimento Clientes SF - 49475 - IND. QUIMICA - AVVENE AGROCIENCIAS - RS.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/DEPOIMENTOS] DEPOIMENTO - SERVIÇOS AUTOMOTIVOS - GRUPO MAQUINÁRIA - SC.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/DEPOIMENTOS] DEPOIMENTOS.docx — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Mais recentes] CASES - SUPERMERCADO.rar — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Mais recentes] CASE DE SUCESSO - 21068 - SUPERMERCADO - PE.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Mais recentes] CASE DE SUCESSO - 45228 - SUPERMERCADO - RS.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Mais recentes] CASE DE SUCESSO - 11066 - SUPERMERCADO - RS.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Mais recentes] CASE DE SUCESSO - 43883 - SUPERMERCADO - GO.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Mais recentes] JOB 52997.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Mais recentes] CASE DE SUCESSO - 30770 - SUPERMERCADO - MG.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Mais recentes] SUPERMERCADO---12125---PB.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Mais recentes] CASE DE SUCESSO - 15604 - SUPERMERCADO - SP.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Mais recentes] JOB  - 61864 .png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Mais recentes] JOB  -43883.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Antigos] Cases de sucesso 1.rar — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Antigos] Case Supermercados RR - 729.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Antigos] Cases Supermercados em Cananéia SP.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Antigos] Case Supermercado SC -800.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Antigos] Case de sucesso Supermercados.jpeg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Antigos] Case Supermercado O DIA.jpeg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Antigos] Case Supermercados ES - 1175.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Antigos] Case Supermercado O DIA - Vacaria.jpeg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases de supermercado/Antigos] Case Supermercado AL - 1947.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] CONSESSIONÁRIA DE CAMINHÕES_ES.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] 033237b7-b825-4155-bd70-53feb9da8051.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] 984c54cb-4b5d-439c-b292-d7d44d810b0a.jfif — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] ed874a1d-7539-427b-8f51-d58d99bee19f.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] ac08331c-5abf-4d20-a4e1-5cbc9c9afb43.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] 38deb79b-7d8e-4b90-8b35-21a42651ea44.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] fe113427-fbbd-4ac7-b4eb-a30116e6a16b.jfif — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] c0bfbe13-7ae2-47e2-b25d-1486406e9277.jfif — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] d7fb089b-8659-4d93-b5a8-72bb53e787b4.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] c1ccd917-4116-46f6-b7bf-6e5859c13c89.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] 5692453c-5c1e-42e9-a861-af41e3ebef35.jfif — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] 83ca9e0b-a748-439c-afbc-22819fee0a78.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] 4d2f94ae-e31b-428f-9373-9e546d1b3516.jfif — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] 35b2a473-471b-40fd-96b5-eff8879eb63d.jfif — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] 637efc4e-7ca6-4fb7-b878-c1e5d696ad05.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] d7cb282e-fe01-47f8-b5fe-0095109b3948.jfif — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/conce] 6d39be3a-0730-4c72-b8e3-c8c4815164d1.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Goiás] CASE DE SUCESSO - 43883 - SUPERMERCADO - GO.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Goiás] DEPOIMENTO - 14347 - IND. E COM. RAÇÃO - CAMARU -ITUMBIARA.GO.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Goiás] VAREJO-DE-MÓVEIS---15379---GO.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Goiás] FARMÁCIA GO - 8005.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Goiás] CASE AGRONEGÓCIO GO - 4780.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Goiás] Serviços de Vigilância e segurança de valores GO - RF - 799rf01.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Goiás] CASE DE SUCESSO - 14347 - IND. RAÇÃO - GO.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Goiás] INDUSTRIA GO -3033rf01.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Goiás] COMÉRCIO DE PNEUS GO - 10131.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Goiás] INDÚSTRIA GO - 3334.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Maranhão] New Case Concessionárias Maranhão.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Maranhão] Máquinas MA - 1076__.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Maranhão] Concessionárias MA - 542__.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Maranhão] Auto peças MA - 819.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Maranhão] Máquinas MA - 895.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Maranhão] Auto peças MA - 738__.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Maranhão] Hospital MA - 569__.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Maranhão] Software - MA - 471__.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Maranhão] Auto peças MA - 820__.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Maranhão] Dist. alimentos - MA -503__.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan/Cases - Maranhão] Software - MA - 476.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] Revista Modelo INSS.pdf — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] Cases SUPER.rar — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] CONSTRUTORA 2.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] INDUSTRIA FARMACEUTICA.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] Case de sucesso Industria de Laticinios.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] IND LATICÍNIOS SP - 3461.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] ZOOM NACIONAL.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] autopeças 2.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] dist 6.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] Industria Construção.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] 4cd66a0c-e9ba-4f34-be5c-ea7a46e6c749.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] AGRO 5.jpeg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] Case PET SHOP.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] LATICÍNIOS SP - 3755.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] CASE DE SUCESSO - 9285 - COM. MAT. ELETRICO - SAO LUIS.MA.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] CASE DE SUCESSO - 42096 - IND. LATICINIOS - MONTES CLAROS.MG.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] AUTOPEÇAS 1.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] RS_ Comércio a varejo de peças e acessórios novos para veículos automotores.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] CALECHE - RO - STUDIO FISCAL.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] AUTOPEÇAS 3.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] HOSPITAL 1.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] dist 2.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] hospital 4.jfif — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] AUTOEÇAS 5.jfif — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] COMERCIO CONSTUÇÃO 1.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] 4700a6cb-9b60-4924-a3cb-ab378928d253.jfif — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] COMERCIO CONSTRUÇÃO 2.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] c0bfbe13-7ae2-47e2-b25d-1486406e9277.jfif — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] COMERCIO CONSTRUÇÃO 3.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] d7fb089b-8659-4d93-b5a8-72bb53e787b4.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] COMÉRCIO CONSTRUÇÃO CÍVIL.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] 984c54cb-4b5d-439c-b292-d7d44d810b0a.jfif — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] HOSPITAL 2.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] 3989c95f-6aeb-4ffc-84e1-76ac00b5afce.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] HOSPITAL 5.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] 637efc4e-7ca6-4fb7-b878-c1e5d696ad05.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] SUPER NO 3 - SF.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] AGRO 1.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] dist 3.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] AGRO 2.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] AGRO 6 (1).jpeg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] dist 5.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] 8236250d-3291-4053-8cb0-6391bb2b5418.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] HOSPITAL 3.jfif — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] dist 4.jpg — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] POSTO 1.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] dist 1.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] CONSTRU 6.png — OK
+- [Material Comercial/STUDIO FISCAL/PRT (JOURNEY)/CASES DE SUCESSO/Cases - Nathan] MATERIAL ELÉTRICO - 9285.jpg — OK

@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Programa de Parcerias · Lucro Ativo</title>
+<style>
+  :root{
+    --navy:#010860; --navy2:#0a1180; --navy3:#39406e; --gold:#C9A227; --ink:#1a1f36;
+    --grey:#5a6072; --line:#e3e6ef; --bg:#f7f8fc;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:1280px 720px;margin:0}
+  body{font-family:'Inter',sans-serif;color:var(--ink)}
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;page-break-after:always;background:#fff;display:flex;flex-direction:column}
+  h1,h2,h3,h4,.mont{font-family:'Montserrat',sans-serif}
+
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:34px 64px 0 64px}
+  .tag{font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;letter-spacing:.14em;color:var(--navy);text-transform:uppercase}
+  .tag .n{color:var(--gold);margin-right:10px}
+  .rule{height:3px;background:linear-gradient(90deg,var(--navy) 0 70%,var(--gold) 70% 100%);margin:14px 64px 0 64px}
+  .content{flex:1;display:flex;flex-direction:column;justify-content:center;padding:6px 64px 56px 64px}
+  .foot{position:absolute;bottom:0;left:0;right:0;height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;font-size:15px;color:var(--grey);background:#fff;z-index:3}
+  .foot .brand{font-family:'Montserrat',sans-serif;font-weight:600;color:var(--navy)}
+  h2.title{font-size:44px;color:var(--navy);font-weight:800;line-height:1.12;margin-bottom:8px}
+  .sub{font-size:23px;color:var(--grey);margin-bottom:22px}
+  .ghost{position:absolute;right:24px;bottom:-40px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:340px;color:var(--navy);opacity:.045;line-height:1;z-index:0}
+  .z{position:relative;z-index:1}
+
+  /* navy slides */
+  .navy{background:linear-gradient(160deg,var(--navy) 0%,#030a72 55%,#0a1288 100%);color:#fff}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--gold)}
+  .cover{flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 96px;position:relative;z-index:2}
+  .cover img.la{width:360px;margin-bottom:44px}
+  .kicker{font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  .cover h1{font-size:62px;font-weight:800;line-height:1.1;max-width:980px}
+  .cover .sub2{font-size:27px;color:#c8cdf0;margin-top:24px;max-width:840px;line-height:1.45}
+  .cover .meta{display:flex;gap:34px;margin-top:46px;font-size:19px;color:#aab1e8;flex-wrap:wrap}
+  .cover .meta b{color:#fff;font-weight:600}
+  .coverart{position:absolute;right:76px;bottom:70px;z-index:1}
+
+  /* índice */
+  .idx{display:grid;grid-template-columns:1fr 1fr;gap:18px 40px;margin-top:6px}
+  .idx .it{display:flex;align-items:center;gap:22px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:20px 24px}
+  .idx .num{font-family:'Montserrat',sans-serif;font-weight:800;font-size:44px;color:var(--navy);min-width:70px}
+  .idx .d{font-size:22px;font-weight:600;color:var(--ink);line-height:1.3}
+  .idx .d span{display:block;font-size:17px;font-weight:400;color:var(--grey);margin-top:2px}
+
+  /* cards / grids */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--bg);border:1px solid var(--line);border-left:6px solid var(--navy);border-radius:10px;padding:24px 26px}
+  .card h3{font-size:24px;color:var(--navy);font-weight:700;margin-bottom:8px}
+  .card p,.card li{font-size:19.5px;line-height:1.45;color:var(--ink)}
+  .card.gold{border-left-color:var(--gold)}
+  .mb{width:42px;height:6px;background:var(--gold);border-radius:3px;margin-bottom:14px}
+  ul.clean{list-style:none}
+  ul.clean li{padding-left:26px;position:relative;margin-bottom:9px}
+  ul.clean li::before{content:"";position:absolute;left:0;top:10px;width:12px;height:12px;background:var(--gold);border-radius:2px}
+  ul.clean li b{color:var(--navy)}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:8px}
+  .stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+  .stat{background:var(--navy);color:#fff;border-radius:12px;padding:26px 20px;text-align:center}
+  .stat .v{font-family:'Montserrat',sans-serif;font-weight:800;font-size:48px;color:var(--gold);line-height:1.1}
+  .stat .l{font-size:17px;color:#c8cdf0;margin-top:8px;line-height:1.35}
+  .stat.soft{background:var(--bg);border:1px solid var(--line)}
+  .stat.soft .v{color:var(--navy)}
+  .stat.soft .l{color:var(--grey)}
+
+  .journey{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:10px}
+  .step{background:var(--bg);border:1px solid var(--line);border-top:6px solid var(--navy);border-radius:10px;padding:20px 14px;text-align:center}
+  .step.hot{border-top-color:var(--gold);background:#fdf9ee}
+  .step .n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:38px;color:var(--navy)}
+  .step h4{font-family:'Montserrat',sans-serif;font-size:19px;color:var(--navy);margin:8px 0 8px 0;line-height:1.2}
+  .step p{font-size:15.5px;color:var(--grey);line-height:1.35}
+
+  table{width:100%;border-collapse:collapse;background:#fff}
+  th{background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-size:18px;font-weight:600;padding:14px 18px;text-align:left}
+  td{font-size:20px;padding:16px 18px;border-bottom:1px solid var(--line);line-height:1.35}
+  tr:nth-child(even) td{background:var(--bg)}
+  td b{color:var(--navy)}
+  .pill{display:inline-block;background:var(--gold);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14.5px;border-radius:20px;padding:4px 14px;letter-spacing:.04em}
+  .pill.navy{background:var(--navy)}
+  .pill.soft{background:#e7e9f7;color:var(--navy)}
+
+  .note{margin-top:16px;background:#fdf9ee;border:1px solid #ecd9a0;border-radius:10px;padding:13px 20px;font-size:18px;color:#6b5510}
+  .note b{color:#8a6d0d}
+  .legal{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .legal .lx{background:#fff;border:1px solid var(--line);border-top:6px solid var(--gold);border-radius:10px;padding:16px 20px}
+  .legal .lx h4{font-family:'Montserrat',sans-serif;font-size:18.5px;color:var(--navy);margin-bottom:6px;line-height:1.25}
+  .legal .lx p{font-size:16px;color:var(--grey);line-height:1.4}
+
+  /* chevron flow */
+  .flow{display:flex;margin-top:16px;filter:drop-shadow(0 2px 5px rgba(1,8,96,.14))}
+  .fs{flex:1;position:relative;display:flex;flex-direction:column;justify-content:center;min-height:128px;padding:18px 36px 18px 46px;background:var(--navy);color:#fff;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 50%,calc(100% - 26px) 100%,0 100%,26px 50%);margin-left:-14px}
+  .fs:first-child{margin-left:0;padding-left:30px;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 50%,calc(100% - 26px) 100%,0 100%)}
+  .fs:last-child{clip-path:polygon(0 0,100% 0,100% 100%,0 100%,26px 50%)}
+  .fs .k{font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;letter-spacing:.14em;color:var(--gold);margin-bottom:6px}
+  .fs h4{font-size:19.5px;line-height:1.2;margin-bottom:6px}
+  .fs p{font-size:15px;color:#c8cdf0;line-height:1.35}
+  .fs.hot{background:var(--gold)}
+  .fs.hot .k{color:#fff}
+  .fs.hot p{color:#fdf4d7}
+  .flow.big .fs{min-height:190px;padding:26px 44px 26px 56px}
+  .flow.big .fs:first-child{padding-left:34px}
+  .flow.big .fs .k{font-size:17px}
+  .flow.big .fs h4{font-size:26px;margin-bottom:10px}
+  .flow.big .fs p{font-size:18px;line-height:1.4}
+  .flow.sm .fs{min-height:96px;padding:12px 30px 12px 40px}
+  .flow.sm .fs:first-child{padding-left:24px}
+  .flow.sm .fs h4{font-size:16.5px;margin-bottom:4px}
+  .flow.sm .fs p{font-size:13.5px}
+
+  /* hub / rede */
+  .hub{position:relative;margin-top:6px}
+  .hub svg.wire{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+  .hubc{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:206px;height:206px;border-radius:50%;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;z-index:2;border:5px solid var(--gold);box-shadow:0 8px 26px rgba(1,8,96,.25)}
+  .hubc b{font-family:'Montserrat',sans-serif;font-size:21px;line-height:1.15}
+  .hubc span{font-size:13.5px;color:#c8cdf0;max-width:150px;line-height:1.3}
+  .hn{position:absolute;width:292px;background:#fff;border:1px solid var(--line);border-left:6px solid var(--gold);border-radius:10px;padding:14px 18px;z-index:2;box-shadow:0 2px 10px rgba(1,8,96,.07)}
+  .hn h4{font-family:'Montserrat',sans-serif;font-size:19px;color:var(--navy);margin-bottom:4px}
+  .hn p{font-size:15px;color:var(--grey);line-height:1.3}
+  .hub.dark .hn{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.25);border-left-color:var(--gold);box-shadow:none}
+  .hub.dark .hn h4{color:#fff}
+  .hub.dark .hn p{color:#c8cdf0}
+  .hub.dark .hubc{background:rgba(255,255,255,.06);border-color:var(--gold);box-shadow:none}
+
+  /* waterfall / barras */
+  .wf{display:flex;align-items:flex-end;gap:26px;height:300px;margin-top:10px;padding:0 10px}
+  .wf .col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:10px}
+  .wf .bar{width:100%;border-radius:10px 10px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:12px}
+  .wf .bar .bv{font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;color:#fff}
+  .wf .stackt{width:100%;border-radius:10px 10px 0 0;display:flex;align-items:center;justify-content:center}
+  .wf .stackt .bv{font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;color:#fff}
+  .wf .stackb{width:100%;display:flex;align-items:flex-start;justify-content:center;padding-top:12px}
+  .wf .cl{font-size:16.5px;color:var(--grey);text-align:center;line-height:1.3}
+  .wf .cl b{color:var(--navy)}
+
+  /* GS vertical slides */
+  .cobrand{position:absolute;top:30px;right:64px;display:flex;align-items:center;gap:16px;z-index:4}
+  .cobrand img{height:34px}
+  .cobrand .sep{width:1px;height:30px;background:var(--line)}
+  .gsnote{margin-top:18px;background:#eef0fa;border:1px solid #d5d9f0;border-radius:10px;padding:13px 20px;font-size:17px;color:#39406e}
+  .gsnote b{color:var(--navy)}
+  .deco{position:absolute;right:52px;bottom:64px;opacity:.08;z-index:0}
+
+  .close .cover h1{font-size:56px}
+</style>
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="cover">
+    <img class="la" src="logo_branca.svg" alt="Lucro Ativo">
+    <div class="kicker">Programa de Parcerias · Lucro Ativo + Ecossistema Grupo Studio</div>
+    <h1>Sua carteira, o nosso motor:<br>cresça com a Lucro Ativo</h1>
+    <div class="sub2">Confiança vira receita. Você indica — a condução comercial e técnica é 100% da Lucro Ativo.</div>
+    <div class="meta">
+      <span><b>Apresentação institucional</b> · Canal de Parcerias</span>
+      <span><b>Setembro de 2026</b> · Versão 1.0</span>
+    </div>
+  </div>
+  <svg class="coverart" width="380" height="300" viewBox="0 0 380 300">
+    <rect x="0"   y="220" width="58" height="80"  rx="6" fill="#C9A227" opacity=".3"/>
+    <rect x="74"  y="180" width="58" height="120" rx="6" fill="#C9A227" opacity=".45"/>
+    <rect x="148" y="130" width="58" height="170" rx="6" fill="#C9A227" opacity=".62"/>
+    <rect x="222" y="75"  width="58" height="225" rx="6" fill="#C9A227" opacity=".82"/>
+    <rect x="296" y="20"  width="58" height="280" rx="6" fill="#C9A227"/>
+    <polyline points="29,200 103,160 177,110 251,55 325,4" fill="none" stroke="#ffffff" stroke-width="3" opacity=".75"/>
+    <circle cx="325" cy="4" r="7" fill="#ffffff" opacity=".9"/>
+  </svg>
+</div>
+
+<!-- 2 · ÍNDICE -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">·</span>O que você vai ver</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Um programa completo — do produto ao relacionamento</h2>
+    <div class="idx">
+      <div class="it"><span class="num">01</span><span class="d">A Lucro Ativo<span>quem somos e como atuamos</span></span></div>
+      <div class="it"><span class="num">02</span><span class="d">A aliança com o Grupo Studio<span>ecossistema nacional de soluções corporativas</span></span></div>
+      <div class="it"><span class="num">03</span><span class="d">O Programa de Parcerias<span>modelo, perfis e jornada do parceiro</span></span></div>
+      <div class="it"><span class="num">04</span><span class="d">Portfólio Lucro Ativo<span>DCF · ICMS-SP · Transação PGFN · IRRF Municípios</span></span></div>
+      <div class="it"><span class="num">05</span><span class="d">Ecossistema Grupo Studio<span>cinco verticais complementares para a sua carteira</span></span></div>
+      <div class="it"><span class="num">06</span><span class="d">Vantagens &amp; visão de futuro<span>para o parceiro, para o cliente e para a rede</span></span></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>2</span></div>
+</div>
+
+<!-- 3 · 01 A LUCRO ATIVO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">01</span>A Lucro Ativo</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Engenharia tributária de alto impacto</h2>
+    <div class="sub">Tributo vira caixa — com condução própria, do diagnóstico ao resultado.</div>
+    <div class="grid3">
+      <div class="card"><div class="mb"></div><h3>Foco corporativo</h3><p>Lucro Real e Presumido — do middle market às grandes operações.</p></div>
+      <div class="card"><div class="mb"></div><h3>Créditos e compensações</h3><p>Compensações e reestruturação de passivos, com fundamentação jurídica sólida.</p></div>
+      <div class="card gold"><div class="mb"></div><h3>Economia real e mensurável</h3><p>Resultado recorrente no caixa, com segurança regulatória e transparência.</p></div>
+    </div>
+    <div class="flow" style="margin-top:26px">
+      <div class="fs"><span class="k">1</span><h4>Diagnóstico</h4><p>Análise do perfil fiscal, sem custo</p></div>
+      <div class="fs" style="background:var(--navy2)"><span class="k">2</span><h4>Enquadramento</h4><p>A tese certa para cada cliente</p></div>
+      <div class="fs" style="background:#141b8f"><span class="k">3</span><h4>Execução</h4><p>Condução 100% Lucro Ativo</p></div>
+      <div class="fs hot"><span class="k">4</span><h4>Resultado</h4><p>Medido e prestado contas, mês a mês</p></div>
+    </div>
+  </div>
+  <div class="ghost">01</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>3</span></div>
+</div>
+
+<!-- 4 · 02 DESTAQUE GS -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="topbar"><span class="tag" style="color:#fff"><span class="n">02</span>A aliança com o Grupo Studio</span></div>
+  <div class="rule" style="background:linear-gradient(90deg,rgba(255,255,255,.35) 0 70%,var(--gold) 70% 100%)"></div>
+  <svg class="deco" width="330" height="300" viewBox="0 0 330 300" style="opacity:.14">
+    <line x1="165" y1="150" x2="40"  y2="40"  stroke="#fff" stroke-width="2"/>
+    <line x1="165" y1="150" x2="290" y2="40"  stroke="#fff" stroke-width="2"/>
+    <line x1="165" y1="150" x2="20"  y2="190" stroke="#fff" stroke-width="2"/>
+    <line x1="165" y1="150" x2="310" y2="190" stroke="#fff" stroke-width="2"/>
+    <line x1="165" y1="150" x2="110" y2="280" stroke="#fff" stroke-width="2"/>
+    <line x1="165" y1="150" x2="230" y2="280" stroke="#fff" stroke-width="2"/>
+    <circle cx="165" cy="150" r="26" fill="#C9A227"/>
+    <circle cx="40" cy="40" r="14" fill="#fff"/><circle cx="290" cy="40" r="14" fill="#fff"/>
+    <circle cx="20" cy="190" r="14" fill="#fff"/><circle cx="310" cy="190" r="14" fill="#fff"/>
+    <circle cx="110" cy="280" r="14" fill="#fff"/><circle cx="230" cy="280" r="14" fill="#fff"/>
+  </svg>
+  <div class="content z">
+    <div style="display:flex;align-items:center;gap:44px;margin-bottom:28px">
+      <img src="logo_branca.svg" style="height:64px" alt="Lucro Ativo">
+      <div style="width:2px;height:64px;background:rgba(255,255,255,.35)"></div>
+      <img src="LOGO_GRUPO_STUDIO_-_V3_-_BRANCO.png" style="height:78px" alt="Grupo Studio">
+    </div>
+    <h2 class="title" style="color:#fff">Uma aliança que multiplica o portfólio</h2>
+    <div class="sub" style="color:#c8cdf0">Escala nacional — e a condução do seu cliente é sempre da Lucro Ativo.</div>
+    <div class="stats3" style="max-width:920px">
+      <div class="stat" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25)"><div class="v">+35 mil</div><div class="l">empresas atendidas pelo ecossistema</div></div>
+      <div class="stat" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25)"><div class="v">+500</div><div class="l">atestados de capacidade técnica</div></div>
+      <div class="stat" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25)"><div class="v">360°</div><div class="l">diagnóstico do cliente em plataforma própria</div></div>
+    </div>
+    <div class="note" style="background:rgba(201,162,39,.14);border-color:rgba(201,162,39,.45);color:#f0e3ba;max-width:920px"><b style="color:var(--gold)">Para o parceiro:</b> teses proprietárias LA + verticais do ecossistema, em um único canal.</div>
+  </div>
+  <div class="foot" style="background:transparent;color:#aab1e8"><span class="brand" style="color:#fff">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>4</span></div>
+</div>
+
+<!-- 5 · 03 O PROGRAMA -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">03</span>O Programa de Parcerias</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Você abre. Nós conduzimos. Você acompanha.</h2>
+    <div class="sub">Parceria de <b>indicação</b>: sua confiança abre a porta — o resto é com a gente.</div>
+    <div class="flow big">
+      <div class="fs"><span class="k">PASSO 1</span><h4>Você abre</h4><p>Sua credibilidade apresenta a conta e faz a ponte com o decisor.</p></div>
+      <div class="fs" style="background:#141b8f"><span class="k">PASSO 2</span><h4>Nós conduzimos</h4><p>Reunião, proposta, contrato e entrega — 100% Lucro Ativo.</p></div>
+      <div class="fs hot"><span class="k">PASSO 3</span><h4>Você acompanha</h4><p>Dashboard com cada oportunidade da sua carteira.</p></div>
+    </div>
+    <div class="note"><b>Indicação, não venda:</b> o parceiro nunca precisa virar vendedor para ser remunerado.</div>
+  </div>
+  <div class="ghost">03</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>5</span></div>
+</div>
+
+<!-- 6 · PERFIS -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">03</span>O Programa de Parcerias · Perfis</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Para quem tem carteira — e quer fazer mais por ela</h2>
+    <div class="sub">Um único critério: carteira ativa de empresas no Lucro Real / Presumido.</div>
+    <table>
+      <tr><th style="width:30%">Perfil</th><th>Por que faz sentido</th><th style="width:20%">Prioridade</th></tr>
+      <tr><td><b>Contabilidades &amp; BPOs</b></td><td>Portfólio ampliado para a base, sem custo fixo.</td><td><span class="pill navy">Foco principal</span></td></tr>
+      <tr><td><b>Escritórios jurídicos</b></td><td>Solução tributária completa para a banca.</td><td><span class="pill navy">Foco principal</span></td></tr>
+      <tr><td><b>Consultorias de negócios</b></td><td>Acesso C-level vira receita de parceria.</td><td><span class="pill navy">Foco principal</span></td></tr>
+      <tr><td><b>Representantes &amp; corretores</b></td><td>Alto ticket na rotina de visitas corporativas.</td><td><span class="pill soft">Por oportunidade</span></td></tr>
+    </table>
+    <div class="note"><b>Importante:</b> parceria de indicação — papel distinto do Executivo e do Parceiro de Vendas.</div>
+  </div>
+  <div class="ghost">03</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>6</span></div>
+</div>
+
+<!-- 7 · JORNADA -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">03</span>O Programa de Parcerias · Jornada</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">A jornada do parceiro — em 6 etapas</h2>
+    <div class="sub">Do primeiro contato à rotina de resultado, com um ponto focal único.</div>
+    <div class="journey">
+      <div class="step"><div class="n">1</div><h4>Conversa inicial</h4><p>Apresentação ao decisor</p></div>
+      <div class="step"><div class="n">2</div><h4>Proposta</h4><p>Modelo, papéis e remuneração</p></div>
+      <div class="step"><div class="n">3</div><h4>Credenciamento</h4><p>Contrato + onboarding</p></div>
+      <div class="step hot"><div class="n">4</div><h4>Mapeamento</h4><p>Carteira × soluções</p></div>
+      <div class="step hot"><div class="n">5</div><h4>Plano conjunto</h4><p>Contas-alvo e agenda</p></div>
+      <div class="step"><div class="n">6</div><h4>Rotina</h4><p>Indicações e resultado</p></div>
+    </div>
+    <div class="note"><b>O coração do programa:</b> carteira mapeada + plano conjunto — é isso que gera resultado.</div>
+  </div>
+  <div class="ghost">03</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>7</span></div>
+</div>
+
+<!-- 8 · SUPORTE CENTRAL (hub) -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">03</span>O Programa de Parcerias · Suporte</span></div>
+  <div class="rule"></div>
+  <div class="content z" style="justify-content:flex-start;padding-top:18px">
+    <h2 class="title" style="font-size:40px">Estrutura central de apoio ao parceiro</h2>
+    <div class="sub" style="font-size:21px;margin-bottom:8px">Método, marca e suporte — não uma lista de indicações.</div>
+    <div class="hub" style="height:430px">
+      <svg class="wire" viewBox="0 0 1152 430" preserveAspectRatio="none">
+        <line x1="576" y1="215" x2="215"  y2="48"  stroke="#c9cde8" stroke-width="2"/>
+        <line x1="576" y1="215" x2="937"  y2="48"  stroke="#c9cde8" stroke-width="2"/>
+        <line x1="576" y1="215" x2="146"  y2="215" stroke="#c9cde8" stroke-width="2"/>
+        <line x1="576" y1="215" x2="1006" y2="215" stroke="#c9cde8" stroke-width="2"/>
+        <line x1="576" y1="215" x2="215"  y2="382" stroke="#c9cde8" stroke-width="2"/>
+        <line x1="576" y1="215" x2="937"  y2="382" stroke="#c9cde8" stroke-width="2"/>
+      </svg>
+      <div class="hubc"><b>Você,<br>parceiro</b><span>suporte central Lucro Ativo</span></div>
+      <div class="hn" style="left:70px;top:8px"><h4>Coordenação dedicada</h4><p>Ponto focal único, contato proativo</p></div>
+      <div class="hn" style="right:70px;top:8px"><h4>Plano de atuação conjunto</h4><p>Contas-alvo e agenda por ciclo</p></div>
+      <div class="hn" style="left:0;top:175px"><h4>Dashboard de transparência</h4><p>Cada oportunidade, em tempo real</p></div>
+      <div class="hn" style="right:0;top:175px"><h4>Kit do Parceiro</h4><p>Materiais e FAQs no padrão da marca</p></div>
+      <div class="hn" style="left:70px;top:342px"><h4>Capacitação contínua</h4><p>Webinars e treinamentos por solução</p></div>
+      <div class="hn" style="right:70px;top:342px"><h4>Comunidade do canal</h4><p>Eventos, ranking e reconhecimento</p></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>8</span></div>
+</div>
+
+<!-- 9 · 04 PORTFÓLIO LA OVERVIEW -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>Portfólio Lucro Ativo</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Quatro soluções proprietárias de alto impacto</h2>
+    <div class="sub">Cada uma com base legal própria e resultado mensurável no caixa.</div>
+    <div class="grid2">
+      <div class="card" style="display:flex;gap:20px;align-items:center">
+        <svg width="86" height="86" viewBox="0 0 86 86"><rect x="6" y="10" width="20" height="70" rx="4" fill="#010860"/><rect x="33" y="24" width="20" height="56" rx="4" fill="#39406e"/><rect x="60" y="58" width="20" height="22" rx="4" fill="#C9A227"/></svg>
+        <div><h3>Direito Creditório Federal</h3><p>Tributos federais quitados com créditos judiciais — <b>20% de economia fixa</b>.</p></div>
+      </div>
+      <div class="card" style="display:flex;gap:20px;align-items:center">
+        <svg width="86" height="86" viewBox="0 0 86 86"><path d="M6 30h44v-12l24 25-24 25v-12H6z" fill="#010860"/><rect x="6" y="8" width="30" height="10" rx="3" fill="#C9A227"/></svg>
+        <div><h3>Compensação de ICMS — SP</h3><p>Créditos acumulados reduzem o <b>ICMS do mês</b>, direto na apuração.</p></div>
+      </div>
+      <div class="card" style="display:flex;gap:20px;align-items:center">
+        <svg width="86" height="86" viewBox="0 0 86 86"><rect x="6" y="8" width="20" height="72" rx="4" fill="#010860"/><rect x="33" y="34" width="20" height="46" rx="4" fill="#39406e"/><rect x="60" y="52" width="20" height="28" rx="4" fill="#C9A227"/><path d="M16 2l6 8h-12z" fill="#C9A227" transform="rotate(180 16 6)"/></svg>
+        <div><h3>Transação Tributária PGFN</h3><p>Dívida ativa da União com <b>até 65% de desconto</b> em juros e multas.</p></div>
+      </div>
+      <div class="card" style="display:flex;gap:20px;align-items:center">
+        <svg width="86" height="86" viewBox="0 0 86 86"><circle cx="24" cy="24" r="16" fill="#C9A227"/><path d="M24 44v18h38" stroke="#010860" stroke-width="8" fill="none"/><path d="M56 50l14 12-14 12z" fill="#010860"/></svg>
+        <div><h3>Retenção de IRRF — Municípios</h3><p>Receita própria do município, com <b>risco zero</b> e remuneração por êxito.</p></div>
+      </div>
+    </div>
+    <div class="note"><b>A seguir:</b> a mecânica e a base legal de cada solução.</div>
+  </div>
+  <div class="ghost">04</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>9</span></div>
+</div>
+
+<!-- 10 · DCF 1 — mecânica -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>Portfólio LA · Direito Creditório Federal</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title" style="font-size:40px">DCF — o encontro de contas da EC 113/2021</h2>
+    <div class="sub" style="font-size:21px">Tributos federais do mês quitados com créditos judiciais definitivos.</div>
+    <div class="flow">
+      <div class="fs"><span class="k">1</span><h4>Crédito definitivo</h4><p>Transitado em julgado contra a União</p></div>
+      <div class="fs" style="background:var(--navy2)"><span class="k">2</span><h4>Cessão formal</h4><p>CC, arts. 286–298 — cliente habilitado</p></div>
+      <div class="fs" style="background:#141b8f"><span class="k">3</span><h4>PER/DCOMP mensal</h4><p>Rito 100% administrativo na RFB</p></div>
+      <div class="fs hot"><span class="k">4</span><h4>Tributos quitados</h4><p>PIS · COFINS · IRPJ · CSLL · INSS</p></div>
+    </div>
+    <div class="grid2" style="margin:20px 0 18px 0">
+      <div class="card"><h3>Para quem</h3><p>Lucro Real ou Presumido com recolhimento federal mensal relevante.</p></div>
+      <div class="card gold"><h3>Sem litígio</h3><p>Redução imediata e recorrente do desembolso, com prestação de contas mensal.</p></div>
+    </div>
+    <div class="legal">
+      <div class="lx"><h4>EC 113/2021 · CF, art. 100, §11</h4><p>Assento constitucional do encontro de contas.</p></div>
+      <div class="lx"><h4>Código Civil, arts. 286–298</h4><p>Disciplina da cessão de créditos.</p></div>
+      <div class="lx"><h4>Normativos RFB / PGFN</h4><p>Operacionalização no rito administrativo.</p></div>
+    </div>
+  </div>
+  <div class="ghost">04</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>10</span></div>
+</div>
+
+<!-- 11 · DCF 2 — waterfall 80/20 -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>Portfólio LA · Direito Creditório Federal</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title" style="font-size:40px">Modelo 80/20 — economia fixa de 20%</h2>
+    <div class="sub" style="font-size:21px">O cliente quita 100% do tributo desembolsando 80%.</div>
+    <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:34px;align-items:center">
+      <div class="wf">
+        <div class="col"><div class="bar" style="height:270px;background:var(--navy)"><span class="bv">R$ 2,4 mi</span></div><div class="cl"><b>Tributos do ano</b><br>R$ 200 mil/mês</div></div>
+        <div class="col"><div class="bar" style="height:216px;background:#39406e"><span class="bv">R$ 1,92 mi</span></div><div class="cl"><b>Desembolso</b><br>80%, conforme compensa</div></div>
+        <div class="col"><div class="bar" style="height:60px;background:var(--gold)"><span class="bv">R$ 480 mil</span></div><div class="cl"><b>Economia no ano</b><br>20% no caixa do cliente</div></div>
+      </div>
+      <div>
+        <div class="stat" style="margin-bottom:14px"><div class="v">20%</div><div class="l">deságio fixo, em toda operação DCF</div></div>
+        <div class="stat soft" style="margin-bottom:14px"><div class="v">≤ 30 dias</div><div class="l">até a primeira compensação</div></div>
+        <div class="stat soft"><div class="v">12 meses</div><div class="l">prazo padrão de contrato</div></div>
+      </div>
+    </div>
+    <div class="note"><b>Exemplo ilustrativo</b> — o 80/20 é fixo; volumes em proposta individual.</div>
+  </div>
+  <div class="ghost">04</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>11</span></div>
+</div>
+
+<!-- 12 · ICMS 1 — mecânica -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>Portfólio LA · Compensação de ICMS — SP</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title" style="font-size:40px">ICMS-SP — compensação com créditos acumulados</h2>
+    <div class="sub" style="font-size:21px">O imposto do mês, quitado em parte com créditos adquiridos com deságio.</div>
+    <div class="flow">
+      <div class="fs"><span class="k">1</span><h4>Detentor habilitado</h4><p>Crédito acumulado validado pela SEFAZ-SP</p></div>
+      <div class="fs" style="background:var(--navy2)"><span class="k">2</span><h4>Transferência oficial</h4><p>Via sistema e-CredAc</p></div>
+      <div class="fs" style="background:#141b8f"><span class="k">3</span><h4>Lançamento</h4><p>Apuração do cliente — GIA + SPED</p></div>
+      <div class="fs hot"><span class="k">4</span><h4>ICMS reduzido</h4><p>Economia direta no imposto corrente</p></div>
+    </div>
+    <div class="grid2" style="margin:20px 0 18px 0">
+      <div class="card"><h3>Para quem</h3><p>Indústria, distribuição e varejo com ICMS mensal relevante em SP.</p></div>
+      <div class="card gold"><h3>O que não é</h3><p>Não olha para o passado, não é tese: reduz o imposto corrente, mês a mês.</p></div>
+    </div>
+    <div class="legal">
+      <div class="lx"><h4>LC 87/96 (Lei Kandir)</h4><p>Não-cumulatividade e crédito acumulado.</p></div>
+      <div class="lx"><h4>RICMS-SP, arts. 71–84 e 99</h4><p>Apropriação e transferência do crédito.</p></div>
+      <div class="lx"><h4>Portaria SRE 65/2023 · e-CredAc</h4><p>Habilitação e transferência no sistema oficial.</p></div>
+    </div>
+  </div>
+  <div class="ghost">04</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>12</span></div>
+</div>
+
+<!-- 13 · ICMS 2 — antes/depois -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>Portfólio LA · Compensação de ICMS — SP</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title" style="font-size:40px">O efeito no caixa, mês a mês</h2>
+    <div class="sub" style="font-size:21px">Mesmo imposto quitado — desembolso menor, dentro do sistema da SEFAZ.</div>
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:34px;align-items:center">
+      <div class="wf" style="height:290px;max-width:560px">
+        <div class="col"><div class="bar" style="height:250px;background:var(--navy)"><span class="bv">ICMS do mês</span></div><div class="cl"><b>Hoje</b><br>desembolso integral</div></div>
+        <div class="col">
+          <div class="stackt" style="height:70px;background:var(--gold)"><span class="bv">economia</span></div>
+          <div class="stackb" style="height:180px;background:#39406e;border-radius:0"><span class="bv" style="font-family:Montserrat;font-weight:800;font-size:20px;color:#fff">desembolso</span></div>
+          <div class="cl"><b>Com a Lucro Ativo</b><br>parte quitada com créditos</div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:16px"><h3>Segurança</h3><p>Créditos habilitados pela própria SEFAZ-SP, com documentação integral.</p></div>
+        <div class="card gold"><h3>Recorrência</h3><p>Benefício contínuo — todo mês em que houver ICMS a recolher.</p></div>
+      </div>
+    </div>
+    <div class="note"><b>Deságio e volumes</b> em proposta individual, pelo perfil de apuração do cliente.</div>
+  </div>
+  <div class="ghost">04</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>13</span></div>
+</div>
+
+<!-- 14 · PGFN 1 — problema e rito -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>Portfólio LA · Transação Tributária PGFN</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title" style="font-size:40px">Transação PGFN — dívida ativa, resolvida</h2>
+    <div class="sub" style="font-size:21px">Reestruturação definitiva do passivo federal, negociada com a Procuradoria.</div>
+    <div class="grid2" style="margin-bottom:18px">
+      <div class="card"><h3>O problema</h3>
+        <ul class="clean">
+          <li>Penhoras e bloqueios <b>SISBAJUD</b></li>
+          <li><b>CND travada</b> — crédito e licitações paradas</li>
+          <li>SELIC torna o parcelamento comum <b>impagável</b></li>
+        </ul>
+      </div>
+      <div class="card gold"><h3>Para quem</h3>
+        <ul class="clean">
+          <li>Passivo federal inscrito <b>acima de R$ 10 milhões</b></li>
+          <li>Grupos que precisam <b>sanear o balanço</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="flow sm" style="margin-bottom:18px">
+      <div class="fs"><h4>1 · Diagnóstico</h4><p>Passivo + nulidades das CDAs</p></div>
+      <div class="fs" style="background:var(--navy2)"><h4>2 · Rating CAPAG</h4><p>Capacidade real de pagamento</p></div>
+      <div class="fs" style="background:#141b8f"><h4>3 · Negociação</h4><p>Transação individual na PGFN</p></div>
+      <div class="fs hot"><h4>4 · Liquidação</h4><p>Créditos fiscais + parcelamento</p></div>
+    </div>
+    <div class="legal">
+      <div class="lx"><h4>Lei 13.988/2020</h4><p>Marco legal da transação tributária.</p></div>
+      <div class="lx"><h4>Lei 14.375/2022</h4><p>Ampliou descontos e prazos.</p></div>
+      <div class="lx"><h4>Portaria PGFN 6.757/2022</h4><p>Transação individual e CAPAG.</p></div>
+    </div>
+  </div>
+  <div class="ghost">04</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>14</span></div>
+</div>
+
+<!-- 15 · PGFN 2 — barras de redução -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>Portfólio LA · Transação Tributária PGFN</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title" style="font-size:40px">As três alavancas do acordo</h2>
+    <div class="sub" style="font-size:21px">Máxima redução legal, com segurança regulatória.</div>
+    <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:34px;align-items:center">
+      <div class="wf" style="height:300px">
+        <div class="col"><div class="bar" style="height:260px;background:var(--navy)"><span class="bv">Passivo</span></div><div class="cl"><b>Dívida ativa</b><br>consolidada</div></div>
+        <div class="col">
+          <div class="stackt" style="height:110px;background:var(--gold)"><span class="bv">– até 65%</span></div>
+          <div class="stackb" style="height:150px;background:#39406e"><span class="bv" style="font-size:18px">saldo</span></div>
+          <div class="cl"><b>Descontos legais</b><br>juros, multas e encargos</div>
+        </div>
+        <div class="col"><div class="bar" style="height:150px;background:var(--navy2)"><span class="bv">120×</span></div><div class="cl"><b>Saldo negociado</b><br>em até 120 meses</div></div>
+      </div>
+      <div>
+        <div class="stat" style="margin-bottom:14px"><div class="v">até 65%</div><div class="l">de desconto — juros, multas e encargos</div></div>
+        <div class="stat soft" style="margin-bottom:14px"><div class="v">até 120</div><div class="l">meses para o saldo</div></div>
+        <div class="stat soft"><div class="v">até 70%</div><div class="l">liquidável com prejuízo fiscal e base negativa de CSLL</div></div>
+      </div>
+    </div>
+    <div class="note"><b>Ilustrativo</b> — cada acordo é dimensionado caso a caso, em proposta individual.</div>
+  </div>
+  <div class="ghost">04</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>15</span></div>
+</div>
+
+<!-- 16 · IRRF 1 — fluxo -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>Portfólio LA · Retenção de IRRF — Municípios</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title" style="font-size:40px">IRRF — a receita que hoje vaza para a União</h2>
+    <div class="sub" style="font-size:21px">O STF consolidou: esse imposto pertence ao município que paga a conta.</div>
+    <div class="flow">
+      <div class="fs"><span class="k">1</span><h4>Fornecedor emite a NF</h4><p>Bens e serviços contratados</p></div>
+      <div class="fs" style="background:var(--navy2)"><span class="k">2</span><h4>Município paga</h4><p>Liquidação da despesa</p></div>
+      <div class="fs" style="background:#141b8f"><span class="k">3</span><h4>IRRF retido na fonte</h4><p>Obrigatório — IN RFB 2.145/2023</p></div>
+      <div class="fs hot"><span class="k">4</span><h4>Caixa do município</h4><p>Receita própria — STF, Tema 1.130</p></div>
+    </div>
+    <div class="stats3" style="margin-top:22px">
+      <div class="stat soft"><div class="v">100%</div><div class="l">do IRRF pertence ao ente contratante<br>(RE 1.293.453)</div></div>
+      <div class="stat soft"><div class="v">R$ 0</div><div class="l">de tributo novo — é receita que já existe</div></div>
+      <div class="stat"><div class="v">Obrigação</div><div class="l">reter deixou de ser opção — IN RFB 2.145/2023</div></div>
+    </div>
+    <div class="note"><b>O gargalo:</b> milhares de notas por mês — sem auditoria, a retenção não acontece.</div>
+  </div>
+  <div class="ghost">04</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>16</span></div>
+</div>
+
+<!-- 17 · IRRF 2 — solução -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>Portfólio LA · Retenção de IRRF — Municípios</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title" style="font-size:40px">Auditoria inteligente, risco zero</h2>
+    <div class="sub" style="font-size:21px">Tudo auditado antes do pagamento — e remuneração só sobre o ganho real.</div>
+    <div class="stats3" style="margin-bottom:22px">
+      <div class="stat"><div class="v">100%</div><div class="l">dos documentos fiscais auditados antes da liquidação</div></div>
+      <div class="stat soft"><div class="v">R$ 0</div><div class="l">de custo fixo — remuneração exclusivamente por êxito</div></div>
+      <div class="stat soft"><div class="v">14.133/21</div><div class="l">contratação nos ritos da nova Lei de Licitações</div></div>
+    </div>
+    <div class="grid2">
+      <div class="card"><h3>Motor de auditoria</h3><p>Tecnologia aplica a alíquota correta a cada despesa, nota a nota.</p></div>
+      <div class="card gold"><h3>A porta do parceiro</h3><p>Relacionamento em prefeituras e câmaras vira indicação de altíssimo valor.</p></div>
+    </div>
+  </div>
+  <div class="ghost">04</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>17</span></div>
+</div>
+
+<!-- 18 · 05 ECOSSISTEMA GS OVERVIEW (hub navy) -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="topbar"><span class="tag" style="color:#fff"><span class="n">05</span>Ecossistema Grupo Studio</span></div>
+  <div class="rule" style="background:linear-gradient(90deg,rgba(255,255,255,.35) 0 70%,var(--gold) 70% 100%)"></div>
+  <div class="content z" style="justify-content:flex-start;padding-top:16px">
+    <h2 class="title" style="color:#fff;font-size:40px">Cinco verticais complementares para a sua carteira</h2>
+    <div class="sub" style="color:#c8cdf0;font-size:21px;margin-bottom:8px">Um cliente, várias soluções — sempre com condução comercial da Lucro Ativo.</div>
+    <div class="hub dark" style="height:428px">
+      <svg class="wire" viewBox="0 0 1152 428" preserveAspectRatio="none">
+        <line x1="576" y1="204" x2="256" y2="46"  stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+        <line x1="576" y1="204" x2="896" y2="46"  stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+        <line x1="576" y1="204" x2="152" y2="230" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+        <line x1="576" y1="204" x2="1000" y2="230" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+        <line x1="576" y1="204" x2="576" y2="384" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+      </svg>
+      <div class="hubc" style="top:204px">
+        <img src="logo_branca.svg" style="width:118px" alt="Lucro Ativo">
+        <span style="color:var(--gold);font-weight:700">+</span>
+        <img src="LOGO_GRUPO_STUDIO_-_V2_-_BRANCO.png" style="width:104px" alt="Grupo Studio">
+      </div>
+      <div class="hn" style="left:110px;top:8px"><h4>Studio Fiscal</h4><p>Planejamento, revisão e teses</p></div>
+      <div class="hn" style="right:110px;top:8px"><h4>Studio Energy</h4><p>Mercado livre, fatura e solar</p></div>
+      <div class="hn" style="left:6px;top:192px"><h4>Studio Bank</h4><p>Capital e operações estruturadas</p></div>
+      <div class="hn" style="right:6px;top:192px"><h4>Seguros &amp; Agro</h4><p>Proteção e soluções do campo</p></div>
+      <div class="hn" style="left:50%;transform:translateX(-50%);top:346px"><h4>LGPD &amp; Governança</h4><p>Conformidade de dados</p></div>
+    </div>
+  </div>
+  <div class="foot" style="background:transparent;color:#aab1e8"><span class="brand" style="color:#fff">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>18</span></div>
+</div>
+
+<!-- 19 · GS FISCAL -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">05</span>Ecossistema GS · Studio Fiscal</span></div>
+  <div class="cobrand"><img src="la_logo_navy.png" alt="Lucro Ativo"><span class="sep"></span><img src="LOGO_GRUPO_STUDIO_-_V2_-_GRAFITE.png" alt="Grupo Studio"></div>
+  <div class="rule"></div>
+  <svg class="deco" width="320" height="260" viewBox="0 0 320 260">
+    <rect x="0" y="150" width="54" height="110" rx="6" fill="#010860"/>
+    <rect x="68" y="110" width="54" height="150" rx="6" fill="#010860"/>
+    <rect x="136" y="70" width="54" height="190" rx="6" fill="#010860"/>
+    <rect x="204" y="30" width="54" height="230" rx="6" fill="#C9A227"/>
+    <polyline points="27,130 95,90 163,50 231,10" fill="none" stroke="#010860" stroke-width="5"/>
+  </svg>
+  <div class="content z">
+    <h2 class="title">Studio Fiscal — inteligência tributária</h2>
+    <div class="sub">Eficiência tributária contínua, para empresas de todos os portes.</div>
+    <div class="grid3" style="max-width:1020px">
+      <div class="card"><div class="mb"></div><h3>Planejamento &amp; revisão</h3><p>Apuração revisada, créditos não aproveitados capturados.</p></div>
+      <div class="card"><div class="mb"></div><h3>Revisão previdenciária</h3><p>Bases de INSS sobre a folha, corrigidas.</p></div>
+      <div class="card"><div class="mb"></div><h3>Incentivos &amp; teses</h3><p>Lei do Bem, teses consolidadas e Reforma Tributária.</p></div>
+    </div>
+    <div class="gsnote" style="max-width:1020px"><b>Solução do ecossistema Grupo Studio</b> · condução comercial da Lucro Ativo.</div>
+  </div>
+  <div class="ghost">05</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>19</span></div>
+</div>
+
+<!-- 20 · GS ENERGY -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">05</span>Ecossistema GS · Studio Energy</span></div>
+  <div class="cobrand"><img src="la_logo_navy.png" alt="Lucro Ativo"><span class="sep"></span><img src="LOGO_GRUPO_STUDIO_-_V2_-_GRAFITE.png" alt="Grupo Studio"></div>
+  <div class="rule"></div>
+  <svg class="deco" width="320" height="260" viewBox="0 0 320 260">
+    <path d="M160 250 A120 120 0 0 1 40 130 A120 120 0 0 1 160 10" fill="none" stroke="#010860" stroke-width="26"/>
+    <path d="M160 10 A120 120 0 0 1 280 130" fill="none" stroke="#C9A227" stroke-width="26"/>
+    <path d="M175 60 L120 150 h42 l-22 66 68 -104 h-44z" fill="#010860"/>
+  </svg>
+  <div class="content z">
+    <h2 class="title">Studio Energy — energia sob controle</h2>
+    <div class="sub">Redução estrutural de um dos maiores custos da operação.</div>
+    <div class="grid3" style="max-width:1020px">
+      <div class="card"><div class="mb"></div><h3>Mercado Livre</h3><p>Previsibilidade e conta menor para médios e grandes consumidores.</p></div>
+      <div class="card"><div class="mb"></div><h3>Recupera Energia</h3><p>Auditoria da fatura — cobranças indevidas de volta ao caixa.</p></div>
+      <div class="card"><div class="mb"></div><h3>Geração &amp; solar</h3><p>Geração própria e assinatura de energia.</p></div>
+    </div>
+    <div class="gsnote" style="max-width:1020px"><b>Solução do ecossistema Grupo Studio</b> · condução comercial da Lucro Ativo.</div>
+  </div>
+  <div class="ghost">05</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>20</span></div>
+</div>
+
+<!-- 21 · GS BANK -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">05</span>Ecossistema GS · Studio Bank</span></div>
+  <div class="cobrand"><img src="la_logo_navy.png" alt="Lucro Ativo"><span class="sep"></span><img src="LOGO_GRUPO_STUDIO_-_V2_-_GRAFITE.png" alt="Grupo Studio"></div>
+  <div class="rule"></div>
+  <svg class="deco" width="320" height="260" viewBox="0 0 320 260">
+    <path d="M160 0 L310 70 H10 Z" fill="#010860"/>
+    <rect x="30" y="90" width="40" height="130" fill="#010860"/>
+    <rect x="105" y="90" width="40" height="130" fill="#010860"/>
+    <rect x="180" y="90" width="40" height="130" fill="#010860"/>
+    <rect x="255" y="90" width="40" height="130" fill="#C9A227"/>
+    <rect x="10" y="235" width="300" height="25" rx="4" fill="#010860"/>
+  </svg>
+  <div class="content z">
+    <h2 class="title">Studio Bank — capital estruturado</h2>
+    <div class="sub">Alternativas ao crédito bancário tradicional.</div>
+    <div class="grid3" style="max-width:1020px">
+      <div class="card"><div class="mb"></div><h3>Operações estruturadas</h3><p>Crédito e garantias sob medida para cada perfil.</p></div>
+      <div class="card"><div class="mb"></div><h3>Captação</h3><p>Nota comercial e liquidez para giro e investimento.</p></div>
+      <div class="card"><div class="mb"></div><h3>Renegociação</h3><p>Contratos bancários reequilibrados, encargos menores.</p></div>
+    </div>
+    <div class="gsnote" style="max-width:1020px"><b>Solução do ecossistema Grupo Studio</b> · condução comercial da Lucro Ativo.</div>
+  </div>
+  <div class="ghost">05</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>21</span></div>
+</div>
+
+<!-- 22 · GS SEGUROS & AGRO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">05</span>Ecossistema GS · Seguros &amp; Agro</span></div>
+  <div class="cobrand"><img src="la_logo_navy.png" alt="Lucro Ativo"><span class="sep"></span><img src="LOGO_GRUPO_STUDIO_-_V2_-_GRAFITE.png" alt="Grupo Studio"></div>
+  <div class="rule"></div>
+  <svg class="deco" width="330" height="260" viewBox="0 0 330 260">
+    <path d="M10 250 Q165 190 320 250" fill="none" stroke="#010860" stroke-width="14"/>
+    <path d="M10 210 Q165 150 320 210" fill="none" stroke="#010860" stroke-width="14"/>
+    <path d="M10 170 Q165 110 320 170" fill="none" stroke="#C9A227" stroke-width="14"/>
+    <path d="M165 120 C120 90 120 30 165 8 C210 30 210 90 165 120 Z" fill="#010860"/>
+    <line x1="165" y1="120" x2="165" y2="30" stroke="#C9A227" stroke-width="8"/>
+  </svg>
+  <div class="content z">
+    <h2 class="title">Seguros &amp; Agro — proteção para o campo</h2>
+    <div class="sub">Gestão de risco e estrutura para o agronegócio.</div>
+    <div class="grid3" style="max-width:1020px">
+      <div class="card"><div class="mb"></div><h3>Seguro por cultura</h3><p>Grãos, café, cana, citros, florestal — e os ativos rurais.</p></div>
+      <div class="card"><div class="mb"></div><h3>Soluções ao produtor</h3><p>Dívidas rurais renegociadas, estrutura patrimonial.</p></div>
+      <div class="card"><div class="mb"></div><h3>Na sua carteira</h3><p>O cliente do agro já procura essas soluções.</p></div>
+    </div>
+    <div class="gsnote" style="max-width:1020px"><b>Solução do ecossistema Grupo Studio</b> · condução comercial da Lucro Ativo.</div>
+  </div>
+  <div class="ghost">05</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>22</span></div>
+</div>
+
+<!-- 23 · GS LGPD -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">05</span>Ecossistema GS · LGPD &amp; Governança</span></div>
+  <div class="cobrand"><img src="la_logo_navy.png" alt="Lucro Ativo"><span class="sep"></span><img src="LOGO_GRUPO_STUDIO_-_V2_-_GRAFITE.png" alt="Grupo Studio"></div>
+  <div class="rule"></div>
+  <svg class="deco" width="280" height="300" viewBox="0 0 280 300">
+    <path d="M140 0 L270 45 V150 C270 230 210 280 140 300 C70 280 10 230 10 150 V45 Z" fill="#010860"/>
+    <path d="M85 150 L125 190 L200 105" fill="none" stroke="#C9A227" stroke-width="22" stroke-linecap="round"/>
+  </svg>
+  <div class="content z">
+    <h2 class="title">LGPD &amp; Governança — conformidade real</h2>
+    <div class="sub">Processo estruturado — não formulário de gaveta.</div>
+    <div class="grid3" style="max-width:1020px">
+      <div class="card"><div class="mb"></div><h3>Diagnóstico</h3><p>Mapeamento de dados, riscos e prioridades.</p></div>
+      <div class="card"><div class="mb"></div><h3>Implantação</h3><p>Políticas, contratos e governança — Lei 13.709/2018.</p></div>
+      <div class="card"><div class="mb"></div><h3>Elegibilidade total</h3><p>Qualquer porte e segmento da sua carteira.</p></div>
+    </div>
+    <div class="gsnote" style="max-width:1020px"><b>Solução do ecossistema Grupo Studio</b> · condução comercial da Lucro Ativo.</div>
+  </div>
+  <div class="ghost">05</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>23</span></div>
+</div>
+
+<!-- 24 · VANTAGENS PARCEIRO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">06</span>Vantagens · Para o Parceiro</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">O que o parceiro ganha</h2>
+    <div class="sub">Receita nova sobre a carteira que você já tem.</div>
+    <div class="grid3">
+      <div class="card gold"><div class="mb"></div><h3>Receita sem custo fixo</h3><p>Sem investimento, sem equipe, sem risco operacional.</p></div>
+      <div class="card"><div class="mb"></div><h3>Portfólio raro</h3><p>Teses LA + verticais GS em um único canal.</p></div>
+      <div class="card"><div class="mb"></div><h3>Relação protegida</h3><p>O cliente continua sendo seu.</p></div>
+      <div class="card"><div class="mb"></div><h3>Transparência total</h3><p>Dashboard passo a passo, em tempo real.</p></div>
+      <div class="card"><div class="mb"></div><h3>Método e suporte</h3><p>Plano conjunto, kit e ponto focal dedicado.</p></div>
+      <div class="card"><div class="mb"></div><h3>Comunidade</h3><p>Ranking, eventos e reconhecimento no canal.</p></div>
+    </div>
+  </div>
+  <div class="ghost">06</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>24</span></div>
+</div>
+
+<!-- 25 · VANTAGENS CLIENTE -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">06</span>Vantagens · Para o cliente do Parceiro</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">O que o cliente da sua carteira ganha</h2>
+    <div class="sub">Acesso qualificado, pela porta de quem ele já confia.</div>
+    <div class="grid2">
+      <div class="card"><div class="mb"></div><h3>Economia real e recorrente</h3><p>Resultado mensurável no caixa, mês a mês.</p></div>
+      <div class="card"><div class="mb"></div><h3>Diagnóstico sem custo</h3><p>O cliente decide com dados, sem compromisso.</p></div>
+      <div class="card"><div class="mb"></div><h3>Condução especializada</h3><p>Ritos oficiais — RFB, SEFAZ, PGFN — e documentação integral.</p></div>
+      <div class="card gold"><div class="mb"></div><h3>Um canal, várias soluções</h3><p>Do tributário à energia, do financeiro ao seguro.</p></div>
+    </div>
+    <div class="note"><b>Regra da casa:</b> nenhum número prometido sem diagnóstico — proposta individual e documentada.</div>
+  </div>
+  <div class="ghost">06</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>25</span></div>
+</div>
+
+<!-- 26 · VISÃO DE FUTURO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">06</span>Visão de futuro</span></div>
+  <div class="rule"></div>
+  <svg class="deco" width="380" height="250" viewBox="0 0 380 250">
+    <polyline points="10,230 100,190 190,140 280,80 360,20" fill="none" stroke="#010860" stroke-width="6"/>
+    <circle cx="10" cy="230" r="10" fill="#010860"/><circle cx="100" cy="190" r="10" fill="#010860"/>
+    <circle cx="190" cy="140" r="10" fill="#010860"/><circle cx="280" cy="80" r="10" fill="#010860"/>
+    <circle cx="360" cy="20" r="14" fill="#C9A227"/>
+  </svg>
+  <div class="content z">
+    <h2 class="title">Uma rede nacional, construída com método</h2>
+    <div class="sub">Governança de gente grande desde o primeiro dia.</div>
+    <div class="grid2" style="max-width:1000px">
+      <div class="card"><div class="mb"></div><h3>Rede em expansão</h3><p>Meta: <b>100+ parceiros ativos</b>, com plano e resultado por ciclo.</p></div>
+      <div class="card"><div class="mb"></div><h3>Comunidade viva</h3><p>Eventos, webinars e encontros do canal.</p></div>
+      <div class="card"><div class="mb"></div><h3>Reconhecimento</h3><p>Ranking, selo <b>Parceiro Certificado LA</b> e premiação anual.</p></div>
+      <div class="card gold"><div class="mb"></div><h3>Tecnologia</h3><p>CRM próprio, dashboard e automação — não planilha.</p></div>
+    </div>
+  </div>
+  <div class="ghost">06</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Programa de Parcerias · Lucro Ativo</span><span>26</span></div>
+</div>
+
+<!-- 27 · FECHO -->
+<div class="slide navy close">
+  <div class="stripe"></div>
+  <div class="cover">
+    <img class="la" src="logo_branca.svg" alt="Lucro Ativo" style="width:320px;margin-bottom:36px">
+    <div class="kicker">Programa de Parcerias · Lucro Ativo</div>
+    <h1>Vamos abrir portas juntos.</h1>
+    <div class="sub2">Método, portfólio e transparência — confiança que vira resultado.</div>
+    <div class="meta" style="margin-top:40px">
+      <span><b>Próximo passo:</b> conversa de credenciamento com a Coordenação de Parcerias</span>
+      <span><b>www.meulucroativo.com.br</b></span>
+    </div>
+    <div style="display:flex;align-items:center;gap:30px;margin-top:52px;opacity:.9">
+      <span style="font-size:17px;color:#aab1e8">Em aliança com</span>
+      <img src="LOGO_GRUPO_STUDIO_-_V5_-_BRANCO.png" style="height:44px" alt="Grupo Studio">
+    </div>
+  </div>
+  <svg class="coverart" width="380" height="300" viewBox="0 0 380 300">
+    <rect x="0"   y="220" width="58" height="80"  rx="6" fill="#C9A227" opacity=".3"/>
+    <rect x="74"  y="180" width="58" height="120" rx="6" fill="#C9A227" opacity=".45"/>
+    <rect x="148" y="130" width="58" height="170" rx="6" fill="#C9A227" opacity=".62"/>
+    <rect x="222" y="75"  width="58" height="225" rx="6" fill="#C9A227" opacity=".82"/>
+    <rect x="296" y="20"  width="58" height="280" rx="6" fill="#C9A227"/>
+    <polyline points="29,200 103,160 177,110 251,55 325,4" fill="none" stroke="#ffffff" stroke-width="3" opacity=".75"/>
+    <circle cx="325" cy="4" r="7" fill="#ffffff" opacity=".9"/>
+  </svg>
+</div>
+
+</body>
+</html>

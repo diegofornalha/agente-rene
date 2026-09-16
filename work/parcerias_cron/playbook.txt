@@ -1,0 +1,543 @@
+                Ficha do Documento & Nota de Incorporação
+                Carta de Área da Gestão de Parcerias (Canal Indireto — Indicadores), produzida no esqueleto-
+                padrão de 8 seções do Modelo de Documento de Área & Playbook v1.0, a partir das premissas 
+                definidas pelo CEO (30/08/2026), do Planejamento Lucro Ativo v2 (Seção 11 — Plano Ulisses e 
+                Anexo A) e da auditoria dos contratos de parceria no Drive (20/08/2026). Minuta autônoma 
+                para validação da Diretoria — será incorporada ao Documento Mestre após aprovação (ver 
+                Anexo B).
+                Documento                                                          Carta de Área & Playbook Operacional — Gestão de 
+                                                                                   Parcerias (v1.0)
+                Área / Pilar                                                       Coordenação de Parcerias — pilar Comercial (CCO & 
+                                                                                   CSO)
+                Responsável pela área                                              Ulisses — Coordenador de Parcerias (reporte ao CCO 
+                                                                                   & CSO Cleber Candia)
+                Aprovação                                                          Cleber Candia (CCO & CSO) e Dr. Lucas Santos 
+                                                                                   (Sponsor / CEO)
+                Status                                                             Versão 1.0 — minuta para validação · NÃO 
+                                                                                   incorporada ao Documento Mestre
+                Documentos-base                                                    Planejamento Lucro Ativo v2 · Padrão de Documento 
+                                                                                   de Área & Playbook v1.0 · premissas do CEO 
+                                                                                   (30/08/2026) · Controle de Parcerias LA+GS (82 
+                                                                                   parceiros, 20/08/2026)
+                Revisão programada                                                 Fevereiro de 2027 (ciclo-padrão de 6 meses)
+                Sumário Executivo (C-Level)
+                LEITURA ESTRATÉGICA · COMO MENTOR DE NEGÓCIOS
+                O desenho pedido pela gestão está conceitualmente correto e maduro: parceiro como meio de 
+                venda (abre a porta, valida e acompanha) e a ação comercial 100% com a equipe Lucro Ativo. 
+                É o modelo que protege a taxa de fechamento, a experiência do cliente e o compliance — e 
+                conversa direto com a Regra de Ouro já fixada no Planejamento v2. O canal tem lastro real: 82 
+                parceiros já mapeados em contrato (57 assinados), a maioria hoje inativa ou em stand-by — ou 
+                seja, a meta de 100+ ativos é, antes de tudo, uma operação de reativação, não só de captação.
+                Como mentor, três alertas definem se este playbook sai do papel: (1) a matemática da cadência 
+                — contato efetivo quinzenal com 100+ parceiros dá ±10 contatos/dia úteis para um único 
+                coordenador; sem régua por tier (A quinzenal · B mensal · C automatizado), a promessa quebra 
+                no primeiro mês; (2) a definição de 'parceiro ativo' — sem régua objetiva de atividade, a meta 
+                de 100+ vira contagem de contratos assinados, não de parceiros produzindo; (3) o modelo de 
+                remuneração dos escritórios jurídicos — indicação remunerada por advogados esbarra no 
+                Código de Ética da OAB e precisa passar pelo CLO antes de qualquer credenciamento desse 
+                perfil.
+                Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação                    Confidencial · pág. 2
+                Recomendação de sequência: (i) instaurar a base — cadastrar os 82 parceiros no Twenty 
+                (objeto 'parcerias') com status e tier; (ii) ativar a régua de relacionamento por tier e o plano 
+                conjunto nos 20 primeiros (Tier A); (iii) só então acelerar captação de novos — credenciar sem 
+                capacidade de gestão fabrica parceiro inativo, que é exatamente o problema que estamos 
+                corrigindo.
+                COMO LER ESTE DOCUMENTO
+                    Esqueleto de 8 seções — mesma ordem e títulos-padrão de toda Carta de Área da Lucro 
+                     Ativo, para leitura comparável entre áreas.
+                    Notas do Mentor [Nº] — classificadas em CRÍTICO / ATENÇÃO / CONTROLE / 
+                     ESTRATÉGICO, concentradas na Seção 7 com painel no Anexo A.
+                    Blocos PROPOSTA (dourado) — sugestões da consultoria que exigem validação da Diretoria 
+                     antes de virarem regra.
+                    Números — nenhum foi inventado: os dados vêm do Planejamento v2, da auditoria de 
+                     contratos (20/08/2026) e das premissas do CEO; metas e faixas novas estão marcadas 
+                     como PARÂMETRO A VALIDAR.
+                Sumário Geral
+                Sumário — no Word, clique com o botão direito e escolha 'Atualizar campo'.
+                Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação                    Confidencial · pág. 3
+                Seção 1 — Identidade & Propósito
+                O CANAL QUE MULTIPLICA PORTAS · NÃO UM SEGUNDO TIME DE VENDAS
+                A Gestão de Parcerias é o canal indireto da operação comercial da Lucro Ativo. Ela transforma 
+                carteiras de terceiros — contabilidades, escritórios jurídicos não-tributários e consultorias de 
+                negócios — em portas qualificadas para a venda executiva da LA e do ecossistema Grupo 
+                Studio. O parceiro é indicador: tem relação de confiança com o cliente e carteira ativa no perfil 
+                buscado (Lucro Real e Presumido); a Lucro Ativo entra com a expertise, o produto e a condução 
+                comercial integral.
+                ⬧ Missão da Gestão de Parcerias
+                Construir e gerir uma rede de 100+ parceiros efetivamente ativos, que abre as portas das suas 
+                carteiras para a venda executiva da Lucro Ativo — com credenciamento formal, carteira mapeada, plano 
+                de atuação conjunto e acompanhamento transparente via dashboard, sem jamais transferir ao parceiro a 
+                condução da venda.
+                O que a Gestão de Parcerias É
+                    Canal indireto de originação — indicações qualificadas vindas de carteiras já estabelecidas, 
+                     com custo de aquisição menor e confiança herdada do parceiro.
+                    Gestão de relacionamento B2B — captação, credenciamento, mapeamento de carteira, 
+                     plano conjunto e rotina programada de contato com cada parceiro.
+                    Extensão de portfólio para o parceiro — o parceiro agrega soluções tributárias e do 
+                     ecossistema GS à sua base, sem custo fixo nem risco operacional.
+                O que a Gestão de Parcerias NÃO é
+                    Não é braço de venda — o parceiro não conduz reunião comercial, não negocia e não fecha: 
+                     ele abre a porta, valida a oportunidade e acompanha. A ação comercial junto ao cliente é 
+                     100% da equipe LA.
+                    Não é Executivo de Vendas nem Parceiro de Vendas — a Lucro Ativo também possui esses 
+                     perfis, mas eles pertencem a outro canal: vendem e conduzem negociação. O parceiro desta 
+                     área é indicador — figura distinta em papel, contrato e remuneração. Este material trata 
+                     exclusivamente da parceria de INDICAÇÃO; a parceria de VENDAS é disciplinada no 
+                     Playbook Comercial (área de Vendas), que receberá os ajustes próprios.
+                    Não é canal de revenda / franquia — o parceiro não 'compra para revender' nem opera 
+                     produto; pedidos de centralização da ação pelo parceiro são exceção formal (Seção 6.9), 
+                     não modalidade.
+                    Não é a relação com fornecedores — o Grupo Studio é fornecedor de soluções (contrato de 
+                     franquia próprio); parceiros-indicadores são outra figura jurídica e comercial.
+                    Não é geração de leads digital — tráfego pago e SDR (Bruno Marinho / Shark Growth) são o 
+                     canal direto; a fronteira de origem entre os dois canais está na Seção 4.
+                Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação                    Confidencial · pág. 4
+                  Divisão de papéis: o parceiro abre, valida e acompanha; a equipe Lucro Ativo conduz 100% da ação comercial.
+              Seção 2 — Escopo & Responsabilidades
+              Responsabilidades da área (premissas da gestão)
+                 Captar novos parceiros — abordagem C-level em contabilidades, escritórios jurídicos (sem 
+                  área tributária) e consultorias de negócios com carteira ativa no perfil LA+GS.
+                 Apresentar o plano de trabalho — proposta institucional padronizada: modelo de parceria, 
+                  papéis, remuneração e a régua de relacionamento.
+                 Mapear a carteira do parceiro — levantamento estruturado da base de clientes (porte, 
+                  regime, segmento) e seleção de contas-alvo pelo ICP.
+                 Elaborar o plano de atuação conjunto — estratégia por conta, agenda de aberturas e metas 
+                  do ciclo, conforme a premissa de trabalho da LA (parceiro indica, LA conduz).
+                 Gerir o relacionamento de forma proativa — contato efetivo programado com todos os 
+                  parceiros (régua por tier — Seção 6.7), além das ações de marketing e envio de 
+                  informações.
+                 Acompanhar as oportunidades — passo a passo da venda via dashboard no Twenty, junto 
+                  com o parceiro e a área de Vendas.
+              Perfis de parceiro (ICP do canal)
+               Perfil                       Característica-alvo          Mote de atração              Prioridade
+               Contabilidades & BPOs        Escritórios contábeis de     Extensão do portfólio        Foco principal
+                                            médio/grande porte e         (Reforma, ICMS, DCF, 
+                                            BPOs financeiros com         Energia) sem custo fixo 
+                                            carteira Lucro               ou risco operacional
+                                            Real/Presumido
+               Escritórios Jurídicos        Bancas cíveis,               Solução tributária e         Foco principal
+                                            trabalhistas e               societária completa para 
+                                            empresariais SEM área        a base do advogado 
+                                            tributária                   (modelo de remuneração 
+                                                                         sob validação do CLO — 
+              Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação      Confidencial · pág. 5
+                                                                          Nota nº 2)
+                Consultorias de Negócios     Consultores de gestão,       Monetização da carteira       Foco principal
+                                             CFOs as a service,           C-level via honorários de 
+                                             assessores de negócios       parceria/êxito
+                Representantes &             Representantes B2B,          Produtos de alto ticket na    Avaliar / oportunidade
+                Corretores                   corretores de seguros        rotina de visitas — 
+                                             corporativos, agentes        atuação POR 
+                                             autônomos                    OPORTUNIDADE, sem 
+                                                                          esforço ativo de 
+                                                                          captação
+              Fora do escopo da área
+                  A venda executiva ao cliente final (área de Vendas / executivos da base).
+                  A relação de fornecimento com o Grupo Studio e a operação do PJ360 (governança própria 
+                   no Planejamento v2).
+                  A geração de leads digital (Coordenação de Geração & Distribuição de Leads — Bruno 
+                   Marinho).
+              Seção 3 — Estrutura & Papéis
+              A Coordenação de Parcerias responde ao CCO & CSO (Cleber Candia) e opera como célula 
+              única — Ulisses como coordenador, sem equipe própria nesta fase. A régua por tier (Seção 6.7) 
+              e o apoio de Agentes/automação são o que torna a célula única viável até a chegada de um 
+              analista de parcerias (Nota nº 1).
+                Papel                                  Quem                                   Responsabilidade na parceria
+                Sponsor                                Dr. Lucas Santos (CEO)                 Aprova o modelo, as metas e as 
+                                                                                              exceções de maior alçada; abre 
+                                                                                              portas institucionais (entidades, 
+                                                                                              eventos)
+                Gestor do canal                        Cleber Candia (CCO & CSO)              Supervisiona o canal, arbitra 
+                                                                                              exceções de roteamento e 
+                                                                                              pedidos de centralização; 
+                                                                                              responde pelo resultado comercial
+                Coordenador de Parcerias               Ulisses                                Ponto focal único do parceiro: 
+                                                                                              capta, credencia, mapeia carteira, 
+                                                                                              monta o plano conjunto e cumpre 
+                                                                                              a régua de contato
+                Executivo de Vendas                    Executivo da base (roteado pelo        Conduz 100% da ação comercial 
+                                                       CRM)                                   na conta indicada; reporta status 
+                                                                                              no dashboard
+                Parceiro (indicador)                   Rede credenciada                       Abre a porta, valida a oportunidade 
+                                                                                              e acompanha pelo dashboard — 
+                                                                                              não conduz a venda
+                Agente de CRM                          Automação (Twenty + Agentes)           Régua automatizada do Tier C, 
+              Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação       Confidencial · pág. 6
+                                                                                                 alertas de inatividade, cobrança de 
+                                                                                                 follow-up e espelho do funil do 
+                                                                                                 parceiro
+               Regra de roteamento (compliance)
+                  O parceiro não escolhe o executivo que atenderá seus clientes — o roteamento é do 
+                   CRM/CCO, observando carga, senioridade e conflito de interesse.
+                  Exceção única: parceiro captado/indicado por um executivo permanece vinculado a esse 
+                   executivo, por coerência e respeito à relação — registrada no CRM como origem 'executivo 
+                   indicador' para auditoria (Nota nº 7).
+                Régua de relacionamento por tier — o desenho que torna exequível a gestão de 100+ parceiros por uma célula única.
+               Seção 4 — Interfaces com Outras Áreas
+               A Gestão de Parcerias é uma área de fronteiras — quase tudo o que ela origina é executado por 
+               outra área. As interfaces abaixo declaram de quem a área depende e quem depende dela 
+               (padrão de toda Carta de Área).
+                Interface                     O que a Parceria              O que recebe de volta          Fronteira crítica
+                                              entrega
+                Vendas (CCO / executivos)     Indicação qualificada         Condução da venda,             Executivo conduz 100%; 
+                                              registrada no CRM +           status passo a passo no        parceiro e coordenador 
+                                              contexto da conta e do        dashboard e feedback de        acompanham — nunca o 
+                                              parceiro                      qualidade da indicação         inverso
+                Geração de Leads (Bruno       Regra de origem: conta        Leads de tráfego que           Conflito de origem (lead 
+                Marinho)                      indicada por parceiro é do    casem com carteira de          pago × indicação) → 
+                                              canal indireto                parceiro (co-validação)        decide a origem registrada 
+                                                                                                           primeiro no CRM (Nota nº 
+                                                                                                           7)
+                Jurídico (CLO Alexandre)      Demanda de contratos (LA      Modelo contratual              Nenhum credenciamento 
+                                              direto / tripartite GS),      validado, parecer OAB          sem contrato assinado; 
+                                              aditivos e distratos          para perfil jurídico e         perfil 'escritório jurídico' 
+                                                                            cláusulas de exclusividade     só após parecer do CLO 
+                                                                                                           (Nota nº 2)
+                Marketing                     Demanda de kits, eventos,     Kit do parceiro, calendário    Comunicação ao cliente 
+                                              newsletter e conteúdo do      de eventos (ciclo 45–60        final é sempre com a 
+               Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação         Confidencial · pág. 7
+                                               canal                         dias) e materiais no padrão   marca conduzida pela LA
+                                                                             da marca
+                Operações (CAO Peter)          Cliente fechado via           SLA e status de entrega —     Problema de entrega em 
+                                               parceiro entra na esteira     a experiência de entrega      conta de parceiro tem 
+                                               de entrega                    reflete diretamente na        prioridade de 
+                                                                             confiança do parceiro         comunicação (protege o 
+                                                                                                           canal)
+                Grupo Studio (fornecedor)      Oportunidades de              Portfólio complementar,       GS é fornecedor — a 
+                                               soluções GS originadas na     PJ360 e premissas de          relação com o parceiro e 
+                                               rede                          gestão de parceiros           com o cliente é da Lucro 
+                                                                                                           Ativo
+                TI / Agentes (Júlio +          Requisitos do dashboard       Dashboard filtrado, alertas   Parceiro vê SOMENTE a 
+                terceirizados)                 do parceiro e da régua        de inatividade e espelho      própria carteira — visão 
+                                               automatizada                  de funil                      filtrada, LGPD (Nota nº 5)
+               Seção 5 — Metas & KPIs
+               A META-MÃE: 100+ PARCEIROS EFETIVAMENTE TRABALHANDO
+               Ponto de partida real (auditoria de 20/08/2026): 82 parceiros com contrato mapeados (57 
+               assinados, 20 minutas, 1 distrato, demais a verificar), grande parte inativa ou em stand-by, e 
+               cadastro no Twenty ainda incompleto. A meta de 100+ ativos é portanto uma combinação de 
+               reativação da base + captação seletiva — nessa ordem.
+               ◆ O QUE CONTA COMO 'PARCEIRO ATIVO' (régua proposta — decide a Diretoria)
+               Parceiro ATIVO = contrato vigente + carteira mapeada + plano conjunto do ciclo + pelo menos 1 
+               indicação qualificada OU 1 reunião de carteira realizada no trimestre.
+               Sem essa régua, '100+ parceiros' vira contagem de contratos assinados — exatamente o estado atual 
+               que queremos corrigir (Nota nº 3).
+               ⬧ PROPOSTA (a validar) — Trajetória de ativação (ramp trimestral)
+               Set/2026 — Fundação: 82 parceiros cadastrados no Twenty, classificados por tier e status; 20 planos 
+               conjuntos (Tier A).
+               Q4/2026: 40 ativos  ·  Q1/2027: 60 ativos  ·  Q2/2027: 80 ativos  ·  Q3/2027: 100+ ativos.
+               Faixas de referência para validação — o dimensionamento fino depende da taxa real de reativação do 1º 
+               ciclo.  [PARÂMETRO A VALIDAR]
+               KPIs da Coordenação (painel do Coordenador)
+                KPI                            Meta proposta                 Frequência                    Fonte
+                Parceiros ativos (régua        Ramp: 40 → 60 → 80 →          Mensal                        Twenty (objeto parcerias)
+                acima)                         100+
+                Novos parceiros                4–6 / mês (com carteira       Mensal                        Contratos ZapSign + CRM
+                credenciados                   mapeada)
+                Reativações da base            6–8 / mês nos 2 primeiros     Mensal                        CRM (status 
+               Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação          Confidencial · pág. 8
+                                            ciclos                                                    standby→ativo)
+               Aderência à régua de         ≥ 90% dos contatos           Quinzenal                    Agenda + registro de 
+               contato                      programados cumpridos                                     atividade
+               Indicações qualificadas      ≥ 1 por parceiro ativo /     Mensal                       CRM (origem parceiro)
+                                            trimestre
+               Conversão indicação →        Acompanhar e estabelecer     Mensal                       Funil comercial
+               contrato                     baseline no 1º ciclo
+               Tempo credenciamento →       ≤ 45 dias                    Por parceiro                 CRM
+               1ª indicação
+               NPS do parceiro              Pesquisa semestral           Semestral                    Pesquisa
+                                            (baseline no 1º ciclo)
+              Todos os valores acima são PARÂMETRO A VALIDAR — são faixas de referência de mercado 
+              para canal indireto B2B, propostas para a Diretoria calibrar no 1º ciclo. Os contratos vigentes não 
+              preveem metas (produtos de difícil metrificação); por isso a régua mede comportamento 
+              (reuniões, indicações, plano conjunto), não receita do parceiro (Nota nº 3).
+              Seção 6 — Playbook Operacional
+              6.1 Gatilhos de entrada
+                 Parceiro-alvo identificado — via entidades (SESCON, ACIs, OABs), eventos, indicação de 
+                  parceiro atual ou de executivo.
+                 Parceiro inativo / stand-by — gatilho de reativação (campanha de conta-alvo ou evento).
+                 Indicação recebida — parceiro apresenta conta da carteira; entra o rito de qualificação e 
+                  roteamento.
+              6.2 Rito — a Jornada do Parceiro (6 etapas)
+                Jornada do parceiro: as etapas 4 e 5 (mapeamento + plano conjunto) são o que separa parceiro ativo de contrato de 
+                                                                    gaveta.
+              Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação     Confidencial · pág. 9
+              Etapa 2 em detalhe — a Proposta de Trabalho (padrão LA)
+                 Apresentação institucional — portfólio LA+GS, casos por segmento e o modelo 'você abre, 
+                  nós conduzimos, você acompanha tudo'.
+                 Modelo de parceria — papéis, remuneração/percentuais do contrato, régua de 
+                  relacionamento e dashboard.
+                 Compromissos mútuos — o que a LA garante (condução, transparência, proteção da 
+                  relação do parceiro com o cliente) e o que espera (acesso à carteira, validação das contas-
+                  alvo).
+              Etapas 4–5 em detalhe — Mapeamento & Plano de Atuação Conjunto
+                 Levantamento da base — planilha/formulário padrão: razão social, porte, regime, segmento, 
+                  relacionamento do parceiro com o decisor. Protegido por confidencialidade contratual 
+                  (LGPD).
+                 Seleção de contas-alvo — cruzamento da base com o ICP das soluções (Lucro 
+                  Real/Presumido, folha, ICMS, dívida ativa); 5–10 contas por ciclo.
+                 Estratégia por conta — quem abre (parceiro), formato da abertura (reunião a três, carta de 
+                  apresentação, evento), executivo roteado e próximo passo datado.
+                 Formalização — o plano conjunto é registrado no CRM e revisado nas reuniões de resultado; 
+                  sem plano vigente, o parceiro não conta como ativo.
+              6.3 RACI por etapa
+               Etapa                  Coordenador            Executivo de           Parceiro               CCO
+                                      (Ulisses)              Vendas
+               Prospecção do          R                      C (quando indicador)   —                      A
+               parceiro
+               Proposta de trabalho   R                      —                      C                      A
+               Credenciamento         R (com CLO)            —                      R (assina)             A
+               (contrato)
+               Mapeamento da          R                      C                      R (fornece a base)     I
+               carteira
+               Plano conjunto         R                      C                      R (valida)             A
+               Abertura da conta      C                      R (conduz do 1º        R (abre a porta)       I
+                                                             contato)
+               Venda executiva        I (dashboard)          R                      I (dashboard)          A
+               Gestão da relação /    R                      C                      C                      A
+               resultado
+              R = responsável executa · A = aprova/decide · C = consultado · I = informado.
+              Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação   Confidencial · pág. 10
+              6.4 Tipos de atividade (taxonomia → Twenty)
+              Toda atividade do canal usa um classificador padrão — é o que permite regras de 
+              prosseguimento e monitoramento por Agente (mesma taxonomia transversal do modelo de 
+              dados do CRM):
+               Tipo de atividade                      Descrição                              Registro
+               Contato efetivo                        Conversa real com o parceiro           Atividade no CRM + próximo passo 
+                                                      (call/reunião/presencial) — não        datado
+                                                      conta mensagem sem resposta
+               Reunião de carteira                    Sessão de mapeamento ou revisão        Ata resumida + atualização do plano 
+                                                      de contas-alvo                         conjunto
+               Reunião de resultado                   Revisão de pipeline, conversões e      Ata + ajustes de plano
+                                                      pendências com o parceiro
+               Indicação                              Conta apresentada pelo parceiro,       Oportunidade no CRM com origem 
+                                                      com validação                          'parceiro'
+               Treinamento / capacitação              Webinar ou sessão técnica sobre        Presença registrada por parceiro
+                                                      soluções
+               Evento / palestra                      Encontros presenciais do ciclo 45–     Lista de presença + follow-up em 5 
+                                                      60 dias                                dias úteis
+               Comunicação programada                 Newsletter, informes, campanhas        Disparo registrado (MKT/Agente)
+                                                      (não substitui contato efetivo)
+              6.5 Regras de prosseguimento (definition of done)
+                 Parceiro só avança a CREDENCIADO com contrato assinado (ZapSign) e onboarding 
+                  agendado.
+                 Parceiro só avança a ATIVO com carteira mapeada + plano conjunto formalizado — 
+                  credenciar sem mapear é cadastro, não parceria.
+                 Indicação só entra no funil comercial com qualificação mínima (empresa, decisor, contexto 
+                  e validação do parceiro) — indicação crua não é repassada a executivo.
+                 Parceiro sem atividade por 2 ciclos seguidos cai para reativação; sem resposta à campanha, 
+                  vai a STAND-BY formal (documentado, sem apagar histórico).
+              6.6 Ferramentas & registro
+                 Twenty CRM — objeto 'parcerias' (cadastro, tier, status), oportunidades com origem 
+                  'parceiro', atividades e o dashboard de acompanhamento. Fonte única de verdade do canal.
+                 Dashboard do parceiro — visão filtrada: o parceiro acompanha o passo a passo APENAS 
+                  das oportunidades da própria carteira (LGPD — Nota nº 5).
+                 ZapSign — assinatura dos contratos de parceria (LA direto e tripartite GS) e planos 
+                  conjuntos.
+                 PJ360 (GS) — solicitações de soluções GS originadas na rede, sempre com executivo LA 
+                  conduzindo e espelho no Twenty.
+                 Agentes — régua automatizada do Tier C, alertas de inatividade, cobrança de contato 
+                  programado e conferência do espelho PJ360↔Twenty.
+              Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação     Confidencial · pág. 11
+               6.7 Calendário de gestão (rituais do canal)
+                Ritual                        Frequência                    Participantes                  Pauta
+                Contato efetivo Tier A        Quinzenal                     Coordenador + parceiro         Pipeline da carteira, 
+                                                                                                           contas-alvo, pendências e 
+                                                                                                           próxima abertura
+                Contato efetivo Tier B        Mensal                        Coordenador + parceiro         Status das indicações e 
+                                                                                                           destrave de contas
+                Régua Tier C                  Contínua (automatizada)       Agente + MKT                   Conteúdo, convites a 
+                                                                                                           eventos e gatilhos de 
+                                                                                                           reativação
+                Weekly de Parcerias           Terças · 45 min               Ulisses + Cleber Candia        Mapeamento, pipeline de 
+                                                                                                           indicados, onboarding, 
+                                                                                                           exceções (ritual já fixado 
+                                                                                                           no Planejamento v2)
+                Reunião de resultado          Mensal (A) / Bimestral (B)    Coordenador + parceiro (+      Planejamento & resultado: 
+                (parceiro)                                                  executivo se houver conta      conversões, qualidade da 
+                                                                            ativa)                         indicação, plano do 
+                                                                                                           próximo ciclo
+                QBR do canal                  Trimestral                    CCO + Coordenador + top        Resultado do trimestre, 
+                                                                            parceiros                      ranking, metas do próximo 
+                                                                                                           ciclo
+                Evento / palestra             A cada 45–60 dias             Rede + convidados              Autoridade técnica 
+                                                                                                           (Reforma Tributária etc.) + 
+                                                                                                           captação e reativação
+               6.8 Mecanismos de ativação & incentivos
+                  Eventos e palestras (ciclo 45–60 dias) — encontros sobre a Reforma Tributária (EC 132/23) 
+                   e temas de autoridade: captam parceiro novo e reativam a base no mesmo movimento (já 
+                   previsto no Planejamento v2).
+                  Campanha de conta-alvo — o mecanismo de reativação mais eficaz do mercado: em vez de 
+                   'vamos retomar?', o coordenador chega com 3 contas da carteira do parceiro já cruzadas 
+                   com o ICP e uma proposta de abertura pronta.
+                  Kit do Parceiro — one-pagers por solução, FAQs de capacitação (já produzidos), roteiro de 
+                   abertura e material co-brandável no padrão da marca.
+                  Webinars de capacitação — sessões técnicas mensais curtas; presença alimenta a régua de 
+                   atividade.
+                  Ranking & reconhecimento — ranking trimestral por indicações convertidas, selo 'Parceiro 
+                   Certificado LA' e prêmio anual no evento do canal.  [PARÂMETRO A VALIDAR]
+                  Incentivos escalonados por tier — percentuais progressivos ou bônus por marcos de 
+                   conversão, sempre por aditivo contratual validado pelo CLO.  [PARÂMETRO A VALIDAR]
+                  Brindes — permitidos como cortesia institucional de valor simbólico, com política escrita 
+                   (teto de valor, registro) — brinde não substitui relacionamento e não pode parecer 
+                   contrapartida (compliance).
+               Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação        Confidencial · pág. 12
+                6.9 Exceções & escalonamento
+                    Pedido de centralização pelo parceiro ('deixa que eu conduzo com meu cliente') — exceção 
+                     formal: sobe ao CCO, que decide caso a caso; se aprovada, executivo LA participa de TODA 
+                     interação e o registro segue no CRM. A regra continua sendo LA conduz.
+                    Conflito de origem (lead pago × indicação de parceiro) — vale a origem registrada primeiro 
+                     no CRM; empate real sobe ao CCO (Nota nº 7).
+                    Parceiro do perfil jurídico — credenciamento condicionado ao parecer do CLO sobre o 
+                     modelo de remuneração (Nota nº 2).
+                    Desligamento / distrato — comunicação formal, corte de acesso ao dashboard no mesmo 
+                     dia e tratamento das oportunidades em andamento definido pelo CCO.
+                Seção 7 — Riscos & Controles — Notas do 
+                Mentor
+                Esta seção concentra todas as Notas do Mentor da área, classificadas em CRÍTICO / 
+                ATENÇÃO / CONTROLE / ESTRATÉGICO. Painel consolidado no Anexo A.
+                NOTA DO MENTOR Nº 1    CRÍTICO — A matemática da cadência quinzenal não fecha para uma 
+                célula única
+                Contato efetivo quinzenal com 100+ parceiros = ±10 contatos reais por dia útil, todos os dias, para um 
+                único coordenador — antes de prospecção, credenciamento, mapeamento, planos e reuniões internas. 
+                A premissa, aplicada literalmente, quebra no primeiro mês e vira contato de fachada (mensagem sem 
+                conversa).
+                Recomendação: adotar a régua por tier (A quinzenal · B mensal · C automatizado) já na largada — ela 
+                preserva a intenção da gestão com agenda exequível — e planejar 1 analista de parcerias quando a 
+                base ativa cruzar ~60 parceiros (mesma lógica do analista comercial do Cleber). O playbook está 
+                desenhado para escalar com essa contratação sem retrabalho.
+                NOTA DO MENTOR Nº 2    CRÍTICO — Escritórios jurídicos remunerados por indicação — risco 
+                ético OAB
+                O Código de Ética da OAB veda a captação de clientela e a partilha de honorários com quem capta — 
+                advogado receber percentual por indicar cliente pode configurar infração para o parceiro E expor a L. 
+                Santos Sociedade de Advocacia. O perfil 'escritórios jurídicos' é foco declarado do canal, então isso não 
+                é detalhe: é pré-requisito.
+                Recomendação: antes de credenciar qualquer banca, o CLO (Alexandre) valida o modelo — alternativas 
+                usuais: parceria institucional sem remuneração por indicação, atuação conjunta com honorários próprios 
+                de cada banca no contrato do cliente, ou remuneração à pessoa jurídica de consultoria (não à sociedade 
+                de advogados). Nenhum contrato do perfil jurídico assina sem esse parecer.
+                NOTA DO MENTOR Nº 3    ATENÇÃO — Sem régua de atividade, '100+ ativos' vira meta de papel
+                Os contratos vigentes não preveem metas (produtos de difícil metrificação — premissa da gestão). O 
+                risco: contar como 'ativo' quem apenas assinou. A régua da Seção 5 resolve medindo comportamento 
+                Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação                   Confidencial · pág. 13
+                (reunião de carteira, plano vigente, indicação no trimestre) em vez de receita — enforcement por 
+                relacionamento e acesso (eventos, ranking, prioridade de agenda), não por punição contratual.
+                NOTA DO MENTOR Nº 4    ATENÇÃO — Este playbook endurece a regra vs. Planejamento v2 — 
+                alinhar na próxima revisão
+                O Planejamento v2 admite fechamento pelo 'time próprio do parceiro capacitado' e a matriz de perfis 
+                prevê 'venda própria acompanhada' para representantes. A premissa atual da gestão é mais dura — 
+                ação comercial 100% da equipe LA — e este documento a adota como regra.
+                Recomendação: registrar a mudança e atualizar a Seção 11/matriz do Planejamento na próxima revisão, 
+                para não coexistirem duas regras oficiais. Pedidos de centralização passam a ser exceção formal 
+                (Seção 6.9).
+                NOTA DO MENTOR Nº 5    ATENÇÃO — Dashboard do parceiro: transparência com cerca de 
+                LGPD
+                Dar ao parceiro visão 'passo a passo completo' é diferencial — e risco, se vazar além da carteira dele. O 
+                dashboard deve ser filtrado por parceiro (somente as próprias contas), sem dados de outros parceiros 
+                nem detalhes sensíveis do cliente além do necessário; acesso é revogado no distrato no mesmo dia. 
+                Requisito para a TI antes do go-live do dashboard.
+                NOTA DO MENTOR Nº 6    CONTROLE — A base do canal ainda não existe no CRM — fundação 
+                antes de meta
+                A auditoria encontrou 82 parceiros em contrato no Drive, mas o objeto 'parcerias' do Twenty está 
+                praticamente vazio (ex.: PAR-105 sem CNPJ/contatos). Sem cadastro completo — com tier, status, 
+                contrato vinculado e contatos — não há régua, não há dashboard e não há KPI confiável. Primeira 
+                entrega do roadmap (M1), pré-requisito de todas as outras.
+                NOTA DO MENTOR Nº 7    CONTROLE — Origem da indicação: a regra de atribuição precisa ser 
+                inequívoca
+                Dois pontos de disciplina: (i) a exceção do executivo indicador fica registrada no cadastro do parceiro 
+                (origem) para auditoria — sem registro, a exceção vira regra invisível e mina o roteamento por 
+                compliance; (ii) no conflito lead pago × indicação, vale a origem registrada primeiro no CRM — protege 
+                a comissão do canal certo e evita atrito entre Bruno e Ulisses.
+                NOTA DO MENTOR Nº 8    ESTRATÉGICO — O parceiro é também um sensor de retenção (CS)
+                O parceiro (contador, consultor) costuma saber da insatisfação do cliente antes da Lucro Ativo. Incluir 
+                na reunião de resultado uma pergunta padrão de saúde das contas ativas da carteira e alimentar o 
+                modelo de Customer Success (dono em aberto no Comercial) transforma o canal em radar de churn — 
+                valor que nenhum concorrente que trata parceiro como 'lista de indicação' captura.
+                Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação                   Confidencial · pág. 14
+                Seção 8 — Roadmap & Maturidade
+                O roadmap preserva as 4 fases do Plano Ulisses (Planejamento v2, Seção 11.4) e acrescenta os 
+                marcos de maturidade do canal:
+                  Fase                             Janela proposta                   Entregas                         Marco de maturidade
+                  F1 — Fundação & Ativação         Semanas 1–2                       Cadastro dos 82 no               M1: base 100% cadastrada 
+                  da Base                                                            Twenty (tier/status),            e classificada
+                                                                                     diagnóstico das parcerias 
+                                                                                     GS/LA, alinhamento de 
+                                                                                     percentuais, reciclagem de 
+                                                                                     inativos
+                  F2 — Prospecção Ativa            Semanas 3–6                       Entidades de classe              M2: régua por tier 
+                                                                                     (SESCON, ACIs, OABs),            operante (≥90% 
+                                                                                     contabilidades e                 aderência)
+                                                                                     consultorias em SC, RS, 
+                                                                                     PR, SP e MG; parecer OAB 
+                                                                                     do perfil jurídico
+                  F3 — Capacitação &               Semanas 7–8                       Kit do parceiro (one-            M3: dashboard do parceiro 
+                  Onboarding                                                         pagers, FAQs,                    no ar (visão filtrada)
+                                                                                     formulários), webinars, 
+                                                                                     treinamentos técnicos
+                  F4 — Roteamento & Rotina         Contínuo                          Registro, recepção e             M4: 100+ parceiros ativos 
+                                                                                     roteamento de indicações;        pela régua
+                                                                                     reuniões de resultado; 
+                                                                                     QBR; eventos 45–60 dias
+                As janelas em semanas seguem o Plano Ulisses original e são PARÂMETRO A VALIDAR contra a 
+                agenda real do coordenador — na régua por tier, F1 e F2 podem correr em paralelo parcial 
+                (reativação Tier A enquanto prospecta).
+                Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação                   Confidencial · pág. 15
+               Anexo A — Painel Consolidado das Notas 
+               do Mentor
+                 Nº                              Classif.                       Tema                            Recomendação-chave
+                 1                               CRÍTICO                        Matemática da cadência          Régua por tier (A/B/C) + 
+                                                                                quinzenal                       analista de parcerias ao 
+                                                                                                                cruzar ~60 ativos
+                 2                               CRÍTICO                        Perfil jurídico × ética OAB     Parecer do CLO antes de 
+                                                                                                                credenciar qualquer 
+                                                                                                                banca; modelos 
+                                                                                                                alternativos de 
+                                                                                                                remuneração
+                 3                               ATENÇÃO                        Definição de 'parceiro          Régua de comportamento 
+                                                                                ativo'                          (reunião, plano, 
+                                                                                                                indicação/trimestre) — 
+                                                                                                                contratos não têm metas
+                 4                               ATENÇÃO                        Divergência com                 Atualizar Seção 11/matriz 
+                                                                                Planejamento v2                 na próxima revisão; 
+                                                                                                                centralização vira exceção 
+                                                                                                                formal
+                 5                               ATENÇÃO                        Dashboard × LGPD                Visão filtrada por parceiro; 
+                                                                                                                corte de acesso no 
+                                                                                                                distrato; requisito antes do 
+                                                                                                                go-live
+                 6                               CONTROLE                       Base do canal fora do CRM       M1: cadastrar e classificar 
+                                                                                                                os 82 no Twenty — pré-
+                                                                                                                requisito de tudo
+                 7                               CONTROLE                       Atribuição de origem            Registro da exceção do 
+                                                                                                                executivo indicador + 
+                                                                                                                regra 'origem primeiro' no 
+                                                                                                                conflito de canais
+                 8                               ESTRATÉGICO                    Parceiro como sensor de         Pergunta padrão de saúde 
+                                                                                CS                              das contas na reunião de 
+                                                                                                                resultado → alimenta 
+                                                                                                                retenção
+               Anexo B — Nota de Incorporação ao 
+               Documento Mestre
+                   Este documento é uma minuta autônoma — ainda NÃO incorporada ao Planejamento Lucro 
+                    Ativo (Documento Mestre).
+                   Fluxo: validação do Coordenador (Ulisses) e do CCO → ajustes → aprovação do Sponsor → 
+                    incorporação ao Mestre com a Nota nº 4 aplicada (atualização da Seção 11 e da matriz de 
+                    perfis).
+               Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação              Confidencial · pág. 16
+                    Revisão programada: Fevereiro de 2027 (ciclo-padrão de 6 meses do Modelo de Documento 
+                     de Área).
+                Anexo C — Proveniência dos Dados & 
+                Premissas
+                    Premissas do CEO (30/08/2026) — perfis de parceiro, responsabilidades, regra 'meio de 
+                     venda', contato quinzenal, dashboard, roteamento e exceção do executivo indicador, meta 
+                     de 100+ ativos.
+                    Planejamento Lucro Ativo v2 — Seção 11 (Plano Ulisses: premissas do cargo, fases 1–4), 
+                     Seção 9.3, matriz de perfis, rituais (Weekly de Parcerias) e eventos 45–60 dias.
+                    Controle de Parcerias LA+GS (20/08/2026) — 82 parceiros únicos, 57 contratos assinados, 
+                     20 minutas, 1 distrato; percentuais 50%→25% e 30%→15% nos contratos auditados.
+                    Modelos contratuais — contrato LA direto e tripartite (com GS), com exclusividade por 
+                     vedação de atividade concorrente e sem metas de produção.
+                    Nenhum número foi inventado — metas, faixas e janelas novas estão marcadas como 
+                     PARÂMETRO A VALIDAR e dependem de validação da Diretoria. Identidade visual conforme 
+                     Manual da Marca (navy #010860, Montserrat + Inter). Edição preparada pela consultoria 
+                     (René) em 30/08/2026.
+                Lucro Ativo · Gestão de Parcerias — Carta de Área & Playbook v1.0 · Minuta para validação                   Confidencial · pág. 17

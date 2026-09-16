@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: 297mm 210mm; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --navy: #010860;
+    --gold: #C9A227;
+    --cart: #D9E0F5; --pros: #F3E6C8; --plan: #DCEDE2; --campo: #E7E0F1; --anal: #E9EAEF;
+  }
+  body { font-family: 'Inter', sans-serif; color: #1A1A2E; }
+  h1, h2, h3, .mont { font-family: 'Montserrat', sans-serif; }
+  .page { width: 297mm; height: 210mm; page-break-after: always; position: relative; overflow: hidden; background: #fff; }
+  .page:last-child { page-break-after: auto; }
+  .footer { position: absolute; bottom: 9mm; left: 18mm; right: 18mm; display: flex; justify-content: space-between; font-size: 8.5pt; color: #6a6d85; border-top: 0.4pt solid #c9ccdd; padding-top: 3mm; }
+  .footer .note { font-style: italic; }
+  .pgnum { color: var(--navy); font-weight: 600; }
+
+  /* ------ capa ------ */
+  .cover { background: var(--navy); color: #fff; padding: 20mm 22mm; }
+  .cover .ghost { position: absolute; right: -12mm; bottom: -30mm; font-family: 'Montserrat'; font-weight: 800; font-size: 300pt; color: rgba(255,255,255,0.05); line-height: 1; }
+  .cover img.logo { height: 16mm; margin-bottom: 26mm; }
+  .cover .kicker { font-size: 11pt; letter-spacing: 3px; color: rgba(255,255,255,0.75); text-transform: uppercase; font-weight: 600; margin-bottom: 8mm; }
+  .cover h1 { font-size: 41pt; font-weight: 800; line-height: 1.12; max-width: 220mm; }
+  .cover .rule { width: 34mm; height: 1.4mm; background: var(--gold); margin: 10mm 0; }
+  .cover .sub { font-size: 14pt; color: rgba(255,255,255,0.88); max-width: 200mm; line-height: 1.5; }
+  .cover .meta { position: absolute; bottom: 20mm; left: 22mm; font-size: 10pt; color: rgba(255,255,255,0.65); line-height: 1.7; }
+  .cover .meta b { color: #fff; font-weight: 600; }
+
+  /* ------ páginas internas ------ */
+  .inner { padding: 14mm 18mm 24mm; }
+  .head { display: flex; align-items: baseline; gap: 6mm; margin-bottom: 4mm; }
+  .head .num { font-family: 'Montserrat'; font-weight: 800; font-size: 26pt; color: var(--navy); }
+  .head h2 { font-size: 20pt; font-weight: 700; color: var(--navy); }
+  .head .tag { margin-left: auto; font-size: 8.5pt; color: #6a6d85; letter-spacing: 1px; text-transform: uppercase; }
+  .lede { font-size: 10pt; color: #4a4d63; margin-bottom: 5mm; max-width: 250mm; line-height: 1.45; }
+
+  /* grade da semana */
+  table.week { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  table.week th, table.week td { border: 0.6pt solid #fff; font-size: 9pt; line-height: 1.42; padding: 3.4mm 3mm; vertical-align: top; }
+  table.week th { background: var(--navy); color: #fff; font-family: 'Montserrat'; font-weight: 700; font-size: 10pt; text-align: left; padding: 2.6mm 3mm; }
+  table.week th.blk { width: 25mm; }
+  table.week td.blk { background: var(--navy); color: #fff; font-weight: 600; font-size: 9pt; vertical-align: middle; }
+  table.week tr.h1x td { height: 22mm; } table.week tr.h2x td { height: 12mm; }
+  td.cart { background: var(--cart); } td.pros { background: var(--pros); }
+  td.plan { background: var(--plan); } td.campo { background: var(--campo); }
+  td.anal { background: var(--anal); }
+  .legend { display: flex; gap: 8mm; margin-top: 6mm; font-size: 9.5pt; align-items: center; }
+  .legend .sw { display: inline-block; width: 5.5mm; height: 3.8mm; border-radius: 0.8mm; margin-right: 2mm; vertical-align: -0.6mm; }
+  .volstrip { margin-top: 5.5mm; background: #F4F5FA; border-left: 1.4mm solid var(--gold); padding: 3.5mm 5mm; font-size: 9pt; color: #4a4d63; line-height: 1.5; }
+
+  /* ciclo & rituais */
+  .timeline { display: flex; gap: 5mm; margin: 12mm 0 10mm; position: relative; }
+  .timeline::before { content: ""; position: absolute; top: 10mm; left: 4%; right: 4%; height: 1mm; background: #c9ccdd; }
+  .tl-item { flex: 1; position: relative; text-align: center; }
+  .tl-item .dot { width: 20mm; height: 20mm; border-radius: 50%; background: var(--navy); color: #fff; font-family: 'Montserrat'; font-weight: 700; font-size: 8pt; display: flex; align-items: center; justify-content: center; margin: 0 auto 4.5mm; position: relative; z-index: 1; border: 1.2mm solid #fff; text-align: center; line-height: 1.15; }
+  .tl-item.gold .dot { background: var(--gold); }
+  .tl-item h3 { font-size: 12pt; color: var(--navy); margin-bottom: 2.5mm; }
+  .tl-item p { font-size: 9.5pt; color: #4a4d63; line-height: 1.5; padding: 0 2mm; }
+  .divider { height: 0.5pt; background: #c9ccdd; margin: 8mm 0; }
+  .loop-title { font-family: 'Montserrat'; font-weight: 700; color: var(--navy); font-size: 12pt; margin-bottom: 4mm; }
+  .loop { display: flex; gap: 5mm; }
+  .loop .step { flex: 1; background: #F4F5FA; border-left: 1.6mm solid var(--navy); padding: 5mm 5.5mm; }
+  .loop .step h4 { font-family: 'Montserrat'; font-size: 11.5pt; color: var(--navy); margin-bottom: 2.5mm; }
+  .loop .step p { font-size: 9.5pt; color: #4a4d63; line-height: 1.5; }
+  .loop .arrow { align-self: center; color: var(--gold); font-size: 17pt; font-weight: 700; }
+
+  /* painel */
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6mm; margin-top: 4mm; }
+  .tile { border: 0.5pt solid #d5d8e6; border-top: 1.8mm solid var(--navy); padding: 6mm 6mm 5.5mm; background: #fff; }
+  .tile.gold { border-top-color: var(--gold); }
+  .tile .big { font-family: 'Montserrat'; font-weight: 800; font-size: 25pt; color: var(--navy); line-height: 1.05; }
+  .tile .unit { font-size: 9.5pt; color: #6a6d85; font-weight: 400; font-family: 'Inter'; }
+  .tile h4 { font-size: 10.5pt; color: #1A1A2E; margin-top: 2.6mm; font-weight: 600; font-family: 'Inter'; }
+  .tile p { font-size: 8.8pt; color: #6a6d85; margin-top: 1.6mm; line-height: 1.45; }
+  .banner { margin-top: 7mm; background: var(--navy); color: #fff; padding: 6mm 8mm; display: flex; align-items: center; gap: 10mm; }
+  .banner .mont { font-size: 15pt; font-weight: 700; white-space: nowrap; }
+  .banner p { font-size: 9.8pt; color: rgba(255,255,255,0.88); line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<!-- ================= PÁGINA 1 · CAPA ================= -->
+<div class="page cover">
+  <div class="ghost">100+</div>
+  <img class="logo" src="logo_branca.svg" alt="Lucro Ativo">
+  <div class="kicker">Gestão de Parcerias · Ferramenta do Coordenador</div>
+  <h1>Cronograma Semanal<br>de Gestão</h1>
+  <div class="rule"></div>
+  <p class="sub">Planejamento e controle da semana do Coordenador de Parcerias —
+  visão de gestão da carteira, da prospecção e dos rituais do canal.
+  Planejar → executar → registrar → analisar.</p>
+  <div class="meta">
+    <b>Ulisses</b> · Coordenador de Gestão de Parcerias · reporte ao CCO &amp; CSO (Cleber Candia)<br>
+    Fonte: Playbook de Gestão de Parcerias v1.0 (minuta em validação) · Setembro/2026 · v1<br>
+    Volumes de referência — PARÂMETRO A VALIDAR na revisão com o coordenador
+  </div>
+</div>
+
+<!-- ================= PÁGINA 2 · SEMANA ================= -->
+<div class="page inner">
+  <div class="head">
+    <span class="num">01</span>
+    <h2>A semana de gestão</h2>
+    <span class="tag">Semana-padrão temática · régua A quinzenal · B mensal · C automatizada</span>
+  </div>
+  <p class="lede">Cada bloco indica o <b>tema de gestão</b> da faixa de horário — a agenda real de cada semana se monta sobre este pano de fundo, no Planner Semanal da ferramenta Excel.</p>
+  <table class="week">
+    <tr><th class="blk">Bloco</th><th>Segunda</th><th>Terça</th><th>Quarta</th><th>Quinta</th><th>Sexta</th></tr>
+    <tr>
+      <td class="blk">08h30–10h</td>
+      <td class="anal">Planejamento da semana — dashboard (Twenty) e parceiros do ciclo</td>
+      <td class="anal">Preparação da Weekly — pipeline de indicados e pauta</td>
+      <td class="cart">Contatos de gestão — Tier A (quinzenal)</td>
+      <td class="plan">Preparação dos planos conjuntos — contas-alvo × ICP</td>
+      <td class="cart">Recuperação da régua da semana (aderência ≥ 90%)</td>
+    </tr>
+    <tr>
+      <td class="blk">10h–12h</td>
+      <td class="cart">Contatos de gestão — Tier A (quinzenal)</td>
+      <td class="anal">Weekly de Parcerias com o CCO (45 min) + desdobramentos</td>
+      <td class="campo">Visita presencial / agenda de campo</td>
+      <td class="plan">Reuniões de planejamento &amp; resultado com parceiros</td>
+      <td class="pros">Reuniões de apresentação — proposta de trabalho</td>
+    </tr>
+    <tr>
+      <td class="blk">13h30–15h30</td>
+      <td class="cart">Contatos de gestão — Tier A / Tier B (mensal)</td>
+      <td class="pros">Reuniões de apresentação — modelo, papéis, régua, dashboard</td>
+      <td class="campo">Visita presencial / apresentação em campo</td>
+      <td class="plan">Reuniões de planejamento &amp; resultado com parceiros</td>
+      <td class="anal">Análise da semana — régua, Funil 1 e Funil 2</td>
+    </tr>
+    <tr>
+      <td class="blk">15h30–17h30</td>
+      <td class="pros">Prospecção de novos parceiros — entidades e indicações</td>
+      <td class="cart">Contatos de gestão — Tier B (mensal): destrave de contas</td>
+      <td class="pros">Prospecção — follow-up de propostas e credenciamentos</td>
+      <td class="cart">Contatos Tier A/B + reativação (campanha de conta-alvo)</td>
+      <td class="anal">Registro consolidado + preparação da próxima semana</td>
+    </tr>
+    <tr>
+      <td class="blk">17h30–18h</td>
+      <td class="anal">Registro do dia no CRM — próximos passos datados</td>
+      <td class="anal">Registro do dia no CRM — próximos passos datados</td>
+      <td class="anal">Registro do dia no CRM — próximos passos datados</td>
+      <td class="anal">Registro do dia no CRM — próximos passos datados</td>
+      <td class="anal">Fechamento — leitura de gestão da semana</td>
+    </tr>
+  </table>
+  <div class="legend">
+    <span><span class="sw" style="background:var(--cart)"></span>Gestão de carteira</span>
+    <span><span class="sw" style="background:var(--pros)"></span>Prospecção de parceiros</span>
+    <span><span class="sw" style="background:var(--plan)"></span>Planejamento conjunto</span>
+    <span><span class="sw" style="background:var(--campo)"></span>Campo &amp; visitas</span>
+    <span><span class="sw" style="background:var(--anal)"></span>Análise &amp; rituais internos</span>
+  </div>
+  <div class="volstrip"><b>Volumes de referência da semana</b> (PARÂMETRO A VALIDAR): 20–25 ligações de gestão · 10–12 ligações de prospecção · 3–4 reuniões de apresentação · 5–6 reuniões de planejamento &amp; resultado · 1–2 visitas presenciais · evento do canal a cada 45–60 dias · Weekly com o CCO às terças.</div>
+  <div class="footer">
+    <span>@meulucroativo · Gestão de Parcerias</span>
+    <span class="note">Volumes de referência — PARÂMETRO A VALIDAR na revisão com o coordenador</span>
+    <span class="pgnum">02</span>
+  </div>
+</div>
+
+<!-- ================= PÁGINA 3 · CICLO & RITUAIS ================= -->
+<div class="page inner">
+  <div class="head">
+    <span class="num">02</span>
+    <h2>Ciclo &amp; rituais</h2>
+    <span class="tag">Calendário de gestão do canal · Playbook v1 · Seção 6.7</span>
+  </div>
+  <p class="lede">Cada ritual tem <b>entrada</b> (o que o alimenta) e <b>saída</b> (o que produz). Um ritual sem saída registrada não aconteceu.</p>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="dot">SEMANAL</div>
+      <h3>Weekly de Parcerias</h3>
+      <p>Terças · 45 min · Ulisses + CCO. Mapeamento, pipeline de indicados, onboarding e exceções.</p>
+    </div>
+    <div class="tl-item">
+      <div class="dot">QUINZENAL</div>
+      <h3>Contato efetivo Tier A</h3>
+      <p>Pipeline da carteira, contas-alvo, pendências e a próxima abertura. Conversa real, com próximo passo datado.</p>
+    </div>
+    <div class="tl-item">
+      <div class="dot">MENSAL</div>
+      <h3>Tier B + resultado + carteira</h3>
+      <p>Contato Tier B (destrave de contas), reunião de planejamento &amp; resultado (Tier A) e revisão mensal da carteira.</p>
+    </div>
+    <div class="tl-item gold">
+      <div class="dot">45–60 DIAS</div>
+      <h3>Evento / palestra do canal</h3>
+      <p>Autoridade técnica (Reforma Tributária etc.) — capta parceiro novo e reativa a base no mesmo movimento.</p>
+    </div>
+    <div class="tl-item">
+      <div class="dot">TRIMESTRAL</div>
+      <h3>QBR do canal</h3>
+      <p>CCO + coordenador + top parceiros A: resultado do trimestre, ranking e metas do próximo ciclo. Régua: ≥ 1 indicação por parceiro ativo.</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="loop-title">O ciclo de gestão da semana</div>
+  <div class="loop">
+    <div class="step"><h4>Planejar</h4><p>Dashboard + cadência da carteira definem os parceiros do ciclo e os planos conjuntos da semana.</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><h4>Executar</h4><p>Contatos por tier, reuniões de apresentação, planejamento conjunto, campo e prospecção.</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><h4>Registrar</h4><p>Toda atividade no Twenty com próximo passo datado — o CRM é a fonte única de verdade do canal.</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><h4>Analisar</h4><p>Leitura de gestão da semana e do mês alimenta a Weekly com o CCO e recalibra o ciclo seguinte.</p></div>
+  </div>
+  <div class="footer">
+    <span>@meulucroativo · Gestão de Parcerias</span>
+    <span class="note">Volumes de referência — PARÂMETRO A VALIDAR na revisão com o coordenador</span>
+    <span class="pgnum">03</span>
+  </div>
+</div>
+
+<!-- ================= PÁGINA 4 · PAINEL ================= -->
+<div class="page inner">
+  <div class="head">
+    <span class="num">03</span>
+    <h2>Painel do coordenador</h2>
+    <span class="tag">Referências de ritmo — não são metas de cobrança</span>
+  </div>
+  <p class="lede">Faixas de referência do Playbook v1 para calibrar a agenda no 1º ciclo — todas marcadas <b>PARÂMETRO A VALIDAR</b>.</p>
+  <div class="tiles">
+    <div class="tile"><div class="big">20–25 <span class="unit">/ semana</span></div><h4>Ligações de gestão</h4><p>Contatos efetivos da régua — Tier A quinzenal · Tier B mensal.</p></div>
+    <div class="tile"><div class="big">10–12 <span class="unit">/ semana</span></div><h4>Ligações de prospecção</h4><p>Novos parceiros-alvo: entidades, indicações e follow-ups.</p></div>
+    <div class="tile"><div class="big">3–4 <span class="unit">/ semana</span></div><h4>Reuniões de apresentação</h4><p>Proposta de trabalho: modelo, papéis, régua e dashboard.</p></div>
+    <div class="tile"><div class="big">5–6 <span class="unit">/ semana</span></div><h4>Planejamento &amp; resultado</h4><p>Reuniões com parceiros: conversões e plano do próximo ciclo.</p></div>
+    <div class="tile"><div class="big">1–2 <span class="unit">/ semana</span></div><h4>Visitas presenciais</h4><p>Agenda de campo — relação e mapeamento de carteira.</p></div>
+    <div class="tile gold"><div class="big">4–6 <span class="unit">/ mês</span></div><h4>Funil 1 · Credenciamentos</h4><p>Novos parceiros credenciados, sempre com carteira mapeada.</p></div>
+    <div class="tile gold"><div class="big">≥ 1 <span class="unit">/ parceiro / trimestre</span></div><h4>Funil 2 · Indicações da base</h4><p>Indicação qualificada por parceiro ativo — régua de atividade.</p></div>
+    <div class="tile"><div class="big">≥ 90% <span class="unit">aderência</span></div><h4>Régua de contato</h4><p>Contatos programados cumpridos — leitura quinzenal.</p></div>
+  </div>
+  <div class="banner">
+    <span class="mont">Meta-mãe&nbsp;·&nbsp;40&nbsp;→&nbsp;60&nbsp;→&nbsp;80&nbsp;→&nbsp;100+</span>
+    <p>Ramp trimestral de parceiros efetivamente ativos (Q4/2026 → Q3/2027). Ativo = contrato vigente + carteira mapeada + plano conjunto do ciclo + 1 indicação ou reunião de carteira no trimestre. Reativação da base (6–8/mês nos 2 primeiros ciclos) vem antes da captação.</p>
+  </div>
+  <div class="footer">
+    <span>@meulucroativo · Gestão de Parcerias</span>
+    <span class="note">Volumes de referência — PARÂMETRO A VALIDAR na revisão com o coordenador</span>
+    <span class="pgnum">04</span>
+  </div>
+</div>
+
+</body>
+</html>

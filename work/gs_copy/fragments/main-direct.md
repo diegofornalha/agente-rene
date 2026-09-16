@@ -1,0 +1,111 @@
+# Fragmento: cópias diretas (Diagnósticos, Apresentações, Mídia Kit Online, Mídia Kit Impresso, pastas planas de Material Comercial)
+
+- [Diagnósticos] Diagnósticos - POSTO SANTA EDWIGES PETROLEO LTDA - folha.pdf — OK
+- [Diagnósticos] Diagnósticos - POSTO SANTA EDWIGES PETROLEO LTDA.pdf — OK
+- [Diagnósticos] Diagnósticos - ADRIANA OLIVEIRA BARTOLOMEO GUIMARAES LTDA.pdf — OK
+- [Diagnósticos] Diagnóstico - DINAMICA HOSPEDAGEM E MULTISERVICOS LTDA.pdf — OK
+- [Diagnósticos] Diagnósticos - DUBELAS COMERCIO DO VESTUARIO LTDA.pdf — OK
+- [Diagnósticos] Diagnostico Selba.pdf — OK
+- [Diagnósticos] Diagnósticos - A & J COMPENSADOS ANATOMICOS LTDA.pdf — OK
+- [Diagnósticos] Análise 360 - ELETROLAR COMERCIO DE MOVEIS E ELETRODOMESTICOS LTDA -  Completo.pdf — OK
+- [Diagnósticos] Análise 360 - ROGER SANTOS TEIXEIRA LTDA -  Completo.pdf — OK
+- [Diagnósticos] Análise 360 - SAHMED DISTRIBUIDORA DE PRODUTOS HOSPITALARES LTDA -  Completo.pdf — OK
+- [Diagnósticos] Análise 360 - BARALDI & DELA TOGNA LTDA -  Completo.pdf — OK
+- [Diagnósticos] Análise 360 - ANGUSTI4 COMERCIO E SERVICOS DE APOIO ADMINISTRATIVOS LTDA -  Completo.pdf — OK
+- [Diagnósticos] Análise 360 - AMB COMERCIO DE BIJUTERIAS LTDA -  Completo.pdf — OK
+- [Diagnósticos] Análise 360 - B & D COMERCIO DE BIJUTERIAS LTDA -  Completo.pdf — OK
+- [Diagnósticos] Análise 360 - BRC LOGISTICA E SERVICOS LTDA -  Completo.pdf — OK
+- [Diagnósticos] Análise 360 - DINAMICA HOSPEDAGEM E MULTISERVICOS LTDA -  Completo.pdf — OK
+- [Diagnósticos] Análise 360 - ADRIANA OLIVEIRA BARTOLOMEO GUIMARAES LTDA -  Completo.pdf — OK
+- [Apresentações] IMPORTANTE.pdf — OK
+- [Apresentações/Franchising] Treinamento -  Franchising GS _ Novos franqueados.pdf — OK
+- [Apresentações/Franchising] GS - Yuri G. _ Funil de Vendas Aplicado.pdf — OK
+- [Apresentações/Franchising] GS _ Esteira Corporate.pdf — OK
+- [Apresentações/Franchising] XP - GS _ Revisão Tributária.pdf — OK
+- [Apresentações/Franchising] GS Partner _ Estrutura.pdf — OK
+- [Apresentações/Franchising] Franchising - GS _ Produtos para Cliente Final.pdf — OK
+- [Apresentações/Franchising] GS _ Seguro Sucessão Corporate.pdf — OK
+- [Apresentações/Franchising] GS _ Antecipação de Recebíveis Corporate.pdf — OK
+- [Apresentações/Franchising] GS _ Revisão Tributária.pdf — OK
+- [Apresentações/Franchising] Franchising - GS _ Institucional.pdf — OK
+- [Apresentações/Franchising] TAX - Alimentos Zaeli  GS.pdf — OK
+- [Apresentações/Franchising] Oficina - GS _ Institucional de Marketing.pdf — OK
+- [Apresentações/Franchising] GS _ Seguro Garantia Judicial Corporate.pdf — OK
+- [Apresentações/Franchising] GS _ Financeiro Corporate.pdf — OK
+- [Apresentações/Franchising] GS _ Captação de Recursos Corporate.pdf — OK
+- [Apresentações/Franchising] Studio Agro _ Energy.pdf — OK
+- [Apresentações/Franchising] GS _ Manual da Marca.pdf — OK
+- [Apresentações/Franchising] GS _ Proposta de Serviços Tributários.pdf — OK
+- [Apresentações/Franchising] GS _ Holding e Estratégias Societárias para Cliente final.pdf — OK
+- [Apresentações/Franchising] GS _ Holding e Estratégias Societárias.pdf — OK
+- [Apresentações/Franchising] Treinamento - GS _ Dicas São Paulo.pdf — OK
+- [Apresentações/Franchising] GS _ Processo de Aquisição de Franquia.pdf — OK
+- [Apresentações/B2B] B2B Revisão Tributaria - Grupo Studio.pdf — OK
+- [Mídia Kit Online/Ass. E-mail Editavel] Assinatura_Email_GS.pptx — OK
+- [Mídia Kit Online/Cases Editaveis] Modelo Editavel - Case GS_Comercio.pptx — OK
+- [Mídia Kit Online/Cases Editaveis] Modelo Editavel - Case Agro_Serviço.pptx — OK
+- [Mídia Kit Online/Cases Editaveis] Modelo Editavel - Case GS_Serviço.pptx — OK
+- [Mídia Kit Online/Cases Editaveis] Modelo Editavel - Case GS_Industria.pptx — OK
+- [Mídia Kit Online/Cases Editaveis] Modelo Editavel - Case Agro_Industria.pptx — OK
+- [Mídia Kit Online/Cases Editaveis] Modelo Editavel - Case Agro_Comercio.pptx — OK
+- [Material Comercial/STUDIO VAREJO] PERDAS DE ESTOQUE I DESSOSSA, CAIXARIA  - Studio Agro.pptx — OK
+- [Material Comercial/TAX - PJ360 SUPPLY TAX (2026)] MATERIAL INFORMATIVO SUPPLY TAX.pdf — OK
+- [Material Comercial/TAX - PJ360 SUPPLY TAX (2026)] APRESENTAÇÃO SUPPLY TAX.pdf — OK
+- [Material Comercial/TAX - PJ360 SUPPLY TAX (2026)] Supply Tax - Planos.pdf — OK
+- [Material Comercial/TAX - PJ360 SUPPLY TAX (2026)] Serviços Supply Tax.pdf — OK
+- [Material Comercial/TAX - PJ360 SUPPLY TAX (2026)] Vídeo e Informações Importantes - PJ360 Supply Tax.docx — OK
+- [Material Comercial/VALE TRANSPORTE] Be.rh - Studio Agro.pdf — OK
+- [Material Comercial/VALE TRANSPORTE] ReduçãoCustoVT - Studio AGRO.pdf.pptx — OK
+- [Material Comercial/CONTRATOS] CANAIS DE PARCERIA STUDIO AGRO.pdf — OK
+- [Material Comercial/CONTRATOS] Distrato Studio Agro_.docx — OK
+- [Material Comercial/CONTRATOS] MODELO DE ADITIVO CONTRATUAL AVULSO.docx — OK
+- [Material Comercial/CONTRATOS] CANAIS DE PARCERIA STUDIO AGRO.docx — OK
+- [Material Comercial/CONTRATOS] Cópia de Distrato Studio Agro_.docx — OK
+- [Material Comercial/SEGURO SUCESSÃO] Seguro Sucessão Empresarial - Studio Agro.pptx — OK
+- [Material Comercial/STUDIO CARBON] Studio Carbon - 102025.pptx — OK
+- [Material Comercial/STUDIO CARBON] Studio Carbon - Cliente Ideal - 102025.pptx — OK
+- [Material Comercial/STUDIO CARBON] 1. Clientes em Potencial 2026 - Studio Carbon.pdf — OK
+- [Material Comercial/CAPTAÇÃO DE RECURSO] PDF CLIENTES CAP REC Studio Agro.pdf — OK
+- [Material Comercial/CAPTAÇÃO DE RECURSO] PDF FRANQUEADOS CAP REC Studio Agro.pdf — OK
+- [Material Comercial/CAPTAÇÃO DE RECURSO] PDF - CLIENTE CHECK LIST - CAPTACAO DE RECURSOS - STUDIO AGRO .pdf — OK
+- [Material Comercial/CAPTAÇÃO DE RECURSO] PDF - Questionario inicial Captacao de Recursos.pdf — OK
+- [Material Comercial/MONITORA ENERGIA] Cópia de Contrato Monitora Energia - sem recorrencia.pdf — OK
+- [Material Comercial/MONITORA ENERGIA] Contrato Monitora Energia - com recorrência.docx — OK
+- [Material Comercial/MONITORA ENERGIA] Cópia de Contrato Monitora Energia - sem recorrencia.docx — OK
+- [Material Comercial/MONITORA ENERGIA] Contrato Monitora Energia - com recorrência.pdf — OK
+- [Mídia Kit Impresso/Faixa] Faixa GS 420X130cm.pdf — OK
+- [Mídia Kit Impresso/Totem] Totem Eliptico.pdf — OK
+- [Mídia Kit Impresso/Banner] Banner-80x120-cm Agro.pdf — OK
+- [Mídia Kit Impresso/Banner] Banner-80x120-cm GS.pdf — OK
+- [Mídia Kit Impresso/Folder] A4 Folder (3 dobras) Agro.pdf — OK
+- [Mídia Kit Impresso/Folder] A4 Folder 3 dobras - GS.pdf — OK
+- [Mídia Kit Impresso/Balcão] Balcão GS 1x1m.pdf — OK
+- [Mídia Kit Impresso/Balcão] V2 Balcão GS 1x1m.pdf — OK
+- [Mídia Kit Impresso/Outdoor] Outdoor GS 9x3m.pdf — OK
+- [Mídia Kit Impresso/Cartão de Visita] Modelo editavel - CARTÃO DE VISITA GS (9x5cm).pptx — OK
+- [Mídia Kit Impresso/Pasta] Mockup.png — OK
+- [Mídia Kit Impresso/Pasta/A3] Pasta 33,6x46cm (A3) VERSO.pdf — OK
+- [Mídia Kit Impresso/Pasta/A3] Pasta 33,6x46cm (A3) FRENTE.pdf — OK
+- [Mídia Kit Impresso/Pasta/A3] Pasta 33,6x46cm (A3) INTERNO.pdf — OK
+- [Mídia Kit Impresso/Pasta/A3] Pasta 33,6x46cm (A3).ai — OK
+- [Mídia Kit Impresso/Pasta/A4] Pasta 24,5x33,5cm (A4) INTERNO.pdf — OK
+- [Mídia Kit Impresso/Pasta/A4] Pasta 24,5x33,5cm (A4).ai — OK
+- [Mídia Kit Impresso/Pasta/A4] Pasta 24,5x33,5cm (A4) FRENTE.pdf — OK
+- [Mídia Kit Impresso/Pasta/A4] Pasta 24,5x33,5cm (A4) VERSO.pdf — OK
+- [Mídia Kit Impresso/Backdrop] Backdrop GS 4x3m.pdf — OK
+- [Mídia Kit Impresso/Backdrop] Backdrop GS 8x2,5m.pdf — OK
+- [Mídia Kit Impresso/Crachá] Crachá GS.pptx — OK
+- [Mídia Kit Impresso/Suporte para Celular] Suporte de celular.pdf — OK
+- [Mídia Kit Impresso/Envelopes/Envelope Ofício GS] 28-04-2026 - Envelope GS.ai — OK
+- [Mídia Kit Impresso/Envelopes/Envelope Ofício GS] 28-04-2026 - Envelope GS.psd — OK
+- [Mídia Kit Impresso/Envelopes/Envelope Ofício GS] 28-04-2026 - Envelope GS.png — OK
+- [Mídia Kit Impresso/Envelopes/Envelope Ofício GS] Envelope Ofício GS Verso.pdf — OK
+- [Mídia Kit Impresso/Envelopes/Envelope Ofício GS] Envelope Ofício GS Frente.pdf — OK
+- [Mídia Kit Impresso/Envelopes/Envelope GS] 28-04-2026 - Envelope GS.psd — OK
+- [Mídia Kit Impresso/Envelopes/Envelope GS] Envelope GS Verso.pdf — OK
+- [Mídia Kit Impresso/Envelopes/Envelope GS] Envelope GS Frente.pdf — OK
+- [Mídia Kit Impresso/Envelopes/Envelope GS] 28-04-2026 - Envelope GS.ai — OK
+- [Mídia Kit Impresso/Envelopes/Envelope GS] 28-04-2026 - Envelope GS.png — OK
+- [Mídia Kit Impresso/Flyer-Panfleto] A4-PANFLETO_AGRO.pdf — OK
+- [Mídia Kit Impresso/Flyer-Panfleto] A5-Folheto Holding.pdf — OK
+- [Mídia Kit Impresso/Folha Timbrada] FolhaTimbradaGS.docx — OK

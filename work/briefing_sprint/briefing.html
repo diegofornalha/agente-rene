@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Briefing Estratégico — Lucro Ativo × Sprint</title>
+<style>
+  :root{
+    --navy:#010860; --navy2:#0a1180; --gold:#C9A227; --ink:#1a1f36;
+    --grey:#5a6072; --line:#e3e6ef; --bg:#f7f8fc; --red:#A32A35;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:210mm 297mm;margin:0}
+  body{font-family:'Inter',sans-serif;color:var(--ink);font-size:10.8pt;line-height:1.5}
+  h1,h2,h3,h4,.mont{font-family:'Montserrat',sans-serif}
+  .page{width:210mm;height:296mm;position:relative;overflow:hidden;page-break-after:always;background:#fff;padding:20mm 18mm 20mm 18mm}
+
+  /* header/footer comuns */
+  .hdr{position:absolute;top:0;left:0;right:0;height:14mm;display:flex;align-items:center;justify-content:space-between;padding:0 18mm;border-bottom:2.5px solid var(--navy)}
+  .hdr img{height:7mm}
+  .hdr .doc{font-family:'Montserrat',sans-serif;font-size:8pt;letter-spacing:.14em;color:var(--grey);text-transform:uppercase;font-weight:600}
+  .ftr{position:absolute;bottom:0;left:0;right:0;height:12mm;display:flex;align-items:center;justify-content:space-between;padding:0 18mm;border-top:1px solid var(--line);font-size:8pt;color:var(--grey)}
+  .ftr b{color:var(--navy);font-family:'Montserrat',sans-serif}
+  .body{padding-top:10mm}
+
+  /* seções */
+  .sec{display:flex;align-items:baseline;gap:10px;margin:0 0 5mm 0;padding-bottom:2mm;border-bottom:2px solid var(--line)}
+  .sec .n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:20pt;color:var(--gold)}
+  .sec h2{font-size:15.5pt;color:var(--navy);font-weight:800}
+  h3{font-size:11.5pt;color:var(--navy);margin:5mm 0 2mm 0}
+  p{margin-bottom:3mm}
+  .lead{font-size:11.4pt;color:var(--ink)}
+  .muted{color:var(--grey)}
+
+  ul.clean{list-style:none;margin-bottom:3mm}
+  ul.clean li{padding-left:6mm;position:relative;margin-bottom:1.8mm}
+  ul.clean li::before{content:"";position:absolute;left:0;top:2.1mm;width:2.6mm;height:2.6mm;background:var(--gold);border-radius:.6mm}
+  ul.clean li b{color:var(--navy)}
+
+  .card{background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:8px;padding:4mm 5mm;margin-bottom:4mm}
+  .card.gold{border-left-color:var(--gold)}
+  .card.red{border-left-color:var(--red);background:#fdf5f5}
+  .card h3{margin-top:0}
+  .card p:last-child, .card ul:last-child{margin-bottom:0}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:4mm}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm;margin-bottom:4mm}
+
+  .stat{background:var(--navy);color:#fff;border-radius:8px;padding:4mm;text-align:center}
+  .stat .v{font-family:'Montserrat',sans-serif;font-weight:800;font-size:17pt;color:var(--gold)}
+  .stat .l{font-size:8.2pt;color:#c8cdf0;margin-top:1mm;line-height:1.3}
+
+  table{width:100%;border-collapse:collapse;background:#fff;margin-bottom:4mm}
+  th{background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-size:9pt;font-weight:600;padding:2.4mm 3mm;text-align:left}
+  td{font-size:9.4pt;padding:2.2mm 3mm;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:var(--bg)}
+  td b{color:var(--navy)}
+
+  .pill{display:inline-block;background:var(--gold);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:7.6pt;border-radius:12px;padding:.6mm 3mm;letter-spacing:.05em;text-transform:uppercase}
+  .pill.navy{background:var(--navy)}
+  .pill.red{background:var(--red)}
+  .validar{display:inline-block;background:#fff3cd;border:1px solid #e6cf8a;color:#7a5c00;font-size:7.8pt;font-weight:600;border-radius:3px;padding:.4mm 2mm}
+
+  .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:2.5mm;margin:3mm 0 4mm 0}
+  .fstep{background:var(--bg);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:3mm 2.5mm;text-align:center}
+  .fstep.hot{border-top-color:var(--gold);background:#fdf9ee}
+  .fstep .n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:13pt;color:var(--navy)}
+  .fstep h4{font-size:8.6pt;color:var(--navy);margin:1mm 0}
+  .fstep p{font-size:7.8pt;color:var(--grey);line-height:1.3;margin:0}
+
+  /* capa */
+  .cover{background:linear-gradient(160deg,var(--navy) 0%,#03063f 100%);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 22mm}
+  .cover .stripe{position:absolute;left:0;top:0;bottom:0;width:5mm;background:var(--gold)}
+  .cover img{width:64mm;margin-bottom:16mm}
+  .cover .kicker{font-family:'Montserrat',sans-serif;font-weight:700;font-size:10.5pt;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:6mm}
+  .cover h1{font-size:29pt;font-weight:800;line-height:1.12;max-width:150mm}
+  .cover .sub2{font-size:12.5pt;color:#c8cdf0;margin-top:7mm;max-width:145mm;line-height:1.5}
+  .cover .meta{margin-top:14mm;font-size:9.8pt;color:#aab1e8;line-height:2}
+  .cover .meta b{color:#fff;font-weight:600}
+  .cover .bars{position:absolute;right:20mm;bottom:18mm;display:flex;align-items:flex-end;gap:3.5mm;opacity:.35}
+  .cover .bars div{width:8mm;background:linear-gradient(180deg,var(--gold),#8d6f14);border-radius:1mm 1mm 0 0}
+  .conf{position:absolute;bottom:12mm;left:22mm;font-size:8.4pt;color:#8890d8;letter-spacing:.12em;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<!-- ============ CAPA ============ -->
+<div class="page cover">
+  <div class="stripe"></div>
+  <img src="wordmark_white.png" alt="Lucro Ativo">
+  <div class="kicker">Briefing Estratégico · Marketing Digital</div>
+  <h1>Tráfego pago para geração de reuniões qualificadas</h1>
+  <div class="sub2">Contexto de negócio, produtos, cenário atual e objetivos — material de onboarding para estruturação de copy, oferta e campanhas no Instagram / Meta Ads.</div>
+  <div class="meta">
+    <div>Preparado para: <b>Sprint · Consultoria de Marketing Digital</b></div>
+    <div>Responsável Lucro Ativo: <b>Dr. Lucas (Sponsor) · Bruno Marinho (Geração de Leads)</b></div>
+    <div>Data: <b>Agosto de 2026</b> &nbsp;·&nbsp; Versão: <b>1.0</b></div>
+  </div>
+  <div class="bars"><div style="height:16mm"></div><div style="height:26mm"></div><div style="height:38mm"></div><div style="height:52mm"></div></div>
+  <div class="conf">Confidencial — uso restrito à Sprint para elaboração de proposta e campanhas</div>
+</div>
+
+<!-- ============ P2 — QUEM SOMOS ============ -->
+<div class="page">
+  <div class="hdr"><img src="wordmark_navy.png"><div class="doc">Briefing · Sprint — Tráfego Pago</div></div>
+  <div class="body">
+    <div class="sec"><div class="n">01</div><h2>Quem é a Lucro Ativo</h2></div>
+    <p class="lead">A <b>Lucro Ativo</b> é uma operação de <b>inteligência e engenharia tributária</b> voltada ao segmento corporativo (empresas do <b>Lucro Real e Lucro Presumido</b>). Atuamos na compensação, aproveitamento e gestão de créditos tributários e na resolução estratégica de passivos fiscais — unindo expertise contábil, jurídica e negociação.</p>
+    <p>Nosso posicionamento é <b>consultivo e C-level</b>: falamos com sócios, CEOs, CFOs e contadores de empresas de médio e grande porte. Não vendemos "curso", "planilha" nem promessa milagrosa — vendemos <b>reunião técnica com especialista</b>, que evolui para diagnóstico e contrato.</p>
+
+    <h3>Modelo comercial (onde o tráfego pago se encaixa)</h3>
+    <p>A venda é 100% consultiva e ocorre em reunião. O papel do tráfego é <b>alimentar o topo desse funil com leads qualificados</b>:</p>
+    <div class="flow">
+      <div class="fstep"><div class="n">1</div><h4>Anúncio / Copy</h4><p>Instagram · Meta Ads</p></div>
+      <div class="fstep"><div class="n">2</div><h4>Lead</h4><p>Formulário com filtros de qualificação</p></div>
+      <div class="fstep"><div class="n">3</div><h4>Pré-venda (SDR)</h4><p>Qualifica e agenda</p></div>
+      <div class="fstep hot"><div class="n">4</div><h4>Reunião</h4><p>Executivo de Vendas conduz — <b>é o KPI que importa</b></p></div>
+      <div class="fstep"><div class="n">5</div><h4>Diagnóstico → Contrato</h4><p>Proposta técnica</p></div>
+    </div>
+
+    <div class="grid3">
+      <div class="stat"><div class="v">10+</div><div class="l">Executivos de Vendas que dependem de reuniões geradas por este canal</div></div>
+      <div class="stat"><div class="v">B2B</div><div class="l">Decisores: sócios, CEOs, CFOs e contadores — Lucro Real e Presumido</div></div>
+      <div class="stat"><div class="v">CRM</div><div class="l">Rastreio ponta a ponta: lead → reunião → contrato (feedback de qualidade para a mídia)</div></div>
+    </div>
+
+    <div class="card gold">
+      <h3>O que o canal precisa entregar</h3>
+      <p><b>Reunião realizada com o perfil certo</b> — não lead barato. A campanha anterior entregou bons resultados por um bom período; na fase final, o comparecimento e a conversão caíram, e pausamos para reestruturar (seção 04). O sucesso desta nova fase será medido em <b>reuniões qualificadas realizadas</b>, com feedback devolvido pelo nosso CRM à otimização da mídia.</p>
+    </div>
+  </div>
+  <div class="ftr"><span><b>Lucro Ativo</b> · Briefing Estratégico — Sprint</span><span>@meulucroativo · www.meulucroativo.com.br</span><span>2</span></div>
+</div>
+
+<!-- ============ P3 — PRODUTOS ============ -->
+<div class="page">
+  <div class="hdr"><img src="wordmark_navy.png"><div class="doc">Briefing · Sprint — Tráfego Pago</div></div>
+  <div class="body">
+    <div class="sec"><div class="n">02</div><h2>Produtos foco das campanhas</h2></div>
+    <p>Dois produtos próprios concentram o esforço de mídia. O resumo abaixo é o necessário para copy — o aprofundamento técnico está nos materiais de apoio (decks e FAQ).</p>
+
+    <div class="card">
+      <h3>DCF — Direito Creditório Federal <span class="pill navy">Produto próprio</span></h3>
+      <p><b>O que é:</b> operação estruturada que permite à empresa <b>quitar tributos federais utilizando direito creditório com deságio</b> — ou seja, pagar a mesma obrigação por menos, com lastro jurídico, seguro-garantia e condução 100% pela equipe Lucro Ativo.</p>
+      <ul class="clean">
+        <li><b>Para quem:</b> empresas do Lucro Real e Presumido com carga tributária federal relevante (IRPJ, CSLL, PIS/COFINS).</li>
+        <li><b>Dor que resolve:</b> caixa consumido por tributos correntes; empresa paga "preço cheio" todo mês.</li>
+        <li><b>Ângulo de copy:</b> eficiência financeira e preservação de caixa — "sua empresa pode estar pagando mais imposto federal do que precisa".</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>ICMS-SP — Compensação do ICMS mensal com créditos acumulados <span class="pill navy">Produto próprio</span></h3>
+      <p><b>O que é:</b> compensação do ICMS mensal a recolher com <b>créditos acumulados de ICMS transferidos</b> por detentores habilitados junto à SEFAZ/SP — o lançamento na apuração (GIA/SPED) <b>reduz o imposto do mês na fonte</b> e o cliente paga pelo crédito utilizado com deságio: economia direta e recorrente. Não é "recuperação" retroativa — é redução do imposto corrente.</p>
+      <ul class="clean">
+        <li><b>Para quem:</b> contribuintes com ICMS mensal relevante e recorrente — indústrias, distribuidoras, atacadistas, importadoras e varejo — prioridade em São Paulo (há atuação em outras UFs).</li>
+        <li><b>Dor que resolve:</b> o ICMS consome o caixa todo mês e a empresa paga o valor integral, sem crédito próprio para abater.</li>
+        <li><b>Ângulo de copy:</b> pagar o mesmo imposto por menos, todo mês — mecânica prevista no próprio regulamento paulista, sem tese "aventureira".</li>
+      </ul>
+    </div>
+
+    <div class="card red">
+      <h3>⚠ Regra inegociável para toda copy</h3>
+      <p><b>Nenhum número (percentual de economia, valor compensado, prazo, "garantido") pode ir a público sem validação prévia do nosso time jurídico/tributário.</b> Somos uma operação de natureza jurídico-tributária: promessa de resultado em anúncio é risco regulatório e reputacional. Toda peça passa por aprovação da Lucro Ativo antes de veicular (seção 07).</p>
+    </div>
+  </div>
+  <div class="ftr"><span><b>Lucro Ativo</b> · Briefing Estratégico — Sprint</span><span>@meulucroativo · www.meulucroativo.com.br</span><span>3</span></div>
+</div>
+
+<!-- ============ P4 — GRUPO STUDIO + ICP ============ -->
+<div class="page">
+  <div class="hdr"><img src="wordmark_navy.png"><div class="doc">Briefing · Sprint — Tráfego Pago</div></div>
+  <div class="body">
+    <div class="sec"><div class="n">03</div><h2>Parceria Grupo Studio & público-alvo</h2></div>
+
+    <h3>Grupo Studio — força de marca e portfólio ampliado</h3>
+    <p>A Lucro Ativo mantém <b>parceria estratégica com o Grupo Studio</b>, uma das maiores redes de soluções tributárias e de gestão do país (grande base histórica de clientes atendidos em âmbito nacional). Na prática:</p>
+    <ul class="clean">
+      <li>Nosso portfólio vai além dos produtos próprios: oferecemos <b>soluções complementares do Grupo Studio</b> (linhas como revisão tributária, energia, folha/previdenciário e outras), sempre com <b>condução comercial 100% Lucro Ativo</b>.</li>
+      <li>Em materiais, produtos GS são sinalizados com <b>selo discreto da marca parceira</b> — usamos a força da marca sem diluir a nossa.</li>
+      <li>Para a mídia: a parceria é <b>argumento de autoridade e escala</b> ("estrutura nacional por trás"), não o protagonista da campanha. A marca que anuncia é a Lucro Ativo.</li>
+    </ul>
+
+    <h3>Perfil de cliente ideal (ICP)</h3>
+    <table>
+      <tr><th style="width:30%">Dimensão</th><th>Definição</th></tr>
+      <tr><td><b>Regime tributário</b></td><td>Lucro Real e Lucro Presumido (Simples Nacional <b>não</b> é foco — é o principal filtro anti-lead-ruim)</td></tr>
+      <tr><td><b>Porte</b></td><td>Médias e grandes empresas; faturamento relevante (faixa exata de corte: <span class="validar">PARÂMETRO A VALIDAR</span> com a diretoria comercial)</td></tr>
+      <tr><td><b>Segmentos com tração na base real</b></td><td>Indústria, distribuição/atacado, farma e drogarias, supermercados, transporte e logística, agro/alimentos, combustíveis</td></tr>
+      <tr><td><b>Decisor (persona)</b></td><td>Sócio/CEO, CFO/diretor financeiro, controller e <b>contador</b> (interno ou escritório que influencia a decisão)</td></tr>
+      <tr><td><b>Geografia</b></td><td>ICMS-SP: prioridade São Paulo · DCF: nacional</td></tr>
+    </table>
+
+    <div class="card gold">
+      <h3>Anti-persona (o que o filtro precisa barrar)</h3>
+      <p>MEI, Simples Nacional, pessoa física buscando "restituição de imposto de renda", curiosos de "renda extra" e aventureiros de tese milagrosa. <b>Foi o avanço desse público que pressionou o comparecimento e a conversão na fase final da campanha anterior</b> — o formulário e a copy devem desqualificar ativamente.</p>
+    </div>
+  </div>
+  <div class="ftr"><span><b>Lucro Ativo</b> · Briefing Estratégico — Sprint</span><span>@meulucroativo · www.meulucroativo.com.br</span><span>4</span></div>
+</div>
+
+<!-- ============ P5 — CENÁRIO ATUAL ============ -->
+<div class="page">
+  <div class="hdr"><img src="wordmark_navy.png"><div class="doc">Briefing · Sprint — Tráfego Pago</div></div>
+  <div class="body">
+    <div class="sec"><div class="n">04</div><h2>Cenário atual — histórico do canal</h2></div>
+
+    <table>
+      <tr><th style="width:34%">Item</th><th>Situação em Agosto/2026</th></tr>
+      <tr><td><b>Histórico do canal</b></td><td>Tráfego pago na Meta ativo por um <b>bom período, com ótimos resultados</b> de geração de leads e reuniões durante boa parte da veiculação.</td></tr>
+      <tr><td><b>Campanhas ativas</b></td><td><b>Nenhuma no momento.</b> A veiculação foi <b>pausada em julho/2026</b> para reestruturação do canal.</td></tr>
+      <tr><td><b>Motivo da pausa</b></td><td>Nos <b>últimos 60 dias de veiculação (junho a meados de julho/2026)</b>, o canal passou a apresentar <b>alto no-show e baixa conversão em fechamento</b> — optamos por pausar e reestruturar antes de reinvestir.</td></tr>
+      <tr><td><b>Formato histórico</b></td><td>Campanhas objetivas/simples, direcionando para os <b>perfis de Instagram</b> da Lucro Ativo e do Dr. Lucas — sem landing page dedicada por oferta e sem camada forte de qualificação.</td></tr>
+      <tr><td><b>Depoimentos e cases públicos</b></td><td><b>Não temos hoje</b> depoimentos gravados nem cases autorizados para veiculação (ver box abaixo).</td></tr>
+      <tr><td><b>Rastreamento</b></td><td>CRM próprio implantado (pipeline lead → reunião → contrato). Instrumentação da ponta de mídia (pixel, eventos, atribuição por campanha) a estruturar em conjunto: <span class="validar">LEVANTAR COM TI</span></td></tr>
+    </table>
+
+    <h3>Leitura da Lucro Ativo — o que evoluir na nova fase</h3>
+    <ul class="clean">
+      <li><b>Bússola de otimização:</b> migrar do custo por lead para o custo por <b>reunião qualificada realizada</b>.</li>
+      <li><b>Camada de qualificação:</b> copy e formulário devem desqualificar ativamente Simples/PF, protegendo a agenda do SDR e o comparecimento.</li>
+      <li><b>Destino do clique:</b> evoluir do perfil do Instagram para destino dedicado por oferta — com captura estruturada e mensuração fina.</li>
+    </ul>
+
+    <div class="card red">
+      <h3>Sobre o pedido de "depoimentos, cases e prints"</h3>
+      <p>Resposta transparente: <b>não existem hoje depoimentos e cases prontos e autorizados para uso público.</b> Existe base real de clientes atendidos e resultados internos — mas transformar isso em prova social exige autorização formal de cada cliente e validação jurídica. Caminho proposto: (1) curto prazo, sustentar a copy em <b>autoridade técnica + base legal + clareza de processo</b>; (2) em paralelo, a Lucro Ativo inicia a <b>coleta estruturada de autorizações e cases anonimizados por segmento</b> para abastecer a mídia nas fases seguintes.</p>
+    </div>
+  </div>
+  <div class="ftr"><span><b>Lucro Ativo</b> · Briefing Estratégico — Sprint</span><span>@meulucroativo · www.meulucroativo.com.br</span><span>5</span></div>
+</div>
+
+<!-- ============ P6 — OBJETIVOS ============ -->
+<div class="page">
+  <div class="hdr"><img src="wordmark_navy.png"><div class="doc">Briefing · Sprint — Tráfego Pago</div></div>
+  <div class="body">
+    <div class="sec"><div class="n">05</div><h2>Objetivos da nova operação de mídia</h2></div>
+
+    <div class="card gold">
+      <h3>Objetivo central</h3>
+      <p><b>Reativar a geração de reuniões comerciais qualificadas em volume suficiente para abastecer a agenda de 10+ Executivos de Vendas</b>, com comparecimento e conversão que sustentem o contrato — recuperando e superando o patamar da melhor fase do canal.</p>
+    </div>
+
+    <h3>Como mediremos sucesso (proposta de KPIs)</h3>
+    <table>
+      <tr><th style="width:38%">Indicador</th><th>Papel</th></tr>
+      <tr><td><b>Reuniões qualificadas realizadas / mês</b></td><td>KPI primário — meta numérica a calibrar com a Sprint a partir da capacidade dos executivos <span class="validar">PARÂMETRO A VALIDAR</span></td></tr>
+      <tr><td><b>Taxa de qualificação do lead</b> (lead → agenda)</td><td>Mede se copy/filtros estão barrando a anti-persona</td></tr>
+      <tr><td><b>Comparecimento (show rate)</b></td><td><b>Ponto de atenção prioritário</b> — o alto no-show foi o principal sintoma da fase final da campanha anterior</td></tr>
+      <tr><td><b>Reunião → proposta → contrato</b></td><td>Fechamento do loop no CRM — devolvemos esse dado à Sprint para otimização por campanha/criativo</td></tr>
+      <tr><td>Custo por reunião qualificada</td><td>Métrica de eficiência do investimento (substitui o CPL como bússola)</td></tr>
+    </table>
+
+    <h3>O que a Lucro Ativo espera da Sprint</h3>
+    <ul class="clean">
+      <li><b>Copy e oferta específicas por produto</b> (DCF e ICMS-SP), com mecanismo claro de qualificação — é exatamente o escopo que vocês propuseram.</li>
+      <li><b>Estratégia de destino do clique</b> (landing dedicada, formulário qualificador, WhatsApp estruturado — recomendação de vocês, decidimos juntos).</li>
+      <li><b>Plano de mensuração</b> por campanha/criativo, integrado ao nosso funil (lead → reunião → contrato).</li>
+      <li><b>Cadência de otimização</b> com reunião periódica de resultados usando o feedback de qualidade do nosso CRM.</li>
+    </ul>
+  </div>
+  <div class="ftr"><span><b>Lucro Ativo</b> · Briefing Estratégico — Sprint</span><span>@meulucroativo · www.meulucroativo.com.br</span><span>6</span></div>
+</div>
+
+<!-- ============ P7 — MARCA E COMPLIANCE ============ -->
+<div class="page">
+  <div class="hdr"><img src="wordmark_navy.png"><div class="doc">Briefing · Sprint — Tráfego Pago</div></div>
+  <div class="body">
+    <div class="sec"><div class="n">06</div><h2>Diretrizes de marca e compliance</h2></div>
+
+    <h3>Identidade visual e tom</h3>
+    <ul class="clean">
+      <li><b>Cores:</b> navy <b>#010860</b> dominado por branco, com dourado como acento. Logos vetoriais (navy e branca) serão fornecidas junto com o Manual da Marca.</li>
+      <li><b>Tipografia:</b> Montserrat (títulos) + Inter (corpo).</li>
+      <li><b>Fotografia:</b> o Manual <b>proíbe banco de imagem genérico</b> (aperto de mão, pessoas de terno apontando gráficos). Preferimos sistema gráfico próprio de dados (números, barras, waterfall) ou imagem sob medida no tom da marca.</li>
+      <li><b>Tom de voz:</b> consultivo, sóbrio, técnico-acessível. Autoridade sem arrogância; urgência sem sensacionalismo. Nada de "hack", "segredo que o governo esconde", emojis em excesso ou estética de infoproduto.</li>
+    </ul>
+
+    <h3>Compliance — leia antes de escrever qualquer copy</h3>
+    <div class="card red">
+      <ul class="clean">
+        <li><b>Natureza jurídica da operação:</b> parte dos serviços é prestada por sociedade de advocacia. Publicidade nesse contexto tem limites regulatórios (sobriedade, vedação à promessa de resultado e à captação mercantilizada). <b>Toda copy passa por validação do nosso jurídico antes de veicular.</b></li>
+        <li><b>Números públicos:</b> percentuais de economia, valores compensados, "garantia" — <b>proibidos sem validação formal</b>. Quando aprovados, sempre com contexto e ressalva.</li>
+        <li><b>Prova social:</b> nomes de clientes, prints e depoimentos só com autorização documentada.</li>
+        <li><b>LGPD:</b> formulários de captura com finalidade declarada e consentimento; dados de lead trafegam para nosso CRM sob nossa política de privacidade.</li>
+      </ul>
+    </div>
+
+    <h3>Fluxo de aprovação proposto</h3>
+    <p class="muted">Sprint cria → Bruno Marinho (Geração de Leads) faz o primeiro crivo → validação jurídica quando houver claim técnico/numérico → aprovação final e veiculação. SLA de resposta do nosso lado a combinar na reunião de kickoff.</p>
+  </div>
+  <div class="ftr"><span><b>Lucro Ativo</b> · Briefing Estratégico — Sprint</span><span>@meulucroativo · www.meulucroativo.com.br</span><span>7</span></div>
+</div>
+
+<!-- ============ P8 — MATERIAIS E PRÓXIMOS PASSOS ============ -->
+<div class="page">
+  <div class="hdr"><img src="wordmark_navy.png"><div class="doc">Briefing · Sprint — Tráfego Pago</div></div>
+  <div class="body">
+    <div class="sec"><div class="n">07</div><h2>Materiais de apoio & próximos passos</h2></div>
+
+    <h3>O que entregamos junto com este briefing</h3>
+    <table>
+      <tr><th style="width:44%">Material</th><th>Uso para a Sprint</th></tr>
+      <tr><td><b>Manual da Marca + logos vetoriais</b> (SVG/PNG navy e branco)</td><td>Base obrigatória de qualquer criativo</td></tr>
+      <tr><td><b>Apresentação comercial ICMS-SP</b> (PDF)</td><td>Linguagem, argumentos e visual do produto</td></tr>
+      <tr><td><b>Deck comercial DCF</b> (PDF)</td><td>Narrativa do produto e provas técnicas</td></tr>
+      <tr><td><b>Apresentação Transação Tributária PGFN</b> (PDF)</td><td>Referência de tom C-level da casa</td></tr>
+      <tr><td><b>FAQ técnico interno</b> (DCF · ICMS · PGFN)</td><td>Fonte segura para copy — base legal e objeções reais</td></tr>
+      <tr><td><b>Perfis Instagram</b> (Lucro Ativo e Dr. Lucas)</td><td>Histórico de conteúdo e presença atual</td></tr>
+    </table>
+    <p class="muted" style="font-size:8.6pt;margin-bottom:2mm">Depoimentos, cases e prints de resultado: ainda não disponíveis para uso público — ver seção 04. Entram no roadmap de coleta.</p>
+
+    <h3 style="margin-top:2.5mm">Interlocutores</h3>
+    <table>
+      <tr><th style="width:30%">Papel</th><th style="width:34%">Quem</th><th>Responsabilidade</th></tr>
+      <tr><td><b>Sponsor</b></td><td>Dr. Lucas (CEO)</td><td>Direção estratégica e aprovação final</td></tr>
+      <tr><td><b>Ponto focal operacional</b></td><td>Bruno Marinho — Geração &amp; Distribuição de Leads</td><td>Briefings, aprovações de rotina, feedback de qualidade dos leads</td></tr>
+      <tr><td><b>Comercial</b></td><td>Cleber Candia (CCO)</td><td>Capacidade de agenda dos executivos e retorno de conversão</td></tr>
+    </table>
+
+    <h3 style="margin-top:3mm">Próximos passos sugeridos</h3>
+    <ul class="clean" style="margin-bottom:2.5mm">
+      <li style="margin-bottom:1.2mm"><b>1.</b> Reunião de kickoff: Sprint apresenta leitura deste briefing + primeiras hipóteses de oferta/copy.</li>
+      <li style="margin-bottom:1.2mm"><b>2.</b> Definição conjunta de metas numéricas (reuniões/mês, orçamento de mídia) — <span class="validar">PARÂMETRO A VALIDAR</span> antes do kickoff.</li>
+      <li style="margin-bottom:1.2mm"><b>3.</b> Estruturação do destino do clique + instrumentação de mensuração com nossa TI.</li>
+      <li style="margin-bottom:1.2mm"><b>4.</b> Rodada 1 de campanhas com criativos aprovados → ciclo quinzenal de otimização com dados do CRM.</li>
+    </ul>
+
+    <div class="card gold" style="margin-bottom:0;padding:2.6mm 4mm">
+      <p style="font-size:9.4pt;line-height:1.35"><b>Resumo:</b> o canal já provou que funciona — ótimos resultados por um bom período; pausamos quando o comparecimento e a conversão caíram, e agora ele volta com copy que <b>filtra o decisor certo</b>, medido por <b>reunião qualificada realizada</b>.</p>
+    </div>
+  </div>
+  <div class="ftr"><span><b>Lucro Ativo</b> · Briefing Estratégico — Sprint</span><span>@meulucroativo · www.meulucroativo.com.br</span><span>8</span></div>
+</div>
+
+</body>
+</html>

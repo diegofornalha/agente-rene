@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Dossiê ICMS SC · Lucro Ativo</title>
+<style>
+  :root{
+    --navy:#010860; --navy2:#0a1180; --gold:#C9A227; --ink:#1a1f36;
+    --grey:#5a6072; --line:#e3e6ef; --bg:#f7f8fc;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:1280px 720px;margin:0}
+  body{font-family:'Inter',sans-serif;color:var(--ink)}
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;page-break-after:always;background:#fff;display:flex;flex-direction:column}
+  h1,h2,h3,.mont{font-family:'Montserrat',sans-serif}
+  .topbar{display:flex;align-items:center;gap:18px;padding:30px 64px 0 64px}
+  .tag{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;letter-spacing:.14em;color:var(--navy);text-transform:uppercase}
+  .tag .n{color:var(--gold);margin-right:10px}
+  .rule{height:3px;background:linear-gradient(90deg,var(--navy) 0 70%,var(--gold) 70% 100%);margin:12px 64px 0 64px}
+  .content{flex:1;display:flex;flex-direction:column;justify-content:center;padding:6px 64px 54px 64px}
+  .foot{position:absolute;bottom:0;left:0;right:0;height:42px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;font-size:14px;color:var(--grey)}
+  .foot .brand{font-family:'Montserrat',sans-serif;font-weight:600;color:var(--navy)}
+  h2.title{font-size:40px;color:var(--navy);font-weight:800;line-height:1.12;margin-bottom:6px}
+  .sub{font-size:21px;color:var(--grey);margin-bottom:20px}
+  .ghost{position:absolute;right:24px;bottom:-40px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:320px;color:var(--navy);opacity:.045;line-height:1;z-index:0}
+  .z{position:relative;z-index:1}
+  .navy{background:linear-gradient(160deg,var(--navy) 0%,#03063f 100%);color:#fff}
+  .navy .bars{position:absolute;right:70px;bottom:60px;display:flex;align-items:flex-end;gap:14px;opacity:.35}
+  .navy .bars div{width:34px;background:linear-gradient(180deg,var(--gold),#8d6f14);border-radius:4px 4px 0 0}
+  .cover{padding:0 90px;display:flex;flex-direction:column;justify-content:center;height:100%}
+  .cover img{width:320px;margin-bottom:44px}
+  .cover .kicker{font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
+  .cover h1{font-size:58px;font-weight:800;line-height:1.1;max-width:960px}
+  .cover .sub2{font-size:25px;color:#c8cdf0;margin-top:22px;max-width:900px;line-height:1.45}
+  .cover .meta{display:flex;gap:34px;margin-top:42px;font-size:18px;color:#aab1e8}
+  .cover .meta b{color:#fff;font-weight:600}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--gold)}
+  /* divisor de seção */
+  .divider{justify-content:center;padding:0 100px}
+  .divider .big-n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:150px;color:var(--gold);line-height:1}
+  .divider h1{font-size:56px;font-weight:800;line-height:1.12;max-width:960px;margin-top:10px}
+  .divider .d-sub{font-size:24px;color:#c8cdf0;margin-top:18px;max-width:920px;line-height:1.5}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--bg);border:1px solid var(--line);border-left:6px solid var(--navy);border-radius:10px;padding:20px 24px}
+  .card h3{font-size:21px;color:var(--navy);font-weight:700;margin-bottom:8px}
+  .card p, .card li{font-size:18px;line-height:1.48;color:var(--ink)}
+  .card.gold{border-left-color:var(--gold)}
+  ul.clean{list-style:none}
+  ul.clean li{padding-left:24px;position:relative;margin-bottom:9px;font-size:18.5px;line-height:1.45}
+  ul.clean li::before{content:"";position:absolute;left:0;top:10px;width:11px;height:11px;background:var(--gold);border-radius:2px}
+  ul.clean li b{color:var(--navy)}
+  table{width:100%;border-collapse:collapse;background:#fff}
+  th{background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-size:16.5px;font-weight:600;padding:10px 14px;text-align:left}
+  td{font-size:16.5px;padding:8px 14px;border-bottom:1px solid var(--line);line-height:1.32}
+  tr:nth-child(even) td{background:var(--bg)}
+  td b{color:var(--navy)}
+  .quote{background:var(--bg);border:1px solid var(--line);border-left:6px solid var(--gold);border-radius:10px;padding:20px 26px;font-size:18px;line-height:1.55;color:#33384f;font-style:italic}
+  .quote b{color:var(--navy);font-style:normal}
+  .quote .src{display:block;margin-top:12px;font-style:normal;font-size:15.5px;color:var(--grey)}
+  .note{margin-top:14px;background:#fdf9ee;border:1px solid #ecd9a0;border-radius:10px;padding:11px 18px;font-size:16.5px;color:#6b5510}
+  .note b{color:#8a6d0d}
+  .pill{display:inline-block;background:var(--gold);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;border-radius:20px;padding:3px 14px;letter-spacing:.04em}
+  .pill.navy{background:var(--navy)}
+  .compact-t td{font-size:14.5px;padding:5px 12px;line-height:1.25}
+  /* timeline */
+  .tl{display:flex;gap:0;margin-top:14px}
+  .tl .ev{flex:1;position:relative;padding:0 8px;text-align:center}
+  .tl .ev::before{content:"";position:absolute;top:9px;left:0;right:0;height:4px;background:var(--line)}
+  .tl .ev:first-child::before{left:50%}
+  .tl .ev:last-child::before{right:50%}
+  .tl .dot{width:22px;height:22px;border-radius:50%;background:var(--navy);border:5px solid #fff;box-shadow:0 0 0 3px var(--navy);margin:0 auto;position:relative;z-index:1}
+  .tl .ev.hot .dot{background:var(--gold);box-shadow:0 0 0 3px var(--gold)}
+  .tl .y{font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--navy);margin-top:12px}
+  .tl .t{font-size:15px;color:var(--grey);line-height:1.35;margin-top:4px}
+  /* índice */
+  .toc{display:grid;grid-template-columns:1fr 1fr;gap:14px 40px}
+  .toc .it{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line);padding:10px 4px}
+  .toc .n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:30px;color:var(--navy);min-width:52px}
+  .toc .d{font-size:19px;color:var(--ink);line-height:1.3}
+  .toc .d small{display:block;color:var(--grey);font-size:15.5px}
+</style>
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="cover">
+    <img src="logo_branca.svg" alt="Lucro Ativo">
+    <div class="kicker">Dossiê Técnico-Jurídico · Uso Interno</div>
+    <h1>Dossiê ICMS SC</h1>
+    <div class="sub2">Quitação de tributos estaduais em Santa Catarina com debêntures da INVESC — origem do crédito, poder liberatório, marco jurídico no STF e jurisprudência consolidada.</div>
+    <div class="meta">
+      <span>Elaboração: <b>Lucro Ativo</b></span>
+      <span>Versão <b>1.0</b></span>
+      <span><b>Setembro de 2026</b></span>
+    </div>
+  </div>
+  <div class="bars"><div style="height:70px"></div><div style="height:110px"></div><div style="height:160px"></div><div style="height:220px"></div></div>
+</div>
+
+<!-- 2 · ÍNDICE -->
+<div class="slide">
+  <div class="topbar"><span class="tag">Conteúdo</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">O que este dossiê reúne</h2>
+    <div class="sub">A íntegra do material técnico, reorganizada em nove blocos.</div>
+    <div class="toc">
+      <div class="it"><span class="n">01</span><span class="d">A origem do crédito<small>Lei estadual nº 9.940/95 · emissão de 1995</small></span></div>
+      <div class="it"><span class="n">02</span><span class="d">Características das debêntures<small>Ficha técnica completa do ativo</small></span></div>
+      <div class="it"><span class="n">03</span><span class="d">O marco jurídico no STF<small>ADI 5.882 e o efeito repristinatório do art. 8º</small></span></div>
+      <div class="it"><span class="n">04</span><span class="d">Liminares em Mandado de Segurança<small>Protestos, CPEN e devedor contumaz</small></span></div>
+      <div class="it"><span class="n">05</span><span class="d">Jurisprudência do TJSC<small>Decisões do Des. Hélio do Valle Pereira</small></span></div>
+      <div class="it"><span class="n">06</span><span class="d">Debênture como garantia em execução fiscal<small>Aceitação pela própria Fazenda</small></span></div>
+      <div class="it"><span class="n">07</span><span class="d">Esfera penal<small>Decisão favorável e parecer do Ministério Público</small></span></div>
+      <div class="it"><span class="n">08</span><span class="d">Procuradoria e incidente de arguição<small>Parecer do MP/CECCON e rejeição do incidente</small></span></div>
+      <div class="it"><span class="n">09</span><span class="d">Parecer Dr. Roque Antonio Carrazza<small>Poder liberatório e interpretação da lei</small></span></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC</span><span>2</span></div>
+</div>
+
+<!-- 3 · LINHA DO TEMPO -->
+<div class="slide">
+  <div class="topbar"><span class="tag">Visão geral</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">A história em uma linha do tempo</h2>
+    <div class="sub">Três décadas entre a emissão dos títulos e a consolidação jurídica do seu poder liberatório.</div>
+    <div class="tl">
+      <div class="ev"><div class="dot"></div><div class="y">1995</div><div class="t">Lei nº 9.940/95 cria a INVESC; emissão de 10.000 debêntures (~R$ 104 mi captados)</div></div>
+      <div class="ev"><div class="dot"></div><div class="y">1997–99</div><div class="t">Inadimplência dos juros; vencimento antecipado declarado em 19/04/1999</div></div>
+      <div class="ev"><div class="dot"></div><div class="y">2017</div><div class="t">Lei nº 17.302/17 tenta limitar o poder liberatório (arts. 6º e 13)</div></div>
+      <div class="ev hot"><div class="dot"></div><div class="y">2022</div><div class="t">STF (ADI 5.882) declara os arts. 6º e 13 inconstitucionais → repristina o art. 8º da Lei 9.940/95</div></div>
+      <div class="ev"><div class="dot"></div><div class="y">2022</div><div class="t">TJSC rejeita o incidente de arguição contra o art. 8º, à luz do julgado do STF</div></div>
+      <div class="ev hot"><div class="dot"></div><div class="y">2023–24</div><div class="t">Liminares protegem contribuintes: protestos suspensos, CPEN, afastado o rótulo de devedor contumaz</div></div>
+    </div>
+    <div class="note"><b>Síntese:</b> a partir do vencimento das debêntures, nos termos do art. 8º, II, da Lei nº 9.940/95, os títulos passaram a ter <b>poder liberatório para quitação de tributos estaduais</b> — fundamento que hoje se apoia em decisão do STF e em jurisprudência estadual consistente.</div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC</span><span>3</span></div>
+</div>
+
+<!-- 4 · DIVISOR 01 -->
+<div class="slide navy divider">
+  <div class="stripe"></div>
+  <div class="big-n">01</div>
+  <h1>A origem do crédito</h1>
+  <div class="d-sub">Como nasceram as debêntures da INVESC — e por que elas carregam poder liberatório para quitar tributos estaduais.</div>
+</div>
+
+<!-- 5 · ORIGEM 1 -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">01</span>A origem do crédito</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">1995: a emissão que financiou o Estado</h2>
+    <div class="grid2" style="margin-top:8px">
+      <div class="card"><h3>A constituição da INVESC</h3><p>Em 1995 foi constituída a <b>Santa Catarina Participações e Investimentos S.A. — INVESC</b>, pela <b>Lei estadual nº 9.940/95</b>, com o principal objetivo de captar recursos para investimentos públicos. A INVESC lançou, à época, cerca de <b>dez mil debêntures</b> no mercado, captando aproximadamente <b>R$ 104 milhões</b>.</p></div>
+      <div class="card"><h3>A contrapartida ao investidor</h3><p>A INVESC oferecia pagamento de <b>juros de 14% ao ano</b>, com atualização pela <b>TJLP</b> (taxa de juros de longo prazo). Como garantia adicional de cumprimento contratual, dava <b>ações ordinárias da Celesc</b>, correspondentes a aproximadamente <b>30% do capital votante</b> da companhia de energia elétrica.</p></div>
+    </div>
+    <div class="note" style="margin-top:20px"><b>O descumprimento:</b> diante da inadimplência da parcela de juros vencida em <b>31/10/1997</b> — e após tratativas do Agente Fiduciário e da Comunhão de Debenturistas sem solução viável —, o Agente Fiduciário declarou o <b>vencimento antecipado das debêntures em 19 de abril de 1999</b>, com fundamento na Escritura de Emissão (Seção V, item 5, alínea “a”).</div>
+  </div>
+  <div class="ghost">01</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · A origem do crédito</span><span>5</span></div>
+</div>
+
+<!-- 6 · ORIGEM 2 -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">01</span>A origem do crédito</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">O poder liberatório nasce da própria lei</h2>
+    <div class="sub">Com o vencimento, os títulos ganharam a prerrogativa prevista no art. 8º da Lei nº 9.940/95.</div>
+    <div class="quote">“Art. 8º A sociedade, por decisão de Assembléia Geral, poderá, quando for necessário à consecução dos seus objetivos, atribuir aos títulos de sua emissão as características de permutabilidade e de <b>poder liberatório</b> para: <b>I</b> — aquisição de bens e direitos do Estado de Santa Catarina e de entidades da administração pública estadual que venham a ser alienados; <b>II</b> — <b>quitação de dívidas tributárias</b>. Parágrafo único. Para efetivação do disposto no inciso II, tratando-se de crédito tributário inscrito em dívida ativa, fica assegurada uma valoração adicional do título em até <b>20% (vinte por cento)</b>.”<span class="src">Lei Estadual nº 9.940/1995 — Santa Catarina</span></div>
+    <div class="grid2" style="margin-top:18px">
+      <div class="card gold"><h3>Quitação de tributos estaduais</h3><p>A partir do vencimento, nos termos do art. 8º, II, as debêntures passaram a ter <b>poder liberatório para quitação de tributos estaduais</b> — vencidos ou vincendos.</p></div>
+      <div class="card"><h3>Privatizações e bens do Estado</h3><p>A lei também prevê o uso das debêntures na <b>aquisição de bens comercializados pelo Estado de SC</b> — o que torna o ativo uma opção relevante em privatizações e alienações estaduais.</p></div>
+    </div>
+  </div>
+  <div class="ghost">§8</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · A origem do crédito</span><span>6</span></div>
+</div>
+
+<!-- 7 · DIVISOR 02 -->
+<div class="slide navy divider">
+  <div class="stripe"></div>
+  <div class="big-n">02</div>
+  <h1>Características das debêntures</h1>
+  <div class="d-sub">A ficha técnica completa do ativo — registro, códigos, remuneração e as prerrogativas de permuta e poder liberatório.</div>
+</div>
+
+<!-- 8 · FICHA TÉCNICA -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">02</span>Características das debêntures</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title" style="font-size:34px">Ficha técnica do ativo</h2>
+    <div class="grid2" style="gap:30px;margin-top:4px">
+      <table class="compact-t">
+        <tr><td><b>Emissora</b></td><td>Santa Catarina Participação e Investimentos S.A. — INVESC</td></tr>
+        <tr><td><b>Legislação</b></td><td>Lei nº 9.940/95</td></tr>
+        <tr><td><b>Registro CVM</b></td><td>SEP/GER/DEB — 95/107, em 14/12/95</td></tr>
+        <tr><td><b>Situação da emissora</b></td><td>Inadimplente com as obrigações pecuniárias</td></tr>
+        <tr><td><b>Código do ativo</b></td><td>CETIP: IVSC 11</td></tr>
+        <tr><td><b>Código ISIN</b></td><td>BRIVSCDBS012</td></tr>
+        <tr><td><b>Banco mandatário</b></td><td>Banco do Estado de Santa Catarina S.A. (Banco do Brasil)</td></tr>
+        <tr><td><b>Coordenador líder</b></td><td>Banco Bradesco S.A.</td></tr>
+        <tr><td><b>Data de emissão</b></td><td>1º de novembro de 1995 (para todos os efeitos legais)</td></tr>
+        <tr><td><b>Data de vencimento</b></td><td>31 de outubro de 2000</td></tr>
+      </table>
+      <table class="compact-t">
+        <tr><td><b>Quantidade</b></td><td>10.000 debêntures, em série única</td></tr>
+        <tr><td><b>Valor total da emissão</b></td><td>R$ 100.000.000,00 na data de emissão</td></tr>
+        <tr><td><b>Valor nominal</b></td><td>R$ 10.000,00 por debênture, na data de emissão</td></tr>
+        <tr><td><b>Forma</b></td><td>Nominativas escriturais</td></tr>
+        <tr><td><b>Espécie</b></td><td>Subordinada, com direito a permutabilidade</td></tr>
+        <tr><td><b>Conversibilidade</b></td><td>Não conversíveis em ações</td></tr>
+        <tr><td><b>Permuta</b></td><td>1 debênture por 8.800 ações ON da CELESC</td></tr>
+        <tr><td><b>Remuneração</b></td><td>TJLP + juros de 14% a.a., pagos anualmente sobre o valor nominal</td></tr>
+      </table>
+    </div>
+    <div class="note"><b>Poder liberatório:</b> as debêntures podem ser utilizadas como <b>moeda para pagamento de tributos estaduais, vencidos ou vincendos</b>, por seu preço unitário na data de sua utilização.</div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · Características das debêntures</span><span>8</span></div>
+</div>
+
+<!-- 9 · DIVISOR 03 -->
+<div class="slide navy divider">
+  <div class="stripe"></div>
+  <div class="big-n">03</div>
+  <h1>O marco jurídico no STF</h1>
+  <div class="d-sub">A ADI 5.882 derrubou a lei que limitava o poder liberatório — e devolveu plena vigência ao art. 8º da Lei 9.940/95.</div>
+</div>
+
+<!-- 10 · ADI CONTEXTO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">03</span>O marco jurídico no STF</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">A tentativa de limitação: Lei nº 17.302/17</h2>
+    <div class="sub">Publicada em 30/10/2017, trouxe condições mais benéficas ao Estado, limitando o poder liberatório e revogando a permutabilidade.</div>
+    <div class="quote">“Art. 6º A partir da data da publicação desta Lei, os títulos fundados na Lei nº 9.940, de 19 de outubro de 1995, passam a ser atualizados pelo mesmo índice de correção dos créditos tributários da Fazenda Pública. § 1º Fica vedada [...] a transferência da titularidade dos créditos [...]. § 2º Os contribuintes do ICMS, titulares [...] de créditos decorrentes de debêntures fundadas na Lei nº 9.940, de 1995, poderão efetuar a compensação do valor representado pelo respectivo título com débitos tributários próprios de ICMS, <b>a vencer, vencidos ou parcelados, inscritos ou não em dívida ativa</b> [...]. Art. 13. Fica revogado o art. 8º da Lei nº 9.940, de 19 de outubro de 1995.”<span class="src">Lei Estadual nº 17.302/2017 — dispositivos posteriormente declarados inconstitucionais</span></div>
+    <div class="note"><b>O contra-ataque institucional:</b> o artigo 6º, parágrafos e incisos foram objeto de <b>Ação Direta de Inconstitucionalidade (ADI nº 5.882/SC)</b>, intentada pelo Governador do Estado de Santa Catarina em exercício, perante o Supremo Tribunal Federal.</div>
+  </div>
+  <div class="ghost">03</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · O marco jurídico no STF</span><span>10</span></div>
+</div>
+
+<!-- 11 · ADI JULGAMENTO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">03</span>O marco jurídico no STF</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">ADI 5.882: o julgamento de 17/05/2022</h2>
+    <div class="quote">“O Tribunal, por maioria, confirmou a medida cautelar anteriormente concedida e, no mérito, conheceu da ação direta para julgar procedente o pedido formulado, <b>declarando a inconstitucionalidade do artigo 6º e, por arrastamento, do artigo 13, ambos da Lei Estadual catarinense 17.302, de 30 de outubro de 2017</b>, nos termos do voto do Relator, vencidos parcialmente os Ministros Dias Toffoli, André Mendonça e Nunes Marques, que acompanhavam o Relator quanto à procedência da ação direta, mas propunham a modulação dos efeitos da decisão. Os Ministros Roberto Barroso e Edson Fachin acompanharam o Relator com ressalvas. Plenário, Sessão Virtual de 6.5.2022 a 13.5.2022.”<span class="src">STF — ADI 5.882/SC, j. 17-05-2022</span></div>
+    <div class="grid2" style="margin-top:18px">
+      <div class="card gold"><h3>Efeito repristinatório</h3><p>Com a inconstitucionalidade dos arts. 6º e 13 da Lei 17.302/17, o STF atribuiu <b>efeito repristinatório</b> (reentrada em vigor de norma aparentemente revogada) ao <b>art. 8º da Lei 9.940/1995</b> — que volta a valer integralmente.</p></div>
+      <div class="card"><h3>O que pende</h3><p>Pende de julgamento <b>apenas a modulação dos efeitos</b> (embargos declaratórios). Em decisões estaduais posteriores, já houve <b>modulação em favor dos contribuintes até fevereiro de 2018</b> quanto a pagamentos realizados naquele período.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · O marco jurídico no STF</span><span>11</span></div>
+</div>
+
+<!-- 12 · REPRISTINAÇÃO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">03</span>O marco jurídico no STF</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Repristinação: por que o art. 8º voltou a valer</h2>
+    <div class="quote">“A norma pretensamente revogada pela norma inconstitucional se mantém em vigor. Declarada a inconstitucionalidade da norma revogadora, constata-se que ocorreu uma mera pretensão da norma nula revogar outra norma.”<span class="src">Rui Medeiros (1999, p. 652, apud FERREIRA, 2009, p. 39)</span></div>
+    <div class="card" style="margin-top:18px"><h3>A conclusão jurídica</h3><p>Em razão do efeito repristinatório, os artigos 6º e 13 da Lei catarinense nº 17.302/17 — que haviam revogado o art. 8º da Lei nº 9.940/95 — foram declarados inconstitucionais, de modo que <b>volta a vigorar a lei anteriormente revogada</b>, permitindo a conclusão de <b>validade e vigência do artigo 8º da Lei 9.940/1995</b>, bem como do <b>poder liberatório para quitação de dívidas tributárias</b>. Em síntese: o pedido de quitação do ICMS é realizado pautando-se na Lei 9.940/1995 e na escritura de emissão das debêntures da INVESC, plenamente válidas.</p></div>
+  </div>
+  <div class="ghost">STF</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · O marco jurídico no STF</span><span>12</span></div>
+</div>
+
+<!-- 13 · DIVISOR 04 -->
+<div class="slide navy divider">
+  <div class="stripe"></div>
+  <div class="big-n">04</div>
+  <h1>Liminares em Mandado de Segurança</h1>
+  <div class="d-sub">Decisões recentes que protegem, na prática, o contribuinte que utiliza as debêntures — protestos, certidões e devedor contumaz.</div>
+</div>
+
+<!-- 14 · MS 1 - CASO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>Liminares em MS</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Caso 1 — Sustação de protestos e emissão de CPEN</h2>
+    <div class="sub">MS impetrado contra ato do Gerente Administrativo da Regional da Fazenda Estadual (identificação da impetrante preservada — LGPD).</div>
+    <div class="grid2">
+      <div class="card"><h3>O caso concreto</h3><p>Contribuinte de ICMS adquiriu, entre <b>2014 e 2023</b>, <b>21 debêntures da INVESC</b>, totalizando <b>R$ 60.688.625,97</b>. Sempre agiu dentro da legalidade: protocolou as debêntures e pediu declaração de quitação perante o Fisco. O Estado, que criou a INVESC, insistia em não reconhecer o poder liberatório — inscrevendo débitos em dívida ativa, levando CDAs a protesto e ajuizando execuções fiscais. Em 12/03/24, teve negada a certidão de regularidade fiscal.</p></div>
+      <div class="card gold"><h3>O que o juízo considerou</h3><p>A aceitação das debêntures engendra <b>compensação, causa de extinção do crédito tributário</b>, e não consiste em favor fiscal — dispensando autorização do Confaz, pois não dá ensejo a guerra fiscal. Com a inconstitucionalidade dos arts. 6º e 13 da Lei 17.302/17, houve efeito repristinatório da lei que concedia o poder liberatório: o pagamento do ICMS/SC realizado por debêntures da INVESC <b>“deve ser garantido e considerado como efetivamente quitado”</b>, conforme decidido pelo STF na ADI nº 5.882.</p></div>
+    </div>
+    <div class="note"><b>Periculum in mora reconhecido:</b> apontamento de CDAs a protesto e negativa de certidão de regularidade fiscal importam restrição de crédito e de atividades — a falta da CPEN impede negociações, participação em licitação e adesão ao TTD (Tratamento Tributário Diferenciado).</div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · Liminares em MS</span><span>14</span></div>
+</div>
+
+<!-- 15 · MS 1 - DECISÃO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>Liminares em MS</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Caso 1 — A liminar deferida</h2>
+    <div class="quote">“Diante do exposto, <b>defiro a liminar</b> para determinar a suspensão dos efeitos dos protestos lavrados em desfavor da Impetrante (protestos nºs 144557, 172743, 176327, 176329 e 186053) <b>e a emissão de CPEN em favor desta</b>, até o julgamento definitivo desta demanda. Expeça-se ofício ao respectivo Cartório de Títulos. [...] Após, dê-se vista ao Ministério Público.”<span class="src">TJSC — Liminar em Mandado de Segurança nº 5010809-64.2024.8.24.0038/SC, 18/03/2024</span></div>
+    <div class="grid2" style="margin-top:18px">
+      <div class="card"><h3>O teste da cautela</h3><p>O juízo aplicou a régua clássica: quanto mais denso o <i>fumus boni juris</i>, menor o rigor no <i>periculum in mora</i> — e, no conflito entre dois bens jurídicos, tutela-se o bem maior (TJSC, AI n. 2008.031776-5; AI n. 0011057-16.2016.8.24.0000).</p></div>
+      <div class="card gold"><h3>O que ficou garantido</h3><p><b>Protestos suspensos</b> e <b>certidão positiva com efeitos de negativa (CPEN)</b> emitida — restaurando a capacidade de negociação, licitação e regularidade da empresa enquanto a demanda tramita.</p></div>
+    </div>
+  </div>
+  <div class="ghost">MS</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · Liminares em MS</span><span>15</span></div>
+</div>
+
+<!-- 16 · MS 2 -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>Liminares em MS</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Caso 2 — Afastado o rótulo de “devedor contumaz”</h2>
+    <div class="sub">Empresa intimada a regularizar a situação fiscal sob pena de enquadramento como devedora contumaz — com tributo quitado por debêntures da INVESC.</div>
+    <div class="grid2">
+      <div class="card"><h3>O risco imposto ao contribuinte</h3><p>O enquadramento sujeitaria a empresa a medidas específicas de fiscalização, restrição de benefícios fiscais, regime diferenciado de apuração de ICMS e até representação por crime contra a ordem tributária. Nas execuções fiscais, parte dos créditos já estava garantida por <b>carta fiança de R$ 11.000.000,00</b>, aceita pelo exequente — quase metade dos créditos constituídos.</p></div>
+      <div class="card gold"><h3>A decisão</h3><p>“Pendente a discussão jurídico-constitucional acerca do poder liberatório das debêntures da Invesc [...] <b>tenho por temerário o enquadramento do contribuinte em regime tributário rígido e diferenciado</b>, com nefastas consequências ao desenvolvimento de suas atividades empresariais. [...] <b>Defiro a liminar</b> para determinar que a autoridade impetrada se abstenha, por ora, de enquadrar a Impetrante como ‘devedora contumaz’, ou ainda, que suspenda os efeitos de tal enquadramento.”</p></div>
+    </div>
+    <div class="note"><b>Fonte:</b> sentença nº 5005679-30.2023.8.24.0038/SC — publicada em 15/08/2023, com vigência até o julgamento definitivo da demanda ou da Arguição de Inconstitucionalidade nº 5030516-06.2022.8.24.0000 perante o Órgão Especial do TJSC.</div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · Liminares em MS</span><span>16</span></div>
+</div>
+
+<!-- 17 · DIVISOR 05 -->
+<div class="slide navy divider">
+  <div class="stripe"></div>
+  <div class="big-n">05</div>
+  <h1>Jurisprudência do TJSC</h1>
+  <div class="d-sub">As decisões do Des. Hélio do Valle Pereira que reconheceram a repristinação e reposicionaram o tema após o STF.</div>
+</div>
+
+<!-- 18 · TJSC 1 -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">05</span>Jurisprudência do TJSC</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Recurso do Estado nº 0301128-02.2016.8.24.0026</h2>
+    <div class="sub">Apelação do Estado contra sentença de Guaramirim que reconheceu o poder liberatório e declarou extintos créditos tributários pela compensação (Inecel Estruturas Elétricas Ltda.).</div>
+    <div class="quote">“Noto que as razões para o reconhecimento da inconstitucionalidade do Art. 6º da Lei Estadual catarinense 17.302/2017 <b>não maculam, ex ante, o que dispõe o Art. 8º da Lei nº 9.940/1995</b>, que sequer experimentou questionamentos quanto à sua constitucionalidade nestes autos. Ademais, a repristinação do artigo em tela [...] pode contribuir, penso eu, para que o Estado de Santa Catarina venha a promover solução definitiva quanto ao passivo referente às debêntures da INVESC.”<span class="src">Trecho acolhido do amicus curiae A. Angeloni &amp; Cia Ltda., citado na decisão</span></div>
+    <div class="card" style="margin-top:16px"><h3>O desfecho</h3><p>“Em resumo: após o posicionamento do STF (inclusive de caráter vinculante) em face da Lei 17.302/2017, as debêntures apresentadas estão subordinadas ao disposto no 8º da Lei Estadual 9.940/1995, de modo que é preciso aguardar a deliberação sobre a validade da regra. Assim, <b>determino a suspensão deste processo</b> (art. 313, V, a, do CPC), na espera da deliberação pelo Órgão Especial acerca do incidente de arguição de inconstitucionalidade n. 5030516-06.2022.8.24.0000.” <i>(Decisão publicada em 08/11/2022.)</i></p></div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · Jurisprudência do TJSC</span><span>18</span></div>
+</div>
+
+<!-- 19 · TJSC 2 -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">05</span>Jurisprudência do TJSC</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Apelação nº 0301336-49.2017.8.24.0026</h2>
+    <div class="sub">Mesmo relator, mesma lógica — agora com a citação expressa do voto do Min. Gilmar Mendes na ADI 5.882.</div>
+    <div class="quote">“A pretensão está amparada no art. 8º da Lei Estadual 9.940/1995, mas esse dispositivo foi revogado pelo art. 13 da Lei Estadual n. 17.302/2017. Só que recentemente <b>o STF declarou a inconstitucionalidade por arrastamento do tal art. 13, ensejando a repristinação do aludido art. 8º</b> da Lei Estadual 9.940/1995 (nos termos do art. 11, § 2º, da Lei 9.868/99), como consignou expressamente o Min. Gilmar Mendes [...]. É verdade que os embargos declaratórios opostos na ADI 5.882 ainda não foram julgados, mas o conteúdo limitado desse tipo recursal <b>não sugere a possibilidade de mudança substancial da decisão do STF</b>, o que justificou o levantamento da suspensão independentemente do trânsito em julgado.”<span class="src">TJSC — 0301336-49.2017.8.24.0026, decisão publicada em 08/11/2022</span></div>
+    <div class="note"><b>Situação processual:</b> o processo foi novamente suspenso aguardando a análise da validade do art. 8º pelo Órgão Especial (incidente nº 5030516-06.2022.8.24.0000) — incidente posteriormente <b>rejeitado</b>, como registra a seção 08 deste dossiê.</div>
+  </div>
+  <div class="ghost">TJ</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · Jurisprudência do TJSC</span><span>19</span></div>
+</div>
+
+<!-- 20 · DIVISOR 06 -->
+<div class="slide navy divider">
+  <div class="stripe"></div>
+  <div class="big-n">06</div>
+  <h1>Debênture aceita como garantia</h1>
+  <div class="d-sub">Em execução fiscal, a própria Fazenda aceitou a debênture da INVESC como garantia do juízo.</div>
+</div>
+
+<!-- 21 · GARANTIA -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">06</span>Garantia em execução fiscal</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">A Fazenda aceitou — e o juízo deferiu a penhora</h2>
+    <div class="grid2">
+      <div class="card"><h3>Situação do processo</h3><p>O executado ofereceu à penhora <b>1 (uma) debênture</b> (Evento 8, PET1). A <b>Fazenda aceitou</b> o título como garantia nº 00001172/2020 (Evento 14, PET1).</p></div>
+      <div class="card gold"><h3>A decisão</h3><p>“2.1 — <b>Defiro a penhora da debênture</b> n. 00001172/2020; 2.2 — Faça-se a penhora por termo nos autos; 2.3 — Intime-se a parte executada para, no prazo de 30 dias (art. 16 da LEF), oferecer embargos [...].”</p></div>
+    </div>
+    <div class="note" style="margin-top:18px"><b>Fonte:</b> decisão nos autos do processo nº 5001977-40.2021.8.24.0008, proferida em 03/03/2021. <b>Leitura prática:</b> a aceitação pela própria Fazenda reforça o valor jurídico-patrimonial do título — inclusive como instrumento de garantia do juízo em execuções fiscais.</div>
+  </div>
+  <div class="ghost">06</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · Garantia em execução fiscal</span><span>21</span></div>
+</div>
+
+<!-- 22 · DIVISOR 07 -->
+<div class="slide navy divider">
+  <div class="stripe"></div>
+  <div class="big-n">07</div>
+  <h1>Esfera penal</h1>
+  <div class="d-sub">Absolvição sumária e parecer do próprio Ministério Público pela absolvição — a boa-fé de quem usou as debêntures na forma da lei.</div>
+</div>
+
+<!-- 23 · PENAL 1 -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">07</span>Esfera penal</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Decisão penal favorável: ausência de dolo</h2>
+    <div class="sub">Réu denunciado por 8 vezes pela prática, em tese, do crime do art. 2º, II, da Lei 8.137/90 (não recolhimento de ICMS de 2011, 2012 e 2015).</div>
+    <div class="grid2">
+      <div class="card"><h3>Os fatos que afastaram o dolo</h3><p>O réu comprovou ser titular de debêntures de emissão da INVESC. A debênture ofertada como caução no juízo cível alcançou <b>R$ 924.131,67</b> (atualizado em 12/06/2017) — <b>superando a dívida apontada na denúncia (R$ 225.428,94)</b>. Havia ação cível discutindo a quitação do débito, com tutela de urgência deferida para sustar a exigibilidade do título, servindo a debênture como caução.</p></div>
+      <div class="card gold"><h3>O fundamento da absolvição</h3><p>“Como já dito, <b>vinha se admitindo a compensação das debêntures com débitos tributários, tanto pelo próprio Estado de Santa Catarina como pela jurisprudência catarinense</b>. Tais circunstâncias, por certo, tornam dúbia a constituição do crédito tributário [...] e <b>afastam o dolo</b> da conduta do réu [...]. Assim, não evidenciado o dolo, a absolvição do réu se impõe.”</p></div>
+    </div>
+    <div class="note"><b>Dispositivo:</b> “Ante o exposto, <b>absolvo sumariamente</b> [identificação preservada — LGPD], com fundamento no art. 397, III, do CPP. Sem custas.” Em recurso em sentido estrito correlato, a <b>rejeição da denúncia foi mantida</b> — reconhecida a independência das esferas, mas também a ausência de indícios de ação fraudulenta.</div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · Esfera penal</span><span>23</span></div>
+</div>
+
+<!-- 24 · PENAL 2 - MP -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">07</span>Esfera penal</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Parecer do MP em ação penal: pela absolvição</h2>
+    <div class="grid2">
+      <div class="card"><h3>O contexto reconhecido pelo MP</h3><p>No período de constituição da dívida (2012), <b>havia decisões do TJSC que reconheciam como possível o pagamento de tributos em títulos públicos</b> emitidos pelo Estado, desde que a lei atribuísse efeito liberatório — como no caso do INVESC (Apelações ns. 0012770-93.2012.8.24.0023 e 2013.015204-8). O réu, sócio-administrador, fez uso das debêntures revestidas de poder liberatório para quitar débitos, oferecendo-as como caução na Execução Fiscal n. 0900435-07.2014.8.24.0036, nos termos da Lei n. 9.940/1995.</p></div>
+      <div class="card gold"><h3>A manifestação</h3><p>“A conduta do acusado, à época dos fatos, <b>era legítima</b>, já que estava autorizado a pleitear a compensação de débitos tributários por debêntures da INVESC. Além do mais, as debêntures possuem o valor de cerca de <b>R$ 829.928,53</b>, o que acautela satisfatoriamente o débito tributário em debate. [...] fica nítida a <b>ausência de dolo</b> do acusado de sonegar o tributo estadual, tornando sua <b>absolvição</b> a medida mais adequada. [...] o Ministério Público requer o julgamento antecipado do feito e a absolvição, nos termos do art. 386, VI, do Código de Processo Penal.”</p></div>
+    </div>
+  </div>
+  <div class="ghost">MP</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · Esfera penal</span><span>24</span></div>
+</div>
+
+<!-- 25 · DIVISOR 08 -->
+<div class="slide navy divider">
+  <div class="stripe"></div>
+  <div class="big-n">08</div>
+  <h1>Procuradoria e incidente de arguição</h1>
+  <div class="d-sub">O parecer do Procurador-Geral de Justiça pela validade das relações jurídicas — e a rejeição do incidente contra o art. 8º.</div>
+</div>
+
+<!-- 26 · PROCURADORIA 1 -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">08</span>Procuradoria e incidente</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Parecer no incidente nº 5030516-06.2022.8.24.0000</h2>
+    <div class="sub">Caso concreto: ação declaratória de A. Angeloni &amp; Cia Ltda. — extinção de crédito de ICMS (jul–set/2009) pago com debêntures, então totalizando R$ 14.888.645,50.</div>
+    <div class="grid2">
+      <div class="card"><h3>A tese contrária (3 argumentos)</h3><ul class="clean" style="margin-top:4px">
+        <li>Inexistência de previsão no CTN de extinção do crédito tributário por debêntures;</li>
+        <li>Competência exclusiva da União para legislar sobre direito comercial;</li>
+        <li>Ausência de convênio Confaz autorizando benefícios fiscais.</li>
+      </ul></div>
+      <div class="card gold"><h3>O contexto fático que a derruba</h3><p>O art. 8º <b>estava plenamente em vigor</b> quando o contribuinte utilizou os créditos para pagar <b>50% do ICMS devido</b>. O poder liberatório foi <b>ratificado pelo então Governador</b>, em protocolo de intenções no qual o Estado aceitaria o pagamento de tributos com as debêntures. Em contrapartida, o contribuinte criaria <b>700 empregos diretos</b> e incrementaria atividades em <b>R$ 100 milhões</b> — obrigações aparentemente atendidas. Houve ainda <b>Regime Especial</b> formalizado e <b>diversos pareceres favoráveis da própria PGE</b> ao pagamento de ICMS com debêntures.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · Procuradoria e incidente</span><span>26</span></div>
+</div>
+
+<!-- 27 · PROCURADORIA 2 -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">08</span>Procuradoria e incidente</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Confiança legítima: o Estado não pode se voltar contra o próprio ato</h2>
+    <div class="grid2">
+      <div class="card"><h3>O argumento central</h3><p>O Estado de Santa Catarina, por meio da INVESC, <b>obteve ganhos financeiros</b> derivados das debêntures adquiridas por investidores — que certamente levaram em consideração o poder liberatório conferido legalmente aos títulos. “Não é admissível que o ente público, objetivando auferir vantagens, pratique atos amparado em norma pretensamente ilegítima e, posteriormente, <b>pretenda se beneficiar de sua própria torpeza</b>.”</p></div>
+      <div class="card"><h3>O respaldo do STF</h3><p>“A proteção da confiança, enquanto valor constitucional [...] <b>desautoriza a Administração Pública a exercer o seu imperium de desconstituir ou anular as situações administrativas</b> desconformes com o postulado da legalidade administrativa, quando revestidas de aparência de legalidade, de boa-fé e consolidadas no tempo por inércia do próprio ente público que as originou ou lhes deu causa.”</p></div>
+    </div>
+    <div class="quote" style="margin-top:16px"><b>Conclusão do parecer:</b> “Ante o exposto, manifesta-se o Procurador-Geral de Justiça, por intermédio do Coordenador do CECCON, no sentido do <b>não acolhimento da arguição</b>, para que seja <b>reconhecida a validade de todas as relações jurídicas amparadas no artigo 8º da Lei Estadual n. 9.940/1995</b>.”</div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · Procuradoria e incidente</span><span>27</span></div>
+</div>
+
+<!-- 28 · INCIDENTE DECISÃO -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">08</span>Procuradoria e incidente</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">O incidente de arguição foi rejeitado</h2>
+    <div class="sub">Órgão Especial do TJSC — incidente suscitado pela Quarta Câmara de Direito Público contra o art. 8º da Lei 9.940/95.</div>
+    <div class="quote">“Nesse sentido, diante de superveniente julgado do Supremo Tribunal Federal sobre o assunto, caracteriza-se necessária a rejeição do presente incidente de arguição de inconstitucionalidade. Ante o exposto, com fulcro no parágrafo único do artigo 949 do Código de Processo Civil, <b>rejeito o presente incidente de arguição de inconstitucionalidade</b>.”<span class="src">TJSC — Incidente de Arguição de Inconstitucionalidade nº 5030516-06.2022.8.24.0000</span></div>
+    <div class="note" style="margin-top:16px"><b>O que isso significa:</b> a validade do art. 8º da Lei 9.940/95 <b>deixou de ser questionada com êxito também na via estadual</b> — o Órgão Especial reconheceu que, após o STF (ADI 5.882, com repristinação expressa), não cabia nova declaração de inconstitucionalidade do dispositivo.</div>
+  </div>
+  <div class="ghost">08</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · Procuradoria e incidente</span><span>28</span></div>
+</div>
+
+<!-- 29 · DIVISOR 09 -->
+<div class="slide navy divider">
+  <div class="stripe"></div>
+  <div class="big-n">09</div>
+  <h1>Parecer Dr. Roque Antonio Carrazza</h1>
+  <div class="d-sub">A conclusão de um dos maiores tributaristas do país sobre as debêntures da INVESC, o poder liberatório e a utilização para quitação de tributos com base na Lei 9.940/1995.</div>
+</div>
+
+<!-- 30 · CARRAZZA -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">09</span>Parecer Carrazza</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Interpretar a lei é captar seu conteúdo — não só suas palavras</h2>
+    <div class="grid2">
+      <div class="card"><h3>A premissa hermenêutica</h3><p>“Ao cabo de tudo o que expusemos, devemos ter presente que interpretar um texto legislativo, mais do que simplesmente entender as palavras que o compõem, é <b>captar seu conteúdo e suas implicações práticas</b>. De fato, as disposições legais não devem ser compreendidas apenas no estrito e exclusivo entendimento gramatical de seus termos. Fosse assim [...] a palavra ‘exegese’ poderia ser substituída por ‘leitura’, e o termo ‘hermenêutica’ deixaria de identificar uma Ciência própria, para tornar-se sinônimo de ‘gramática’.”</p></div>
+      <div class="card"><h3>A lição de Carlos Maximiliano</h3><p>“A palavra é um mau veículo do pensamento; por isso, embora de aparência translúcida a forma, não revela todo o conteúdo da lei [...]; sob um só invólucro verbal se conchegam e escondem várias idéias, valores mais amplos e profundos do que os resultantes da simples apreciação literal do texto.” Tais ideias ressaltam a importância da <b>interpretação sistemática</b>, que, em busca da <i>mens legis</i>, exige uma visão global do ordenamento jurídico.</p></div>
+    </div>
+    <div class="quote" style="margin-top:16px">“Na interpretação das leis, mais importante do que o rigor da lógica racional, é o entendimento razoável dos preceitos, porque o que se espera inferir das leis não é, necessariamente, a melhor lógica, mas uma <b>justa e humana solução</b>.” <span class="src">Goffredo da Silva Telles Júnior, citado no parecer — que conclui pela leitura razoável do art. 8º da Lei catarinense nº 9.940/1995 e pela validade do poder liberatório</span></div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · Parecer Carrazza</span><span>30</span></div>
+</div>
+
+<!-- 31 · SÍNTESE -->
+<div class="slide">
+  <div class="topbar"><span class="tag">Síntese</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">O quadro completo de sustentação jurídica</h2>
+    <div class="grid3" style="margin-top:8px">
+      <div class="card"><h3>Base legal</h3><p>Art. 8º da Lei estadual nº 9.940/95: poder liberatório para <b>quitação de dívidas tributárias</b> + valoração adicional de até 20% em dívida ativa.</p></div>
+      <div class="card"><h3>STF</h3><p>ADI 5.882 (17/05/2022): inconstitucionalidade dos arts. 6º e 13 da Lei 17.302/17 — <b>repristinação expressa do art. 8º</b>.</p></div>
+      <div class="card"><h3>Órgão Especial TJSC</h3><p>Incidente nº 5030516-06 <b>rejeitado</b> (art. 949, § único, CPC), à luz do julgado do STF.</p></div>
+      <div class="card"><h3>Liminares recentes</h3><p>Protestos suspensos + <b>CPEN emitida</b> (18/03/2024); afastado o enquadramento como <b>devedor contumaz</b> (15/08/2023).</p></div>
+      <div class="card"><h3>Fazenda e esfera penal</h3><p>Debênture <b>aceita como garantia</b> em execução fiscal; absolvição sumária e <b>parecer do MP pela absolvição</b> — ausência de dolo.</p></div>
+      <div class="card gold"><h3>Doutrina</h3><p>Parecer do Prof. <b>Roque Antonio Carrazza</b> pela validade do poder liberatório com base na Lei 9.940/1995.</p></div>
+    </div>
+    <div class="note"><b>Pontos de atenção (uso interno):</b> pende a <b>modulação de efeitos</b> na ADI 5.882 (embargos declaratórios); há registro de <b>ADI nº 7.329</b> sobre o tema e de decisões estaduais com modulação em favor de contribuintes até fevereiro de 2018. Toda operação exige análise caso a caso pela área técnica-jurídica antes de qualquer compromisso com cliente.</div>
+  </div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Dossiê ICMS SC · Síntese</span><span>31</span></div>
+</div>
+
+<!-- 32 · FECHO -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="cover" style="align-items:center;text-align:center">
+    <img src="logo_branca.svg" alt="Lucro Ativo" style="width:300px;margin-bottom:40px">
+    <h1 style="font-size:52px">Inteligência tributária<br>com base jurídica sólida.</h1>
+    <div class="sub2" style="max-width:820px;margin-left:auto;margin-right:auto">Dossiê técnico de uso interno — suporte à qualificação de operações de quitação de ICMS em Santa Catarina.</div>
+    <div class="meta" style="justify-content:center"><span><b>Lucro Ativo</b> · Compliance Fiscal Tributário</span><span>www.meulucroativo.com.br</span><span><b>Setembro 2026 · Versão 1.0</b></span></div>
+  </div>
+  <div class="bars"><div style="height:70px"></div><div style="height:110px"></div><div style="height:160px"></div><div style="height:220px"></div></div>
+</div>
+
+</body>
+</html>

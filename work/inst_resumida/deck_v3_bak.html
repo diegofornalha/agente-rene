@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Apresentação Institucional · Lucro Ativo</title>
+<style>
+  :root{
+    --navy:#010860; --navy2:#0a1180; --navy3:#39406e; --gold:#C9A227; --ink:#1a1f36;
+    --grey:#5a6072; --line:#e3e6ef; --bg:#f7f8fc;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:1280px 720px;margin:0}
+  body{font-family:'Inter',sans-serif;color:var(--ink)}
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;page-break-after:always;background:#fff;display:flex;flex-direction:column}
+  h1,h2,h3,h4,.mont{font-family:'Montserrat',sans-serif}
+
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:34px 64px 0 64px}
+  .tag{font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;letter-spacing:.14em;color:var(--navy);text-transform:uppercase}
+  .tag .n{color:var(--gold);margin-right:10px}
+  .rule{height:3px;background:linear-gradient(90deg,var(--navy) 0 70%,var(--gold) 70% 100%);margin:14px 64px 0 64px}
+  .content{flex:1;display:flex;flex-direction:column;justify-content:center;padding:6px 64px 56px 64px}
+  .foot{position:absolute;bottom:0;left:0;right:0;height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;font-size:15px;color:var(--grey);background:#fff;z-index:3}
+  .foot .brand{font-family:'Montserrat',sans-serif;font-weight:600;color:var(--navy)}
+  h2.title{font-size:44px;color:var(--navy);font-weight:800;line-height:1.12;margin-bottom:8px}
+  .sub{font-size:23px;color:var(--grey);margin-bottom:22px}
+  .ghost{position:absolute;right:24px;bottom:-40px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:340px;color:var(--navy);opacity:.045;line-height:1;z-index:0}
+  .z{position:relative;z-index:1}
+
+  /* navy slides */
+  .navy{background:linear-gradient(160deg,var(--navy) 0%,#030a72 55%,#0a1288 100%);color:#fff}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--gold)}
+  .cover{flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 96px;position:relative;z-index:2}
+  .cover img.la{width:360px;margin-bottom:44px}
+  .kicker{font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  .cover h1{font-size:62px;font-weight:800;line-height:1.1;max-width:980px}
+  .cover .sub2{font-size:27px;color:#c8cdf0;margin-top:24px;max-width:840px;line-height:1.45}
+  .cover .meta{display:flex;gap:34px;margin-top:46px;font-size:19px;color:#aab1e8;flex-wrap:wrap}
+  .cover .meta b{color:#fff;font-weight:600}
+  .coverart{position:absolute;right:76px;bottom:70px;z-index:1}
+
+  /* índice */
+  .idx{display:grid;grid-template-columns:1fr 1fr;gap:18px 40px;margin-top:6px}
+  .idx .it{display:flex;align-items:center;gap:22px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:20px 24px}
+  .idx .num{font-family:'Montserrat',sans-serif;font-weight:800;font-size:44px;color:var(--navy);min-width:70px}
+  .idx .d{font-size:22px;font-weight:600;color:var(--ink);line-height:1.3}
+  .idx .d span{display:block;font-size:17px;font-weight:400;color:var(--grey);margin-top:2px}
+
+  /* cards / grids */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--bg);border:1px solid var(--line);border-left:6px solid var(--navy);border-radius:10px;padding:24px 26px}
+  .card h3{font-size:24px;color:var(--navy);font-weight:700;margin-bottom:8px}
+  .card p,.card li{font-size:19.5px;line-height:1.45;color:var(--ink)}
+  .card.gold{border-left-color:var(--gold)}
+  .mb{width:42px;height:6px;background:var(--gold);border-radius:3px;margin-bottom:14px}
+  ul.clean{list-style:none}
+  ul.clean li{padding-left:26px;position:relative;margin-bottom:9px}
+  ul.clean li::before{content:"";position:absolute;left:0;top:10px;width:12px;height:12px;background:var(--gold);border-radius:2px}
+  ul.clean li b{color:var(--navy)}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:8px}
+  .stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+  .stat{background:var(--navy);color:#fff;border-radius:12px;padding:26px 20px;text-align:center}
+  .stat .v{font-family:'Montserrat',sans-serif;font-weight:800;font-size:48px;color:var(--gold);line-height:1.1}
+  .stat .l{font-size:17px;color:#c8cdf0;margin-top:8px;line-height:1.35}
+  .stat.soft{background:var(--bg);border:1px solid var(--line)}
+  .stat.soft .v{color:var(--navy)}
+  .stat.soft .l{color:var(--grey)}
+
+  .journey{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:10px}
+  .step{background:var(--bg);border:1px solid var(--line);border-top:6px solid var(--navy);border-radius:10px;padding:20px 14px;text-align:center}
+  .step.hot{border-top-color:var(--gold);background:#fdf9ee}
+  .step .n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:38px;color:var(--navy)}
+  .step h4{font-family:'Montserrat',sans-serif;font-size:19px;color:var(--navy);margin:8px 0 8px 0;line-height:1.2}
+  .step p{font-size:15.5px;color:var(--grey);line-height:1.35}
+
+  table{width:100%;border-collapse:collapse;background:#fff}
+  th{background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-size:18px;font-weight:600;padding:14px 18px;text-align:left}
+  td{font-size:20px;padding:16px 18px;border-bottom:1px solid var(--line);line-height:1.35}
+  tr:nth-child(even) td{background:var(--bg)}
+  td b{color:var(--navy)}
+  .pill{display:inline-block;background:var(--gold);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14.5px;border-radius:20px;padding:4px 14px;letter-spacing:.04em}
+  .pill.navy{background:var(--navy)}
+  .pill.soft{background:#e7e9f7;color:var(--navy)}
+
+  .note{margin-top:16px;background:#fdf9ee;border:1px solid #ecd9a0;border-radius:10px;padding:13px 20px;font-size:18px;color:#6b5510}
+  .note b{color:#8a6d0d}
+  .legal{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .legal .lx{background:#fff;border:1px solid var(--line);border-top:6px solid var(--gold);border-radius:10px;padding:16px 20px}
+  .legal .lx h4{font-family:'Montserrat',sans-serif;font-size:18.5px;color:var(--navy);margin-bottom:6px;line-height:1.25}
+  .legal .lx p{font-size:16px;color:var(--grey);line-height:1.4}
+
+  /* chevron flow */
+  .flow{display:flex;margin-top:16px;filter:drop-shadow(0 2px 5px rgba(1,8,96,.14))}
+  .fs{flex:1;position:relative;display:flex;flex-direction:column;justify-content:center;min-height:128px;padding:18px 36px 18px 46px;background:var(--navy);color:#fff;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 50%,calc(100% - 26px) 100%,0 100%,26px 50%);margin-left:-14px}
+  .fs:first-child{margin-left:0;padding-left:30px;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 50%,calc(100% - 26px) 100%,0 100%)}
+  .fs:last-child{clip-path:polygon(0 0,100% 0,100% 100%,0 100%,26px 50%)}
+  .fs .k{font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;letter-spacing:.14em;color:var(--gold);margin-bottom:6px}
+  .fs h4{font-size:19.5px;line-height:1.2;margin-bottom:6px}
+  .fs p{font-size:15px;color:#c8cdf0;line-height:1.35}
+  .fs.hot{background:var(--gold)}
+  .fs.hot .k{color:#fff}
+  .fs.hot p{color:#fdf4d7}
+  .flow.big .fs{min-height:190px;padding:26px 44px 26px 56px}
+  .flow.big .fs:first-child{padding-left:34px}
+  .flow.big .fs .k{font-size:17px}
+  .flow.big .fs h4{font-size:26px;margin-bottom:10px}
+  .flow.big .fs p{font-size:18px;line-height:1.4}
+  .flow.sm .fs{min-height:96px;padding:12px 30px 12px 40px}
+  .flow.sm .fs:first-child{padding-left:24px}
+  .flow.sm .fs h4{font-size:16.5px;margin-bottom:4px}
+  .flow.sm .fs p{font-size:13.5px}
+
+  /* hub / rede */
+  .hub{position:relative;margin-top:6px}
+  .hub svg.wire{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+  .hubc{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:206px;height:206px;border-radius:50%;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;z-index:2;border:5px solid var(--gold);box-shadow:0 8px 26px rgba(1,8,96,.25)}
+  .hubc b{font-family:'Montserrat',sans-serif;font-size:21px;line-height:1.15}
+  .hubc span{font-size:13.5px;color:#c8cdf0;max-width:150px;line-height:1.3}
+  .hn{position:absolute;width:292px;background:#fff;border:1px solid var(--line);border-left:6px solid var(--gold);border-radius:10px;padding:14px 18px;z-index:2;box-shadow:0 2px 10px rgba(1,8,96,.07)}
+  .hn h4{font-family:'Montserrat',sans-serif;font-size:19px;color:var(--navy);margin-bottom:4px}
+  .hn p{font-size:15px;color:var(--grey);line-height:1.3}
+  .hub.dark .hn{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.25);border-left-color:var(--gold);box-shadow:none}
+  .hub.dark .hn h4{color:#fff}
+  .hub.dark .hn p{color:#c8cdf0}
+  .hub.dark .hubc{background:rgba(255,255,255,.06);border-color:var(--gold);box-shadow:none}
+
+  /* waterfall / barras */
+  .wf{display:flex;align-items:flex-end;gap:26px;height:300px;margin-top:10px;padding:0 10px}
+  .wf .col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:10px}
+  .wf .bar{width:100%;min-height:56px;border-radius:10px 10px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:12px}
+  .wf .bar .bv{font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;color:#fff}
+  .wf .stackt{width:100%;border-radius:10px 10px 0 0;display:flex;align-items:center;justify-content:center}
+  .wf .stackt .bv{font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;color:#fff}
+  .wf .stackb{width:100%;display:flex;align-items:flex-start;justify-content:center;padding-top:12px}
+  .wf .cl{font-size:16.5px;color:var(--grey);text-align:center;line-height:1.3}
+  .wf .cl b{color:var(--navy)}
+
+  /* GS vertical slides */
+  .cobrand{position:absolute;top:30px;right:64px;display:flex;align-items:center;gap:16px;z-index:4}
+  .cobrand img{height:34px}
+  .cobrand .sep{width:1px;height:30px;background:var(--line)}
+  .grid3.gsx{gap:16px}
+  .grid3.gsx .card{padding:16px 20px}
+  .grid3.gsx .card h3{font-size:21px;margin-bottom:6px}
+  .grid3.gsx .card p{font-size:16.5px;line-height:1.35}
+  .grid3.gsx .mb{margin-bottom:9px;width:34px;height:5px}
+  .gsnote{margin-top:16px;font-size:16px;background:#eef0fa;border:1px solid #d5d9f0;border-radius:10px;padding:13px 20px;font-size:17px;color:#39406e}
+  .gsnote b{color:var(--navy)}
+  .deco{position:absolute;right:52px;bottom:64px;opacity:.08;z-index:0}
+
+  .close .cover h1{font-size:50px}
+  .close .cover{padding-bottom:20px}
+  .close .sub2{font-size:23px;margin-top:14px}
+</style>
+<style>
+  .credbar{display:flex;gap:0;margin-top:26px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .credbar .c{flex:1;padding:18px 22px;background:var(--bg);border-right:1px solid var(--line)}
+  .credbar .c:last-child{border-right:0}
+  .credbar .c b{display:block;font-family:'Montserrat',sans-serif;font-size:19px;color:var(--navy);margin-bottom:3px}
+  .credbar .c span{font-size:15.5px;color:var(--grey);line-height:1.3}
+  .prod{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .prod .p{background:#fff;border:1px solid var(--line);border-left:6px solid var(--navy);border-radius:10px;padding:16px 22px;position:relative}
+  .prod .p .k{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14.5px;letter-spacing:.13em;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+  .prod .p h3{font-size:23px;color:var(--navy);font-weight:800;margin-bottom:6px;line-height:1.15}
+  .prod .p p{font-size:17px;line-height:1.38;color:var(--ink)}
+  .prod .p .leg{margin-top:9px;font-size:15px;color:var(--grey)}
+  .pubnote{margin-top:14px;background:#eef0fa;border:1px solid #d5d9f0;border-left:6px solid var(--navy);border-radius:10px;padding:12px 20px;font-size:16.5px;color:#39406e}
+  .pubnote b{color:var(--navy)}
+  .two{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+  .kv{display:flex;flex-direction:column;gap:12px}
+  .kv .r{display:flex;align-items:baseline;gap:14px;border-bottom:1px dashed var(--line);padding-bottom:10px}
+  .kv .r .lbl{font-size:18px;color:var(--grey);flex:1}
+  .kv .r .val{font-family:'Montserrat',sans-serif;font-weight:800;font-size:23px;color:var(--navy)}
+  .kv .r.hot .val{color:#1f7a4d}
+  .disc{margin-top:14px;font-size:15px;color:var(--grey);line-height:1.4}
+  .shield{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .shield .s{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);border-left:6px solid var(--gold);border-radius:10px;padding:18px 22px}
+  .shield .s h4{font-family:'Montserrat',sans-serif;font-size:21px;margin-bottom:6px;color:#fff}
+  .shield .s p{font-size:17px;color:#c8cdf0;line-height:1.4}
+  .fit{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .fit .yes{background:#f1f8f3;border:1px solid #cfe6d8;border-left:6px solid #1f7a4d;border-radius:10px;padding:22px 26px}
+  .fit .no{background:#fbf2f2;border:1px solid #ecd6d6;border-left:6px solid #a33;border-radius:10px;padding:22px 26px}
+  .fit h3{font-family:'Montserrat',sans-serif;font-size:23px;margin-bottom:12px}
+  .fit .yes h3{color:#1f7a4d}.fit .no h3{color:#993030}
+  .fit li{font-size:18px;line-height:1.4;margin-bottom:8px;padding-left:24px;position:relative;list-style:none}
+  .fit .yes li::before{content:"✓";position:absolute;left:0;color:#1f7a4d;font-weight:700}
+  .fit .no li::before{content:"×";position:absolute;left:0;color:#a33;font-weight:700}
+  .askbox{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:18px 26px;margin-top:22px}
+  .askbox h4{font-family:'Montserrat',sans-serif;font-size:20px;color:var(--gold);margin-bottom:10px;letter-spacing:.06em;text-transform:uppercase}
+  .askbox li{font-size:18px;color:#fff;margin-bottom:7px;list-style:none;padding-left:26px;position:relative;line-height:1.35}
+  .askbox li::before{content:"";position:absolute;left:0;top:9px;width:11px;height:11px;background:var(--gold);border-radius:2px}
+  .sign{display:flex;gap:18px;margin-top:20px;flex-wrap:wrap}
+  .sign .b{background:#fff;border-radius:10px;padding:16px 22px;flex:1;min-width:280px}
+  .sign .b b{display:block;font-family:'Montserrat',sans-serif;font-size:18px;color:var(--navy);margin-bottom:4px}
+  .sign .b span{font-size:16px;color:var(--grey);line-height:1.4;display:block}
+  .sign .b span.ln{border-bottom:1px solid #d9ddec;height:24px;margin-top:10px}
+  .sign .b b.ph{color:#7b84a6;font-weight:600;font-size:15px;letter-spacing:.1em;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="cover">
+    <img class="la" src="logo_branca.svg" alt="Lucro Ativo">
+    <div class="kicker">Apresentação Institucional</div>
+    <h1>Eficiência tributária,<br>preservação de caixa<br>e saneamento de passivos</h1>
+    <div class="sub2">Engenharia tributária para empresas que querem reduzir desembolso e regularizar obrigações — com respaldo jurídico e condução técnica integral.</div>
+    <div class="meta">
+      <div><b>Créditos federais</b> · encontro de contas</div>
+      <div><b>ICMS</b> · compensação</div>
+      <div><b>Dívida ativa</b> · transação PGFN</div>
+    </div>
+  </div>
+  <div class="foot" style="background:transparent;color:#aab1e8"><span class="brand" style="color:#fff">LUCRO ATIVO · COMPLIANCE FISCAL TRIBUTÁRIO</span><span>01</span></div>
+</div>
+
+<!-- 2 · A LUCRO ATIVO -->
+<div class="slide">
+  <div class="topbar"><div class="tag"><span class="n">01</span>A LUCRO ATIVO</div></div>
+  <div class="rule"></div>
+  <div class="content">
+    <div class="ghost">01</div>
+    <div class="z">
+      <h2 class="title">Estratégia tributária com condução de advocacia</h2>
+      <div class="sub">Diagnóstico, modelagem jurídica e execução sob uma única responsabilidade técnica.</div>
+      <div class="grid3">
+        <div class="card"><div class="mb"></div><h3>Atuação</h3><p>Inteligência e engenharia tributária para o segmento corporativo — <b>middle e corporate</b>, em situações de maior complexidade.</p></div>
+        <div class="card"><div class="mb"></div><h3>Integração</h3><p>Análise <b>contábil, jurídica e financeira</b> na mesma mesa, com negociação estratégica junto ao Fisco.</p></div>
+        <div class="card gold"><div class="mb"></div><h3>Objetivo</h3><p>Converter passivos e obrigações recorrentes em <b>caixa preservado, regularidade e capacidade de crescimento</b>.</p></div>
+      </div>
+      <div class="credbar">
+        <div class="c"><b>Sociedade de advogados</b><span>L. Santos Sociedade Individual de Advocacia — responsabilidade profissional e sigilo</span></div>
+        <div class="c"><b>Condução integral</b><span>Da análise à execução, sem terceirizar a relação com o cliente</span></div>
+        <div class="c"><b>Ecossistema</b><span>Aliança com o Grupo Studio para soluções fiscais complementares</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">LUCRO ATIVO · COMPLIANCE FISCAL TRIBUTÁRIO</span><span>02</span></div>
+</div>
+
+<!-- 3 · O DESAFIO -->
+<div class="slide">
+  <div class="topbar"><div class="tag"><span class="n">02</span>O DESAFIO</div></div>
+  <div class="rule"></div>
+  <div class="content">
+    <div class="ghost">02</div>
+    <div class="z">
+      <h2 class="title">Quando o tributo deixa de ser obrigação e vira restrição</h2>
+      <div class="sub">Quatro sintomas que colocam a empresa em desvantagem competitiva.</div>
+      <div class="grid2">
+        <div class="card"><h3>Pressão de caixa</h3><p>Recolhimento corrente relevante ou passivo acumulado consome liquidez e trava investimento.</p></div>
+        <div class="card"><h3>Restrição fiscal</h3><p>Dívida ativa, protestos e constrições limitam crédito, licitações e a própria operação.</p></div>
+        <div class="card"><h3>Parcelamento que não resolve</h3><p>A dívida é corrigida pela SELIC e se alonga sem atacar a causa econômica do passivo.</p></div>
+        <div class="card"><h3>Complexidade técnica</h3><p>Diagnóstico, documentação e estratégia jurídica exigem coordenação — e raramente estão sob a mesma condução.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">LUCRO ATIVO · COMPLIANCE FISCAL TRIBUTÁRIO</span><span>03</span></div>
+</div>
+
+<!-- 4 · PORTFÓLIO -->
+<div class="slide">
+  <div class="topbar"><div class="tag"><span class="n">03</span>SOLUÇÕES</div></div>
+  <div class="rule"></div>
+  <div class="content">
+    <div class="ghost">03</div>
+    <div class="z">
+      <h2 class="title">Quatro frentes, um mesmo objetivo: menos desembolso</h2>
+      <div class="sub">A frente aplicável depende do perfil tributário — definida no diagnóstico.</div>
+      <div class="prod">
+        <div class="p"><div class="k">Tributos federais correntes</div><h3>Direito Creditório Federal</h3><p>Encontro de contas: os tributos federais do mês são quitados com direito creditório reconhecido em decisão transitada em julgado.</p><div class="leg">EC 113/2021 · compensação mensal via PER/DCOMP</div></div>
+        <div class="p"><div class="k">Dívida ativa da União</div><h3>Transação Tributária · PGFN</h3><p>Saneamento de CDAs, revisão de CAPAG e Transação Individual para grandes passivos, com liquidação estruturada do saldo.</p><div class="leg">Lei 13.988/2020 · Lei 14.375/2022 · Portaria PGFN 6.757/2022</div></div>
+        <div class="p"><div class="k">ICMS corrente</div><h3>Compensação de ICMS</h3><p>Créditos acumulados habilitados são transferidos e lançados na apuração, reduzindo o ICMS a recolher no mês.</p><div class="leg">LC 87/96 · RICMS-SP · e-CredAc</div></div>
+        <div class="p"><div class="k">ICMS · quitação</div><h3>Títulos públicos estaduais</h3><p>Ativos com poder liberatório previsto em lei, adquiridos abaixo do valor de face, aplicados à quitação do imposto.</p><div class="leg">Detalhamento técnico apresentado sob confidencialidade</div></div>
+      </div>
+      <div class="pubnote"><b>Setor público:</b> a Lucro Ativo também atua com municípios na retenção correta do IRRF sobre bens e serviços — receita própria assegurada pelo STF (Tema 1.130) e pela IN RFB 2.145/2023.</div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">LUCRO ATIVO · COMPLIANCE FISCAL TRIBUTÁRIO</span><span>04</span></div>
+</div>
+
+<!-- 5 · DCF -->
+<div class="slide">
+  <div class="topbar"><div class="tag"><span class="n">04</span>DIREITO CREDITÓRIO FEDERAL</div></div>
+  <div class="rule"></div>
+  <div class="content">
+    <div class="ghost">04</div>
+    <div class="z">
+      <h2 class="title">Pagar 80% do que hoje se paga integralmente</h2>
+      <div class="sub">A empresa deixa de desembolsar 100% dos tributos federais e passa a quitá-los por encontro de contas.</div>
+      <div class="two">
+        <div>
+          <ul class="clean" style="font-size:19px;line-height:1.45">
+            <li><b>O que entra:</b> PIS, COFINS, IRPJ, CSLL e INSS.</li>
+            <li><b>Como funciona:</b> o cliente é habilitado como titular de uma fração do direito creditório por cessão formal — <b>antes</b> de qualquer compensação.</li>
+            <li><b>Onde corre:</b> integralmente dentro da Receita Federal, via PER/DCOMP, com rastreabilidade.</li>
+            <li><b>Quando começa:</b> primeira compensação em até <b>30 dias</b> da formalização.</li>
+            <li><b>Sem desembolso antecipado</b> para aquisição do crédito: o pagamento acompanha as competências.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="kv">
+            <div class="r"><span class="lbl">Tributos federais / mês</span><span class="val">R$ 200.000</span></div>
+            <div class="r"><span class="lbl">Volume compensado em 12 meses</span><span class="val">R$ 2.400.000</span></div>
+            <div class="r"><span class="lbl">Pago à Lucro Ativo (80%)</span><span class="val">R$ 1.920.000</span></div>
+            <div class="r hot"><span class="lbl">Economia no ano (20%)</span><span class="val">R$ 480.000</span></div>
+          </div>
+          <div class="disc">Exemplo ilustrativo. O deságio de 20% é fixo no modelo; os 80% já incluem honorários, taxas e custos da operação. Volumes variam conforme o perfil de recolhimento.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">LUCRO ATIVO · COMPLIANCE FISCAL TRIBUTÁRIO</span><span>05</span></div>
+</div>
+
+<!-- 6 · PGFN -->
+<div class="slide">
+  <div class="topbar"><div class="tag"><span class="n">05</span>TRANSAÇÃO TRIBUTÁRIA · PGFN</div></div>
+  <div class="rule"></div>
+  <div class="content">
+    <div class="ghost">05</div>
+    <div class="z">
+      <h2 class="title">Grandes passivos inscritos em dívida ativa</h2>
+      <div class="sub">Simulação ilustrativa sobre passivo consolidado de R$ 10 milhões.</div>
+      <div class="wf" style="height:275px;flex-shrink:0;align-items:flex-end;margin-top:18px">
+        <div class="col"><div class="bar" style="height:170px;background:var(--navy)"><span class="bv">R$ 10,00 mi</span></div><div class="cl"><b>Passivo consolidado</b><br>situação atual</div></div>
+        <div class="col"><div class="bar" style="height:60px;background:var(--gold)"><span class="bv">− R$ 3,50 mi</span></div><div class="cl"><b>Desconto legal</b><br>até 65% sobre juros, multas e encargos</div></div>
+        <div class="col"><div class="bar" style="height:111px;background:var(--navy3)"><span class="bv">R$ 6,50 mi</span></div><div class="cl"><b>Saldo remanescente</b><br>base da liquidação</div></div>
+        <div class="col"><div class="bar" style="height:78px;background:var(--gold)"><span class="bv">− R$ 4,55 mi</span></div><div class="cl"><b>Liquidação com crédito</b><br>até 70% do saldo · custo R$ 3,64 mi</div></div>
+        <div class="col"><div class="bar" style="height:56px;background:#1f7a4d"><span class="bv">R$ 1,95 mi</span></div><div class="cl"><b>Saldo em caixa</b><br>parcelado em até 36x</div></div>
+      </div>
+      <div class="disc" style="margin-top:16px">Liquidação com <b>crédito financeiro de terceiro</b>, formalmente transferido por escritura pública, com deságio de 20% (R$ 4,55 mi extintos ao custo de R$ 3,64 mi). Desembolso total: R$ 5,59 mi — <b>economia de R$ 4,41 mi (44,1%)</b>. Percentuais são tetos legais; o efetivo depende da capacidade de pagamento aferida pela PGFN (Portaria 6.757/2022).</div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">LUCRO ATIVO · COMPLIANCE FISCAL TRIBUTÁRIO</span><span>06</span></div>
+</div>
+
+<!-- 7 · ICMS -->
+<div class="slide">
+  <div class="topbar"><div class="tag"><span class="n">06</span>ICMS</div></div>
+  <div class="rule"></div>
+  <div class="content">
+    <div class="ghost">06</div>
+    <div class="z">
+      <h2 class="title">Redução do ICMS a recolher no mês</h2>
+      <div class="sub">Duas mecânicas distintas — ambas sobre o imposto corrente, não sobre o passado.</div>
+      <div class="grid2">
+        <div class="card"><div class="mb"></div><h3>Compensação com créditos acumulados</h3><p>Créditos legitimamente acumulados por detentores habilitados na SEFAZ são transferidos e lançados na apuração do cliente (GIA/EFD), <b>reduzindo o imposto a recolher da competência</b>.</p><p class="leg" style="margin-top:10px;font-size:15.5px;color:var(--grey)">LC 87/96 · RICMS-SP, arts. 71 a 84 e 99 · Portaria SRE 65/2023</p></div>
+        <div class="card gold"><div class="mb"></div><h3>Quitação com títulos públicos estaduais</h3><p>Ativos com <b>poder liberatório previsto em lei estadual</b>, adquiridos abaixo do valor de face e aplicados à quitação do ICMS, com validação em camadas no Judiciário e perante a Fazenda.</p><p class="leg" style="margin-top:10px;font-size:15.5px;color:var(--grey)">Estrutura, origem e precedentes apresentados em reunião técnica sob confidencialidade</p></div>
+      </div>
+      <div class="pubnote" style="border-left-color:var(--gold)"><b>Diferença que importa:</b> não se trata de reaver imposto pago no passado. A economia incide sobre o ICMS que a empresa pagaria <b>neste mês</b> — efeito imediato e recorrente no caixa.</div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">LUCRO ATIVO · COMPLIANCE FISCAL TRIBUTÁRIO</span><span>07</span></div>
+</div>
+
+<!-- 8 · ECOSSISTEMA GRUPO STUDIO -->
+<div class="slide navy">
+  <div class="topbar"><div class="tag" style="color:#fff"><span class="n">07</span>ECOSSISTEMA</div></div>
+  <div class="rule" style="background:linear-gradient(90deg,#fff 0 70%,var(--gold) 70% 100%)"></div>
+  <div class="cobrand" style="top:32px"><img src="gs_branco.png" alt="Grupo Studio" style="height:40px"></div>
+  <div class="content">
+    <div class="z">
+      <h2 class="title" style="color:#fff">Uma aliança que amplia o alcance da assessoria</h2>
+      <div class="sub" style="color:#c8cdf0">A Lucro Ativo integra o ecossistema do <b style="color:#fff">Grupo Studio</b>, somando às teses tributárias proprietárias um portfólio consolidado de soluções fiscais, financeiras e de conformidade.</div>
+      <div class="stats3">
+        <div class="stat" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25)"><div class="v">+35 mil</div><div class="l">empresas atendidas pelo ecossistema</div></div>
+        <div class="stat" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25)"><div class="v">+500</div><div class="l">atestados de capacidade técnica emitidos por clientes</div></div>
+        <div class="stat" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25)"><div class="v">360°</div><div class="l">diagnóstico do cliente em plataforma própria</div></div>
+      </div>
+      <div class="askbox" style="margin-top:24px">
+        <h4>O que isso significa para a sua empresa</h4>
+        <ul>
+          <li><b>Diagnóstico completo</b> — a análise não se limita ao tributo: mapeia energia, capital, riscos e conformidade.</li>
+          <li><b>Um único interlocutor</b> — a Lucro Ativo conduz a relação e responde pela execução em todas as frentes.</li>
+          <li><b>Lastro de experiência</b> — soluções já aplicadas em escala, com histórico documentado por segmento.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot" style="background:transparent;color:#aab1e8"><span class="brand" style="color:#fff">LUCRO ATIVO · COMPLIANCE FISCAL TRIBUTÁRIO</span><span>08</span></div>
+</div>
+
+<!-- 9 · VERTICAIS COMPLEMENTARES -->
+<div class="slide">
+  <div class="topbar"><div class="tag"><span class="n">08</span>SOLUÇÕES COMPLEMENTARES</div></div>
+  <div class="cobrand"><img src="la_logo_navy_fix.png" alt="Lucro Ativo"><span class="sep"></span><img src="gs_grafite.png" alt="Grupo Studio"></div>
+  <div class="rule"></div>
+  <div class="content">
+    <div class="ghost">08</div>
+    <div class="z">
+      <h2 class="title">Cinco verticais além da tese tributária</h2>
+      <div class="sub">Disponibilizadas pelo ecossistema Grupo Studio, com condução da Lucro Ativo.</div>
+      <div class="grid3 gsx">
+        <div class="card"><div class="mb"></div><h3>Studio Fiscal</h3><p>Planejamento e revisão de apuração, captura de créditos não aproveitados e revisão das bases previdenciárias.</p></div>
+        <div class="card"><div class="mb"></div><h3>Studio Energy</h3><p>Mercado Livre, auditoria da fatura e geração própria — redução estrutural de um custo relevante.</p></div>
+        <div class="card"><div class="mb"></div><h3>Studio Bank</h3><p>Operações estruturadas, captação via nota comercial e garantias sob medida.</p></div>
+        <div class="card"><div class="mb"></div><h3>Seguros &amp; Agro</h3><p>Seguro por cultura, proteção de ativos rurais e reestruturação de dívidas do produtor.</p></div>
+        <div class="card"><div class="mb"></div><h3>LGPD &amp; Governança</h3><p>Adequação à Lei Geral de Proteção de Dados e estruturação de governança societária.</p></div>
+        <div class="card gold"><div class="mb"></div><h3>Condução Lucro Ativo</h3><p>Qualquer que seja a vertical, o <b>diagnóstico, a modelagem e o acompanhamento</b> seguem sob a mesma responsabilidade.</p></div>
+      </div>
+      <div class="gsnote"><b>Como é apresentado:</b> a frente complementar só entra em pauta quando o diagnóstico identifica ganho concreto — não há oferta cruzada sem fundamento técnico.</div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">LUCRO ATIVO · COMPLIANCE FISCAL TRIBUTÁRIO</span><span>09</span></div>
+</div>
+
+<!-- 10 · METODOLOGIA -->
+<div class="slide navy">
+  <div class="topbar"><div class="tag" style="color:#fff"><span class="n">09</span>METODOLOGIA</div></div>
+  <div class="rule" style="background:linear-gradient(90deg,#fff 0 70%,var(--gold) 70% 100%)"></div>
+  <div class="content">
+    <div class="z">
+      <h2 class="title" style="color:#fff">Da análise à execução, sob uma única condução</h2>
+      <div class="sub" style="color:#c8cdf0">Nenhuma etapa é terceirizada: diagnóstico, modelagem, protocolo e acompanhamento são da Lucro Ativo.</div>
+      <div class="flow big">
+        <div class="fs"><div class="k">ETAPA 1</div><h4>Diagnóstico</h4><p>Recolhimentos, passivos, certidões e restrições. Sem custo.</p></div>
+        <div class="fs"><div class="k">ETAPA 2</div><h4>Confidencialidade</h4><p>NDA e apresentação técnica detalhada da solução aplicável.</p></div>
+        <div class="fs"><div class="k">ETAPA 3</div><h4>Estruturação</h4><p>Modelagem jurídica e financeira, condições comerciais e cronograma.</p></div>
+        <div class="fs hot"><div class="k">ETAPA 4</div><h4>Execução</h4><p>Protocolos, negociação e compensações mensais acompanhadas.</p></div>
+      </div>
+      <div style="margin-top:24px;font-size:19px;color:#c8cdf0">Acompanhamento antes, durante e depois da implementação — inclusive na escrituração contábil do cliente.</div>
+    </div>
+  </div>
+  <div class="foot" style="background:transparent;color:#aab1e8"><span class="brand" style="color:#fff">LUCRO ATIVO · COMPLIANCE FISCAL TRIBUTÁRIO</span><span>10</span></div>
+</div>
+
+<!-- 9 · SEGURANÇA -->
+<div class="slide navy">
+  <div class="topbar"><div class="tag" style="color:#fff"><span class="n">10</span>ESTRUTURA E RESPALDO</div></div>
+  <div class="rule" style="background:linear-gradient(90deg,#fff 0 70%,var(--gold) 70% 100%)"></div>
+  <div class="content">
+    <div class="z">
+      <h2 class="title" style="color:#fff">Segurança jurídica construída em camadas</h2>
+      <div class="sub" style="color:#c8cdf0">Quatro pilares que sustentam cada operação — do enquadramento inicial à execução mensal.</div>
+      <div class="shield">
+        <div class="s"><h4>Titularidade prévia</h4><p>A cessão formal e a habilitação do cliente como <b>titular do direito creditório</b> precedem qualquer compensação — a operação parte de um direito próprio.</p></div>
+        <div class="s"><h4>Ativo consolidado</h4><p>Direito creditório reconhecido em <b>decisão transitada em julgado</b>, com liquidez e certeza já definidas na esfera judicial.</p></div>
+        <div class="s"><h4>Rastreabilidade integral</h4><p>Compensações protocoladas na <b>Receita Federal, via PER/DCOMP</b>, com trilha documental completa de cada competência.</p></div>
+        <div class="s"><h4>Responsabilidade profissional</h4><p>Operação conduzida por <b>sociedade de advogados</b>, com parecer de viabilidade individual, sigilo profissional e acompanhamento contínuo.</p></div>
+      </div>
+      <div style="margin-top:22px;font-size:18px;color:#c8cdf0;line-height:1.45">A base é o <b style="color:#fff">encontro de contas autorizado pela EC 113/2021</b> (CF, art. 100, §11), que admite expressamente créditos líquidos e certos adquiridos de terceiros e reconhecidos por decisão transitada em julgado. O enquadramento de cada operação é objeto de análise técnica individual, formalizada antes de qualquer implementação.</div>
+    </div>
+  </div>
+  <div class="foot" style="background:transparent;color:#aab1e8"><span class="brand" style="color:#fff">LUCRO ATIVO · COMPLIANCE FISCAL TRIBUTÁRIO</span><span>11</span></div>
+</div>
+
+<!-- 10 · PARA QUEM É -->
+<div class="slide">
+  <div class="topbar"><div class="tag"><span class="n">11</span>PERFIL DE ATENDIMENTO</div></div>
+  <div class="rule"></div>
+  <div class="content">
+    <div class="ghost">11</div>
+    <div class="z">
+      <h2 class="title">Para quem essa conversa faz sentido</h2>
+      <div class="sub">Critérios objetivos — para que ninguém invista tempo em uma operação inviável.</div>
+      <div class="fit">
+        <div class="yes">
+          <h3>Faz sentido avaliar</h3>
+          <ul>
+            <li>Empresas no <b>Lucro Real ou Presumido</b></li>
+            <li>Recolhimento federal recorrente <b>a partir de R$ 100 mil/mês</b></li>
+            <li>ICMS relevante em operação corrente</li>
+            <li>Passivo inscrito em <b>dívida ativa da União</b>, com ou sem parcelamento em curso</li>
+            <li>Necessidade de certidão, participação em licitação ou liberação de crédito</li>
+          </ul>
+        </div>
+        <div class="no">
+          <h3>Não é o nosso perfil</h3>
+          <ul>
+            <li>Simples Nacional, MEI e pessoa física</li>
+            <li>Carga tributária pouco relevante</li>
+            <li>Quem procura promessa de resultado sem análise prévia</li>
+            <li>Débitos já objeto de compensação glosada (exigem tratamento diverso)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="disc" style="margin-top:16px;font-size:16.5px">Todo enquadramento é confirmado no diagnóstico. Nenhuma operação é implementada sem análise de viabilidade documental e jurídica.</div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">LUCRO ATIVO · COMPLIANCE FISCAL TRIBUTÁRIO</span><span>12</span></div>
+</div>
+
+<!-- 11 · PRÓXIMO PASSO -->
+<div class="slide navy close">
+  <div class="stripe"></div>
+  <div class="cover">
+    <div class="kicker">Próximo passo</div>
+    <h1>Descubra, em números,<br>o que a sua empresa deixa na mesa.</h1>
+    <div class="sub2" style="margin-top:18px">O diagnóstico inicial é <b style="color:#fff">sem custo</b> e devolve enquadramento, economia potencial mensal e anual, documentação necessária e riscos — antes de qualquer implementação ou compromisso.</div>
+    <div class="askbox">
+      <h4>Para começar, basta</h4>
+      <ul>
+        <li>Média de recolhimento federal dos últimos 12 meses — DARFs ou DCTFWeb</li>
+        <li>Relatório de Situação Fiscal (e-CAC / PGFN), se houver passivo inscrito</li>
+        <li>Para ICMS: apuração dos últimos 12 meses</li>
+      </ul>
+    </div>
+    <div class="sign">
+      <div class="b"><b class="ph">Consultor responsável</b><span class="ln"></span><span class="ln"></span></div>
+      <div class="b"><b class="ph">Contato</b><span class="ln"></span><span class="ln"></span></div>
+    </div>
+  </div>
+  <div class="foot" style="background:transparent;color:#aab1e8"><span class="brand" style="color:#fff">LUCRO ATIVO · COMPLIANCE FISCAL TRIBUTÁRIO</span><span>13</span></div>
+</div>
+
+</body>
+</html>

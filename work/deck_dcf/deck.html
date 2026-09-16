@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Deck Comercial · Direito Creditório Federal · Lucro Ativo</title>
+<style>
+  :root{
+    --navy:#010860; --gold:#C9A227; --ink:#1a1f36;
+    --grey:#5a6072; --line:#e3e6ef; --bg:#f7f8fc;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:1280px 720px;margin:0}
+  body{font-family:'Inter',sans-serif;color:var(--ink)}
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;page-break-after:always;background:#fff;display:flex;flex-direction:column}
+  h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
+  .topbar{display:flex;align-items:center;gap:18px;padding:32px 64px 0 64px}
+  .tag{font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;letter-spacing:.14em;color:var(--navy);text-transform:uppercase}
+  .tag .n{color:var(--gold);margin-right:10px}
+  .rule{height:3px;background:linear-gradient(90deg,var(--navy) 0 70%,var(--gold) 70% 100%);margin:13px 64px 0 64px}
+  .content{flex:1;display:flex;flex-direction:column;justify-content:center;padding:6px 64px 56px 64px}
+  .foot{position:absolute;bottom:0;left:0;right:0;height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;font-size:15px;color:var(--grey)}
+  .foot .brand{font-family:'Montserrat',sans-serif;font-weight:600;color:var(--navy)}
+  h2.title{font-size:42px;color:var(--navy);font-weight:800;line-height:1.12;margin-bottom:8px}
+  .sub{font-size:22px;color:var(--grey);margin-bottom:22px}
+  .ghost{position:absolute;right:24px;bottom:-40px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:340px;color:var(--navy);opacity:.045;line-height:1;z-index:0}
+  .z{position:relative;z-index:1}
+  .navy{background:linear-gradient(160deg,var(--navy) 0%,#03063f 100%);color:#fff}
+  .navy .bars{position:absolute;right:70px;bottom:60px;display:flex;align-items:flex-end;gap:14px;opacity:.35}
+  .navy .bars div{width:34px;background:linear-gradient(180deg,var(--gold),#8d6f14);border-radius:4px 4px 0 0}
+  .cover{padding:0 90px;display:flex;flex-direction:column;justify-content:center;height:100%}
+  .cover img{width:340px;margin-bottom:46px}
+  .cover .kicker{font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  .cover h1{font-size:58px;font-weight:800;line-height:1.1;max-width:980px}
+  .cover .sub2{font-size:26px;color:#c8cdf0;margin-top:24px;max-width:920px;line-height:1.45}
+  .cover .meta{display:flex;gap:34px;margin-top:44px;font-size:19px;color:#aab1e8}
+  .cover .meta b{color:#fff;font-weight:600}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--gold)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--bg);border:1px solid var(--line);border-left:6px solid var(--navy);border-radius:10px;padding:20px 24px}
+  .card h3{font-size:21px;color:var(--navy);font-weight:700;margin-bottom:9px}
+  .card p,.card li{font-size:19px;line-height:1.48;color:var(--ink)}
+  .card.gold{border-left-color:var(--gold)}
+  .card b{color:var(--navy)}
+  ul.clean{list-style:none}
+  ul.clean li{padding-left:26px;position:relative;margin-bottom:11px;font-size:19.5px;line-height:1.48}
+  ul.clean li::before{content:"";position:absolute;left:0;top:10px;width:12px;height:12px;background:var(--gold);border-radius:2px}
+  ul.clean li b{color:var(--navy)}
+  .note{margin-top:15px;background:#fdf9ee;border:1px solid #ecd9a0;border-radius:10px;padding:12px 20px;font-size:17px;color:#6b5510}
+  .note b{color:#8a6d0d}
+  /* etapas 3x2 */
+  .flow6{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
+  .step{background:var(--bg);border:1px solid var(--line);border-top:6px solid var(--navy);border-radius:10px;padding:18px 18px}
+  .step.hot{border-top-color:var(--gold);background:#fdf9ee}
+  .step .n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:32px;color:var(--gold)}
+  .step h4{font-size:19.5px;color:var(--navy);margin:5px 0 8px 0;line-height:1.2}
+  .step p{font-size:16.5px;color:var(--grey);line-height:1.42}
+  /* timeline */
+  .tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:18px;position:relative}
+  .tl::before{content:"";position:absolute;left:6%;right:6%;top:26px;height:4px;background:linear-gradient(90deg,var(--navy),var(--gold));border-radius:2px}
+  .tlc{position:relative;text-align:center;padding:0 14px}
+  .tlc .dot{min-width:54px;width:max-content;padding:0 16px;height:54px;border-radius:27px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;margin:0 auto 14px auto;position:relative;z-index:1;border:4px solid #fff;box-shadow:0 0 0 2px var(--navy)}
+  .tlc.hot .dot{background:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+  .tlc h4{font-size:19px;color:var(--navy);margin-bottom:8px;line-height:1.2}
+  .tlc p{font-size:16.5px;color:var(--grey);line-height:1.42}
+  /* decisões */
+  .dec{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .dcard{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:18px 22px;position:relative}
+  .dcard .badge{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14.5px;letter-spacing:.08em;color:#fff;background:var(--navy);border-radius:6px;padding:4px 12px;margin-bottom:10px;text-transform:uppercase}
+  .dcard.hot .badge{background:var(--gold)}
+  .dcard h4{font-size:19px;color:var(--navy);margin-bottom:7px;line-height:1.25}
+  .dcard p{font-size:16.5px;line-height:1.42;color:var(--ink)}
+  /* 80/20 split */
+  .split{display:flex;align-items:center;gap:44px;justify-content:center;margin-top:8px}
+  .stack{width:280px}
+  .stack .s80{height:230px;background:linear-gradient(180deg,var(--navy),#03063f);border-radius:12px 12px 0 0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:0 18px}
+  .stack .s20{height:80px;background:linear-gradient(180deg,var(--gold),#a8871f);border-radius:0 0 12px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:0 14px}
+  .stack .pc{font-family:'Montserrat',sans-serif;font-weight:800;font-size:40px;line-height:1}
+  .stack .pl{font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;margin-top:6px;line-height:1.25}
+  .kv{display:flex;flex-direction:column;gap:12px;max-width:560px}
+  .kv .row{display:flex;gap:14px;align-items:flex-start}
+  .kv .ic{min-width:44px;height:44px;border-radius:10px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:19px}
+  .kv .tx{font-size:18.5px;line-height:1.42}
+  .kv .tx b{color:var(--navy)}
+  /* norma grid */
+  .norm{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .ncard{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .ncard h4{font-size:17.5px;color:var(--navy);margin-bottom:6px}
+  .ncard p{font-size:15.5px;color:var(--grey);line-height:1.38}
+  .juris{margin-top:16px;display:flex;gap:14px}
+  .jpill{flex:1;background:var(--navy);color:#fff;border-radius:10px;padding:13px 18px;font-size:16px;line-height:1.35}
+  .jpill b{font-family:'Montserrat',sans-serif;color:var(--gold)}
+</style>
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="cover">
+    <img src="logo_branca.svg" alt="Lucro Ativo">
+    <div class="kicker">Solução Tributária · Direito Creditório Federal</div>
+    <h1>Encontro de contas<br>tributário federal</h1>
+    <div class="sub2">Compensação mensal dos seus tributos federais com crédito judicial transitado em julgado — procedimento 100% administrativo, previsto em lei, com condução integral da Lucro Ativo.</div>
+    <div class="meta">
+      <span><b>Lucro Ativo</b> · Compliance Fiscal Tributário</span>
+      <span>Apresentação Comercial</span>
+    </div>
+  </div>
+  <div class="bars"><div style="height:70px"></div><div style="height:110px"></div><div style="height:160px"></div><div style="height:220px"></div></div>
+</div>
+
+<!-- 2 · A OPORTUNIDADE -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">01</span>A oportunidade</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">O tributo federal do mês, extinto por compensação</h2>
+    <div class="sub">Sua empresa é habilitada como titular de fração de um <b>crédito judicial transitado em julgado</b> — e passa a quitar os tributos federais vincendos por compensação administrativa.</div>
+    <div class="grid2">
+      <div class="card"><h3>O que acontece na prática</h3><p>A cada mês de competência, os débitos federais vincendos — <b>PIS, COFINS, IRPJ, CSLL</b> e demais tributos administrados pela Receita Federal — são <b>extintos por compensação</b> (CTN, art. 156, II) contra o crédito habilitado, por declaração eletrônica <b>PER/DCOMP</b>. Não há saída de caixa para a União sobre o tributo do mês.</p></div>
+      <div class="card gold"><h3>O que muda no seu caixa</h3><p>O cliente paga <b>80% do valor de face</b> de cada tributo efetivamente compensado — na medida em que cada compensação se efetiva — e retém <b>20% como economia direta e líquida</b>, competência após competência. Sem pagamento antecipado, sem adesão, sem honorários à parte.</p></div>
+    </div>
+    <div class="note"><b>Importante:</b> não se trata de tese especulativa. A operação é o exercício de direito com assento constitucional — o <b>encontro de contas inaugurado pela EC&nbsp;113/2021 (CF, art.&nbsp;100, §11)</b> e regulamentado pelos normativos federais posteriores — em harmonia com o <b>CTN (arts.&nbsp;156,&nbsp;II, 170 e 170-A)</b>, dentro de procedimento administrativo regular na Receita Federal.</div>
+  </div>
+  <div class="ghost">01</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Direito Creditório Federal · Encontro de Contas</span><span>2</span></div>
+</div>
+
+<!-- 3 · O QUE NÃO É -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">02</span>Precisão técnica</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">O que a operação não é</h2>
+    <div class="sub">A segurança começa pela distinção correta dos institutos.</div>
+    <div class="grid2">
+      <div class="card"><h3>Não é precatório</h3><p>A União <b>não emite ordem de pagamento</b> e não há fila de recebimento. O efeito é outro: a <b>extinção do débito tributário por compensação administrativa</b> (CTN, art. 156, II), dentro da própria Receita Federal.</p></div>
+      <div class="card"><h3>Não é a compensação comum da Lei 9.430/96</h3><p>O rito ordinário do art. 74 foi desenhado para crédito <b>próprio</b> do contribuinte. A base desta operação é <b>posterior e constitucional</b>: o encontro de contas da <b>EC 113/2021 (CF, art. 100, §11)</b>, que admite expressamente créditos <b>próprios ou adquiridos de terceiros</b>, decorrentes de decisões judiciais transitadas em julgado.</p></div>
+      <div class="card"><h3>Não é "compensação com crédito de terceiro"</h3><p>Antes de qualquer declaração, o cliente é <b>formalmente habilitado no polo ativo</b> do processo de origem como titular de fração do crédito, por cessão formal (CC, arts. 286–298). A empresa compensa crédito <b>do qual é titular</b>.</p></div>
+      <div class="card"><h3>Não é planejamento agressivo</h3><p>A operação exerce direito <b>previsto em lei</b>, com crédito reconhecido judicialmente e escrituração aceita pelo juízo de origem — sem simulação, dissimulação ou fraude. O <b>Tema 736/STF</b> protege expressamente o exercício do direito creditório.</p></div>
+    </div>
+  </div>
+  <div class="ghost">02</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Direito Creditório Federal · Encontro de Contas</span><span>3</span></div>
+</div>
+
+<!-- 4 · BASE LEGAL -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">03</span>Fundamentação</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Base legal integral — da Constituição ao procedimento</h2>
+    <div class="norm">
+      <div class="ncard"><h4>CF/88 — art. 100, §11 (EC 113/2021)</h4><p><b>O assento constitucional do encontro de contas:</b> faculta a oferta de créditos líquidos e certos, <b>próprios ou adquiridos de terceiros</b>, decorrentes de decisões judiciais transitadas em julgado, para quitação de débitos perante a União.</p></div>
+      <div class="ncard"><h4>CF/88 — arts. 150, §6º e 195</h4><p>Legalidade tributária e materialidade dos tributos federais compensáveis.</p></div>
+      <div class="ncard"><h4>Código Civil — arts. 286–298 e 368–369</h4><p>Cessão de crédito (matriz da habilitação do cliente) e a compensação como instituto civil.</p></div>
+      <div class="ncard"><h4>CTN — arts. 156, II, 170 e 170-A</h4><p>Extinção do crédito tributário pela compensação; crédito líquido e certo; exigência do trânsito em julgado — integralmente cumprida.</p></div>
+      <div class="ncard"><h4>Decreto 11.249/2022 · Portaria PGFN 10.826/2022 · IN RFB 2.055/2021</h4><p><b>A regulamentação posterior da EC 113/2021:</b> disciplina operacional do encontro de contas e do processamento administrativo federal de restituição, ressarcimento e compensação.</p></div>
+      <div class="ncard"><h4>Lei 9.250/95 — art. 39, §4º</h4><p>Atualização do crédito pela <b>SELIC</b> durante todo o processamento administrativo.</p></div>
+    </div>
+    <div class="juris">
+      <div class="jpill"><b>Tema 736/STF</b> — inconstitucional a multa de 50% sobre compensação não homologada, sem má-fé.</div>
+      <div class="jpill"><b>Tema 237/STJ</b> — garantia assegura Certidão Positiva com Efeitos de Negativa (CPD-EN).</div>
+      <div class="jpill"><b>Súmula 461/STJ</b> — o contribuinte pode optar pela compensação do indébito transitado em julgado.</div>
+    </div>
+  </div>
+  <div class="ghost">03</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Direito Creditório Federal · Encontro de Contas</span><span>4</span></div>
+</div>
+
+<!-- 5 · COMO FUNCIONA (6 etapas) -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">04</span>Como funciona</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Seis etapas — todas dentro da Receita Federal</h2>
+    <div class="flow6">
+      <div class="step"><div class="n">1</div><h4>Habilitação</h4><p>Cessão formal de fração do crédito (CC, arts. 286–298) e petição de habilitação do cliente no polo ativo do processo de origem.</p></div>
+      <div class="step"><div class="n">2</div><h4>Pedido-mãe</h4><p>Protocolo, no COMPROT, do pedido de restituição/ressarcimento lastreado no crédito judicial escriturado — é dentro dele que vivem as compensações mensais.</p></div>
+      <div class="step hot"><div class="n">3</div><h4>Compensações mensais</h4><p>A cada competência, PER/DCOMP indicando o crédito habilitado e o débito federal vincendo a quitar. Cada declaração gera protocolo individualizado.</p></div>
+      <div class="step"><div class="n">4</div><h4>Prazo legal</h4><p>A RFB tem até 1 ano para examinar o pedido, na forma da legislação do processo administrativo fiscal. Durante o prazo, o crédito segue atualizado pela SELIC.</p></div>
+      <div class="step"><div class="n">5</div><h4>Homologação tácita</h4><p>Transcorrido o prazo sem questionamento, a compensação considera-se homologada por efeito legal.</p></div>
+      <div class="step"><div class="n">6</div><h4>Certidões preservadas</h4><p>CND mantida para os débitos compensados na competência; CPD-EN para pretéritos com garantia (Tema 237/STJ); medidas preventivas quando necessário.</p></div>
+    </div>
+  </div>
+  <div class="ghost">04</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Direito Creditório Federal · Encontro de Contas</span><span>5</span></div>
+</div>
+
+<!-- 6 · CRONOGRAMA -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">05</span>Implementação</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Primeira compensação em até 30 dias — economia recorrente pelo prazo do contrato</h2>
+    <div class="tl">
+      <div class="tlc"><div class="dot">ETAPA 1</div><h4>Diagnóstico</h4><p>Coleta de DCTFs, EFD-Contribuições e DARFs; média mensal de recolhimento federal; débitos elegíveis. <b>Entregável: Mapa de Recolhimento.</b></p></div>
+      <div class="tlc"><div class="dot">ETAPA 2</div><h4>Análise jurídica</h4><p>Parecer técnico de viabilidade e memória de cálculo; estratégia administrativa (ou + judicial preventiva). <b>Entregável: Parecer Jurídico.</b></p></div>
+      <div class="tlc"><div class="dot">ETAPA 3</div><h4>Formalização</h4><p>Contrato e procuração; cessão de fração do crédito, habilitação no processo de origem e protocolo do pedido-mãe na RFB.</p></div>
+      <div class="tlc hot"><div class="dot">ATÉ 30 DIAS</div><h4>Compensação recorrente</h4><p>Primeira parcela mensal compensada <b>em até 30 dias</b>; PER/DCOMPs a cada competência, <b>pelo prazo do contrato (padrão: 1 ano)</b>.</p></div>
+    </div>
+    <div class="note"><b>Ritmo padrão da operação</b> — as compensações iniciam em <b>até 30 dias</b> da formalização e se estendem pelo <b>prazo do contrato (padrão: 1 ano)</b>; o cronograma detalhado de cada caso é confirmado no diagnóstico.</div>
+  </div>
+  <div class="ghost">05</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Direito Creditório Federal · Encontro de Contas</span><span>6</span></div>
+</div>
+
+<!-- 7 · SEGURANÇA JURÍDICA / DECISÕES -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">06</span>Segurança jurídica</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Decisões judiciais em operações idênticas</h2>
+    <div class="sub">Quatro decisões favoráveis — TRF3, TRF4 e TRF5, dez/2024 a abr/2026 (identificação preservada por confidencialidade).</div>
+    <div class="dec">
+      <div class="dcard"><span class="badge">Acórdão · dez/2024</span><h4>Compensação com débitos parcelados reconhecida</h4><p>Apelação provida: possibilidade expressa de compensar créditos habilitados de ação judicial com débitos em parcelamento — inclusive inscritos em Dívida Ativa.</p></div>
+      <div class="dcard"><span class="badge">Mandado de segurança · mar/2026</span><h4>Multa e responsabilização de sócios vedadas</h4><p>Segurança concedida: abstenção de multa qualificada (Tema 736/STF), vedação de responsabilização dos sócios e garantia de emissão de CND/CPD-EN.</p></div>
+      <div class="dcard"><span class="badge">Liminar · abr/2026</span><h4>Legitimidade da cessão reconhecida</h4><p>Suspensão de alerta de autorregularização da RFB após PER/DCOMP com crédito cedido; determinação de instauração do processo administrativo e emissão de CPD-EN.</p></div>
+      <div class="dcard hot"><span class="badge">Tutela de urgência · abr/2026</span><h4>Processamento imposto em 15 dias</h4><p>Instauração do processo sob multa diária; suspensão de parcelas vincendas do parcelamento; proibição de CADIN/SERASA; CPD-EN com base no Tema 237/STJ.</p></div>
+    </div>
+    <div class="note"><b>Defesa incluída:</b> toda defesa administrativa e judicial relacionada à operação é conduzida pela estrutura da Lucro Ativo, <b>sem custo adicional</b> para o cliente. As íntegras das decisões são disponibilizadas sob pedido, para análise técnica.</div>
+  </div>
+  <div class="ghost">06</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Direito Creditório Federal · Encontro de Contas</span><span>7</span></div>
+</div>
+
+<!-- 8 · MODELO 80/20 -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">07</span>Modelo econômico</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Preço único, transparente, 100% atrelado a resultado</h2>
+    <div class="split">
+      <div class="stack">
+        <div class="s80"><div class="pc">80%</div><div class="pl">do valor de face do tributo compensado — pago na medida em que cada compensação se efetiva</div></div>
+        <div class="s20"><div class="pc" style="font-size:30px">20%</div><div class="pl" style="font-size:14.5px">economia direta e líquida, no seu caixa, a cada competência</div></div>
+      </div>
+      <div class="kv">
+        <div class="row"><div class="ic">✓</div><div class="tx"><b>Sem pagamento antecipado</b> — nada é cobrado sobre crédito ainda não utilizado.</div></div>
+        <div class="row"><div class="ic">✓</div><div class="tx"><b>Sem adesão, sem mensalidade, sem honorários à parte</b> — custas, taxas e condução técnica estão integralmente embutidas.</div></div>
+        <div class="row"><div class="ic">✓</div><div class="tx"><b>Tributo do mês extinto na competência</b> (CTN, art. 156, II) — sem saída de caixa para a União sobre o débito compensado.</div></div>
+        <div class="row"><div class="ic">✓</div><div class="tx"><b>Exemplo ilustrativo:</b> empresa que recolhe em média <b>R$ 200.000/mês</b> em tributos federais (PIS, COFINS, IRPJ, CSLL e INSS) → cessão anual de <b>R$ 2.400.000</b>, extinta por compensação → <b>R$ 480.000 de economia direta</b> ao cliente no ano (20%).</div></div>
+      </div>
+    </div>
+    <div class="note"><b>Percentual fixo do modelo:</b> o deságio do DCF é sempre de <b>20%</b> — 80/20 em toda operação. Volumes e prazos são confirmados em <b>proposta individual</b>, após o diagnóstico — o exemplo acima é didático.</div>
+  </div>
+  <div class="ghost">07</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Direito Creditório Federal · Encontro de Contas</span><span>8</span></div>
+</div>
+
+<!-- 9 · COMO COMEÇAR -->
+<div class="slide">
+  <div class="topbar"><span class="tag"><span class="n">08</span>Como começar</span></div>
+  <div class="rule"></div>
+  <div class="content z">
+    <h2 class="title">Documentação enxuta, diagnóstico sem custo</h2>
+    <div class="grid2">
+      <div class="card"><h3>O que a sua empresa entrega</h3>
+        <ul class="clean" style="margin-top:6px">
+          <li><b>Contrato social</b> — versão consolidada e vigente</li>
+          <li><b>Certidões dos sócios administradores</b> — emitidas em até 90 dias</li>
+          <li><b>RG ou CNH</b> dos signatários de procuração e contrato</li>
+          <li><b>Procuração eletrônica no e-CAC</b> — para as pessoas jurídicas indicadas</li>
+        </ul>
+        <p style="font-size:16.5px;color:var(--grey);margin-top:10px">Documentos complementares (DCTFs, EFD, ECD/ECF) só se solicitados na análise jurídica, conforme o perfil tributário.</p>
+      </div>
+      <div class="card gold"><h3>O que a Lucro Ativo devolve</h3>
+        <ul class="clean" style="margin-top:6px">
+          <li><b>Mapa de Recolhimento</b> — média mensal federal e débitos elegíveis</li>
+          <li><b>Parecer Jurídico</b> — viabilidade e memória de cálculo do seu caso</li>
+          <li><b>Proposta + Plano de Implementação</b> — cenário financeiro de 12, 24 e 36 meses</li>
+        </ul>
+        <p style="font-size:16.5px;color:var(--grey);margin-top:10px">Sigilo profissional preservado em todas as etapas. Coleta assistida pela equipe técnica.</p>
+      </div>
+    </div>
+    <div class="note"><b>Sem compromisso:</b> o diagnóstico inicial não tem custo — você decide se avança depois de entender exatamente o potencial de economia da sua operação.</div>
+  </div>
+  <div class="ghost">08</div>
+  <div class="foot"><span class="brand">@meulucroativo</span><span>Direito Creditório Federal · Encontro de Contas</span><span>9</span></div>
+</div>
+
+<!-- 10 · FECHO -->
+<div class="slide navy">
+  <div class="stripe"></div>
+  <div class="cover">
+    <img src="logo_branca.svg" alt="Lucro Ativo" style="width:300px;margin-bottom:40px">
+    <div class="kicker">Próximo passo</div>
+    <h1 style="font-size:54px">Agende o diagnóstico<br>da sua operação tributária</h1>
+    <div class="sub2">Análise técnica pela equipe da Lucro Ativo, sem custo e sem compromisso comercial. Resposta em até 24 horas úteis.</div>
+    <div class="meta">
+      <span><b>Lucro Ativo</b> · Compliance Fiscal Tributário</span>
+      <span><b>@meulucroativo</b> · www.meulucroativo.com.br</span>
+    </div>
+  </div>
+  <div class="bars"><div style="height:220px"></div><div style="height:160px"></div><div style="height:110px"></div><div style="height:70px"></div></div>
+</div>
+
+</body>
+</html>
