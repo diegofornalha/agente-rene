@@ -14,7 +14,8 @@ OpenAI-compatível deste backend. Está rodando com permissões liberadas
   `data/contacts.json`, porta 3456). Esse WhatsApp **não está conectado** aqui. Quem
   atende o WhatsApp hoje é o **gateway do Hermes** (`pm2: hermes-gateway`, ponte Baileys
   em `127.0.0.1:3000`).
-- Só `skills/ops/whatsapp-clear-context.md` e este arquivo descrevem o fluxo atual.
+- Só `skills/ops/whatsapp-clear-context.md`, `skills/ops/whatsapp-grupos-habilitar.md`
+  (como um grupo fica habilitado para o agente) e este arquivo descrevem o fluxo atual.
 
 ## Operações de WhatsApp: use SEMPRE o MCP `wa-allowlist`
 

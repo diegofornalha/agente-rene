@@ -17,18 +17,30 @@ const { getClaudeResetTime } = require('../services/chat/step-formatter');
 
 module.exports = function mount(app, { upload, sessionContextManager }) {
 
+// Express 4 não captura rejeição de handler async: sem try/catch, um erro aqui vira
+// unhandledRejection e derruba o processo inteiro (aconteceu em 2026-09-27 com fs.glob no Node 20).
 app.get('/llms.txt', async (req, res) => {
-  res.setHeader('Content-Type', 'text/markdown; charset=utf-8');
-  res.setHeader('Cache-Control', 'public, max-age=60');
-  const md = await llmsIndex.get();
-  res.send(md);
+  try {
+    const md = await llmsIndex.get();
+    res.setHeader('Content-Type', 'text/markdown; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=60');
+    res.send(md);
+  } catch (err) {
+    console.error('[llms.txt] falha ao gerar índice:', err);
+    res.status(500).type('text/plain').send('llms.txt indisponível');
+  }
 });
 
 app.get('/llms-full.txt', async (req, res) => {
-  res.setHeader('Content-Type', 'text/markdown; charset=utf-8');
-  res.setHeader('Cache-Control', 'public, max-age=300');
-  const md = await llmsIndex.getFull();
-  res.send(md);
+  try {
+    const md = await llmsIndex.getFull();
+    res.setHeader('Content-Type', 'text/markdown; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=300');
+    res.send(md);
+  } catch (err) {
+    console.error('[llms-full.txt] falha ao gerar índice:', err);
+    res.status(500).type('text/plain').send('llms-full.txt indisponível');
+  }
 });
 
 // Leads Rota Fiscal — CRUD de registros por pessoa

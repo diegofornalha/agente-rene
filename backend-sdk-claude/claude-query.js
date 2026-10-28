@@ -115,6 +115,7 @@ async function* _spawnQuery({ prompt, options }) {
   const mcpConfigPath = options.mcpConfigPath || MCP_CONFIG;
   if (fs.existsSync(mcpConfigPath)) args.push('--mcp-config', mcpConfigPath, '--strict-mcp-config');
   if (options.maxTurns) args.push('--max-turns', String(options.maxTurns));
+  if (options.resume) args.push('--resume', String(options.resume)); // retoma sessão (entrega após limite de turnos)
   if (options.permissionMode) args.push('--permission-mode', options.permissionMode);
   if (options.model) args.push('--model', options.model);
   if (options.appendSystemPrompt) args.push('--append-system-prompt', options.appendSystemPrompt);

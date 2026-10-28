@@ -1,0 +1,4 @@
+[
+  { "name": "agente", "type": "claude", "priority": 0, "description": "Claude Code com ferramentas, sem pedir permissão (bypass)" },
+  { "name": "grok-4", "type": "openai", "priority": 1, "base_url": "http://127.0.0.1:8645/v1", "model": "grok-4", "description": "Grok da xAI pelo hermes proxy local (OAuth da xAI, sem chave)" }
+]

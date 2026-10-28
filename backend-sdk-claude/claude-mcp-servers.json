@@ -3,6 +3,16 @@
     "grok": {
       "command": "node",
       "args": ["/home/box/.hermes/agente-rene/backend-sdk-claude/mcp-servers/grok-mcp.mjs"]
+    },
+    "ssh": {
+      "type": "stdio",
+      "command": "/home/box/.local/bin/ssh-mcp-stdio",
+      "args": [],
+      "env": {
+        "SSH_CONNECT_TIMEOUT": "20",
+        "SSH_COMMAND_TIMEOUT": "180",
+        "RUST_LOG": "warn"
+      }
     }
   }
 }

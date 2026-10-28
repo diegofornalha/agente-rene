@@ -42,12 +42,13 @@ function _collectChannels() {
 
 async function _collectSkills() {
   const SKILLS_ROOT = path.join(__dirname, '..', '..', '.claude', 'skills');
-  const { glob } = require('fs');
-  const { promisify } = require('util');
-  const globAsync = promisify(glob);
+  // fs.glob só existe a partir do Node 22; em produção (CLAUDE_NODE_BIN = Node 20)
+  // promisify(undefined) lançava TypeError fora do try e GET /llms.txt ficava
+  // pendurado sem resposta. readdir recursivo existe desde o Node 20.1.
   let skills = [];
   try {
-    const files = await globAsync('**/*.md', { cwd: SKILLS_ROOT });
+    const entries = await fs.promises.readdir(SKILLS_ROOT, { recursive: true });
+    const files = entries.filter(f => f.endsWith('.md'));
     skills = files
       .map(f => {
         const rel = f.replace(/\.md$/, '').replace(/\\/g, '/');

@@ -10,10 +10,17 @@
       "command": "node",
       "args": [
         "/home/box/.hermes/agente-rene/backend-sdk-claude/mcp-servers/wa-allowlist-mcp.mjs"
-      ],
-      "env": {
-        "WA_ALLOWLIST_PIN": ""
-      }
+      ]
+    },
+    "diegofornalha": {
+      "type": "http",
+      "url": "https://mcp.smithery.ai/diegofornalha"
+    },
+    "ssh": {
+      "type": "stdio",
+      "command": "/home/box/.local/bin/ssh-mcp-stdio",
+      "args": [],
+      "env": {}
     }
   }
 }

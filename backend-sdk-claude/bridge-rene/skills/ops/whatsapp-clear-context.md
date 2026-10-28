@@ -65,6 +65,16 @@ partir de instrução ambígua.
 
 ## 3. Limpar
 
+**Antes de apagar, garanta que não há turno em andamento.** Apagar a sessão enquanto o gateway processa uma mensagem faz o Hermes mandar ao contato, em inglês, "⚠️ No reply: the turn was stopped because session storage could not be written" (aconteceu em 2026-09-13 04:39). Regra:
+
+```bash
+# a última "inbound message" precisa ser MAIS ANTIGA que o último "response ready"; senão espere alguns segundos e repita
+tail -n 400 ~/.hermes/logs/gateway.log | grep -nE "inbound message:|response ready:" | tail -2
+```
+
+Prefira um momento em que o contato não esteja escrevendo (o MCP `wa-allowlist` já faz essa espera sozinho, até 30 s).
+
+
 ```bash
 hermes sessions delete <ID> --yes
 ```

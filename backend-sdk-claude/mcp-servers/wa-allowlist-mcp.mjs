@@ -6,10 +6,8 @@
 //     e avisá-lo pela ponte do WhatsApp (127.0.0.1:3000/send)
 //
 // Registrado em claude-mcp-servers-dm.json -> exposto ao modelo `rene-dm`.
-// Segurança: PIN opcional. Se WA_ALLOWLIST_PIN (env) estiver definido, toda operação
-// que altera algo exige esse PIN; se não estiver, as operações rodam sem PIN (a
-// allowlist do WhatsApp já restringe quem consegue falar com o agente).
-// Listar nunca exige PIN.
+// Segurança: sem PIN. A allowlist do WhatsApp já restringe quem consegue falar com o
+// agente; o PIN foi removido em 2026-10-03 a pedido do dono. Não reintroduzir.
 
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
@@ -26,9 +24,22 @@ const STATE_DB = process.env.HERMES_STATE_DB || path.join(HERMES_HOME, 'state.db
 const LOG_FILE = path.join(HERMES_HOME, 'logs', 'wa-allowlist.log');
 const PM2_APP = process.env.HERMES_GATEWAY_PM2_APP || 'hermes-gateway';
 const BRIDGE_URL = process.env.HERMES_WA_BRIDGE_URL || 'http://127.0.0.1:3000';
-const PIN = (process.env.WA_ALLOWLIST_PIN || '').trim();
 const KEY = 'WHATSAPP_ALLOWED_USERS';
 const EXEC_ENV = { ...process.env, PATH: `${HOME}/.local/bin:${process.env.PATH || ''}` };
+
+// Espera (até ~30 s) o gateway terminar um turno em andamento antes de apagar sessão: apagar durante
+// um turno faz o Hermes enviar ao contato "No reply: session storage could not be written" (2026-09-13).
+async function aguardarTurnoLivre() {
+  const gwLog = path.join(HERMES_HOME, 'logs', 'gateway.log');
+  for (let i = 0; i < 15; i++) {
+    let tail = '';
+    try { tail = execFileSync('tail', ['-n', '400', gwLog], { encoding: 'utf8' }); } catch { return 'log indisponível'; }
+    const li = tail.lastIndexOf('inbound message:'); const lr = tail.lastIndexOf('response ready:');
+    if (li < 0 || lr > li) return i ? `aguardou ${i * 2} s por turno em andamento` : 'sem turno em andamento';
+    await new Promise((r) => setTimeout(r, 2000));
+  }
+  return 'turno ainda em andamento após 30 s (apagando mesmo assim)';
+}
 
 function log(msg) {
   try {
@@ -37,20 +48,16 @@ function log(msg) {
   } catch {}
 }
 
-function normalizarNumero(n) {
+function normalizarNumero(n, { permitirLead = false } = {}) {
   const d = String(n || '').replace(/\D/g, '');
   if (d.length < 10 || d.length > 15) {
     throw new Error(`Número inválido: "${n}". Use DDI+DDD+número, só dígitos (ex.: 5511999999999).`);
   }
-  return d;
-}
-
-function exigirPin(pin) {
-  if (!PIN) return; // PIN desativado: nada a validar
-  if (String(pin || '').trim() !== PIN) {
-    log('PIN incorreto');
-    throw new Error('PIN incorreto. Operação recusada.');
+  // @menção no WhatsApp mostra lead ID (não é 55 com 12 ou 13 dígitos). Não liberar isso.
+  if (!permitirLead && !/^55\d{10,11}$/.test(d)) {
+    throw new Error('Isso não é telefone. Um @ no WhatsApp mostra o lead ID da pessoa, não o número. Não liberar e não dizer que está fora da allowlist. Liberar só o telefone real (DDI 55, 12 ou 13 dígitos).');
   }
+  return d;
 }
 
 // ---------------------------------------------------------------- allowlist
@@ -70,10 +77,48 @@ function gravarLista(txt, presente, lista) {
   writeFileSync(ENV_FILE, novo, { mode: 0o600 });
 }
 
+// Turnos de OUTROS chats em andamento? (1) outro processo claude do backend rene-dm vivo
+// (fora o pai deste MCP, que é o turno atual) ou (2) mais de um chat com inbound sem
+// "response ready" no gateway.log. Reiniciar nessa hora mata o trabalho alheio
+// (2026-09-28: derrubou a edição de vídeo da Camila no meio).
+function turnosAlheios() {
+  const motivos = [];
+  try {
+    const out = execFileSync('pgrep', ['-f', 'backend-sdk-claude/node_modules/@anthropic-ai/claude-code-linux-x64/claude --output-format'], { stdio: 'pipe' }).toString();
+    const outros = out.split('\n').map(Number).filter(p => p && p !== process.ppid);
+    if (outros.length) motivos.push(`${outros.length} turno(s) do backend em curso`);
+  } catch (_) {}
+  try {
+    const linhas = readFileSync(path.join(HERMES_HOME, 'logs', 'gateway.log'), 'utf8').split('\n').slice(-600);
+    const ultimo = {};
+    for (const l of linhas) {
+      const m = l.match(/(inbound message|response ready): platform=\w+ (?:user=.*? )?chat=(\S+)/);
+      if (m) ultimo[m[2]] = m[1];
+    }
+    const pendentes = Object.values(ultimo).filter(v => v === 'inbound message').length;
+    if (pendentes > 1) motivos.push(`${pendentes} chats aguardando resposta`);
+  } catch (_) {}
+  return motivos;
+}
+
+function esperarGatewayOcioso(maxMs = 8 * 60 * 1000) {
+  const ini = Date.now(); let motivos = turnosAlheios();
+  const sab = new SharedArrayBuffer(4);
+  while (motivos.length && Date.now() - ini < maxMs) {
+    Atomics.wait(new Int32Array(sab), 0, 0, 10000);
+    motivos = turnosAlheios();
+  }
+  return { esperouMs: Date.now() - ini, motivos };
+}
+
 function reiniciarGateway() {
+  const espera = esperarGatewayOcioso();
+  const nota = espera.esperouMs > 15000
+    ? ` (esperei ${Math.round(espera.esperouMs / 1000)} s para não derrubar turnos em andamento${espera.motivos.length ? '; reiniciei mesmo assim: ' + espera.motivos.join(', ') : ''})`
+    : '';
   try {
     execFileSync('pm2', ['restart', PM2_APP, '--update-env'], { env: EXEC_ENV, stdio: 'pipe', timeout: 60000 });
-    return `gateway "${PM2_APP}" reiniciado`;
+    return `gateway "${PM2_APP}" reiniciado${nota}`;
   } catch (e) {
     return `AVISO: não consegui reiniciar o gateway (${e.message}). Rode: pm2 restart ${PM2_APP} --update-env`;
   }
@@ -122,13 +167,12 @@ const TOOLS = [
   },
   {
     name: 'whatsapp_allowlist_liberar',
-    description: 'Adiciona um número à allowlist do WhatsApp do Hermes e reinicia o gateway. Use quando o dono pedir para liberar/autorizar um número.',
+    description: 'Adiciona um TELEFONE à allowlist do WhatsApp do Hermes e reinicia o gateway. Só telefone real (DDI 55, 12 ou 13 dígitos). Um @ no grupo mostra lead ID, não telefone: não chame esta ferramenta com esse id e não diga que a pessoa está fora da allowlist por causa dele.',
     inputSchema: {
       type: 'object',
       required: ['numero'],
       properties: {
-        numero: { type: 'string', description: 'Número com DDI, só dígitos (ex.: 5516992294486)' },
-        pin: { type: 'string', description: 'PIN de autorização; só necessário se o servidor estiver configurado com PIN' },
+        numero: { type: 'string', description: 'Telefone real com DDI 55, 12 ou 13 dígitos. Nunca um lead ID copiado de uma @menção.' },
       },
     },
   },
@@ -138,7 +182,7 @@ const TOOLS = [
     inputSchema: {
       type: 'object',
       required: ['numero'],
-      properties: { numero: { type: 'string' }, pin: { type: 'string' } },
+      properties: { numero: { type: 'string' } },
     },
   },
   {
@@ -157,7 +201,6 @@ const TOOLS = [
       required: ['numero'],
       properties: {
         numero: { type: 'string', description: 'Telefone do contato, só dígitos, com DDI' },
-        pin: { type: 'string', description: 'Só necessário se o servidor estiver configurado com PIN' },
         aviso: { type: 'string', description: 'Texto da mensagem de aviso. Padrão: "Contexto limpo, pode mandar de novo."' },
         sem_aviso: { type: 'boolean', description: 'true para apagar sem enviar mensagem ao contato' },
       },
@@ -179,8 +222,7 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
     }
 
     if (name === 'whatsapp_allowlist_liberar' || name === 'whatsapp_allowlist_remover') {
-      exigirPin(args.pin);
-      const num = normalizarNumero(args.numero);
+      const num = normalizarNumero(args.numero, { permitirLead: name === 'whatsapp_allowlist_remover' });
       const { txt, lista, presente } = lerLista();
       let msg;
       if (name === 'whatsapp_allowlist_liberar') {
@@ -202,7 +244,7 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
     }
 
     if (name === 'whatsapp_sessoes_listar') {
-      const num = args.numero ? normalizarNumero(args.numero) : null;
+      const num = args.numero ? normalizarNumero(args.numero, { permitirLead: true }) : null;
       const rows = listarSessoes(num);
       if (!rows.length) return ok(num ? `Nenhuma sessão para ${num}.` : 'Nenhuma sessão WhatsApp em DM.');
       const linhas = rows.map((r) => `- ${r.telefone} | ${r.mensagens} msgs | última: ${r.ultima} | id ${r.id} | "${r.titulo || ''}"`);
@@ -210,10 +252,10 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
     }
 
     if (name === 'whatsapp_limpar_contexto') {
-      exigirPin(args.pin);
-      const num = normalizarNumero(args.numero);
+      const num = normalizarNumero(args.numero, { permitirLead: true });
       const rows = listarSessoes(num);
       if (!rows.length) return ok(`Nenhuma sessão encontrada para ${num}. Nada apagado.`);
+      const espera = await aguardarTurnoLivre();
       const apagadas = [];
       for (const r of rows) {
         apagarSessao(r.id);
@@ -225,7 +267,7 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
         await enviarWhatsapp(num, texto);
         avisoMsg = `aviso enviado: "${texto}"`;
       }
-      const msg = `Contexto de ${num} limpo. Sessões apagadas: ${apagadas.join(', ')}. ${avisoMsg}.`;
+      const msg = `Contexto de ${num} limpo. Sessões apagadas: ${apagadas.join(', ')}. ${avisoMsg}. (${espera})`;
       log(`${name} ${num} -> ${msg}`);
       return ok(msg);
     }

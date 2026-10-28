@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "buffer": {
+      "type": "http",
+      "url": "https://mcp.buffer.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${BUFFER_API_KEY}"
+      }
+    },
+    "diegofornalha": {
+      "type": "http",
+      "url": "https://mcp.smithery.ai/diegofornalha"
+    },
+    "grok": {
+      "command": "node",
+      "args": [
+        "/home/box/.hermes/agente-rene/backend-sdk-claude/mcp-servers/grok-mcp.mjs"
+      ]
+    }
+  }
+}

@@ -62,8 +62,18 @@ class Watchdog {
     const now = Date.now();
     const expected = this._opts.intervalMs;
     const actual = now - (this._lastTick || now);
-    const lag = Math.max(0, actual - expected);
+    let lag = Math.max(0, actual - expected);
     this._lastTick = now;
+    // Pod hibernado/congelado: o relógio de parede pula mas o monotônico não (ou o salto passa de 10 min,
+    // o que nenhum bloqueio real do event loop sobrevive sem ser notado). Não é lag: registra e segue.
+    const mono = process.hrtime.bigint();
+    const monoActual = this._lastMono ? Number((mono - this._lastMono) / 1000000n) : actual;
+    this._lastMono = mono;
+    if (lag > this._opts.lagCriticalMs && (actual - monoActual > 5000 || lag > 600000)) {
+      console.log(`🐕 Watchdog: máquina estava suspensa ~${Math.round(lag / 1000)} s (relógio pulou); ignorado como lag`);
+      this._consecutiveLag = 0;
+      lag = 0;
+    }
 
     const mem = process.memoryUsage();
     const totalMem = os.totalmem();
